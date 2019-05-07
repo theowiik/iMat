@@ -1,10 +1,12 @@
 package Controller;
 
+import Model.ProductBrowser;
 import Model.ProductCard;
 import Model.ProductCardFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.TilePane;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -12,12 +14,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class iMatController implements Initializable {
-    private BackendController backendController;
+    private static BackendController backendController;
+    private ProductBrowserController productBrowserController;
 
     @FXML
-    public TilePane productTilePane;
-    @FXML
-    public ScrollPane productScrollPane;
+    public AnchorPane contentPane;
 
     /**
      *
@@ -26,46 +27,18 @@ public class iMatController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initTilePane();
-        initScrollPane();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        System.out.println("heyop !");
+        System.out.println("Init for iMatController");
+        backendController = BackendController.getInstance();
+        productBrowserController = new ProductBrowserController();
+        spawnProductBrowser();
+        System.out.println("iMatController initialized");
     }
 
     /**
-     * Inits the scrollbar pane.
+     * Shows the product browser
      */
-    private void initScrollPane() {
-        productScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        productScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        productTilePane.setPrefColumns(3);
-    }
-
-    /**
-     * Configs the tile pane containing products and categories.
-     */
-    public void initTilePane() {
-        productTilePane.setHgap(10);
-        productTilePane.setVgap(10);
-    }
-
-    /**
-     * Constructor
-     */
-    public iMatController() {
-        backendController = new BackendController();
-    }
-
-    /**
-     * Spawns a basic card
-     */
-    public void spawnSampleData() {
-        Product product = backendController.getRandomProduct();
-        ProductCard card = ProductCardFactory.createProductCard(product, this);
-        productTilePane.getChildren().add(card);
+    public void spawnProductBrowser() {
+        ProductBrowser browser = new ProductBrowser();
+        contentPane.getChildren().add(browser);
     }
 }
