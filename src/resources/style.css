@@ -9,7 +9,11 @@
 }
 
 .navbarTile {
-    -fx-background-color: pink;
+    -fx-background-color: #fbf9f9;
+}
+
+.navbarTile:hover {
+    -fx-background-color: #be5250;
 }
 
 .navbarTitle {
@@ -17,5 +21,9 @@
 }
 
 .header {
-    -fx-background-color: red;
+    /*-fx-background-color: yellow;*/
+}
+
+#headerLogo {
+
 }
