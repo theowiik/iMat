@@ -1,3 +1,4 @@
+import javafx.scene.image.Image;
 import se.chalmers.cse.dat216.project.*;
 
 /**
@@ -9,6 +10,8 @@ public class BackendTestExample {
 //        for (Product product : dataHandler.getProducts()) {
 //            System.out.println(product);
 //        }
+
+        dataHandler.getProduct(6).getImageName();
 
     }
 }

@@ -1,9 +1,12 @@
 package Controller;
 
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 /**
- * The controller
+ * The controller of the backend.
  */
 public class BackendController {
     private static IMatDataHandler db;
@@ -15,11 +18,17 @@ public class BackendController {
         db = IMatDataHandler.getInstance();
     }
 
+    public void addToShoppingCart(Product product) {
+        ShoppingCart cart = db.getShoppingCart();
+        ShoppingItem item = new ShoppingItem(product);
+        cart.addItem(item);
+    }
+
     /**
-     *
-     * @return
+     * Returns a random product
+     * @return Product
      */
-    public static IMatDataHandler getDb() {
-        return db;
+    public Product getRandomProduct() {
+        return db.getProduct(144);
     }
 }

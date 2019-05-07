@@ -1,27 +1,19 @@
 package Model;
 
+import Controller.BackendController;
+import Controller.iMatController;
+import javafx.scene.image.Image;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 
 public class ProductCardFactory {
-
     /**
-     * Given a product, returns a product card.
+     * Given a product and controller, returns a product card.
      * @param product
      * @return
      */
-    public static ProductCard createProductCard(Product product) {
-        return new ProductCard(product);
+    public static ProductCard createProductCard(Product product, iMatController parentController) {
+//        Image image = IMatDataHandler.getInstance().getFXImage(product);
+        return new ProductCard(product, parentController);
     }
-
-    /**
-     *
-     * @param name
-     * @param price
-     * @param unit
-     * @return
-     */
-    public static ProductCard createProductCard(String name, String price, String unit) {
-        return new ProductCard(name, price, unit);
-    }
-
 }
