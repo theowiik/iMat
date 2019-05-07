@@ -15,8 +15,6 @@ import java.io.IOException;
  * A "card" includes information about a product
  */
 public class ProductCard extends AnchorPane {
-    private iMatController parentController;
-
     @FXML
     public Text name;
     @FXML
@@ -32,9 +30,8 @@ public class ProductCard extends AnchorPane {
      * Creates a new product card.
      *
      * @param product          a product.
-     * @param parentController a iMatController.
      */
-    ProductCard(Product product, iMatController parentController) {
+    ProductCard(Product product) {
         // FXML init
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productCard.fxml"));
         fxmlLoader.setRoot(this);
@@ -45,9 +42,6 @@ public class ProductCard extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
-        // Instances
-        this.parentController = parentController;
 
         this.name.setText(product.getName());
         this.price.setText(String.valueOf(product.getPrice()));
