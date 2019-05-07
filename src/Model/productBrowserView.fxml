@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Text?>
+
+<fx:root fx:id="productBrowserRootPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="237.0" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="238.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="495.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ScrollPane fx:id="productScrollPane" prefHeight="510.0" prefWidth="456.0" GridPane.columnIndex="1">
+               <content>
+                  <TilePane fx:id="productTilePane" style="-fx-background-color: orange;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </content>
+            </ScrollPane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink;" />
+            <Text fx:id="testText" strokeType="OUTSIDE" strokeWidth="0.0" text="lista med kategorierna" />
+         </children>
+      </GridPane>
+   </children>
+</fx:root>
