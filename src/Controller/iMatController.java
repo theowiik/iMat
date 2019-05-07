@@ -4,6 +4,7 @@ import Model.ProductCard;
 import Model.ProductCardFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.TilePane;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -15,6 +16,8 @@ public class iMatController implements Initializable {
 
     @FXML
     public TilePane productTilePane;
+    @FXML
+    public ScrollPane productScrollPane;
 
     /**
      *
@@ -24,12 +27,22 @@ public class iMatController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initTilePane();
+        initScrollPane();
         spawnSampleData();
         spawnSampleData();
         spawnSampleData();
         spawnSampleData();
         spawnSampleData();
         System.out.println("heyop !");
+    }
+
+    /**
+     * Inits the scrollbar pane.
+     */
+    private void initScrollPane() {
+        productScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        productScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        productTilePane.setPrefColumns(3);
     }
 
     /**
