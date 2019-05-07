@@ -21,6 +21,8 @@ public class iMat extends Application {
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/iMat");
         Parent root = FXMLLoader.load(getClass().getResource("Model/iMat.fxml"), bundle);
         Scene scene = new Scene(root, 1280, 720);
+        stage.setMinWidth(700);
+        stage.setMinHeight(600);
         stage.setTitle("iMat");
         stage.setScene(scene);
         stage.show();
