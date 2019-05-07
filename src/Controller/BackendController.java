@@ -10,15 +10,32 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
  * The controller of the backend.
  */
 public class BackendController {
+    private static BackendController instance = null;
     private static IMatDataHandler db;
 
     /**
      *
      */
-    public BackendController() {
+    private BackendController() {
         db = IMatDataHandler.getInstance();
     }
 
+    /**
+     * Returns the instance of the backend
+     * @return
+     */
+    public static BackendController getInstance() {
+        if (instance == null) {
+            instance = new BackendController();
+        }
+
+        return instance;
+    }
+
+    /**
+     * Adds a product to the shopping cart
+     * @param product
+     */
     public void addToShoppingCart(Product product) {
         ShoppingCart cart = db.getShoppingCart();
         ShoppingItem item = new ShoppingItem(product);
