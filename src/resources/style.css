@@ -24,6 +24,11 @@
     /*-fx-background-color: yellow;*/
 }
 
+.needHelpButton {
+    -fx-background-color: #be5250;
+    -fx-text-fill: white;
+}
+
 #headerLogo {
 
 }
