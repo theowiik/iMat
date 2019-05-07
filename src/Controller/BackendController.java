@@ -1,5 +1,6 @@
 package Controller;
 
+import javafx.scene.image.Image;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCart;
@@ -30,5 +31,14 @@ public class BackendController {
      */
     public Product getRandomProduct() {
         return db.getProduct(144);
+    }
+
+    /**
+     * Returns the image of a product
+     * @param product
+     * @return
+     */
+    public Image getProductImage(Product product) {
+        return db.getFXImage(product);
     }
 }
