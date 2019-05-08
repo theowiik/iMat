@@ -9,7 +9,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="319.0" styleClass="productCard" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="192.0" layoutY="364.0" mnemonicParsing="false" text="sample button" />
+      <Button layoutX="204.0" layoutY="364.0" mnemonicParsing="false" text="+" />
       <Text fx:id="name" layoutX="57.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productName" text="product name goes here" />
       <Text fx:id="unit" layoutX="57.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="product unit goes here" />
       <Text fx:id="price" layoutX="57.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="product price goes here" />
@@ -19,5 +19,6 @@
          </image>
       </ImageView>
       <Label fx:id="amount" layoutX="139.0" layoutY="368.0" text="amount" />
+      <Button layoutX="81.0" layoutY="364.0" mnemonicParsing="false" text="-" />
    </children>
 </fx:root>

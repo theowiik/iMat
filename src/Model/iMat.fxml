@@ -185,6 +185,7 @@
                                     </AnchorPane>
                                  </children>
                               </GridPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="headerTopBar" />
                               <GridPane>
                                 <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />

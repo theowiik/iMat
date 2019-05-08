@@ -6,6 +6,8 @@ import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import java.util.List;
+
 /**
  * The controller of the backend.
  */
