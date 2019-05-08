@@ -27,6 +27,15 @@
 .needHelpButton {
     -fx-background-color: #be5250;
     -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.needHelpButton:hover {
+    -fx-background-color: orange;
+}
+
+.needHelpButton:pressed {
+    -fx-background-color: gray;
 }
 
 #headerLogo {
