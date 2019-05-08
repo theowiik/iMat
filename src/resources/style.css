@@ -8,8 +8,14 @@
     -fx-font-size: 21px;
 }
 
+.headerTopBar {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+}
+
 .navbarTile {
     -fx-background-color: #fbf9f9;
+    -fx-border-color: #b9b7b7;
 }
 
 .navbarTile:hover {
