@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <fx:root fx:id="productBrowserRootPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="237.0" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
@@ -21,20 +22,28 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Accordion>
+            <Accordion style="-fx-background-color: white;">
               <panes>
-                <TitledPane animated="false" text="untitled 1">
+                <TitledPane animated="false" text="Frukt och grönt">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <Text fx:id="testText" layoutX="13.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lista med kategorierna" />
+                              <ScrollPane fx:id="productScrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <TilePane fx:id="productTilePane" prefHeight="148.0" style="-fx-background-color: orange;" />
+                                 </content>
+                              </ScrollPane>
                            </children>
                         </AnchorPane>
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="untitled 2">
+                <TitledPane animated="false" text="Mejeri">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox fx:id="productContainerFlow" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: green;" AnchorPane.bottomAnchor="-48.599999999999994" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children></AnchorPane>
                   </content>
                 </TitledPane>
                 <TitledPane animated="false" text="untitled 3">
@@ -46,11 +55,7 @@
             </Accordion>
             <AnchorPane fx:id="productContainer" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: purple;" GridPane.columnIndex="1">
                <children>
-                  <ScrollPane fx:id="productScrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <content>
-                        <TilePane fx:id="productTilePane" prefHeight="148.0" style="-fx-background-color: orange;" />
-                     </content>
-                  </ScrollPane>
+                  <ScrollPane fx:id="productViewMainScrollPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </children>

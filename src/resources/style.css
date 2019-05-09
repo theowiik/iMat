@@ -13,6 +13,10 @@
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
 }
 
+.categoryTitle {
+    -fx-font-size: 24px;
+}
+
 .navbarTile {
     -fx-background-color: #fbf9f9;
     -fx-border-color: #b9b7b7;

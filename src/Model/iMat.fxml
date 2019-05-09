@@ -99,7 +99,7 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="1">
+                                    <AnchorPane onMouseClicked="#myAccountToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="1">
                                        <children>
                                           <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <columnConstraints>
@@ -141,7 +141,7 @@
                                           </GridPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="3">
+                                    <AnchorPane onMouseClicked="#checkoutToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="3">
                                        <children>
                                           <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <columnConstraints>
@@ -162,7 +162,7 @@
                                           </GridPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile">
+                                    <AnchorPane onMouseClicked="#storeToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile">
                                        <children>
                                           <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <columnConstraints>

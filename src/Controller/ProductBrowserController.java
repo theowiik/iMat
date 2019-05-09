@@ -2,6 +2,7 @@ package Controller;
 
 import Model.ProductBrowser;
 import Model.ProductCardFactory;
+import Model.TitledSection;
 import se.chalmers.cse.dat216.project.Product;
 
 /**
@@ -24,7 +25,26 @@ public class ProductBrowserController {
         spawnSampleData();
         spawnSampleData();
         spawnSampleData();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
+        spawnSampleTitledSection();
         productBrowser.initTilePane();
+    }
+
+    /**
+     *
+     */
+    private void spawnSampleTitledSection() {
+        TitledSection titledSection = new TitledSection("Potatisar");
+        productBrowser.spawnSampleTitledSection();
     }
 
     /**

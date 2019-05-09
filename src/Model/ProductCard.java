@@ -46,6 +46,5 @@ public class ProductCard extends AnchorPane {
         this.name.setText(product.getName());
         this.price.setText(String.valueOf(product.getPrice()));
         this.unit.setText(product.getUnit());
-
     }
 }

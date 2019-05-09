@@ -1,17 +1,14 @@
 package Controller;
 
+import Model.Checkout;
+import Model.MyAccount;
 import Model.ProductBrowser;
-import Model.ProductCard;
-import Model.ProductCardFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.TilePane;
-import se.chalmers.cse.dat216.project.Product;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,6 +19,8 @@ import java.util.ResourceBundle;
 public class iMatController implements Initializable {
     private static BackendController backendController;
     private ProductBrowserController productBrowserController;
+    private MyAccountController myAccountController;
+    private CheckoutController checkoutController;
 
     @FXML
     public AnchorPane contentPane;
@@ -37,8 +36,13 @@ public class iMatController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         backendController = BackendController.getInstance();
         productBrowserController = new ProductBrowserController();
+        myAccountController = new MyAccountController();
+        checkoutController = new CheckoutController();
         spawnProductBrowser();
+        spawnMyAccount();
+        spawnCheckout();
         addListenerToContentPane();
+        storeToFront();
     }
 
     /**
@@ -55,17 +59,50 @@ public class iMatController implements Initializable {
     }
 
     /**
-     * todo
-     */
-    public void appendToContentPane() {
-
-    }
-
-    /**
      * Shows the product browser
      */
     public void spawnProductBrowser() {
         ProductBrowser browser = productBrowserController.getProductBrowser();
         contentPane.getChildren().add(browser);
+    }
+
+    /**
+     * Shows the my account view
+     */
+    public void spawnMyAccount() {
+        MyAccount myAccount = myAccountController.getMyAccount();
+        contentPane.getChildren().add(myAccount);
+    }
+
+    /**
+     * Shows the my checkout view
+     */
+    private void spawnCheckout() {
+        Checkout checkout = checkoutController.getCheckout();
+        contentPane.getChildren().add(checkout);
+    }
+
+    /**
+     * Brings the store view to the front.
+     */
+    public void storeToFront() {
+        System.out.println("Bringing store view to front...");
+        productBrowserController.getProductBrowser().toFront();
+    }
+
+    /**
+     * Brings the account view to the front.
+     */
+    public void myAccountToFront() {
+        System.out.println("Bringing my account view to front...");
+        myAccountController.getMyAccount().toFront();
+    }
+
+    /**
+     *
+     */
+    public void checkoutToFront() {
+        System.out.println("Bringing checkout to front...");
+        checkoutController.getCheckout().toFront();
     }
 }

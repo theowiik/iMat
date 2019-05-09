@@ -2,8 +2,10 @@ package Model;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -18,6 +20,10 @@ public class ProductBrowser extends AnchorPane {
     public TilePane productTilePane;
     @FXML
     public AnchorPane productContainer;
+    @FXML
+    public VBox productContainerFlow;
+    @FXML
+    ScrollPane productViewMainScrollPane;
 
     private int vGap = 30;
     private int hGap = 30;
@@ -30,6 +36,23 @@ public class ProductBrowser extends AnchorPane {
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
+        }
+
+        addShit();
+    }
+
+    public void addShit() {
+        VBox myVBox = new VBox();
+        myVBox.setFillWidth(true);
+        moreShit(myVBox);
+        myVBox.setStyle("-fx-background-color: #FF0000;");
+        productViewMainScrollPane.setContent(myVBox);
+    }
+
+    public void moreShit(VBox myVBox) {
+        for (int i = 0; i < 100; i++) {
+            TitledSection titledSection = new TitledSection("Potatisar", "#FF0000");
+            myVBox.getChildren().add(titledSection);
         }
     }
 
@@ -51,16 +74,14 @@ public class ProductBrowser extends AnchorPane {
 
     /**
      * Given a the width to work with, and a card, returns the recommended amount of columns that will fit.
-     *
      */
     public int getRecommendedCols(double cardWidth) {
         double width = productContainer.getWidth();
         double hSpacePerCard = (hGap + cardWidth);
-        return (int)(width / hSpacePerCard);
+        return (int) (width / hSpacePerCard);
     }
 
     /**
-     *
      * @param cols
      */
     public void setCols(int cols) {
@@ -68,11 +89,17 @@ public class ProductBrowser extends AnchorPane {
     }
 
     /**
-     *
      * @return
      */
     public double getProductContainerWidth() {
         return productContainer.getWidth();
     }
 
+    /**
+     *
+     */
+    public void spawnSampleTitledSection() {
+        TitledSection titledSection = new TitledSection("Potatisar");
+        productContainerFlow.getChildren().add(titledSection);
+    }
 }

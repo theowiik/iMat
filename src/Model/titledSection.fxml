@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="93.0" style="-fx-background-color: pink;" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="title" layoutX="26.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="categoryTitle" text="Äpplen" wrappingWidth="478.64453125" />
+   </children>
+</fx:root>
