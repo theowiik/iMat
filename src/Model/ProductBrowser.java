@@ -10,84 +10,64 @@ import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductBrowser extends AnchorPane implements CustomComponent {
     @FXML
     public Text testText;
     @FXML
-    public AnchorPane productBrowserRootPane;
-    @FXML
-    public TilePane productTilePane;
-    @FXML
     public AnchorPane productContainer;
     @FXML
-    public VBox productContainerFlow;
+    private VBox cardVBox;
     @FXML
-    ScrollPane productViewMainScrollPane;
+    public ScrollPane productViewMainScrollPane;
 
-    private int vGap = 30;
-    private int hGap = 30;
+    private final List<CardGrid> cardGrids = new ArrayList<>();
 
+    private final int hGap = 30;
+    private final int vGap = 15;
+
+    /**
+     * Constructor.
+     */
     public ProductBrowser() {
         setRoot();
-        addShit();
-        spawnSampleCardGrid();
-    }
-
-    public void addShit() {
-        VBox myVBox = new VBox();
-        myVBox.setFillWidth(true);
-        moreShit(myVBox);
-        myVBox.setStyle("-fx-background-color: #FF0000;");
-        productViewMainScrollPane.setContent(myVBox);
-    }
-
-    public void moreShit(VBox myVBox) {
-        for (int i = 0; i < 30; i++) {
-            TitledSection titledSection = new TitledSection("Potatisar", "#FF0000");
-            CardGrid cardGrid = new CardGrid();
-            myVBox.getChildren().add(cardGrid);
-            myVBox.getChildren().add(titledSection);
-        }
+        initCardVBox();
     }
 
     /**
-     * Configs the tile pane containing products and categories.
+     *
      */
-    public void initTilePane() {
-        productTilePane.setHgap(hGap);
-        productTilePane.setVgap(vGap);
+    private void initCardVBox() {
+        cardVBox = new VBox();
+        cardVBox.setFillWidth(true);
+        System.out.println("hi");
+        System.out.println(productViewMainScrollPane.getId());
+        productViewMainScrollPane.setContent(this.cardVBox);
     }
 
     /**
-     * Spawns a basic card
+     *
+     * @param title
      */
-    public void spawnSampleData(Product product) {
-        ProductCard card = ProductCardFactory.createProductCard(product);
-        productTilePane.getChildren().add(card);
+    public void addTitledSection(String title) {
+        TitledSection titledSection = new TitledSection(title);
+        cardVBox.getChildren().add(titledSection);
     }
 
     /**
-     * Given a the width to work with, and a card, returns the recommended amount of columns that will fit.
+     *
+     * @param cards
      */
-    public int getRecommendedCols(double cardWidth) {
-        double width = productContainer.getWidth();
-        double hSpacePerCard = (hGap + cardWidth);
-        return (int) (width / hSpacePerCard);
-    }
-
-    public void spawnSampleCardGrid() {
-        CardGrid cardGrid = new CardGrid();
+    public void spawnCardGrid(List<AnchorPane> cards) {
+        CardGrid cardGrid = new CardGrid(cards, hGap, vGap);
+        cardGrids.add(cardGrid);
+        cardVBox.getChildren().add(cardGrid);
     }
 
     /**
-     * @param cols
-     */
-    public void setCols(int cols) {
-        productTilePane.setPrefColumns(cols);
-    }
-
-    /**
+     *
      * @return
      */
     public double getProductContainerWidth() {
@@ -97,9 +77,17 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
     /**
      *
      */
-    public void spawnSampleTitledSection() {
-        TitledSection titledSection = new TitledSection("Potatisar");
-        productContainerFlow.getChildren().add(titledSection);
+    public void spawnTitledSection(String title) {
+        TitledSection titledSection = new TitledSection(title);
+        cardVBox.getChildren().add(titledSection);
+    }
+
+    /**
+     * Given a the width to work with, and a card, returns the recommended amount of columns that will fit.
+     */
+    public int getRecommendedAmountOfColumns(double cardWidth, double maxWidth) {
+        double hSpacePerCard = (hGap + cardWidth);
+        return (int) (maxWidth / hSpacePerCard);
     }
 
     @Override
@@ -111,6 +99,12 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
+        }
+    }
+
+    public void updateGaps(int cols) {
+        for (CardGrid cardGrid : cardGrids) {
+            cardGrid.setColumns(cols);
         }
     }
 }

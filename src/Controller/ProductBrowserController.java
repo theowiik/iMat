@@ -1,9 +1,14 @@
 package Controller;
 
 import Model.ProductBrowser;
+import Model.ProductCard;
 import Model.ProductCardFactory;
 import Model.TitledSection;
+import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The controller for the product browser view
@@ -11,48 +16,32 @@ import se.chalmers.cse.dat216.project.Product;
 public class ProductBrowserController {
     private static BackendController backendController;
     private ProductBrowser productBrowser;
-    private double productCardWidth;
 
     public ProductBrowserController() {
         this.backendController = BackendController.getInstance();
-        this.productCardWidth = ProductCardFactory.createProductCard(backendController.getRandomProduct()).getWidth();
         this.productBrowser = new ProductBrowser();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleData();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        spawnSampleTitledSection();
-        productBrowser.initTilePane();
+        spawnTitledSection("Category 1");
+        spawnCardGrid();
+        spawnTitledSection("Category 2");
+        spawnCardGrid();
     }
 
     /**
-     *
+     * Spawns a card grid.
      */
-    private void spawnSampleTitledSection() {
-        TitledSection titledSection = new TitledSection("Potatisar");
-        productBrowser.spawnSampleTitledSection();
+    private void spawnCardGrid() {
+        List<AnchorPane> cards = new ArrayList<>();
+        for (Product prod : backendController.getRandomProducts(10)) {
+            cards.add(ProductCardFactory.createProductCard(prod));
+        }
+        productBrowser.spawnCardGrid(cards);
     }
 
     /**
-     *
+     * Spawns a titles section
      */
-    public void spawnSampleData() {
-        Product product = backendController.getRandomProduct();
-        productBrowser.spawnSampleData(product);
+    private void spawnTitledSection(String title) {
+        productBrowser.spawnTitledSection(title);
     }
 
     /**
@@ -73,21 +62,12 @@ public class ProductBrowserController {
 
     /**
      * Updates the amount of columns of products.
-     */
-    public void updatePrefColumns() {
-        updatePrefColumns(300);
-    }
-
-    /**
-     * Updates the amount of columns of products.
      * @param cardSize
      */
     public void updatePrefColumns(double cardSize) {
-        double productContainerWidth = getProductContainerWidth();
-        int cols = productBrowser.getRecommendedCols(cardSize);
-        System.out.println("Current Width is: " + productContainerWidth);
-        System.out.println("With a card size of: " + productCardWidth);
-        System.out.println("It will fit " + cols + " columns.");
-        productBrowser.setCols(cols);
+        double availableWidth = productBrowser.getWidth() * 0.75;
+        int cols = productBrowser.getRecommendedAmountOfColumns(cardSize, availableWidth);
+        productBrowser.updateGaps(cols);
+        System.out.println(cols);
     }
 }

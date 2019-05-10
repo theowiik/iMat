@@ -18,14 +18,15 @@ import java.util.ResourceBundle;
  */
 public class iMatController implements Initializable {
     private static BackendController backendController;
+
     private ProductBrowserController productBrowserController;
     private MyAccountController myAccountController;
     private CheckoutController checkoutController;
 
+    private int cardSize = 300;
+
     @FXML
     public AnchorPane contentPane;
-    @FXML
-    public GridPane myGridPane;
 
     /**
      *
@@ -35,12 +36,15 @@ public class iMatController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         backendController = BackendController.getInstance();
+
         productBrowserController = new ProductBrowserController();
         myAccountController = new MyAccountController();
         checkoutController = new CheckoutController();
+
         spawnProductBrowser();
         spawnMyAccount();
         spawnCheckout();
+
         addListenerToContentPane();
         storeToFront();
     }
@@ -52,8 +56,8 @@ public class iMatController implements Initializable {
         contentPane.widthProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                productBrowserController.updatePrefColumns();
-                System.out.println("Window resized. Updating the amount of columns.");
+                productBrowserController.updatePrefColumns(cardSize);
+                System.out.println("Window resized.");
             }
         });
     }

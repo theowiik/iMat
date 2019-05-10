@@ -6,6 +6,7 @@ import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,8 +36,8 @@ public class BackendController {
     }
 
     /**
-     * Adds a product to the shopping cart
-     * @param product
+     * Adds a product to the shopping cart.
+     * @param product a product.
      */
     public void addToShoppingCart(Product product) {
         ShoppingCart cart = db.getShoppingCart();
@@ -50,6 +51,18 @@ public class BackendController {
      */
     public Product getRandomProduct() {
         return db.getProduct(144);
+    }
+
+    /**
+     * Returns a list of random products.
+     * @return a list of random products.
+     */
+    public List<Product> getRandomProducts(int amount) {
+        List<Product> products = new ArrayList<>();
+        for (int i = 2; i < amount; i++) {
+            products.add(db.getProduct(i));
+        }
+        return products;
     }
 
     /**

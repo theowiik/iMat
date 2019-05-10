@@ -41,8 +41,6 @@ public class TitledSection extends AnchorPane implements CustomComponent {
 
         if (isValidColor(color)) {
             sb.append(color);
-            System.out.println("hiiiiiiii");
-            System.out.println(sb.toString());
             this.title.setStyle(sb.toString());
         }
     }
