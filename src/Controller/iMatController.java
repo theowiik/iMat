@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 /**
  * The main controller for the application window.
  */
-public class iMatController implements Initializable {
+public class iMatController implements Initializable, WindowResizeObserver {
     private static BackendController backendController;
 
     private ProductBrowserController productBrowserController;
@@ -108,5 +108,11 @@ public class iMatController implements Initializable {
     public void checkoutToFront() {
         System.out.println("Bringing checkout to front...");
         checkoutController.getCheckout().toFront();
+    }
+
+    @Override
+    public void windowIsResized() {
+        productBrowserController.updatePrefColumns(cardSize);
+        System.out.println("Window resized. (2)");
     }
 }

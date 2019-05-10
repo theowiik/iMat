@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,8 +27,17 @@ public class iMat extends Application {
         stage.setMinHeight(600);
         stage.setTitle("iMat");
         stage.setScene(scene);
+        addResizeListenerToStage(stage);
         stage.show();
-//        stage.setMaximized(true);
+    }
+
+    private void addResizeListenerToStage(Stage stage) {
+        stage.widthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                System.out.println("window is resized");;
+            }
+        });
     }
 
     /**
