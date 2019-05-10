@@ -5,12 +5,13 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class Checkout extends AnchorPane {
+public class Checkout extends AnchorPane implements CustomComponent {
     public Checkout() {
         setRoot();
     }
 
-    private void setRoot() {
+    @Override
+    public void setRoot() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("checkoutView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

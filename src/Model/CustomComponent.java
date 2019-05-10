@@ -1,5 +1,5 @@
 package Model;
 
-public interface ContentView {
+public interface CustomComponent {
     void setRoot();
 }

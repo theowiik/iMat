@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * A "card" includes information about a product
  */
-public class ProductCard extends AnchorPane {
+public class ProductCard extends AnchorPane implements CustomComponent {
     @FXML
     public Text name;
     @FXML
@@ -32,7 +32,14 @@ public class ProductCard extends AnchorPane {
      * @param product          a product.
      */
     ProductCard(Product product) {
-        // FXML init
+        setRoot();
+        this.name.setText(product.getName());
+        this.price.setText(String.valueOf(product.getPrice()));
+        this.unit.setText(product.getUnit());
+    }
+
+    @Override
+    public void setRoot() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productCard.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -42,9 +49,5 @@ public class ProductCard extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
-        this.name.setText(product.getName());
-        this.price.setText(String.valueOf(product.getPrice()));
-        this.unit.setText(product.getUnit());
     }
 }

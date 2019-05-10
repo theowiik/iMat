@@ -7,7 +7,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
-public class TitledSection extends AnchorPane {
+public class TitledSection extends AnchorPane implements CustomComponent {
     @FXML
     private Text title;
 
@@ -54,6 +54,7 @@ public class TitledSection extends AnchorPane {
         return true;
     }
 
+    @Override
     public void setRoot() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("titledSection.fxml"));
         fxmlLoader.setRoot(this);

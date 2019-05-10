@@ -11,7 +11,7 @@ import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
 
-public class ProductBrowser extends AnchorPane {
+public class ProductBrowser extends AnchorPane implements CustomComponent {
     @FXML
     public Text testText;
     @FXML
@@ -29,16 +29,9 @@ public class ProductBrowser extends AnchorPane {
     private int hGap = 30;
 
     public ProductBrowser() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productBrowserView.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-
+        setRoot();
         addShit();
+        spawnSampleCardGrid();
     }
 
     public void addShit() {
@@ -50,8 +43,10 @@ public class ProductBrowser extends AnchorPane {
     }
 
     public void moreShit(VBox myVBox) {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 30; i++) {
             TitledSection titledSection = new TitledSection("Potatisar", "#FF0000");
+            CardGrid cardGrid = new CardGrid();
+            myVBox.getChildren().add(cardGrid);
             myVBox.getChildren().add(titledSection);
         }
     }
@@ -81,6 +76,10 @@ public class ProductBrowser extends AnchorPane {
         return (int) (width / hSpacePerCard);
     }
 
+    public void spawnSampleCardGrid() {
+        CardGrid cardGrid = new CardGrid();
+    }
+
     /**
      * @param cols
      */
@@ -101,5 +100,17 @@ public class ProductBrowser extends AnchorPane {
     public void spawnSampleTitledSection() {
         TitledSection titledSection = new TitledSection("Potatisar");
         productContainerFlow.getChildren().add(titledSection);
+    }
+
+    @Override
+    public void setRoot() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productBrowserView.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
     }
 }
