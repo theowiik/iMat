@@ -13,6 +13,12 @@ public class CardGrid extends FlowPane implements CustomComponent {
     private final int vGap;
     private final int hGap;
 
+    /**
+     * Constructor
+     * @param cards
+     * @param vGap
+     * @param hGap
+     */
     public CardGrid(List<AnchorPane> cards, int vGap, int hGap) {
         this.vGap = vGap;
         this.hGap = hGap;
