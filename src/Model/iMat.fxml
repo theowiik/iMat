@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
+<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -229,7 +229,7 @@
                                                       <Image url="@../resources/search.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Button mnemonicParsing="false" text="Sök" GridPane.columnIndex="2" />
+                                                <Button fx:id="searchButton" mnemonicParsing="false" text="Sök" GridPane.columnIndex="2" />
                                              </children>
                                           </GridPane>
                                        </children>

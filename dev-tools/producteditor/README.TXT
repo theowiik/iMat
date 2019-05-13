@@ -29,5 +29,5 @@ specified in the manifest,the content of the Class-Path element has to be on
 the projects runtime path.
 * To set a main class in a standard Java project, right-click the project node
 in the Projects window and choose Properties. Then click Run and enter the
-class name in the BackendTestExample Class field. Alternatively, you can manually type the
-class name in the manifest BackendTestExample-Class element.
+class name in the Main Class field. Alternatively, you can manually type the
+class name in the manifest Main-Class element.
