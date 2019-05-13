@@ -1,3 +1,5 @@
+import Controller.WindowResizeObservable;
+import Controller.WindowResizeObserver;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -6,12 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
  * iMat
  */
-public class iMat extends Application {
+public class iMat extends Application implements WindowResizeObservable {
+
+    private List<WindowResizeObserver> observers = new ArrayList<>();
 
     /**
      * Starts the application
@@ -35,7 +41,8 @@ public class iMat extends Application {
         stage.widthProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println("window is resized");;
+                System.out.println("window is resized");
+                notifyAllObservers();
             }
         });
     }
@@ -46,5 +53,17 @@ public class iMat extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void addObserver(WindowResizeObserver observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyAllObservers() {
+        for (WindowResizeObserver observer : observers) {
+            observer.windowIsResized();
+        }
     }
 }

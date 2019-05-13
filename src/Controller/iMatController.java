@@ -29,9 +29,9 @@ public class iMatController implements Initializable, WindowResizeObserver {
     public AnchorPane contentPane;
 
     /**
-     *
-     * @param location
-     * @param resources
+     * Initializes iMatController
+     * @param location location.
+     * @param resources a resources file.
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -103,13 +103,16 @@ public class iMatController implements Initializable, WindowResizeObserver {
     }
 
     /**
-     *
+     * Bring the checkout view to the front.
      */
     public void checkoutToFront() {
         System.out.println("Bringing checkout to front...");
         checkoutController.getCheckout().toFront();
     }
 
+    /**
+     * Calls all observers that the window has been resized.
+     */
     @Override
     public void windowIsResized() {
         productBrowserController.updatePrefColumns(cardSize);
