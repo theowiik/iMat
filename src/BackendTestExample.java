@@ -11,7 +11,7 @@ public class BackendTestExample {
 //            System.out.println(product);
 //        }
 
-        dataHandler.getProduct(6).getImageName();
-
+        dataHandler.getProduct(6);
+        System.out.println("ello");
     }
 }

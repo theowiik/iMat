@@ -26,6 +26,7 @@
 
 .navbarTile:hover {
     -fx-background-color: #be5250;
+    -fx-cursor: hand;
 }
 
 .navbarTitle {
@@ -36,14 +37,20 @@
     /*-fx-background-color: yellow;*/
 }
 
+.searchButton:hover {
+    -fx-cursor: hand;
+}
+
 .needHelpButton {
     -fx-background-color: #be5250;
     -fx-text-fill: white;
     -fx-font-size: 20px;
+
 }
 
 .needHelpButton:hover {
     -fx-background-color: orange;
+    -fx-cursor: hand;
 }
 
 .needHelpButton:pressed {
