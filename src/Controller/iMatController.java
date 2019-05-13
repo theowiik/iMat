@@ -45,21 +45,7 @@ public class iMatController implements Initializable, WindowResizeObserver {
         spawnMyAccount();
         spawnCheckout();
 
-        addListenerToContentPane();
         storeToFront();
-    }
-
-    /**
-     * Adds a listener that listens to the width of the content pane.
-     */
-    public void addListenerToContentPane() {
-        contentPane.widthProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                productBrowserController.updatePrefColumns(cardSize);
-                System.out.println("Window resized.");
-            }
-        });
     }
 
     /**

@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
  * iMat
  */
 public class iMat extends Application implements WindowResizeObservable {
-
     private List<WindowResizeObserver> observers = new ArrayList<>();
 
     /**
@@ -33,18 +32,7 @@ public class iMat extends Application implements WindowResizeObservable {
         stage.setMinHeight(600);
         stage.setTitle("iMat");
         stage.setScene(scene);
-        addResizeListenerToStage(stage);
         stage.show();
-    }
-
-    private void addResizeListenerToStage(Stage stage) {
-        stage.widthProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println("window is resized");
-                notifyAllObservers();
-            }
-        });
     }
 
     /**

@@ -45,6 +45,7 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
         System.out.println("hi");
         System.out.println(productViewMainScrollPane.getId());
         productViewMainScrollPane.setContent(this.cardVBox);
+        productViewMainScrollPane.setFitToWidth(true);
     }
 
     /**
