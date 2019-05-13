@@ -103,9 +103,18 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
         }
     }
 
+    /**
+     *
+     * @param cols
+     */
     public void updateGaps(int cols) {
         for (CardGrid cardGrid : cardGrids) {
             cardGrid.setColumns(cols);
         }
+    }
+
+    public void clearCardVBox() {
+        cardVBox.getChildren().clear();
+        System.out.println("clear");
     }
 }
