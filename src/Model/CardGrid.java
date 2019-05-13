@@ -2,6 +2,7 @@ package Model;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.TilePane;
@@ -22,6 +23,7 @@ public class CardGrid extends FlowPane implements CustomComponent {
     public CardGrid(List<AnchorPane> cards, int vGap, int hGap) {
         this.vGap = vGap;
         this.hGap = hGap;
+        this.setPadding(new Insets(0,0,0,10));
         addCards(cards);
         initGaps();
     }

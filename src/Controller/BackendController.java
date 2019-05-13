@@ -46,7 +46,7 @@ public class BackendController {
     private void populateProuctCardMap() {
         List<Product> products = db.getProducts();
         for (Product product : products) {
-            ProductCard productCard = ProductCardFactory.createProductCard(product);
+            ProductCard productCard = ProductCardFactory.createProductCard(product, getProductImage(product));
             productCardMap.put(product.getName(), productCard);
         }
     }

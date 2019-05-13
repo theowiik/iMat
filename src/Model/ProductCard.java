@@ -4,11 +4,12 @@ import Controller.iMatController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 
-import javax.swing.text.html.ImageView;
 import java.io.IOException;
 
 /**
@@ -21,8 +22,8 @@ public class ProductCard extends AnchorPane implements CustomComponent {
     public Text price;
     @FXML
     public Text unit;
-//    @FXML
-//    public ImageView image;
+    @FXML
+    public ImageView image;
 //    @FXML
 //    public Label amount;
     private int amount = 0;
@@ -32,11 +33,12 @@ public class ProductCard extends AnchorPane implements CustomComponent {
      *
      * @param product          a product.
      */
-    ProductCard(Product product) {
+    ProductCard(Product product, Image image) {
         setRoot();
         this.name.setText(product.getName());
         this.price.setText(String.valueOf(product.getPrice()));
         this.unit.setText(product.getUnit());
+        this.image.setImage(image);
     }
 
     @Override

@@ -11,9 +11,10 @@ public class ProductCardFactory {
     /**
      * Given a product, returns a product card.
      * @param product
+     * @param image
      * @return
      */
-    public static ProductCard createProductCard(Product product) {
-        return new ProductCard(product);
+    public static ProductCard createProductCard(Product product, Image image) {
+        return new ProductCard(product, image);
     }
 }
