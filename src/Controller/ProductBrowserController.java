@@ -27,12 +27,21 @@ public class ProductBrowserController {
     }
 
     /**
-     * Spawns a card grid.
+     * Spawns a sample card grid.
      */
-    private void spawnCardGrid() {
+    public void spawnCardGrid() {
+        List<Product> products = backendController.getRandomProducts(10);
+        spawnCardGrid(products);
+    }
+
+    /**
+     * Spawns a card grid.
+     * @param products
+     */
+    public void spawnCardGrid(List<Product> products) {
         List<AnchorPane> cards = new ArrayList<>();
-        for (Product prod : backendController.getRandomProducts(10)) {
-            cards.add(ProductCardFactory.createProductCard(prod));
+        for (Product product : products) {
+            cards.add(backendController.getProductCard(product));
         }
         productBrowser.spawnCardGrid(cards);
     }
@@ -40,7 +49,7 @@ public class ProductBrowserController {
     /**
      * Spawns a titles section
      */
-    private void spawnTitledSection(String title) {
+    public void spawnTitledSection(String title) {
         productBrowser.spawnTitledSection(title);
     }
 
@@ -69,5 +78,12 @@ public class ProductBrowserController {
         int cols = productBrowser.getRecommendedAmountOfColumns(cardSize, availableWidth);
         productBrowser.updateGaps(cols);
         System.out.println(cols);
+    }
+
+    /**
+     * Clears the box
+     */
+    public void clearCardVBox() {
+        productBrowser.clearCardVBox();
     }
 }

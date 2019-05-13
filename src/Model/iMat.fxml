@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
+<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -219,7 +219,7 @@
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <TextField promptText="Jag vill köpa..." GridPane.columnIndex="1">
+                                                <TextField fx:id="searchBar" onKeyReleased="#search" promptText="Jag vill köpa..." GridPane.columnIndex="1">
                                                    <GridPane.margin>
                                                       <Insets left="20.0" right="20.0" />
                                                    </GridPane.margin>
@@ -229,7 +229,7 @@
                                                       <Image url="@../resources/search.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Button fx:id="searchButton" mnemonicParsing="false" text="Sök" GridPane.columnIndex="2" />
+                                                <Button fx:id="searchButton" mnemonicParsing="false" onMouseClicked="#search" text="Sök" GridPane.columnIndex="2" />
                                              </children>
                                           </GridPane>
                                        </children>

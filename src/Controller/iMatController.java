@@ -3,14 +3,14 @@ package Controller;
 import Model.Checkout;
 import Model.MyAccount;
 import Model.ProductBrowser;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
+import se.chalmers.cse.dat216.project.Product;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -27,6 +27,8 @@ public class iMatController implements Initializable, WindowResizeObserver {
 
     @FXML
     public AnchorPane contentPane;
+    @FXML
+    public TextField searchBar;
 
     /**
      * Initializes iMatController
@@ -103,5 +105,17 @@ public class iMatController implements Initializable, WindowResizeObserver {
     public void windowIsResized() {
         productBrowserController.updatePrefColumns(cardSize);
         System.out.println("Window resized. (2)");
+    }
+
+    /**
+     * Search
+     */
+    @FXML
+    public void search() {
+        String query = searchBar.getText();
+        List<Product> products = backendController.search(query);
+        productBrowserController.clearCardVBox();
+        productBrowserController.spawnTitledSection("Sökresultat för: " + query);
+        productBrowserController.spawnCardGrid(products);
     }
 }

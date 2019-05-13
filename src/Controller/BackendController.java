@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.ProductCard;
+import Model.ProductCardFactory;
 import javafx.scene.image.Image;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
@@ -7,7 +9,9 @@ import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The controller of the backend.
@@ -15,12 +19,14 @@ import java.util.List;
 public class BackendController {
     private static BackendController instance = null;
     private static IMatDataHandler db;
+    private final Map<String, ProductCard> productCardMap = new HashMap<String, ProductCard>();
 
     /**
      *
      */
     private BackendController() {
         db = IMatDataHandler.getInstance();
+        populateProuctCardMap();
     }
 
     /**
@@ -31,8 +37,18 @@ public class BackendController {
         if (instance == null) {
             instance = new BackendController();
         }
-
         return instance;
+    }
+
+    /**
+     * Adds all cards.
+     */
+    private void populateProuctCardMap() {
+        List<Product> products = db.getProducts();
+        for (Product product : products) {
+            ProductCard productCard = ProductCardFactory.createProductCard(product);
+            productCardMap.put(product.getName(), productCard);
+        }
     }
 
     /**
@@ -72,5 +88,23 @@ public class BackendController {
      */
     public Image getProductImage(Product product) {
         return db.getFXImage(product);
+    }
+
+    /**
+     * Searches for products.
+     * @param
+     * @return
+     */
+    public List<Product> search(String input) {
+        return db.findProducts(input);
+    }
+
+    /**
+     * Returns the product card of a product.
+     * @param product
+     * @return
+     */
+    public ProductCard getProductCard(Product product) {
+        return productCardMap.get(product.getName());
     }
 }
