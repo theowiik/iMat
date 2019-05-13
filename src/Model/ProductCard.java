@@ -25,6 +25,7 @@ public class ProductCard extends AnchorPane implements CustomComponent {
 //    public ImageView image;
 //    @FXML
 //    public Label amount;
+    private int amount = 0;
 
     /**
      * Creates a new product card.
@@ -49,5 +50,19 @@ public class ProductCard extends AnchorPane implements CustomComponent {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+    }
+
+    public void add() {
+        amount++;
+        System.out.println(amount);
+    }
+
+    public void subtract() {
+        amount--;
+        System.out.println(amount);
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }
