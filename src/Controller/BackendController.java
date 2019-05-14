@@ -67,6 +67,17 @@ public class BackendController {
      */
     public void addToShoppingCart(Product product) {
         ShoppingCart cart = db.getShoppingCart();
+
+        for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
+            if (shoppingItem.getProduct().getName().equals(product.getName())) {
+                // There already is one of those in the cart.
+                // Update.
+                shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+                return;
+            }
+        }
+
+        // New item
         ShoppingItem item = new ShoppingItem(product);
         cart.addItem(item);
     }
