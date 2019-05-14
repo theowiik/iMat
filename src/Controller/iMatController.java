@@ -104,7 +104,6 @@ public class iMatController implements Initializable, WindowResizeObserver {
     @Override
     public void windowIsResized() {
         productBrowserController.updatePrefColumns(cardSize);
-        System.out.println("Window resized. (2)");
     }
 
     /**
@@ -116,6 +115,6 @@ public class iMatController implements Initializable, WindowResizeObserver {
         List<Product> products = backendController.search(query);
         productBrowserController.clearCardVBox();
         productBrowserController.spawnTitledSection("Sökresultat för: " + query);
-        productBrowserController.spawnCardGrid(products);
+        productBrowserController.spawnProductCardGrid(products);
     }
 }
