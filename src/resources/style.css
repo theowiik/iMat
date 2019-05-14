@@ -62,3 +62,15 @@
 #headerLogo {
 
 }
+
+
+
+.recieptItem {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+}
+
+.recieptItem:hover {
+    -fx-cursor: hand;
+    -fx-background-color: lightgray;
+}

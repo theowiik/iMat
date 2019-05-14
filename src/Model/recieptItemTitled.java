@@ -3,31 +3,38 @@ package Model;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TitledPane;
 
 import java.io.IOException;
 
-public class RecieptItem extends AnchorPane implements CustomComponent {
+public class recieptItemTitled extends TitledPane implements CustomComponent {
 
     @FXML
     public Label date;
 
     @FXML
-    public Label deliverer;
+    public Label lev;
 
     @FXML
     public Label price;
 
-    public RecieptItem(String date, String deliverer, double price) {
+    /*
+    @FXML
+    public AnchorPane content;
+     */
+
+
+    public recieptItemTitled(String date, String lev, double price) {
         setRoot();
         this.date.setText(date);
-        this.deliverer.setText(deliverer);
+        this.lev.setText(lev);
         this.price.setText(String.valueOf(price));
+
     }
 
     @Override
     public void setRoot() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("recieptItem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("recieptItemTitled.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
