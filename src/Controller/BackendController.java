@@ -37,6 +37,9 @@ public class BackendController {
         categories.add(Category.DRINKS);
         categories.add(Category.FRUITS);
     }
+
+    public Map<String, ProductCard> getProductCardMap() {
+        return productCardMap;
     }
 
     /**
@@ -53,7 +56,7 @@ public class BackendController {
     /**
      * Adds all cards.
      */
-    private void populateProuctCardMap() {
+    private void populateProductCardMap() {
         List<Product> products = db.getProducts();
         for (Product product : products) {
             ProductCard productCard = ProductCardFactory.createProductCard(product, getProductImage(product));
