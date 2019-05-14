@@ -118,6 +118,25 @@ public class BackendController {
         return productCardMap.get(product.getName());
     }
 
+    public void removeFromShoppingCart(Product product) {
+        ShoppingCart cart = db.getShoppingCart();
+        ShoppingItem item = new ShoppingItem(product);
+
+        for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
+            if (shoppingItem.getProduct().getName().equals(product.getName())) {
+                // There already is one of those in the cart.
+                // Update.
+                shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+
+                if (shoppingItem.getAmount() <= 0) {
+                    cart.removeItem(shoppingItem);
+                }
+
+                return;
+            }
+        }
+    }
+
     public void printShoppingCart() {
         ShoppingCart shoppingCart = db.getShoppingCart();
 
