@@ -1,12 +1,10 @@
 package Controller;
 
+import Model.CategoryCard;
 import Model.ProductCard;
 import Model.ProductCardFactory;
 import javafx.scene.image.Image;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,13 +18,25 @@ public class BackendController {
     private static BackendController instance = null;
     private static IMatDataHandler db;
     private final Map<String, ProductCard> productCardMap = new HashMap<String, ProductCard>();
+    private final List<Category> categories = new ArrayList<>();
 
     /**
      *
      */
     private BackendController() {
         db = IMatDataHandler.getInstance();
-        populateProuctCardMap();
+        populateProductCardMap();
+        populateCategoryList();
+    }
+
+    private void populateCategoryList() {
+        categories.add(Category.DAIRY);
+        categories.add(Category.DRINKS);
+        categories.add(Category.FRUITS);
+    }
+
+    public Map<String, ProductCard> getProductCardMap() {
+        return productCardMap;
     }
 
     /**
@@ -43,7 +53,7 @@ public class BackendController {
     /**
      * Adds all cards.
      */
-    private void populateProuctCardMap() {
+    private void populateProductCardMap() {
         List<Product> products = db.getProducts();
         for (Product product : products) {
             ProductCard productCard = ProductCardFactory.createProductCard(product, getProductImage(product));
@@ -57,6 +67,17 @@ public class BackendController {
      */
     public void addToShoppingCart(Product product) {
         ShoppingCart cart = db.getShoppingCart();
+
+        for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
+            if (shoppingItem.getProduct().getName().equals(product.getName())) {
+                // There already is one of those in the cart.
+                // Update.
+                shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+                return;
+            }
+        }
+
+        // New item
         ShoppingItem item = new ShoppingItem(product);
         cart.addItem(item);
     }
@@ -120,4 +141,99 @@ public class BackendController {
     public String getFirstName() {
         return db.getCustomer().getFirstName();
     }
+
+    /**
+     *
+     * @return
+     */
+    public List<CategoryCard> getCategoryCards() {
+        List<CategoryCard> categoryCards = new ArrayList<>();
+
+        for (Category category : categories) {
+            CategoryCard categoryCard = new CategoryCard();
+            categoryCards.add(categoryCard);
+        }
+
+        return categoryCards;
+    }
+
+    public void removeFromShoppingCart(Product product) {
+        ShoppingCart cart = db.getShoppingCart();
+        ShoppingItem item = new ShoppingItem(product);
+
+        for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
+            if (shoppingItem.getProduct().getName().equals(product.getName())) {
+                // There already is one of those in the cart.
+                // Update.
+                shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+
+                if (shoppingItem.getAmount() <= 0) {
+                    cart.removeItem(shoppingItem);
+                }
+
+                return;
+            }
+        }
+    }
+
+    public void printShoppingCart() {
+        ShoppingCart shoppingCart = db.getShoppingCart();
+
+        System.out.println("---------");
+
+        for (ShoppingItem product : shoppingCart.getItems()) {
+            System.out.println(product.getAmount() + " x " + product.getProduct().getName());
+        }
+    }
+
+    public Product getProduct(int id) {
+        return db.getProduct(id);
+    }
+
+    public List<Product> getProducts(int[] ids) {
+        List<Product> products = new ArrayList<>();
+
+        for (int i : ids) {
+            products.add(getProduct(i));
+        }
+
+        return products;
+    }
+
+    public List<Product> getProducts(Category category) {
+        int productIds[];
+        switch (category) {
+            case DAIRY:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case MEAT:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case NUTS:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case FRUITS:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case VEGETABLES:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case SWEETS:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case DRINKS:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            default:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+        }
+
+        final List<Product> products = getProducts(productIds);
+        return products;
+    }
+    
+    public List<Order> getReciepts() {
+        return db.getOrders();
+    }
 }
+

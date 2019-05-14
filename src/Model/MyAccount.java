@@ -1,13 +1,26 @@
 package Model;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.Order;
 
 import java.io.IOException;
+import java.util.List;
 
 public class MyAccount extends AnchorPane implements CustomComponent{
-    public MyAccount() {
+
+    @FXML
+    public AnchorPane rightContainer;
+
+    public void spawnRecieptView(List<Order> reciepts) {
+        MyAccountReciept myAccountReciept = new MyAccountReciept(reciepts);
+        rightContainer.getChildren().add(myAccountReciept);
+    }
+
+    public MyAccount(List<Order> reciepts) {
         setRoot();
+        spawnRecieptView(reciepts);
     }
 
     @Override

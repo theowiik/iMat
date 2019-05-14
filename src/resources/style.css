@@ -1,4 +1,29 @@
-* {}
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('fontPackage/Lato-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('fontPackage/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('fontPackage/Lato-Light.ttf');
+}
+
+* {
+  -fx-font-family: Lato-Regular;
+}
+
+.thinText {
+    -fx-font-family: Lato-Light;
+}
+
+.boldText {
+    -fx-font-family: Lato-Bold;
+}
 
 .productCard {
     -fx-background-color: white;
@@ -17,7 +42,11 @@
 }
 
 .categoryTitle {
-    -fx-font-size: 24px;
+    -fx-font-size: 26px;
+}
+
+.categoryCard {
+    -fx-font-size: 40;
 }
 
 .navbarTile {
@@ -61,4 +90,21 @@
 
 #headerLogo {
 
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+    -fx-background-radius: 4;
+}
+
+
+.recieptItem {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+}
+
+.recieptItem:hover {
+    -fx-cursor: hand;
+    -fx-background-color: lightgray;
 }
