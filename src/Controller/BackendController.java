@@ -107,4 +107,50 @@ public class BackendController {
     public ProductCard getProductCard(Product product) {
         return productCardMap.get(product.getName());
     }
+
+    public Product getProduct(int id) {
+        return db.getProduct(id);
+    }
+
+    public List<Product> getProducts(int[] ids) {
+        List<Product> products = new ArrayList<>();
+
+        for (int i : ids) {
+            products.add(getProduct(i));
+        }
+
+        return products;
+    }
+
+    public List<Product> getProducts(Category category) {
+        int productIds[];
+        switch (category) {
+            case DAIRY:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case MEAT:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case NUTS:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case FRUITS:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case VEGETABLES:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case SWEETS:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            case DRINKS:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+                break;
+            default:
+                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+        }
+
+        final List<Product> products = getProducts(productIds);
+        return products;
+    }
 }
