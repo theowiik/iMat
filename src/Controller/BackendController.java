@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.CategoryCard;
 import Model.ProductCard;
 import Model.ProductCardFactory;
 import javafx.scene.image.Image;
@@ -20,13 +21,17 @@ public class BackendController {
     private static BackendController instance = null;
     private static IMatDataHandler db;
     private final Map<String, ProductCard> productCardMap = new HashMap<String, ProductCard>();
+    private final List<Category> categories = new ArrayList<>();
 
     /**
      *
      */
     private BackendController() {
         db = IMatDataHandler.getInstance();
-        populateProuctCardMap();
+        populateProductCardMap();
+        populateCategoryList();
+    }
+
     private void populateCategoryList() {
         categories.add(Category.DAIRY);
         categories.add(Category.DRINKS);
