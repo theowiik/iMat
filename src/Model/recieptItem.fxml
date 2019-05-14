@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<fx:root fx:id="recieptItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="31.0" layoutY="35.0" text="DATUM" />
+      <Label layoutX="266.0" layoutY="34.0" text="LEVERANTÖR" />
+      <Label layoutX="543.0" layoutY="35.0" text="PRIS" />
+   </children>
+</fx:root>
