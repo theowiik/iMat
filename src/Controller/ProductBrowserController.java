@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.ProductBrowser;
-import Model.ProductCard;
-import Model.ProductCardFactory;
-import Model.TitledSection;
+import Model.*;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -13,37 +10,56 @@ import java.util.List;
 /**
  * The controller for the product browser view
  */
-public class ProductBrowserController {
+public class ProductBrowserController implements ProductCardObserver {
     private static BackendController backendController;
     private ProductBrowser productBrowser;
 
     public ProductBrowserController() {
         this.backendController = BackendController.getInstance();
         this.productBrowser = new ProductBrowser();
-        spawnTitledSection("Category 1");
-        spawnCardGrid();
-        spawnTitledSection("Category 2");
-        spawnCardGrid();
+        observeAllProductCards();
+        spawnTitledSection("Lista med kategorier");
+        spawnCategoryCardGrid();
+        spawnTitledSection("Lista med slumpvalda produkter");
+        spawnProductCardGrid();
     }
 
     /**
      * Spawns a sample card grid.
      */
-    public void spawnCardGrid() {
+    public void spawnProductCardGrid() {
         List<Product> products = backendController.getRandomProducts(10);
-        spawnCardGrid(products);
+        spawnProductCardGrid(products);
     }
 
     /**
      * Spawns a card grid.
      * @param products
      */
-    public void spawnCardGrid(List<Product> products) {
+    public void spawnProductCardGrid(List<Product> products) {
         List<AnchorPane> cards = new ArrayList<>();
         for (Product product : products) {
             cards.add(backendController.getProductCard(product));
         }
         productBrowser.spawnCardGrid(cards);
+    }
+
+    public void spawnCategoryCardGrid() {
+        List<AnchorPane> cards = new ArrayList<>();
+        cards.addAll(backendController.getCategoryCards());
+        productBrowser.spawnCardGrid(cards);
+    }
+
+//    public void spawnSubCategoryCardGrid(Category category) {
+//        List<AnchorPane> cards = new ArrayList<>();
+//        cards.addAll(backendController.getSubCategoryCards(category));
+//        productBrowser.spawnCardGrid(cards);
+//    }
+
+    private void observeAllProductCards() {
+        for (ProductCard productCard : backendController.getProductCardMap().values()) {
+            productCard.addObserver(this);
+        }
     }
 
     /**
@@ -85,5 +101,19 @@ public class ProductBrowserController {
      */
     public void clearCardVBox() {
         productBrowser.clearCardVBox();
+    }
+
+    @Override
+    public void productAdded(Product product) {
+        backendController.addToShoppingCart(product);
+        backendController.printShoppingCart();
+        System.out.println("+");
+    }
+
+    @Override
+    public void productRemoved(Product product) {
+        backendController.removeFromShoppingCart(product);
+        backendController.printShoppingCart();
+        System.out.println("-");
     }
 }
