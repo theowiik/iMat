@@ -108,6 +108,16 @@ public class BackendController {
         return productCardMap.get(product.getName());
     }
 
+    public void printShoppingCart() {
+        ShoppingCart shoppingCart = db.getShoppingCart();
+
+        System.out.println("---------");
+
+        for (ShoppingItem product : shoppingCart.getItems()) {
+            System.out.println(product.getAmount() + " x " + product.getProduct().getName());
+        }
+    }
+
     public Product getProduct(int id) {
         return db.getProduct(id);
     }
