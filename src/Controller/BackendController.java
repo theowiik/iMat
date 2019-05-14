@@ -118,6 +118,21 @@ public class BackendController {
         return productCardMap.get(product.getName());
     }
 
+    /**
+     *
+     * @return
+     */
+    public List<CategoryCard> getCategoryCards() {
+        List<CategoryCard> categoryCards = new ArrayList<>();
+
+        for (Category category : categories) {
+            CategoryCard categoryCard = new CategoryCard();
+            categoryCards.add(categoryCard);
+        }
+
+        return categoryCards;
+    }
+
     public void removeFromShoppingCart(Product product) {
         ShoppingCart cart = db.getShoppingCart();
         ShoppingItem item = new ShoppingItem(product);
