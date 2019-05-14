@@ -61,6 +61,14 @@ public class BackendController {
         cart.addItem(item);
     }
 
+    public int getShoppingCartAmount() {
+        return db.getShoppingCart().getItems().size();
+    }
+
+    public double getTotal() {
+        return db.getShoppingCart().getTotal();
+    }
+
     /**
      * Returns a random product
      * @return Product
@@ -106,5 +114,10 @@ public class BackendController {
      */
     public ProductCard getProductCard(Product product) {
         return productCardMap.get(product.getName());
+
+    }
+
+    public String getFirstName() {
+        return db.getCustomer().getFirstName();
     }
 }
