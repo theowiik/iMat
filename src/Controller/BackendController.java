@@ -4,10 +4,7 @@ import Model.CategoryCard;
 import Model.ProductCard;
 import Model.ProductCardFactory;
 import javafx.scene.image.Image;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -221,4 +218,9 @@ public class BackendController {
         final List<Product> products = getProducts(productIds);
         return products;
     }
+    
+    public List<Order> getReciepts() {
+        return db.getOrders();
+    }
 }
+
