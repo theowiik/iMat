@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="-2.0" layoutY="-1.0" prefHeight="627.0" prefWidth="565.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="203.66668701171875" minHeight="0.0" prefHeight="63.666666666666664" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="505.9999974966049" minHeight="10.0" prefHeight="42.99999999999999" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="523.333366394043" minHeight="10.0" prefHeight="510.0000534057617" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+              <content>
+                <AnchorPane fx:id="recieptArea" minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="550.0" />
+              </content>
+            </ScrollPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="197.0" layoutY="10.0" prefHeight="47.0" prefWidth="171.0" text="INKÖPSLISTOR" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Slider layoutX="411.0" layoutY="22.0" AnchorPane.rightAnchor="14.333333333333371" />
+                  <Label layoutX="411.0" text="Kostnad" />
+                  <Text layoutX="472.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="priceholder" />
+                  <Text layoutX="536.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" />
+                  <TextField layoutX="22.0" layoutY="11.0" prefHeight="25.0" prefWidth="269.0" />
+                  <Button layoutX="305.0" layoutY="11.0" mnemonicParsing="false" text="Sök" />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
