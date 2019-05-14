@@ -27,6 +27,11 @@ public class BackendController {
     private BackendController() {
         db = IMatDataHandler.getInstance();
         populateProuctCardMap();
+    private void populateCategoryList() {
+        categories.add(Category.DAIRY);
+        categories.add(Category.DRINKS);
+        categories.add(Category.FRUITS);
+    }
     }
 
     /**
