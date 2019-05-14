@@ -98,6 +98,25 @@
     -fx-background-radius: 4;
 }
 
+.square-button {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+    -fx-background-radius: 2;
+    -fx-font-size: 20px;
+}
+
+.square-button:hover {
+    -fx-background-color: lightgrey;
+    -fx-cursor: hand;
+    -fx-font-size: 20px;
+}
+
+.square-button:pressed {
+    -fx-background-color: #be5250;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
 
 .recieptItem {
     -fx-background-color: white;
