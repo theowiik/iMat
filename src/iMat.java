@@ -27,7 +27,7 @@ public class iMat extends Application implements WindowResizeObservable {
         Parent root = FXMLLoader.load(getClass().getResource("Model/iMat.fxml"), bundle);
         Scene scene = new Scene(root, 1280, 720);
         stage.setMinWidth(750);
-        stage.setMinHeight(600);
+        stage.setMinHeight(700);
         stage.setTitle("iMat");
         stage.setScene(scene);
         stage.show();

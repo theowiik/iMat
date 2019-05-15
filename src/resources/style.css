@@ -127,3 +127,7 @@
     -fx-cursor: hand;
     -fx-background-color: lightgray;
 }
+
+.buttonShadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 3, 3);
+}
