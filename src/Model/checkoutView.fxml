@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1300.0" style="-fx-background-color: #EEEEEE;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1350.0" style="-fx-background-color: #EEEEEE;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane layoutX="464.0" layoutY="218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -43,15 +44,23 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #00ff00;" styleClass="buttonShadow" stylesheets="@../resources/style.css" text="Betalsätt" GridPane.columnIndex="1">
+                              <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #FFFF00;" stylesheets="@../resources/style.css" text="Rabatter">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #FFFF00;" styleClass="buttonShadow" stylesheets="@../resources/style.css" text="Rabatter">
+                              <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #00ff00;" stylesheets="@../resources/style.css" text="Button" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
                               </Button>
                            </children>
                         </GridPane>
@@ -86,7 +95,7 @@
                   <RowConstraints maxHeight="120.80960083007812" minHeight="10.0" prefHeight="110.19039916992188" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane prefHeight="18.0" prefWidth="650.0">
                      <children>
                         <Text fx:id="welcomeMessage" layoutX="11.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.1015625">
                            <font>
@@ -133,10 +142,14 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
                      <children>
-                        <Button layoutX="36.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="348.0" style="-fx-background-color: #FDFDF0;" styleClass="buttonShadow" stylesheets="@../resources/style.css" text="Ändra Leveranstid" AnchorPane.leftAnchor="15.0">
+                        <Button layoutX="36.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #FDFDF0;" stylesheets="@../resources/style.css" text="Ändra Leveranstid" AnchorPane.leftAnchor="15.0">
                            <font>
                               <Font size="36.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="buttonShadow" />
+                              <String fx:value="categoryTitle" />
+                           </styleClass>
                         </Button>
                      </children>
                   </AnchorPane>
