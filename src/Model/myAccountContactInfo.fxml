@@ -1,64 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<fx:root prefHeight="741.0" prefWidth="912.0" style="-fx-background-color: white;" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane layoutX="-2.0" layoutY="-1.0" prefHeight="627.0" prefWidth="565.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="203.66668701171875" minHeight="0.0" prefHeight="63.666666666666664" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="505.9999974966049" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="562.6666666666666" minHeight="10.0" prefHeight="562.6666666666666" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="203.66668701171875" minHeight="0.0" prefHeight="63.33333841959635" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="562.6666666666666" minHeight="10.0" prefHeight="497.9999949137369" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <TextField layoutX="141.0" layoutY="42.0" prefHeight="25.0" prefWidth="389.0" />
-                  <TextField layoutX="141.0" layoutY="80.0" prefHeight="25.0" prefWidth="389.0" />
-                  <TextField layoutX="141.0" layoutY="155.0" />
-                  <TextField layoutX="360.0" layoutY="155.0" prefHeight="25.0" prefWidth="170.0" />
-                  <Label layoutX="78.0" layoutY="46.0" text="Förnamn:" />
-                  <Label layoutX="68.0" layoutY="84.0" text="Efternamn:" />
-                  <Label layoutX="49.0" layoutY="159.0" text="Postnummer:" />
-                  <Label layoutX="322.0" layoutY="159.0" text="Stad:" />
-                  <Label layoutX="34.0" layoutY="226.0" text="Telefonnummer:" />
-                  <Label layoutX="33.0" layoutY="313.0" text="Jag brukar vara hemma:" />
-                  <TextField layoutX="141.0" layoutY="118.0" prefHeight="25.0" prefWidth="389.0" />
-                  <Label layoutX="84.0" layoutY="122.0" text="Adress:" />
-                  <TextField layoutX="141.0" layoutY="222.0" prefHeight="25.0" prefWidth="389.0" />
-                  <Label layoutX="49.0" layoutY="259.0" text="E-postadress:" />
-                  <TextField layoutX="141.0" layoutY="255.0" prefHeight="25.0" prefWidth="389.0" />
-                  <Button layoutX="460.0" layoutY="496.0" mnemonicParsing="false" text="SPARA" />
-                  <Button layoutX="44.0" layoutY="496.0" mnemonicParsing="false" text="RENSA" />
-                  <RadioButton layoutX="168.0" layoutY="346.0" mnemonicParsing="false" text="Måndag" />
-                  <RadioButton layoutX="168.0" layoutY="365.0" mnemonicParsing="false" text="Tisdag" />
-                  <RadioButton layoutX="168.0" layoutY="384.0" mnemonicParsing="false" text="Onsdag" />
-                  <RadioButton layoutX="168.0" layoutY="403.0" mnemonicParsing="false" text="Torsdag" />
-                  <RadioButton layoutX="169.0" layoutY="422.0" mnemonicParsing="false" text="Fredag" />
-                  <RadioButton layoutX="360.0" layoutY="346.0" mnemonicParsing="false" text="7:00-10:00" />
-                  <RadioButton layoutX="360.0" layoutY="365.0" mnemonicParsing="false" text="10:00-13:00" />
-                  <RadioButton layoutX="360.0" layoutY="384.0" mnemonicParsing="false" text="13:00-16:00" />
-                  <RadioButton layoutX="360.0" layoutY="403.0" mnemonicParsing="false" text="16:00-19:00" />
-                  <RadioButton layoutX="360.0" layoutY="422.0" mnemonicParsing="false" text="19:00-22:00" />
-                  <Label layoutX="124.0" layoutY="344.0" text="Dagar:" />
-                  <Label layoutX="319.0" layoutY="346.0" text="Tider:" />
+                  <GridPane hgap="20.0" layoutX="25.0" layoutY="136.0" prefHeight="502.0" prefWidth="676.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="384.0" minWidth="10.0" prefWidth="192.66666666666666" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="841.3333231608073" minWidth="10.0" prefWidth="530.9999186197916" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="722.0000406901041" minWidth="10.0" prefWidth="155.666748046875" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Förnamn:" GridPane.rowIndex="1" />
+                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Efternamn:" GridPane.rowIndex="2" />
+                        <Label text="Adress:" GridPane.rowIndex="3" />
+                        <Label text="Postnummer:" GridPane.rowIndex="4" />
+                        <GridPane hgap="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField />
+                              <Label text="Stad:" GridPane.columnIndex="1" />
+                              <TextField prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Telefonnummer:" GridPane.rowIndex="5" />
+                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="E-postadress:" GridPane.rowIndex="6" />
+                        <Label text="Jag brukar vara hemma:" GridPane.rowIndex="8" />
+                        <Label text="Dagar:" GridPane.rowIndex="9" />
+                        <GridPane hgap="20.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="181.99995930989587" minWidth="10.0" prefWidth="171.99995930989587" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.6666259765625" minWidth="10.0" prefWidth="155.66670735677087" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Tider:" GridPane.columnIndex="1" />
+                              <RadioButton mnemonicParsing="false" text="Måndag" />
+                              <RadioButton mnemonicParsing="false" text="7:00-10:00" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="10">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Tisdag" />
+                              <RadioButton mnemonicParsing="false" text="10:00-13:00" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="11">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="13:00-16:00" GridPane.columnIndex="2" />
+                              <RadioButton mnemonicParsing="false" text="Onsdag" />
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="12">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Torsdag" />
+                              <RadioButton mnemonicParsing="false" text="16:00-19:00" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="13">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Fredag" />
+                              <RadioButton mnemonicParsing="false" text="19:00-22:00" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="15">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <Button mnemonicParsing="false" text="RENSA" GridPane.rowIndex="15" />
+                        <Button mnemonicParsing="false" text="SPARA" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                     </children>
+                  </GridPane>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane prefHeight="167.0" prefWidth="912.0">
                <children>
-                  <Label layoutX="143.0" layoutY="10.0" prefHeight="47.0" prefWidth="279.0" text="KONTAKTINFORMATION" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="143.0" AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="10.0">
+                  <Label layoutX="189.0" layoutY="24.0" prefHeight="47.0" prefWidth="279.0" text="KONTAKTINFORMATION" textAlignment="CENTER" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="24.0">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>
-</AnchorPane>
+</fx:root>

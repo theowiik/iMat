@@ -13,14 +13,42 @@ public class MyAccount extends AnchorPane implements CustomComponent{
     @FXML
     public AnchorPane rightContainer;
 
+    @FXML
+    public AnchorPane leftContainer;
+
+
+    MyAccountReciept myAccountReciept;
+    MyAccountContactInfo myAccountContactInfo;
+    MyAccountShoppingList myAccountShoppingList;
+    MyAccountPersonalDiscounts myAccountPersonalDiscounts;
+
     public void spawnRecieptView(List<Order> reciepts) {
-        MyAccountReciept myAccountReciept = new MyAccountReciept(reciepts);
+        myAccountReciept = new MyAccountReciept(reciepts);
         rightContainer.getChildren().add(myAccountReciept);
+    }
+
+    public void spawnContactInfoView() {
+        myAccountContactInfo = new MyAccountContactInfo();
+        rightContainer.getChildren().add(myAccountContactInfo);
+    }
+
+    public void spawnListView() {
+        myAccountShoppingList = new MyAccountShoppingList();
+        rightContainer.getChildren().add(myAccountShoppingList);
+    }
+
+    public void spawnPersonalDiscounts() {
+        myAccountPersonalDiscounts = new MyAccountPersonalDiscounts();
+        rightContainer.getChildren().add(myAccountPersonalDiscounts);
     }
 
     public MyAccount(List<Order> reciepts) {
         setRoot();
         spawnRecieptView(reciepts);
+        spawnContactInfoView();
+        spawnListView();
+        spawnPersonalDiscounts();
+        recieptsToFront();
     }
 
     @Override
@@ -33,5 +61,20 @@ public class MyAccount extends AnchorPane implements CustomComponent{
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+    }
+
+    public void contactInfoToFront() {
+        myAccountContactInfo.toFront();
+    }
+    public void recieptsToFront() {
+        myAccountReciept.toFront();
+    }
+
+    public void listsToFront() {
+        myAccountShoppingList.toFront();
+    }
+
+    public void personalDiscountsToFront(){
+        myAccountPersonalDiscounts.toFront();
     }
 }

@@ -23,7 +23,7 @@
             <AnchorPane fx:id="rightContainer" prefHeight="200.0" prefWidth="377.0" GridPane.columnIndex="1" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mitt konto" wrappingWidth="171.7082977294922">
+                  <Text fill="#232323" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitt konto" wrappingWidth="171.7082977294922">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -48,7 +48,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <AnchorPane styleClass="square-button" stylesheets="@../resources/style.css">
+                              <AnchorPane onMouseClicked="#recieptsToFront" styleClass="square-button" stylesheets="@../resources/style.css">
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
@@ -59,7 +59,7 @@
                                     <Text layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KVITTON" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane styleClass="square-button" GridPane.columnIndex="1">
+                              <AnchorPane onMouseClicked="#listsToFront" styleClass="square-button" GridPane.columnIndex="1">
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
@@ -77,14 +77,22 @@
                                  <padding>
                                     <Insets right="5.0" top="5.0" />
                                  </padding>
+                                 <children>
+                                    <Text layoutX="10.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PERSONLIGA" />
+                                    <Text layoutX="11.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERBJUDANDEN" />
+                                 </children>
                               </AnchorPane>
-                              <AnchorPane styleClass="square-button" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <AnchorPane fx:id="contactButton" onMouseClicked="#contactInfoToFront" styleClass="square-button" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
                                  <padding>
                                     <Insets right="5.0" top="5.0" />
                                  </padding>
+                                 <children>
+                                    <Text layoutX="14.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LEVERANS &amp;" />
+                                    <Text layoutX="16.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KONTAKTINFORMATION" />
+                                 </children>
                               </AnchorPane>
                            </children>
                            <padding>
