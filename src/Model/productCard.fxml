@@ -43,7 +43,7 @@
                <children>
                   <StackPane prefHeight="46.0" prefWidth="124.0" GridPane.columnIndex="1">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#be5250" height="39.0" stroke="#be5250" strokeType="INSIDE" width="105.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#be5250" height="39.0" stroke="#be5250" strokeType="INSIDE" width="128.0">
                            <StackPane.margin>
                               <Insets />
                            </StackPane.margin>

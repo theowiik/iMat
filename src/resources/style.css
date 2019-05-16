@@ -13,7 +13,7 @@
     src: url('fontPackage/Lato-Light.ttf');
 }
 
-* {
+*{
   -fx-font-family: Lato-Regular;
 }
 
@@ -116,6 +116,11 @@
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
     -fx-background-radius: 10;
+}
+
+.categoryCard:hover {
+    -fx-effect: dropshadow(three-pass-box, #b3d9ff, 10, 0, 0, 0);
+    -fx-cursor: hand;
 }
 
 .categoryCardText {
