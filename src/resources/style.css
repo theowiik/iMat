@@ -25,15 +25,82 @@
     -fx-font-family: Lato-Bold;
 }
 
+.addSubButton {
+    -fx-background-color: #873735;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.addSubButton:hover {
+    -fx-background-color: orange;
+    -fx-cursor: hand;
+}
+
+.addSubButton:pressed {
+    -fx-background-color: gray;
+}
+
+.greenButtonRound {
+    -fx-background-color: white;
+    -fx-background-radius: 50px 50px 50px 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #4CAF50;
+    -fx-border-radius: 50px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 13px;
+}
+
+.greenButtonRound:hover{
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.greenButtonRound:pressed{
+    -fx-background-color: gray;
+}
+
+.redButtonRound {
+    -fx-background-color: white;
+    -fx-background-radius: 50px 50px 50px 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #FA5757;
+    -fx-border-radius: 50px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 13px;
+}
+
+.redButtonRound:hover{
+    -fx-background-color: #FA5757;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.redButtonRound:pressed {
+    -fx-background-color: gray;
+}
+
 .productCard {
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
     -fx-background-radius: 10;
 }
 
+.cartItem {
+    -fx-background-color: white;
+}
+
+.text-field-prod-card {
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+    -fx-background-color: #BE5250;
+}
+
 .productName {
     -fx-background-color: red;
-    -fx-font-size: 21px;
+    -fx-font-size: 30px;
 }
 
 .headerTopBar {
@@ -46,6 +113,11 @@
 }
 
 .categoryCard {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+}
+
+.categoryCardText {
     -fx-font-size: 40;
 }
 

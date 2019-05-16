@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -27,17 +28,15 @@ public class ProductCard extends AnchorPane implements CustomComponent, ProductC
     @FXML
     public Text name;
     @FXML
-    public Text price;
-    @FXML
-    public Text unit;
+    public Text priceAndUnit;
     @FXML
     public ImageView image;
     @FXML
-    public Label amountLabel;
+    public Button addProdButton;
     @FXML
-    public Button addButton;
+    public Button subProdButton;
     @FXML
-    public Button subtractButton;
+    public TextField productAmount;
 
     List<ProductCardObserver> observers = new ArrayList<>();
     private int amount = 0;
@@ -52,8 +51,7 @@ public class ProductCard extends AnchorPane implements CustomComponent, ProductC
         setRoot();
         this.product = product;
         this.name.setText(product.getName());
-        this.price.setText(String.valueOf(product.getPrice()));
-        this.unit.setText(product.getUnit());
+        this.priceAndUnit.setText((String.valueOf(product.getPrice())) + " " + product.getUnit());
         this.image.setImage(image);
         updateAmountLabel();
         addListenersToButtons();
@@ -64,7 +62,7 @@ public class ProductCard extends AnchorPane implements CustomComponent, ProductC
      * @param amount
      */
     private void setAmountLabel(int amount) {
-        amountLabel.setText(String.valueOf(amount));
+        productAmount.setText(String.valueOf(amount));
     }
 
     // FIXME: 2019-05-14
@@ -72,14 +70,14 @@ public class ProductCard extends AnchorPane implements CustomComponent, ProductC
     // Is not planned to be fixed as I dont want to spend more time on this
     // because its only a prototype.
     private void addListenersToButtons() {
-        addButton.setOnAction(new EventHandler<ActionEvent>() {
+        addProdButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 add();
             }
         });
 
-        subtractButton.setOnAction(new EventHandler<ActionEvent>() {
+        subProdButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 subtract();
