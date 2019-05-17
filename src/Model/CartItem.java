@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
 

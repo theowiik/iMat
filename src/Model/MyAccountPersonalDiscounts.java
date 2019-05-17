@@ -18,8 +18,10 @@ public class MyAccountPersonalDiscounts extends AnchorPane implements CustomComp
     public FlowPane productContainer;
 
     @FXML
-    public ScrollPane productScroll;
+    public FlowPane productContainerLeft;
 
+    @FXML
+    public ScrollPane productScroll;
 
 
     public MyAccountPersonalDiscounts() {
@@ -27,6 +29,10 @@ public class MyAccountPersonalDiscounts extends AnchorPane implements CustomComp
         //productScroll.setFitToWidth(true);
         List<ProductCard> productCards = new ArrayList<>();
         Product product = BackendController.getInstance().getProduct(45);
+        productCards.add(BackendController.getInstance().getProductCard(product));
+        product = BackendController.getInstance().getProduct(48);
+        productCards.add(BackendController.getInstance().getProductCard(product));
+        product = BackendController.getInstance().getProduct(12);
         productCards.add(BackendController.getInstance().getProductCard(product));
         populateDiscounts(productCards);
     }

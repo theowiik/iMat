@@ -180,13 +180,13 @@
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
     -fx-background-radius: 2;
-    -fx-font-size: 20px;
+    -fx-font-size: 30px;
 }
 
 .square-button:hover {
     -fx-background-color: lightgrey;
     -fx-cursor: hand;
-    -fx-font-size: 20px;
+    -fx-font-size: 30px;
 }
 
 .square-button:pressed {
@@ -195,6 +195,51 @@
     -fx-font-size: 20px;
 }
 
+.prominentDoneButton {
+    -fx-background-color: #4CAF50;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #4CAF70;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.prominentDoneButton:hover {
+    -fx-background-color: #2A602C;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #4CAF70;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+}
+
+.prominentAbortButton {
+    -fx-background-color: #be5250;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #be5270;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.prominentAbortButton:hover {
+    -fx-background-color: #8B3C3B;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #be5270;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+}
 
 .recieptItem {
     -fx-background-color: white;

@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="741.0" prefWidth="912.0" style="-fx-background-color: white;" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="741.0" prefWidth="912.0" style="-fx-background-color: white;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane layoutX="-2.0" layoutY="-1.0" prefHeight="627.0" prefWidth="565.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane layoutX="-2.0" layoutY="-1.0" prefHeight="689.0" prefWidth="912.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="203.66668701171875" minHeight="0.0" prefHeight="63.33333841959635" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="562.6666666666666" minHeight="10.0" prefHeight="497.9999949137369" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
@@ -50,8 +50,8 @@
                     </rowConstraints>
                      <children>
                         <Label text="Förnamn:" GridPane.rowIndex="1" />
-                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="name" prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="lastname" prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Efternamn:" GridPane.rowIndex="2" />
                         <Label text="Adress:" GridPane.rowIndex="3" />
                         <Label text="Postnummer:" GridPane.rowIndex="4" />
@@ -65,15 +65,15 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <TextField />
+                              <TextField fx:id="postalcode" />
                               <Label text="Stad:" GridPane.columnIndex="1" />
-                              <TextField prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="2" />
+                              <TextField fx:id="city" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="2" />
                            </children>
                         </GridPane>
-                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="address" prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="Telefonnummer:" GridPane.rowIndex="5" />
-                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="telnumber" prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="mail" prefHeight="25.0" prefWidth="424.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="E-postadress:" GridPane.rowIndex="6" />
                         <Label text="Jag brukar vara hemma:" GridPane.rowIndex="8" />
                         <Label text="Dagar:" GridPane.rowIndex="9" />
@@ -88,8 +88,8 @@
                           </rowConstraints>
                            <children>
                               <Label text="Tider:" GridPane.columnIndex="1" />
-                              <RadioButton mnemonicParsing="false" text="Måndag" />
-                              <RadioButton mnemonicParsing="false" text="7:00-10:00" GridPane.columnIndex="2" />
+                              <RadioButton fx:id="monday" mnemonicParsing="false" text="Måndag" />
+                              <RadioButton fx:id="seven" mnemonicParsing="false" text="7:00-10:00" GridPane.columnIndex="2" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.columnIndex="1" GridPane.rowIndex="10">
@@ -102,8 +102,8 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Tisdag" />
-                              <RadioButton mnemonicParsing="false" text="10:00-13:00" GridPane.columnIndex="2" />
+                              <RadioButton fx:id="tuesday" mnemonicParsing="false" text="Tisdag" />
+                              <RadioButton fx:id="ten" mnemonicParsing="false" text="10:00-13:00" GridPane.columnIndex="2" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.columnIndex="1" GridPane.rowIndex="11">
@@ -116,8 +116,8 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <RadioButton mnemonicParsing="false" text="13:00-16:00" GridPane.columnIndex="2" />
-                              <RadioButton mnemonicParsing="false" text="Onsdag" />
+                              <RadioButton fx:id="one" mnemonicParsing="false" text="13:00-16:00" GridPane.columnIndex="2" />
+                              <RadioButton fx:id="wednesday" mnemonicParsing="false" text="Onsdag" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.columnIndex="1" GridPane.rowIndex="12">
@@ -130,8 +130,8 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Torsdag" />
-                              <RadioButton mnemonicParsing="false" text="16:00-19:00" GridPane.columnIndex="2" />
+                              <RadioButton fx:id="thursday" mnemonicParsing="false" text="Torsdag" />
+                              <RadioButton fx:id="four" mnemonicParsing="false" text="16:00-19:00" GridPane.columnIndex="2" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.columnIndex="1" GridPane.rowIndex="13">
@@ -144,8 +144,8 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Fredag" />
-                              <RadioButton mnemonicParsing="false" text="19:00-22:00" GridPane.columnIndex="2" />
+                              <RadioButton fx:id="friday" mnemonicParsing="false" text="Fredag" />
+                              <RadioButton fx:id="nineteen" mnemonicParsing="false" text="19:00-22:00" GridPane.columnIndex="2" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.columnIndex="1" GridPane.rowIndex="15">
@@ -158,15 +158,15 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                         </GridPane>
-                        <Button mnemonicParsing="false" text="RENSA" GridPane.rowIndex="15" />
-                        <Button mnemonicParsing="false" text="SPARA" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                        <Button fx:id="clear" mnemonicParsing="false" onMouseClicked="#clearFieldsContact" styleClass="prominentAbortButton" text="RENSA" GridPane.rowIndex="15" />
+                        <Button fx:id="save" mnemonicParsing="false" styleClass="prominentDoneButton" text="SPARA" GridPane.columnIndex="2" GridPane.rowIndex="15" />
                      </children>
                   </GridPane>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="167.0" prefWidth="912.0">
                <children>
-                  <Label layoutX="189.0" layoutY="24.0" prefHeight="47.0" prefWidth="279.0" text="KONTAKTINFORMATION" textAlignment="CENTER" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="24.0">
+                  <Label layoutX="286.0" layoutY="10.0" prefHeight="47.0" prefWidth="279.0" text="KONTAKTINFORMATION" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                      <font>
                         <Font size="25.0" />
                      </font>
