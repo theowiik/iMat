@@ -246,10 +246,12 @@
 }
 
 .same-page-err-msg {
-
     -fx-font-size: 12px;
     -fx-text-fill: red;
+}
 
+.small-text {
+    -fx-font-size: 15px;
 }
 
 .recieptItem {

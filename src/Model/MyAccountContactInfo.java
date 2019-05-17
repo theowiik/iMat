@@ -92,11 +92,24 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
 
     public MyAccountContactInfo() {
         setRoot();
+        populateCurrent();
+        msg.setText("");
         resetMsg();
     }
 
+    private void populateCurrent() {
+        BackendController backendController = BackendController.getInstance();
+        Customer c = backendController.getCustomer();
+        name.setText(c.getFirstName());
+        lastname.setText(c.getLastName());
+        address.setText(c.getAddress());
+        postalcode.setText(c.getPostCode());
+        city.setText(c.getPostAddress());
+        mail.setText(c.getEmail());
+        telnumber.setText(c.getMobilePhoneNumber());
+    }
+
     private void resetMsg(){
-        msg.setText("");
         errName.setText("");
         errLastName.setText("");
         errAddress.setText("");
@@ -120,7 +133,7 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
     }
 
     private Boolean hasNoError() {
-        if(errName.getText().equals("") && errLastName.getText().equals("") && errAddress.getText().equals("") && errPostalCity.getText().equals("") && errMail.getText().equals("") && errTelNumber.getText().equals(""))
+        if(!name.getText().equals("") && !lastname.getText().equals("") && !address.getText().equals("") && !postalcode.getText().equals("") && !mail.getText().equals("") && !telnumber.getText().equals(""))
             return true;
 
         return false;
@@ -150,6 +163,7 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
     public void saveFieldsContact() {
         BackendController backendController = BackendController.getInstance();
         Customer c = backendController.getCustomer();
+        resetMsg();
         if (!(name.getText().isEmpty()))
             c.setFirstName(name.getText());
         else
@@ -182,7 +196,10 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
         else
             errTelNumber.setText("Telefonnummer saknas");
 
-        if (hasNoError())
+        if (hasNoError()){
+
             msg.setText("Uppgifter sparade till " + c.getFirstName() + "s konto.");
+        }
+
     }
 }
