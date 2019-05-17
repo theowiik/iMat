@@ -1,9 +1,14 @@
 package Model;
 
+import Controller.BackendController;
+import Controller.MyAccountController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.Customer;
 
 import java.awt.*;
 import java.io.IOException;
@@ -68,10 +73,37 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
     @FXML
     public javafx.scene.control.Button save;
 
+    @FXML
+    public Text msg;
+
+    @FXML
+    public Text errName;
+    @FXML
+    public Text errLastName;
+    @FXML
+    public Text errAddress;
+    @FXML
+    public Text errPostalCity;
+    @FXML
+    public Text errMail;
+    @FXML
+    public Text errTelNumber;
 
 
     public MyAccountContactInfo() {
         setRoot();
+        resetMsg();
+    }
+
+    private void resetMsg(){
+        msg.setText("");
+        errName.setText("");
+        errLastName.setText("");
+        errAddress.setText("");
+        errPostalCity.setText("");
+        errMail.setText("");
+        errTelNumber.setText("");
+
     }
 
     @Override
@@ -87,6 +119,12 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
         }
     }
 
+    private Boolean hasNoError() {
+        if(errName.getText().equals("") && errLastName.getText().equals("") && errAddress.getText().equals("") && errPostalCity.getText().equals("") && errMail.getText().equals("") && errTelNumber.getText().equals(""))
+            return true;
+
+        return false;
+    }
 
     public void clearFieldsContact() {
         name.setText("");
@@ -106,9 +144,45 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
         one.setSelected(false);
         four.setSelected(false);
         nineteen.setSelected(false);
+        resetMsg();
     }
 
     public void saveFieldsContact() {
+        BackendController backendController = BackendController.getInstance();
+        Customer c = backendController.getCustomer();
+        if (!(name.getText().isEmpty()))
+            c.setFirstName(name.getText());
+        else
+            errName.setText("Förnamn saknas");
 
+        if (!lastname.getText().isEmpty())
+            c.setLastName(lastname.getText());
+        else
+            errLastName.setText("Efternamn saknas");
+
+        if (!address.getText().isEmpty())
+            c.setAddress(address.getText());
+        else
+            errAddress.setText("Adress saknas");
+
+        if (!postalcode.getText().isEmpty() || !city.getText().isEmpty()) {
+            c.setPostCode(postalcode.getText());
+            c.setPostAddress(city.getText());
+        }
+        else
+            errPostalCity.setText("Postkod & stad saknas");
+
+        if (!mail.getText().isEmpty())
+            c.setEmail(mail.getText());
+        else
+            errMail.setText("Mail saknas");
+
+        if (!telnumber.getText().isEmpty())
+            c.setMobilePhoneNumber(telnumber.getText());
+        else
+            errTelNumber.setText("Telefonnummer saknas");
+
+        if (hasNoError())
+            msg.setText("Uppgifter sparade till " + c.getFirstName() + "s konto.");
     }
 }

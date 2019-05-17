@@ -241,6 +241,17 @@
     -fx-cursor: hand;
 }
 
+.same-page-msg {
+    -fx-font-size: 20px;
+}
+
+.same-page-err-msg {
+
+    -fx-font-size: 12px;
+    -fx-text-fill: red;
+
+}
+
 .recieptItem {
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);

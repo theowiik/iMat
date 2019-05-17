@@ -3,6 +3,7 @@ package Model;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.Order;
 
 import java.awt.*;
@@ -81,6 +82,9 @@ public class MyAccount extends AnchorPane implements CustomComponent{
 
     public void clearFieldsContact() {
         myAccountContactInfo.clearFieldsContact();
-        //myAccountContactInfo.name.setText("");
     }
+
+    //public void saveFieldsContact(Customer c) {
+    //    myAccountContactInfo.saveFieldsContact(c);
+    //}
 }

@@ -142,6 +142,10 @@ public class BackendController {
         return db.getCustomer().getFirstName();
     }
 
+    public Customer getCustomer() {
+        return db.getCustomer();
+    }
+
     /**
      *
      * @return
