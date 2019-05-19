@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<fx:root fx:id="categoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="319.0" styleClass="card" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="categoryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane prefHeight="319.0" prefWidth="319.0">
+      <GridPane prefHeight="319.0" prefWidth="319.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="185.0" minHeight="10.0" prefHeight="185.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <HBox prefHeight="74.0" prefWidth="319.0" GridPane.rowIndex="2">
-               <children>
-                  <Text fx:id="categoryName" strokeType="OUTSIDE" strokeWidth="0.0" text="Category name goes here" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="319.11170959472656">
-                     <styleClass>
-                        <String fx:value="boldText" />
-                        <String fx:value="categoryCard" />
-                     </styleClass>
-                  </Text>
-               </children>
-            </HBox>
+            <ImageView fx:id="image" fitHeight="139.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/dolan.jpg" />
+               </image>
+            </ImageView>
+            <Text fx:id="categoryName" strokeType="OUTSIDE" strokeWidth="0.0" text="Category name goes here" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="319.11170959472656" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="boldText" />
+                  <String fx:value="categoryCard" />
+               </styleClass>
+            </Text>
          </children>
       </GridPane>
-      <ImageView fx:id="categoryPic" fitHeight="319.0" fitWidth="319.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
+   <styleClass>
+      <String fx:value="card" />
+      <String fx:value="categoryCard" />
+   </styleClass>
 </fx:root>
