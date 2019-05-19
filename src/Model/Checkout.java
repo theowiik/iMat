@@ -75,6 +75,15 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public AnchorPane payViewWindow;
 
+    @FXML
+    public AnchorPane infoCoverWindow;
+
+    @FXML
+    public AnchorPane invoiceInfoWindow;
+
+    @FXML
+    public AnchorPane bankInfoWindow;
+
 
 
     public void setWelcomeMessage(String welcomeMessage) {
@@ -155,6 +164,21 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public void openPayViewWindow() {
         this.payViewWindow.toFront();
+    }
+
+    @FXML
+    public void uncoverInvoiceInfoWindow() {
+        this.invoiceInfoWindow.toFront();
+    }
+
+    @FXML
+    public void uncoverBankInfoWindow() {
+        this.bankInfoWindow.toFront();
+    }
+
+    @FXML
+    public void hideInfo() {
+        this.infoCoverWindow.toFront();
     }
 
     @FXML
