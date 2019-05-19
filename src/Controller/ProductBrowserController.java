@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.*;
+import Model.Categories.Category;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -16,12 +17,15 @@ public class ProductBrowserController implements ProductCardObserver {
 
     public ProductBrowserController() {
         this.backendController = BackendController.getInstance();
-        this.productBrowser = new ProductBrowser();
+        List<Category> categories = new ArrayList<>();
+        categories.addAll(backendController.getcategories());
+        this.productBrowser = new ProductBrowser(categories);
         observeAllProductCards();
-        spawnTitledSection("Lista med kategorier");
-        spawnCategoryCardGrid();
-        spawnTitledSection("Lista med slumpvalda produkter");
-        spawnProductCardGrid();
+        showAllProducts();
+    }
+
+    public void showAllProducts() {
+        productBrowser.showAllProducts();
     }
 
     /**
@@ -44,13 +48,13 @@ public class ProductBrowserController implements ProductCardObserver {
         productBrowser.spawnCardGrid(cards);
     }
 
-    public void spawnCategoryCardGrid() {
-        List<AnchorPane> cards = new ArrayList<>();
-        cards.addAll(backendController.getCategoryCards());
-        productBrowser.spawnCardGrid(cards);
-    }
+//    public void spawnCategoryCardGrid() {
+//        List<AnchorPane> cards = new ArrayList<>();
+//        cards.addAll(backendController.getCategoryCards());
+//        productBrowser.spawnCardGrid(cards);
+//    }
 
-//    public void spawnSubCategoryCardGrid(Category category) {
+//    public void spawnSubCategoryCardGrid(CategoryName category) {
 //        List<AnchorPane> cards = new ArrayList<>();
 //        cards.addAll(backendController.getSubCategoryCards(category));
 //        productBrowser.spawnCardGrid(cards);
