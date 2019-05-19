@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
+<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -206,7 +206,7 @@
                                           <Insets />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <Button mnemonicParsing="false" styleClass="needHelpButton" text="Jag behöver hjälp!" GridPane.columnIndex="3" />
+                                    <Button mnemonicParsing="false" onMouseClicked="#helpToFront" styleClass="needHelpButton" text="Jag behöver hjälp!" GridPane.columnIndex="3" />
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                                        <children>
                                           <GridPane layoutX="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

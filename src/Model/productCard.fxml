@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="300.0" styleClass="card" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="331.0" styleClass="productCard" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -21,51 +26,121 @@
         <rowConstraints>
             <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="143.0" valignment="TOP" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="127.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="51.599993896484364" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="152.40001220703127" minHeight="10.0" prefHeight="85.60002441406246" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="91.99997558593748" minHeight="10.0" prefHeight="59.99997558593748" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fx:id="image" fitHeight="128.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../resources/dolan.jpg" />
-               </image>
-            </ImageView>
-            <GridPane prefHeight="36.0" prefWidth="300.0" GridPane.rowIndex="3">
+            <GridPane prefHeight="61.0" prefWidth="344.0" GridPane.rowIndex="4">
               <columnConstraints>
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="140.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="67.0" minWidth="10.0" prefWidth="20.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="140.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="subtractButton" mnemonicParsing="false" text="-" />
-                  <Button fx:id="addButton" mnemonicParsing="false" text="+" GridPane.columnIndex="2" />
-                  <Label fx:id="amountLabel" text="amount" GridPane.columnIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane GridPane.rowIndex="2">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="19.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="281.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                  <StackPane prefHeight="46.0" prefWidth="124.0" GridPane.columnIndex="1">
                      <children>
-                        <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productName" text="product name goes here" wrappingWidth="257.62646484375" />
-                        <Text fx:id="unit" strokeType="OUTSIDE" strokeWidth="0.0" text="product unit goes here" />
-                        <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0" text="product price goes here" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#be5250" height="39.0" stroke="#be5250" strokeType="INSIDE" width="128.0">
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                        </Rectangle>
+                        <TextField fx:id="productAmount" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="38.0" prefWidth="47.0" promptText="0">
+                           <font>
+                              <Font name="Lato Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <StackPane.margin>
+                              <Insets top="1.0" />
+                           </StackPane.margin>
+                           <styleClass>
+                              <String fx:value="boldText" />
+                              <String fx:value="text-field-prod-card" />
+                           </styleClass>
+                        </TextField>
+                     </children>
+                  </StackPane>
+                  <Button fx:id="subProdButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="55.0" style="-fx-background-radius: 0px 50px 50px 50px;" styleClass="addSubButton" text="-" textFill="WHITE" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="1.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="1.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="addProdButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="55.0" style="-fx-background-radius: 50px 50px 0px 50px;" styleClass="addSubButton" text="+" textFill="WHITE" textOverrun="CLIP">
+                     <GridPane.margin>
+                        <Insets bottom="1.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="1.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </GridPane>
+            <GridPane prefHeight="63.0" prefWidth="331.0" GridPane.rowIndex="3">
+              <columnConstraints>
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox prefHeight="78.0" prefWidth="309.0">
+                     <children>
+                        <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="product name" textAlignment="CENTER" wrappingWidth="300.826416015625">
+                           <styleClass>
+                              <String fx:value="productName" />
+                              <String fx:value="boldText" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin></Text>
+                        <HBox prefHeight="18.0" prefWidth="222.0">
+                           <children>
+                              <Text fx:id="priceAndUnit" strokeType="OUTSIDE" strokeWidth="0.0" text="??? kr/förp" textAlignment="RIGHT" wrappingWidth="112.11559200286865">
+                                 <styleClass>
+                                    <String fx:value="thinText" />
+                                    <String fx:value="productPrice" />
+                                 </styleClass>
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="50.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
                   </VBox>
                </children>
             </GridPane>
+            <ImageView fx:id="image" fitHeight="174.0" fitWidth="174.0" pickOnBounds="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../resources/dolan.jpg" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
    </children>

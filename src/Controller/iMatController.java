@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Checkout;
+import Model.Help;
 import Model.MyAccount;
 import Model.ProductBrowser;
 import javafx.fxml.FXML;
@@ -22,6 +23,7 @@ public class iMatController implements Initializable, WindowResizeObserver {
     private ProductBrowserController productBrowserController;
     private MyAccountController myAccountController;
     private CheckoutController checkoutController;
+    private Help help;
 
     private int cardSize = 300;
 
@@ -60,6 +62,7 @@ public class iMatController implements Initializable, WindowResizeObserver {
         spawnProductBrowser();
         spawnMyAccount();
         spawnCheckout();
+        spawnHelp();
 
         storeToFront();
     }
@@ -88,6 +91,10 @@ public class iMatController implements Initializable, WindowResizeObserver {
         contentPane.getChildren().add(checkout);
     }
 
+    private void spawnHelp() {
+        help = new Help();
+        contentPane.getChildren().add(help);
+    }
     /**
      * Brings the store view to the front.
      */
@@ -119,6 +126,15 @@ public class iMatController implements Initializable, WindowResizeObserver {
         storeActive(false);
         checkoutActive(true);
         myAccountActive(false);
+    }
+
+    /**
+     * Bring the help view to front.
+     */
+    public void helpToFront() {
+        System.out.println("Bringing help to front...");
+        help.toFront();
+        help.populateFields();
     }
 
     /**

@@ -20,7 +20,7 @@
           <RowConstraints maxHeight="156.33331298828128" minHeight="10.0" prefHeight="59.333353678385436" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="291.0" styleClass="prominentDoneButton" text="SPARA SOM INKÖPSLISTA" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="261.0" styleClass="prominentDoneButton" text="LÄGG TILL I KUNDVAGN" GridPane.rowIndex="1" />
             <AnchorPane fx:id="cartItemContainer" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </GridPane>
@@ -30,21 +30,21 @@
          <children>
             <GridPane prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <columnConstraints>
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="date" text="DATE">
+                  <Label fx:id="listName" text="NAME">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="lev" text="LEV" GridPane.columnIndex="1" />
-                  <Label fx:id="price" text="PRICE" textAlignment="RIGHT" GridPane.columnIndex="2">
+                  <Label fx:id="listCategory" text="CATEGORY" GridPane.columnIndex="1" />
+                  <Label fx:id="listPrice" text="PRICE" textAlignment="RIGHT" GridPane.columnIndex="2">
                      <padding>
                         <Insets right="30.0" />
                      </padding>

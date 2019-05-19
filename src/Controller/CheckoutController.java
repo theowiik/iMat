@@ -25,6 +25,7 @@ public class CheckoutController {
         checkout.setWelcomeMessage("Var det bra så, " + getFirstName() + "?");
         checkout.setAmountMessage("Din kundvagn innehåller " + backendController.getShoppingCartAmount() + " varor.");
         checkout.setTotalText("TOTALT: " + getTotal() + "kr");
+        setDefaultDate();
     }
 
     public Checkout getCheckout() {
@@ -38,5 +39,12 @@ public class CheckoutController {
     private double getTotal() {
         return backendController.getTotal();
     }
+
+    private void setDefaultDate() {
+        checkout.handled1();
+        checkout.confirmDeliveryDate();
+        checkout.setDeliveryDateText();
+    }
+
 
 }

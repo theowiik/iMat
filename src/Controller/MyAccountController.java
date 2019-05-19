@@ -21,4 +21,20 @@ public class MyAccountController {
     public List<Order> getReciepts() {
         return BackendController.getInstance().getReciepts();
     }
+
+    public void contactInfoToFront() {
+        myAccount.contactInfoToFront();
+    }
+
+    public void recieptsToFront() {
+        myAccount.recieptsToFront();
+    }
+
+    public void listsToFront() {
+        myAccount.listsToFront();
+    }
+
+    public void personalDiscountToFront() { myAccount.personalDiscountToFront();}
+
+    public void clearFieldsContact() {myAccount.clearFieldsContact();}
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,61 +13,99 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1300.0" style="-fx-background-color: #EEEEEE;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #EEEEEE;" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane layoutX="464.0" layoutY="218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <AnchorPane fx:id="shadowWindow" onMouseClicked="#closeDeliveryWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <AnchorPane fx:id="deliveryWindow2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="100.0">
                <children>
-                  <GridPane layoutX="-30.0" layoutY="77.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="309.1347198486328" minHeight="10.0" prefHeight="309.1347198486328" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="159.19039916992188" minHeight="10.0" prefHeight="38.332794189453125" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="151.66720581054688" minHeight="10.0" prefHeight="151.66720581054688" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <GridPane layoutX="514.0" layoutY="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="390.0" minHeight="390.0" prefHeight="390.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
                      <children>
-                        <GridPane GridPane.rowIndex="2">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                        <GridPane GridPane.rowIndex="1">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #00ff00;" text="Betalsätt">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
+                              <Button fx:id="d10" mnemonicParsing="false" onAction="#handled10" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #FFFF00;" text="Rabatter" GridPane.columnIndex="1">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
+                              <Button fx:id="d11" mnemonicParsing="false" onAction="#handled11" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="d9" mnemonicParsing="false" onAction="#handled9" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
                               </Button>
                            </children>
                         </GridPane>
-                        <ScrollPane prefHeight="360.0" prefWidth="495.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                          </content>
-                        </ScrollPane>
-                        <AnchorPane prefHeight="22.0" prefWidth="650.0" GridPane.rowIndex="1">
+                        <GridPane GridPane.rowIndex="2">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <Text fx:id="totalText" layoutX="164.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="3.5">
+                              <Button fx:id="backDeliveryButton" mnemonicParsing="false" onAction="#closeDeliveryWindow" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #FDFDC0;" stylesheets="@../resources/style.css" text="TILLBAKA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="nextDateButton2" mnemonicParsing="false" onAction="#nextDateView2" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #FDFDE0';" stylesheets="@../resources/style.css" text="FLER TIDER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="confirmDeliveryButton1" mnemonicParsing="false" onAction="#acceptDelivery" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #00ff00;" stylesheets="@../resources/style.css" text="BEKRÄFTA" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="65.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vilken tid passar dig bäst?" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <font>
+                                    <Font size="30.0" />
                                  </font>
                               </Text>
                            </children>
@@ -74,76 +114,294 @@
                   </GridPane>
                </children>
             </AnchorPane>
-            <GridPane>
+            <AnchorPane fx:id="deliveryWindow1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="100.0">
+               <children>
+                  <GridPane layoutX="514.0" layoutY="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="390.0" minHeight="390.0" prefHeight="390.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                        <GridPane GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="d2" mnemonicParsing="false" onAction="#handled2" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="d3" mnemonicParsing="false" onAction="#handled3" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="d4" mnemonicParsing="false" onAction="#handled4" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="d5" mnemonicParsing="false" onAction="#handled5" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="d6" mnemonicParsing="false" onAction="#handled6" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="d7" mnemonicParsing="false" onAction="#handled7" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="d8" mnemonicParsing="false" onAction="#handled8" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="d1" mnemonicParsing="false" onAction="#handled1" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.rowIndex="2">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="backDeliveryButton" mnemonicParsing="false" onAction="#closeDeliveryWindow" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #FDFDC0;" stylesheets="@../resources/style.css" text="TILLBAKA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="nextDateButton1" mnemonicParsing="false" onAction="#nextDateView1" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #FDFDE0';" stylesheets="@../resources/style.css" text="FLER TIDER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="confirmDeliveryButton" mnemonicParsing="false" onAction="#acceptDelivery" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #00ff00;" stylesheets="@../resources/style.css" text="BEKRÄFTA" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="65.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vilken tid passar dig bäst?" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="98.05728149414062" minHeight="10.0" prefHeight="64.61919784545898" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="151.1625576019287" minHeight="10.0" prefHeight="36.495361328125" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="283.8390426635742" minHeight="10.0" prefHeight="212.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="65.79104614257812" minHeight="0.0" prefHeight="36.504638671875" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="124.17184448242188" minHeight="10.0" prefHeight="41.495361328125" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="120.80960083007812" minHeight="10.0" prefHeight="110.19039916992188" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <Text fx:id="welcomeMessage" layoutX="11.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.1015625">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Text>
+                        <GridPane layoutX="-30.0" layoutY="77.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="34.0" minHeight="34.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="134.0" minHeight="134.0" prefHeight="134.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <GridPane GridPane.rowIndex="2">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #FFFF00;" stylesheets="@../resources/style.css" text="RABATTER" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="15.0">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="buttonShadow" />
+                                                <String fx:value="categoryTitle" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Button layoutX="14.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" style="-fx-background-color: #00ff00;" stylesheets="@../resources/style.css" text="BETALSÄTT" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="15.0">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="buttonShadow" />
+                                                <String fx:value="categoryTitle" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </GridPane>
+                              <AnchorPane prefHeight="22.0" prefWidth="650.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Text fx:id="totalText" layoutX="164.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="15.0">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Separator layoutX="155.0" layoutY="31.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane layoutX="194.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                                      </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="55.0" prefWidth="600.0" GridPane.rowIndex="1">
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="67.0" minHeight="67.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="255.0" minHeight="255.0" prefHeight="255.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="44.0" minHeight="44.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="43.0" minHeight="43.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
-                        <Text fx:id="amountMessage" layoutX="117.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Text>
+                        <AnchorPane prefHeight="153.0" prefWidth="600.0">
+                           <children>
+                              <Text fx:id="welcomeMessage" layoutX="14.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="28.0" prefWidth="600.0" GridPane.rowIndex="1">
+                           <children>
+                              <Text fx:id="amountMessage" layoutX="117.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fitHeight="242.0" fitWidth="418.0" layoutX="14.0" layoutY="65.0" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0">
+                                 <image>
+                                    <Image url="@../resources/iMatTruck.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <children>
+                              <Text layoutX="29.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vi beräknar att leverera varorna hos dig" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                           <children>
+                              <Text fx:id="deliveryDateText" layoutX="78.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATUM" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                           <children>
+                              <Button fx:id="changeDeliveryButton" layoutX="36.0" layoutY="-1.0" mnemonicParsing="false" onAction="#openDeliveryWindow" onMouseClicked="#openDeliveryWindow" prefHeight="70.0" prefWidth="290.0" style="-fx-background-color: #FDFDF0;" stylesheets="@../resources/style.css" text="ÄNDRA LEVERANSTID" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="categoryTitle" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </AnchorPane>
                      </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-                     <children>
-                        <ImageView fitHeight="210.0" fitWidth="384.0" layoutX="22.0" layoutY="3.0" preserveRatio="true" AnchorPane.topAnchor="0.0">
-                           <image>
-                              <Image url="@../resources/iMatTruck.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
-                     <children>
-                        <Text layoutX="29.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vi beräknar att leverera varorna hos dig" AnchorPane.leftAnchor="15.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
-                     <children>
-                        <Text fx:id="deliveryDateText" layoutX="78.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATUM" AnchorPane.leftAnchor="15.0">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
-                     <children>
-                        <Button layoutX="36.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="348.0" style="-fx-background-color: #FDFDF0;" text="Ändra Leveranstid" AnchorPane.leftAnchor="15.0">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
+                  </GridPane>
                </children>
             </GridPane>
          </children>
-      </GridPane>
+      </AnchorPane>
    </children>
 </fx:root>
