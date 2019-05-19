@@ -22,6 +22,8 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public Text totalText;
     @FXML
+    public Text totalText1;
+    @FXML
     public Text deliveryDateText;
 
     @FXML
@@ -70,6 +72,9 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public AnchorPane shadowWindow;
 
+    @FXML
+    public AnchorPane payViewWindow;
+
 
 
     public void setWelcomeMessage(String welcomeMessage) {
@@ -82,6 +87,7 @@ public class Checkout extends AnchorPane implements CustomComponent {
 
     public void setTotalText(String totalText) {
         this.totalText.setText(totalText);
+        this.totalText1.setText((totalText));
     }
 
     public void setDeliveryDateText(){
@@ -125,6 +131,11 @@ public class Checkout extends AnchorPane implements CustomComponent {
     }
 
     @FXML
+    public void openMainWindow() {
+        this.mainWindow.toFront();
+    }
+
+    @FXML
     public void acceptDelivery() {
         this.mainWindow.toFront();
         confirmDeliveryDate();
@@ -139,6 +150,11 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public void nextDateView2() {
         this.deliveryWindow1.toFront();
+    }
+
+    @FXML
+    public void openPayViewWindow() {
+        this.payViewWindow.toFront();
     }
 
     @FXML
