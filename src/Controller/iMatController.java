@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Checkout;
+import Model.Help;
 import Model.MyAccount;
 import Model.ProductBrowser;
 import Model.ShoppingCart1;
@@ -24,6 +25,8 @@ public class iMatController implements Initializable, WindowResizeObserver {
     private MyAccountController myAccountController;
     private CheckoutController checkoutController;
     private ShoppingCartController shoppingCartController;
+    private Help help;
+
 
     private int cardSize = 300;
     private boolean isInfront = false;
@@ -33,6 +36,19 @@ public class iMatController implements Initializable, WindowResizeObserver {
     @FXML
     public TextField searchBar;
 
+    @FXML
+    public AnchorPane storeButton;
+    @FXML
+    public AnchorPane checkoutButton;
+    @FXML
+    public AnchorPane myAccountButton;
+    @FXML
+    public AnchorPane cartButton;
+
+    private String activeColor = "#be5250";
+    private String inActiveColor = "#ffffff";
+
+
     /**
      * Initializes iMatController
      * @param location location.
@@ -41,6 +57,7 @@ public class iMatController implements Initializable, WindowResizeObserver {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         backendController = BackendController.getInstance();
+        backendController.initCategories();
 
         productBrowserController = new ProductBrowserController();
         myAccountController = new MyAccountController();
@@ -52,6 +69,7 @@ public class iMatController implements Initializable, WindowResizeObserver {
         spawnMyAccount();
         spawnCheckout();
         spawnShoppingCart();
+        spawnHelp();
 
         storeToFront();
     }
@@ -80,6 +98,10 @@ public class iMatController implements Initializable, WindowResizeObserver {
         contentPane.getChildren().add(checkout);
     }
 
+    private void spawnHelp() {
+        help = new Help();
+        contentPane.getChildren().add(help);
+    }
     /**
      * Shows the shopping cart view
      */
@@ -94,6 +116,9 @@ public class iMatController implements Initializable, WindowResizeObserver {
     public void storeToFront() {
         System.out.println("Bringing store view to front...");
         productBrowserController.getProductBrowser().toFront();
+        storeActive(true);
+        checkoutActive(false);
+        myAccountActive(false);
     }
 
     /**
@@ -102,6 +127,9 @@ public class iMatController implements Initializable, WindowResizeObserver {
     public void myAccountToFront() {
         System.out.println("Bringing my account view to front...");
         myAccountController.getMyAccount().toFront();
+        storeActive(false);
+        checkoutActive(false);
+        myAccountActive(true);
     }
 
     /**
@@ -110,6 +138,18 @@ public class iMatController implements Initializable, WindowResizeObserver {
     public void checkoutToFront() {
         System.out.println("Bringing checkout to front...");
         checkoutController.getCheckout().toFront();
+        storeActive(false);
+        checkoutActive(true);
+        myAccountActive(false);
+    }
+
+    /**
+     * Bring the help view to front.
+     */
+    public void helpToFront() {
+        System.out.println("Bringing help to front...");
+        help.toFront();
+        help.populateFields();
     }
 
     /**
@@ -145,5 +185,22 @@ public class iMatController implements Initializable, WindowResizeObserver {
         productBrowserController.clearCardVBox();
         productBrowserController.spawnTitledSection("Sökresultat för: " + query);
         productBrowserController.spawnProductCardGrid(products);
+    }
+
+    private void storeActive(boolean state) {
+        String color = (state) ? activeColor : inActiveColor;
+        storeButton.setStyle("-fx-background-color: " + color);
+        productBrowserController.showAllProducts();
+//        storeButton.setStyle("-fx-text-fill: white");
+    }
+
+    private void myAccountActive(boolean state) {
+        String color = (state) ? activeColor : inActiveColor;
+        myAccountButton.setStyle("-fx-background-color: " + color);
+    }
+
+    private void checkoutActive(boolean state) {
+        String color = (state) ? activeColor : inActiveColor;
+        checkoutButton.setStyle("-fx-background-color: " + color);
     }
 }

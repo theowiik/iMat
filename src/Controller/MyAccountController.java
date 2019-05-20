@@ -34,5 +34,7 @@ public class MyAccountController {
         myAccount.listsToFront();
     }
 
-    public void personalDiscountToFront() { myAccount.personalDiscountsToFront();}
+    public void personalDiscountToFront() { myAccount.personalDiscountToFront();}
+
+    public void clearFieldsContact() {myAccount.clearFieldsContact();}
 }

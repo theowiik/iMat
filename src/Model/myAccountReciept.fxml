@@ -48,14 +48,13 @@
                         <RowConstraints maxHeight="13.333343505859375" minHeight="5.333343505859375" prefHeight="5.333343505859375" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <DatePicker GridPane.rowIndex="1" />
+                        <DatePicker disable="true" GridPane.rowIndex="1" />
                         <Label text="Datum" />
                         <Label text="Leverantör" GridPane.columnIndex="1" />
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Slider GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <ChoiceBox disable="true" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Slider disable="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <Label text="Kostnad" GridPane.columnIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="priceholder" textAlignment="RIGHT" wrappingWidth="194.8599853515625" GridPane.columnIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="RIGHT" wrappingWidth="221.46994018554688" GridPane.columnIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0 kr" textAlignment="RIGHT" wrappingWidth="221.46994018554688" GridPane.columnIndex="2" />
                      </children>
                   </GridPane>
                </children>

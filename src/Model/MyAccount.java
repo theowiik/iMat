@@ -3,8 +3,10 @@ package Model;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.Order;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -74,7 +76,15 @@ public class MyAccount extends AnchorPane implements CustomComponent{
         myAccountShoppingList.toFront();
     }
 
-    public void personalDiscountsToFront(){
+    public void personalDiscountToFront(){
         myAccountPersonalDiscounts.toFront();
     }
+
+    public void clearFieldsContact() {
+        myAccountContactInfo.clearFieldsContact();
+    }
+
+    //public void saveFieldsContact(Customer c) {
+    //    myAccountContactInfo.saveFieldsContact(c);
+    //}
 }

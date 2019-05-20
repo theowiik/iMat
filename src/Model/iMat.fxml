@@ -99,7 +99,7 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <AnchorPane onMouseClicked="#myAccountToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="1">
+                                    <AnchorPane fx:id="myAccountButton" onMouseClicked="#myAccountToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="1">
                                        <children>
                                           <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <columnConstraints>
@@ -120,7 +120,8 @@
                                           </GridPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane onMouseClicked="#shoppingCartToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="2">
+                                    
+                                    <AnchorPane fx:id="cartButton" onMouseClicked="#shoppingCartToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="2">
                                        <children>
                                           <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <columnConstraints>
@@ -141,7 +142,7 @@
                                           </GridPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane onMouseClicked="#checkoutToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="3">
+                                    <AnchorPane fx:id="checkoutButton" onMouseClicked="#checkoutToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="3">
                                        <children>
                                           <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <columnConstraints>
@@ -206,14 +207,13 @@
                                           <Insets />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <Button mnemonicParsing="false" styleClass="needHelpButton" text="Jag behöver hjälp!" GridPane.columnIndex="3" />
+                                    <Button mnemonicParsing="false" onMouseClicked="#helpToFront" styleClass="needHelpButton" text="Jag behöver hjälp!" GridPane.columnIndex="3" />
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                                        <children>
                                           <GridPane layoutX="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <columnConstraints>
                                               <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
                                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                                             </columnConstraints>
                                             <rowConstraints>
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -229,7 +229,6 @@
                                                       <Image url="@../resources/search.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Button fx:id="searchButton" mnemonicParsing="false" onMouseClicked="#search" text="Sök" GridPane.columnIndex="2" />
                                              </children>
                                           </GridPane>
                                        </children>

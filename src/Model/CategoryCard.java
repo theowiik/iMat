@@ -1,17 +1,31 @@
 package Model;
 
+import Controller.CategoryName;
+import Model.Categories.Category;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 
 public class CategoryCard extends AnchorPane implements CustomComponent {
-    private String title;
-    private Image image;
+    @FXML
+    private Text categoryName;
+    private CategoryName categoryNameEnum;
+    @FXML
+    private ImageView image;
 
-    public CategoryCard() {
+    public CategoryCard(Category category) {
         setRoot();
+        this.categoryName.setText(category.getCategoryName().getPrettyName());
+        this.categoryNameEnum = category.getCategoryName();
+        this.image.setImage(category.getImage());
+    }
+
+    public CategoryName getCategoryNameEnum() {
+        return categoryNameEnum;
     }
 
     @Override

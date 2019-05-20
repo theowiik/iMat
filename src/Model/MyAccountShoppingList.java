@@ -6,6 +6,7 @@ import javafx.scene.control.Accordion;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 
 import java.io.IOException;
@@ -23,17 +24,8 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
     public Accordion listAccordion;
 
 
-    public void spawnLists() {
-        /*RecieptItem ri;
-        for (Order order : reciepts){
-            ri = new RecieptItem(order.getDate().toString(), "Test", 22.00);
-            recieptArea.getChildren().add(ri);
-        }
-        RecieptItem recieptItem = new RecieptItem("2019-05-10", "Emilia", 23.50);
-        recieptArea.getChildren().add(recieptItem);
-        RecieptItem reit = new RecieptItem("2019-05-10", "Emil", 23.50);
-        recieptArea.getChildren().add(reit);*/
 
+    public void spawnLists() {
 
         TitledPane listItem = new listItemTitled("Veckohandlingen", "Blandat", 1234.56);
         listItem.setAnimated(true);

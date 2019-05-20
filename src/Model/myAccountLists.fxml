@@ -40,12 +40,11 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Slider layoutX="411.0" layoutY="22.0" AnchorPane.rightAnchor="14.333333333333371" />
-                  <Label layoutX="411.0" text="Kostnad" />
-                  <Text layoutX="472.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="priceholder" />
-                  <Text layoutX="536.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" />
-                  <TextField layoutX="22.0" layoutY="11.0" prefHeight="25.0" prefWidth="269.0" />
-                  <Button layoutX="305.0" layoutY="11.0" mnemonicParsing="false" text="Sök" />
+                  <Slider disable="true" layoutX="411.0" layoutY="22.0" AnchorPane.rightAnchor="14.333333333333371" />
+                  <Text layoutX="525.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" AnchorPane.rightAnchor="33.86458333333337" />
+                  <Text layoutX="536.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" AnchorPane.rightAnchor="19.19661458333337" />
+                  <TextField disable="true" layoutX="22.0" layoutY="11.0" prefHeight="25.0" prefWidth="269.0" />
+                  <Button disable="true" layoutX="305.0" layoutY="11.0" mnemonicParsing="false" text="Sök" />
                </children>
             </AnchorPane>
          </children>
