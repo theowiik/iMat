@@ -85,6 +85,18 @@
     -fx-font-family: Lato-Bold;
 }
 
+.smallText {
+    -fx-font-size: 12px;
+}
+
+.pararaphText {
+    -fx-font-size: 17px;
+}
+
+.largeText {
+    -fx-font-size: 32px;
+}
+
 .transparentBackground {
     -fx-background-color: transparent;
 }
@@ -352,7 +364,7 @@
 }
 
 .categoryTab:hover {
-    -fx-background-color: #E88A87;
+    -fx-background-color: #FFBEBD;
     -fx-font-size: 50px;
 }
 
@@ -372,4 +384,9 @@
 
 .buttonShadow {
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 3, 3);
+}
+
+.feature {
+    /*-fx-background-color: pink;*/
+    -fx-background-image: url('resources/feature.png');
 }
