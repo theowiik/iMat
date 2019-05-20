@@ -21,21 +21,22 @@ public class CheckoutController {
         backendController = BackendController.getInstance();
         checkout = new Checkout();
         updateView();
+        setDefaultDate();
     }
 
 
-/*    public void updateCartItemArea() {
+    public void updateCartItemArea() {
         checkout.cartPane.getChildren().clear();
-        for(ShoppingItem shoppingItem: backendController.) {
-            shoppingCart1.cartItemArea.getChildren().add(new CartItem(shoppingItem.getProduct()));
+        for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
+            checkout.cartPane.getChildren().add(new CartItem(shoppingItem.getProduct()));
         }
-    }*/
+    }
 
     public void updateView() {
         checkout.setWelcomeMessage("Var det bra så, " + getFirstName() + "?");
         checkout.setAmountMessage("Din kundvagn innehåller " + backendController.getShoppingCartAmount() + " varor.");
         checkout.setTotalText("TOTALT: " + getTotal() + "kr");
-        setDefaultDate();
+        updateCartItemArea();
     }
 
     public Checkout getCheckout() {

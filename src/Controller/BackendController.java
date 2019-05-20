@@ -251,5 +251,9 @@ public class BackendController {
         return productCards;
     }
 
+    public ShoppingCart getShoppingCart() {
+        return db.getShoppingCart();
+    }
+
 }
 

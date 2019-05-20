@@ -290,11 +290,34 @@
     -fx-border-color: #4CAF70;
     -fx-border-radius: 10px;
     -fx-border-width: 2px;
-    -fx-text-fill: black;
+    -fx-text-fill: white;
     -fx-font-size: 20px;
 }
 
 .prominentDoneButton:hover {
+    -fx-background-color: #2A602C;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #4CAF70;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+}
+
+.prominentDoneButton2 {
+    -fx-background-color: #4CAF50;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #4CAF70;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 20px;
+}
+
+.prominentDoneButton2:hover {
     -fx-background-color: #2A602C;
     -fx-background-radius: 10px 10px 10px 10px;
     -fx-border-style: solid;
@@ -376,6 +399,29 @@
     -fx-cursor: hand;
 }
 
+.prominentAbortButton2 {
+    -fx-background-color: #be5250;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #be5270;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 34px;
+}
+
+.prominentAbortButton2:hover {
+    -fx-background-color: #8B3C3B;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #be5270;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 34px;
+    -fx-cursor: hand;
+}
+
 .same-page-msg {
     -fx-font-size: 20px;
 }
@@ -436,4 +482,8 @@
 .feature {
     /*-fx-background-color: pink;*/
     -fx-background-image: url('resources/feature.png');
+}
+
+.pane {
+    -fx-border-color: black;
 }
