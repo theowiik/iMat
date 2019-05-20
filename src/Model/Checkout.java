@@ -27,15 +27,26 @@ public class Checkout extends AnchorPane implements CustomComponent {
     public Text deliveryDateText;
 
     @FXML
-    public Button changeDeliveryButton;
+    public TextField nameField;
     @FXML
-    public Button confirmDeliveryButton;
+    public TextField nameField2;
     @FXML
-    public Button backDeliveryButton;
+    public TextField adressField;
     @FXML
-    public Button nextDateButton1;
+    public TextField addressField2;
     @FXML
-    public Button nextDateButton2;
+    public TextField codeField;
+    @FXML
+    public TextField codeField2;
+    @FXML
+    public TextField cityField;
+    @FXML
+    public TextField cityField2;
+    @FXML
+    public TextField bankField;
+    @FXML
+    public TextField cardField;
+
 
     @FXML
     public Button d1;
@@ -62,25 +73,19 @@ public class Checkout extends AnchorPane implements CustomComponent {
 
     @FXML
     public AnchorPane deliveryWindow1;
-
     @FXML
     public AnchorPane deliveryWindow2;
-
     @FXML
     public AnchorPane mainWindow;
-
     @FXML
     public AnchorPane shadowWindow;
-
     @FXML
     public AnchorPane payViewWindow;
 
     @FXML
     public AnchorPane infoCoverWindow;
-
     @FXML
     public AnchorPane invoiceInfoWindow;
-
     @FXML
     public AnchorPane bankInfoWindow;
 
@@ -179,6 +184,11 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public void hideInfo() {
         this.infoCoverWindow.toFront();
+    }
+
+    @FXML
+    public void placeOrder() {
+
     }
 
     @FXML
