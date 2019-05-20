@@ -5,7 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
@@ -81,13 +83,15 @@ public class Checkout extends AnchorPane implements CustomComponent {
     public AnchorPane shadowWindow;
     @FXML
     public AnchorPane payViewWindow;
-
     @FXML
     public AnchorPane infoCoverWindow;
     @FXML
     public AnchorPane invoiceInfoWindow;
     @FXML
     public AnchorPane bankInfoWindow;
+
+    @FXML
+    public FlowPane cartPane;
 
 
 
