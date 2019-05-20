@@ -99,6 +99,7 @@ public class BackendController {
         cart.addItem(item);
     }
 
+
     public int getShoppingCartAmount() {
         return db.getShoppingCart().getItems().size();
     }
@@ -121,7 +122,8 @@ public class BackendController {
      */
     public List<Product> getRandomProducts(int amount) {
         List<Product> products = new ArrayList<>();
-        for (int i = 2; i < amount; i++) {
+        int startVal = 1;
+        for (int i = startVal; i < (startVal + amount); i++) {
             products.add(db.getProduct(i));
         }
         return products;
@@ -248,5 +250,6 @@ public class BackendController {
 
         return productCards;
     }
+
 }
 

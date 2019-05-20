@@ -1,14 +1,19 @@
 package Model;
 
 import Controller.BackendController;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class listItemTitled extends TitledPane implements CustomComponent {
 
@@ -24,6 +29,10 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     @FXML
     public FlowPane cartItemContainer;
 
+    @FXML
+    public Button addToCartButton;
+
+    public ArrayList<Product> products = new ArrayList<>();
 
     public listItemTitled(String name, String category, double price) {
         setRoot();
@@ -34,11 +43,15 @@ public class listItemTitled extends TitledPane implements CustomComponent {
 
     }
 
-    private void spawncartItems() {
-        Product product = BackendController.getInstance().getProduct(45);
-        //CartItem cartItem = new CartItem(product);
-        //cartItemContainer.getChildren().add(cartItem);
-        //TODO
+    public void spawncartItems() {
+        for (Product p : products) {
+            CartItem cartItem = new CartItem(p);
+            cartItemContainer.getChildren().add(cartItem);
+        }
+    }
+
+    public void addProduct(Product product) {
+        this.products.add(product);
     }
 
     @Override
@@ -52,5 +65,15 @@ public class listItemTitled extends TitledPane implements CustomComponent {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+    }
+
+    public void addToCart() {
+        for (Product p : products)
+            BackendController.getInstance().addToShoppingCart(p);
+            BackendController.getInstance().printShoppingCart();
+    }
+
+    public void setPrice(double d) {
+        listPrice.setText(String.valueOf(d));
     }
 }
