@@ -28,19 +28,42 @@ public class Help extends AnchorPane implements CustomComponent {
     @FXML
     public Text msg;
 
+    @FXML
+    public Text errName;
+
+    @FXML
+    public Text errMail;
+
+    @FXML
+    public Text errSubject;
+
+    @FXML
+    public Text errMsg;
+
 
     public Help() {
         setRoot();
         populateFields();
-        msg.setText("");
+        clearErrMsg();
+    }
 
+    private void clearErrMsg() {
+        errMsg.setText("");
+        errSubject.setText("");
+        errMail.setText("");
+        errName.setText("");
+        msg.setText("");
     }
 
     public void populateFields() {
         BackendController backendController = BackendController.getInstance();
         Customer c = backendController.getCustomer();
+        nameInput.setPromptText("Fyll i namn");
         nameInput.setText(c.getFirstName());
+        mailInput.setPromptText("Fyll i en giltig mailadress");
         mailInput.setText(c.getEmail());
+        subject.setPromptText("Fyll i ett ämne");
+        message.setPromptText("Fyll i en fråga här.");
         msg.setText("");
     }
 
@@ -55,23 +78,19 @@ public class Help extends AnchorPane implements CustomComponent {
     private boolean isSuccesful() {
         int i = 0;
         if (nameInput.getText().isEmpty()){
-            //TODO add error message
-            nameInput.setPromptText("Fyll i namn");
+            errName.setText("Namn saknas!");
             i++;
         }
         if (mailInput.getText().isEmpty()) {
-            //TODO add error message
-            mailInput.setPromptText("Fyll i en giltig mailadress");
+            errMail.setText("Epost saknas!");
             i++;
         }
         if (subject.getText().isEmpty()) {
-            //TODO add error message
-            subject.setPromptText("Fyll i ett ämne");
+            errSubject.setText("Ämne saknas!");
             i++;
         }
         if (message.getText().isEmpty()){
-            //TODO add error message
-            message.setPromptText("Fyll i en fråga här.");
+            errMsg.setText("Fråga saknas!");
             i++;
         }
         if (i!=0) {

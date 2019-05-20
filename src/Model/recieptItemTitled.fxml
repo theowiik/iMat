@@ -20,7 +20,7 @@
           <RowConstraints maxHeight="156.33331298828128" minHeight="10.0" prefHeight="59.333353678385436" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="291.0" styleClass="prominentDoneButton" text="SPARA SOM INKÖPSLISTA" GridPane.rowIndex="1" />
+            <Button fx:id="saveAsShoppingList" mnemonicParsing="false" prefHeight="48.0" prefWidth="291.0" styleClass="prominentDoneButton" text="SPARA SOM INKÖPSLISTA" GridPane.rowIndex="1" />
             <AnchorPane fx:id="cartItemContainer" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </GridPane>

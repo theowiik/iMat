@@ -32,6 +32,10 @@ public class recieptItemTitled extends TitledPane implements CustomComponent {
 
     }
 
+    //TODO destroy button - id.setVisible(false)
+    //TODO skapa inköpslista
+    //TODO getReciept ger en order som har shoppingitem som har produkt.
+
     @Override
     public void setRoot() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("recieptItemTitled.fxml"));

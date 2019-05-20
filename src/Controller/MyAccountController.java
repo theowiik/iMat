@@ -2,6 +2,7 @@ package Controller;
 
 import Model.MyAccount;
 import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.Product;
 
 import java.util.List;
 
@@ -37,4 +38,10 @@ public class MyAccountController {
     public void personalDiscountToFront() { myAccount.personalDiscountToFront();}
 
     public void clearFieldsContact() {myAccount.clearFieldsContact();}
+
+    public void addToCart() {myAccount.addToCart();}
+
+    public void addProductToShoppingList(Product p ) {
+        myAccount.myAccountShoppingList.listItemTitled.addProduct(p);
+    }
 }

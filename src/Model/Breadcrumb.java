@@ -23,7 +23,7 @@ public class Breadcrumb extends AnchorPane implements CustomComponent {
         if (categoryName != null) {
             backButton.setText("Gå tillbaka till " + categoryName.getPrettyName().toLowerCase() + ".");
         } else {
-            destroyButton();
+            backButton.setText("Visa alla kategorier");
         }
     }
 

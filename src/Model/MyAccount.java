@@ -21,7 +21,7 @@ public class MyAccount extends AnchorPane implements CustomComponent{
 
     MyAccountReciept myAccountReciept;
     MyAccountContactInfo myAccountContactInfo;
-    MyAccountShoppingList myAccountShoppingList;
+    public MyAccountShoppingList myAccountShoppingList;
     MyAccountPersonalDiscounts myAccountPersonalDiscounts;
 
     public void spawnRecieptView(List<Order> reciepts) {
@@ -82,6 +82,10 @@ public class MyAccount extends AnchorPane implements CustomComponent{
 
     public void clearFieldsContact() {
         myAccountContactInfo.clearFieldsContact();
+    }
+
+    public void addToCart() {
+        myAccountShoppingList.addToCart();
     }
 
     //public void saveFieldsContact(Customer c) {
