@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
 
@@ -24,18 +24,11 @@ public class CartItem extends AnchorPane implements CustomComponent {
     @FXML
     public Button cartSubItem;
 
-    @FXML
-    public Label cartAmount;
-
-    @FXML
-    public Label cartItem;
-
     public CartItem(Product product){
         setRoot();
-        this.cartItemName.setText(product.getName());
-        //TODO
+        cartAmountTxtField = new TextField("0");
+        this.cartItemName.setText(product.getName() + ":");
     }
-
 
     @Override
     public void setRoot() {
@@ -50,4 +43,19 @@ public class CartItem extends AnchorPane implements CustomComponent {
         }
     }
 
+    public void addCartItem() {
+        System.out.println("hejj");
+    }
+
+    public void subCartItem() {
+
+    }
+
+    public void updateCost() {
+
+    }
+
+    public void updateAmount() {
+
+    }
 }

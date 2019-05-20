@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
+<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -120,7 +120,7 @@
                                           </GridPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="2">
+                                    <AnchorPane onMouseClicked="#shoppingCartToFront" prefHeight="200.0" prefWidth="200.0" styleClass="navbarTile" GridPane.columnIndex="2">
                                        <children>
                                           <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <columnConstraints>

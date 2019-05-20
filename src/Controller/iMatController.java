@@ -3,6 +3,7 @@ package Controller;
 import Model.Checkout;
 import Model.MyAccount;
 import Model.ProductBrowser;
+import Model.ShoppingCart1;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -22,8 +23,10 @@ public class iMatController implements Initializable, WindowResizeObserver {
     private ProductBrowserController productBrowserController;
     private MyAccountController myAccountController;
     private CheckoutController checkoutController;
+    private ShoppingCartController shoppingCartController;
 
     private int cardSize = 300;
+    private boolean isInfront = false;
 
     @FXML
     public AnchorPane contentPane;
@@ -42,10 +45,13 @@ public class iMatController implements Initializable, WindowResizeObserver {
         productBrowserController = new ProductBrowserController();
         myAccountController = new MyAccountController();
         checkoutController = new CheckoutController();
+        shoppingCartController = new ShoppingCartController();
+
 
         spawnProductBrowser();
         spawnMyAccount();
         spawnCheckout();
+        spawnShoppingCart();
 
         storeToFront();
     }
@@ -75,6 +81,14 @@ public class iMatController implements Initializable, WindowResizeObserver {
     }
 
     /**
+     * Shows the shopping cart view
+     */
+    private void spawnShoppingCart() {
+        ShoppingCart1 shoppingCart1 = shoppingCartController.getShoppingCart1();
+        contentPane.getChildren().add(shoppingCart1);
+    }
+
+    /**
      * Brings the store view to the front.
      */
     public void storeToFront() {
@@ -97,6 +111,21 @@ public class iMatController implements Initializable, WindowResizeObserver {
         System.out.println("Bringing checkout to front...");
         checkoutController.getCheckout().toFront();
     }
+
+    /**
+     * Bring the shopping cart view to the front.
+     */
+    public void shoppingCartToFront() {
+        if (!isInfront) {
+            System.out.println("Bringing my shopping cart view to front...");
+            shoppingCartController.getShoppingCart1().toFront();
+            isInfront = true;
+        } else {
+            shoppingCartController.getShoppingCart1().toBack();
+            isInfront = false;
+        }
+    }
+
 
     /**
      * Calls all observers that the window has been resized.

@@ -65,7 +65,7 @@
                         </TextField>
                      </children>
                   </StackPane>
-                  <Button fx:id="subProdButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="55.0" style="-fx-background-radius: 0px 50px 50px 50px;" styleClass="addSubButton" text="-" textFill="WHITE" GridPane.columnIndex="2">
+                  <Button fx:id="addProdButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="55.0" style="-fx-background-radius: 0px 50px 50px 50px;" styleClass="addSubButton" text="+" textFill="WHITE" GridPane.columnIndex="2">
                      <GridPane.margin>
                         <Insets bottom="1.0" />
                      </GridPane.margin>
@@ -76,7 +76,7 @@
                         <Insets bottom="1.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="addProdButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="55.0" style="-fx-background-radius: 50px 50px 0px 50px;" styleClass="addSubButton" text="+" textFill="WHITE" textOverrun="CLIP">
+                  <Button fx:id="subProdButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="55.0" style="-fx-background-radius: 50px 50px 0px 50px;" styleClass="addSubButton" text="-" textFill="WHITE" textOverrun="CLIP">
                      <GridPane.margin>
                         <Insets bottom="1.0" />
                      </GridPane.margin>
