@@ -36,6 +36,13 @@ public class CartItem extends AnchorPane implements CustomComponent {
         //TODO
     }
 
+    /* TILLAGD FÖR TEST /Jesper
+       public CartItem(String name){
+        setRoot();
+        this.cartItemName.setText(name);
+    }
+     */
+
 
     @Override
     public void setRoot() {

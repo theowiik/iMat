@@ -1,9 +1,12 @@
 package Model;
 
+import Controller.BackendController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
 
@@ -18,10 +21,8 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     @FXML
     public Label listPrice;
 
-    /*
     @FXML
-    public AnchorPane content;
-     */
+    public FlowPane cartItemContainer;
 
 
     public listItemTitled(String name, String category, double price) {
@@ -29,7 +30,15 @@ public class listItemTitled extends TitledPane implements CustomComponent {
         this.listName.setText(name);
         this.listCategory.setText(category);
         this.listPrice.setText(String.valueOf(price));
+        spawncartItems();
 
+    }
+
+    private void spawncartItems() {
+        Product product = BackendController.getInstance().getProduct(45);
+        //CartItem cartItem = new CartItem(product);
+        //cartItemContainer.getChildren().add(cartItem);
+        //TODO
     }
 
     @Override

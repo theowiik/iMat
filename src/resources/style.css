@@ -190,7 +190,7 @@
 }
 
 .square-button:pressed {
-    -fx-background-color: #be5250;
+
     -fx-text-fill: white;
     -fx-font-size: 20px;
 }
@@ -253,6 +253,12 @@
 .small-text {
     -fx-font-size: 15px;
 }
+
+
+.medium-text {
+    -fx-font-size: 20px;
+}
+
 
 .recieptItem {
     -fx-background-color: white;
