@@ -41,6 +41,7 @@ public class Help extends AnchorPane implements CustomComponent {
         Customer c = backendController.getCustomer();
         nameInput.setText(c.getFirstName());
         mailInput.setText(c.getEmail());
+        msg.setText("");
     }
 
     public void send() {

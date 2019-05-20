@@ -85,6 +85,10 @@
     -fx-font-family: Lato-Bold;
 }
 
+.transparentBackground {
+    -fx-background-color: transparent;
+}
+
 .addSubButton {
     -fx-background-color: #873735;
     -fx-text-fill: white;
@@ -109,6 +113,7 @@
     -fx-border-width: 2px;
     -fx-text-fill: black;
     -fx-font-size: 13px;
+    -fx-effect: dropshadow(three-pass-box, gray, 1, 3, 0, 0);
 }
 
 .greenButtonRound:hover {
@@ -131,6 +136,7 @@
     -fx-border-width: 2px;
     -fx-text-fill: black;
     -fx-font-size: 13px;
+    -fx-effect: dropshadow(three-pass-box, gray, 1, 3, 0, 0);
 }
 
 .redButtonRound:hover {
@@ -148,9 +154,19 @@
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
     -fx-background-radius: 10;
 }
+.squareInShoppingCart {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, gray, 1, 0, -2, -2);
+}
 
 .cartItem {
     -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, gray, 2, 0, 0, 0);
+}
+
+.cartItem:hover{
+    -fx-effect: dropshadow(three-pass-box, #b3d9ff, 2, 0, 0, 0);
+    -fx-cursor: hand;
 }
 
 .text-field-prod-card {
@@ -250,7 +266,7 @@
 }
 
 .square-button:pressed {
-    -fx-background-color: #be5250;
+
     -fx-text-fill: white;
     -fx-font-size: 20px;
 }
@@ -313,6 +329,12 @@
 .small-text {
     -fx-font-size: 15px;
 }
+
+
+.medium-text {
+    -fx-font-size: 20px;
+}
+
 
 .recieptItem {
     -fx-background-color: white;
