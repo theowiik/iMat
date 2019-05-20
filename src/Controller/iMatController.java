@@ -32,6 +32,19 @@ public class iMatController implements Initializable, WindowResizeObserver {
     @FXML
     public TextField searchBar;
 
+    @FXML
+    public AnchorPane storeButton;
+    @FXML
+    public AnchorPane checkoutButton;
+    @FXML
+    public AnchorPane myAccountButton;
+    @FXML
+    public AnchorPane cartButton;
+
+    private String activeColor = "#be5250";
+    private String inActiveColor = "#ffffff";
+
+
     /**
      * Initializes iMatController
      * @param location location.
@@ -40,6 +53,7 @@ public class iMatController implements Initializable, WindowResizeObserver {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         backendController = BackendController.getInstance();
+        backendController.initCategories();
 
         productBrowserController = new ProductBrowserController();
         myAccountController = new MyAccountController();
@@ -87,6 +101,9 @@ public class iMatController implements Initializable, WindowResizeObserver {
     public void storeToFront() {
         System.out.println("Bringing store view to front...");
         productBrowserController.getProductBrowser().toFront();
+        storeActive(true);
+        checkoutActive(false);
+        myAccountActive(false);
     }
 
     /**
@@ -95,6 +112,9 @@ public class iMatController implements Initializable, WindowResizeObserver {
     public void myAccountToFront() {
         System.out.println("Bringing my account view to front...");
         myAccountController.getMyAccount().toFront();
+        storeActive(false);
+        checkoutActive(false);
+        myAccountActive(true);
     }
 
     /**
@@ -103,6 +123,9 @@ public class iMatController implements Initializable, WindowResizeObserver {
     public void checkoutToFront() {
         System.out.println("Bringing checkout to front...");
         checkoutController.getCheckout().toFront();
+        storeActive(false);
+        checkoutActive(true);
+        myAccountActive(false);
     }
 
     /**
@@ -132,5 +155,22 @@ public class iMatController implements Initializable, WindowResizeObserver {
         productBrowserController.clearCardVBox();
         productBrowserController.spawnTitledSection("Sökresultat för: " + query);
         productBrowserController.spawnProductCardGrid(products);
+    }
+
+    private void storeActive(boolean state) {
+        String color = (state) ? activeColor : inActiveColor;
+        storeButton.setStyle("-fx-background-color: " + color);
+        productBrowserController.showAllProducts();
+//        storeButton.setStyle("-fx-text-fill: white");
+    }
+
+    private void myAccountActive(boolean state) {
+        String color = (state) ? activeColor : inActiveColor;
+        myAccountButton.setStyle("-fx-background-color: " + color);
+    }
+
+    private void checkoutActive(boolean state) {
+        String color = (state) ? activeColor : inActiveColor;
+        checkoutButton.setStyle("-fx-background-color: " + color);
     }
 }

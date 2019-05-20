@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Categories.*;
 import Model.CategoryCard;
 import Model.ProductCard;
 import Model.ProductCardFactory;
@@ -18,6 +19,8 @@ public class BackendController {
     private static BackendController instance = null;
     private static IMatDataHandler db;
     private final Map<String, ProductCard> productCardMap = new HashMap<String, ProductCard>();
+//    private final Map<String, CategoryCard> categoryCardMap = new HashMap<String, CategoryCard>();
+    private final List<CategoryName> availableCategories = new ArrayList<>();
     private final List<Category> categories = new ArrayList<>();
 
     /**
@@ -26,13 +29,27 @@ public class BackendController {
     private BackendController() {
         db = IMatDataHandler.getInstance();
         populateProductCardMap();
-        populateCategoryList();
     }
 
-    private void populateCategoryList() {
-        categories.add(Category.DAIRY);
-        categories.add(Category.DRINKS);
-        categories.add(Category.FRUITS);
+    public void initCategories() {
+        // - Root Categories -----
+        availableCategories.add(CategoryName.DAIRY);
+        categories.add(new Dairy());
+        // ---
+        availableCategories.add(CategoryName.MEAT);
+        categories.add(new Meat());
+        // ---
+        availableCategories.add(CategoryName.FRUITS);
+        categories.add(new Fruits());
+
+        availableCategories.add(CategoryName.FISH);
+        categories.add(new Fish());
+
+        // - Sub Categories -----
+        // Only requires to be added to availableCategories.
+        availableCategories.add(CategoryName.EXOTIC_FRUITS);
+        availableCategories.add(CategoryName.BERRIES);
+        availableCategories.add(CategoryName.SHELLFISH);
     }
 
     public Map<String, ProductCard> getProductCardMap() {
@@ -135,7 +152,6 @@ public class BackendController {
      */
     public ProductCard getProductCard(Product product) {
         return productCardMap.get(product.getName());
-
     }
 
     public String getFirstName() {
@@ -150,16 +166,16 @@ public class BackendController {
      *
      * @return
      */
-    public List<CategoryCard> getCategoryCards() {
-        List<CategoryCard> categoryCards = new ArrayList<>();
-
-        for (Category category : categories) {
-            CategoryCard categoryCard = new CategoryCard();
-            categoryCards.add(categoryCard);
-        }
-
-        return categoryCards;
-    }
+//    public List<CategoryCard> getCategoryCards() {
+//        List<CategoryCard> categoryCards = new ArrayList<>();
+//
+//        for (CategoryName category : availableCategories) {
+//            CategoryCard categoryCard = new CategoryCard(category);
+//            categoryCards.add(categoryCard);
+//        }
+//
+//        return categoryCards;
+//    }
 
     public void removeFromShoppingCart(Product product) {
         ShoppingCart cart = db.getShoppingCart();
@@ -194,7 +210,7 @@ public class BackendController {
         return db.getProduct(id);
     }
 
-    public List<Product> getProducts(int[] ids) {
+    public List<Product> getProducts(List<Integer> ids) {
         List<Product> products = new ArrayList<>();
 
         for (int i : ids) {
@@ -204,40 +220,33 @@ public class BackendController {
         return products;
     }
 
-    public List<Product> getProducts(Category category) {
-        int productIds[];
-        switch (category) {
-            case DAIRY:
-                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
-                break;
-            case MEAT:
-                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
-                break;
-            case NUTS:
-                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
-                break;
-            case FRUITS:
-                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
-                break;
-            case VEGETABLES:
-                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
-                break;
-            case SWEETS:
-                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
-                break;
-            case DRINKS:
-                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
-                break;
-            default:
-                productIds = new int[]{1, 2, 3, 4, 6, 7, 8, 9, 10};
+    public List<Product> getProducts(CategoryName category) {
+        final List<Product> products = new ArrayList<>();
+        for (Category currentCategory : categories) {
+            if (currentCategory.getCategoryName().name().equals(category.name())) {
+                products.addAll(currentCategory.getProducts());
+            }
         }
 
-        final List<Product> products = getProducts(productIds);
         return products;
     }
     
     public List<Order> getReciepts() {
         return db.getOrders();
+    }
+
+    public List<Category> getcategories() {
+        return new ArrayList<>(this.categories);
+    }
+
+    public List<ProductCard> getProductCards(List<Product> products) {
+        List<ProductCard> productCards = new ArrayList<>();
+
+        for (Product product : products) {
+            productCards.add(getProductCard(product));
+        }
+
+        return productCards;
     }
 }
 

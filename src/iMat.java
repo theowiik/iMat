@@ -31,6 +31,7 @@ public class iMat extends Application implements WindowResizeObservable {
         stage.setTitle("iMat");
         stage.setScene(scene);
         stage.show();
+        stage.setMaximized(true);
     }
 
     /**
