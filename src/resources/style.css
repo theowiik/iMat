@@ -157,6 +157,8 @@
 .squareInShoppingCart {
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 1, 0, -2, -2);
+    -fx-rotate: 45;
+    -fx-alignment: TOP_CENTER;
 }
 
 .cartItem {

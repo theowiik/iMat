@@ -9,111 +9,140 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="491.0" prefWidth="640.0" styleClass="transparentBackground" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="300" AnchorPane.leftAnchor="800" AnchorPane.rightAnchor="500" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root mouseTransparent="true" pickOnBounds="false" styleClass="transparentBackground" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutY="14.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="640.0" styleClass="productCard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="440.0" />
+          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="484.7999694824219" minHeight="10.0" prefHeight="461.6000183105469" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <GridPane prefHeight="477.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="153.79999389648438" minHeight="9.000000381469732" prefHeight="62.4" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="363.9999755859375" minHeight="10.0" prefHeight="344.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="84.60001220703123" minHeight="10.0" prefHeight="46.20004882812498" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <AnchorPane prefHeight="477.0" prefWidth="640.0" styleClass="productCard" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                <children>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="386.0" prefWidth="600.0" GridPane.rowIndex="1">
-                    <content>
-                      <AnchorPane fx:id="cartItemArea" minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="600.0" />
-                    </content>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="20.0" right="20.0" />
-                     </GridPane.margin>
-                  </ScrollPane>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="600.0" GridPane.rowIndex="2">
-                     <children>
-                        <Label fx:id="totalCostLabel" text="totalCost">
-                           <HBox.margin>
-                              <Insets right="50.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Button fx:id="toCheckoutButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="78.0" text="Button">
-                           <HBox.margin>
-                              <Insets bottom="3.0" left="20.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <GridPane.margin>
-                        <Insets right="20.0" />
-                     </GridPane.margin>
-                  </HBox>
-                  <GridPane>
+                  <GridPane prefHeight="477.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="639.6" minWidth="10.0" prefWidth="596.799951171875" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints maxHeight="50.599996948242186" minHeight="10.0" prefHeight="50.599996948242186" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="30.599996948242186" minHeight="10.0" prefHeight="20.20000305175781" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="153.79999389648438" minHeight="9.000000381469732" prefHeight="62.4" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="363.9999755859375" minHeight="10.0" prefHeight="322.7999755859375" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="84.60001220703123" minHeight="10.0" prefHeight="58.80002441406248" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <HBox prefHeight="46.0" prefWidth="330.0">
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="386.0" prefWidth="600.0" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" />
+                           </GridPane.margin>
+                           <content>
+                              <FlowPane fx:id="cartItemArea" prefHeight="339.0" prefWidth="600.0" />
+                           </content>
+                        </ScrollPane>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="620.0" GridPane.rowIndex="2">
                            <children>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                              <Label prefHeight="30.0" prefWidth="129.0" styleClass="medium-text" text="Total kostand:">
                                  <HBox.margin>
-                                    <Insets left="5.0" right="20.0" />
+                                    <Insets />
                                  </HBox.margin>
-                                 <image>
-                                    <Image url="@../resources/cart.png" />
-                                 </image>
-                              </ImageView>
-                              <Label prefHeight="46.0" prefWidth="193.0" text="KUNDVAGN">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
                               </Label>
+                              <Label fx:id="totalCostLabel" alignment="CENTER" prefHeight="30.0" prefWidth="85.0" styleClass="medium-text" text="99 kr">
+                                 <HBox.margin>
+                                    <Insets right="50.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button fx:id="toCheckoutButton" mnemonicParsing="false" prefHeight="48.0" prefWidth="126.0" styleClass="prominentDoneButton" text="Till kassan">
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" left="20.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                            <GridPane.margin>
-                              <Insets />
+                              <Insets right="20.0" />
                            </GridPane.margin>
-                           <padding>
-                              <Insets left="10.0" top="10.0" />
-                           </padding>
                         </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="639.6" minWidth="10.0" prefWidth="596.799951171875" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="50.599996948242186" minHeight="10.0" prefHeight="50.599996948242186" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="30.599996948242186" minHeight="10.0" prefHeight="20.20000305175781" vgrow="SOMETIMES" />
+                          </rowConstraints>
                            <children>
-                              <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="114.0" text="Varor:" />
-                              <Label alignment="CENTER" prefHeight="20.0" prefWidth="167.0" text="Antal:" />
-                              <Label alignment="CENTER" prefHeight="20.0" prefWidth="178.0" text="Pris:">
+                              <HBox prefHeight="46.0" prefWidth="330.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="20.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../resources/cart.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="46.0" prefWidth="193.0" text="KUNDVAGN">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
                                  <padding>
-                                    <Insets left="50.0" right="90.0" />
+                                    <Insets left="10.0" top="10.0" />
                                  </padding>
-                              </Label>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="114.0" text="Varor:" />
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="167.0" text="Antal:" />
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="178.0" text="Pris:">
+                                       <padding>
+                                          <Insets left="50.0" right="90.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="20.0" stroke="#00000009" strokeType="INSIDE" width="20.0">
+                                       <styleClass>
+                                          <String fx:value="productCard" />
+                                          <String fx:value="squareInShoppingCart" />
+                                       </styleClass>
+                                       <HBox.margin>
+                                          <Insets bottom="45.0" />
+                                       </HBox.margin>
+                                    </Rectangle>
+                                 </children>
+                              </HBox>
                            </children>
-                        </HBox>
+                        </GridPane>
                      </children>
                   </GridPane>
                </children>
-            </GridPane>
+               <GridPane.margin>
+                  <Insets top="13.0" />
+               </GridPane.margin>
+            </AnchorPane>
          </children>
-      </AnchorPane>
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="20.0" layoutX="310.0" rotate="45.0" stroke="#00000009" strokeType="INSIDE" width="20.0" AnchorPane.topAnchor="6.0">
-         <styleClass>
-            <String fx:value="productCard" />
-            <String fx:value="squareInShoppingCart" />
-         </styleClass>
-      </Rectangle>
+      </GridPane>
    </children>
 </fx:root>
