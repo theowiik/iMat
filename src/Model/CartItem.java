@@ -26,16 +26,25 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
     @FXML
     public Button cartSubItem;
 
+    @FXML
+    public Label cartPrice;
+
     private Product product;
 
     List<AddProductObserver> observers = new ArrayList<>();
+    private double amount;
 
-    public CartItem(Product product){
+    public CartItem(Product product, double amountOfProd){
         setRoot();
         cartAmountTxtField.setText(String.valueOf(product.getPrice()));
         this.cartItemName.setText(product.getName() + ":");
         this.product = product;
+        this.amount = amountOfProd;
+        this.cartAmountTxtField.setText(String.valueOf(amountOfProd));
+        this.cartPrice.setText(String.valueOf(product.getPrice() * amountOfProd));
     }
+
+
 
     @Override
     public void setRoot() {

@@ -46,7 +46,7 @@ public class listItemTitled extends TitledPane implements CustomComponent {
 
     public void spawncartItems() {
         for (ShoppingItem p : products) {
-            CartItem cartItem = new CartItem(p.getProduct());
+            CartItem cartItem = new CartItem(p.getProduct(), p.getAmount());
             cartItem.cartAmountTxtField.setText(String.valueOf(p.getAmount()));
             cartItemContainer.getChildren().add(cartItem);
         }

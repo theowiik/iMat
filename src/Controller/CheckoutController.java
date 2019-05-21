@@ -28,7 +28,7 @@ public class CheckoutController {
     public void updateCartItemArea() {
         checkout.cartPane.getChildren().clear();
         for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
-            checkout.cartPane.getChildren().add(new CartItem(shoppingItem.getProduct()));
+            checkout.cartPane.getChildren().add(new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount()));
         }
     }
 

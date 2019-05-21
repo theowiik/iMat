@@ -49,7 +49,7 @@ public class ShoppingCartController implements AddProductObserver {
     public void updateCartItemArea() {
         shoppingCart1.cartItemArea.getChildren().clear();
         for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
-            CartItem cartItem = new CartItem(shoppingItem.getProduct());
+            CartItem cartItem = new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount());
             cartItem.addObserver(this);
             shoppingCart1.cartItemArea.getChildren().add(cartItem);
         }
