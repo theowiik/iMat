@@ -39,11 +39,14 @@ public class ShoppingCartController implements AddProductObserver {
     public void productAdded(Product product) {
         System.out.println("Nu är du här");
         updateCartItemArea();
+        updateTotCost();
+
     }
 
     @Override
     public void productRemoved(Product product) {
         updateCartItemArea();
+        updateTotCost();
     }
 
     public void updateCartItemArea() {
@@ -53,5 +56,10 @@ public class ShoppingCartController implements AddProductObserver {
             cartItem.addObserver(this);
             shoppingCart1.cartItemArea.getChildren().add(cartItem);
         }
+
+    }
+
+    public void updateTotCost(){
+        shoppingCart1.totalCostLabel.setText(String.valueOf(backendController.getShoppingCart().getTotal())+ " kr");
     }
 }
