@@ -188,7 +188,7 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
             if (categoryTab.hasCategory(categoryName)) {
                 categoryTab.setStyle("-fx-background-color: #E88A87");
             } else {
-                categoryTab.setStyle("-fx-background-color: white");
+                categoryTab.setStyle("");
             }
         }
     }
