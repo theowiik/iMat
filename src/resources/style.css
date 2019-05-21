@@ -86,7 +86,7 @@
 }
 
 .transparentBackground {
-    -fx-background-color: transparent;
+    -fx-background-color: null;
 }
 
 .addSubButton {

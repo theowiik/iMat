@@ -1,14 +1,18 @@
 package Controller;
 
-import Model.Checkout;
-import Model.Help;
-import Model.MyAccount;
-import Model.ProductBrowser;
-import Model.ShoppingCart1;
+import Model.*;
+import javafx.animation.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
+import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.Product;
 
 import java.net.URL;
@@ -18,7 +22,7 @@ import java.util.ResourceBundle;
 /**
  * The main controller for the application window.
  */
-public class iMatController implements Initializable, WindowResizeObserver {
+public class iMatController implements Initializable, WindowResizeObserver, Observer, AddProductObserver {
     private static BackendController backendController;
 
     private ProductBrowserController productBrowserController;
@@ -62,7 +66,11 @@ public class iMatController implements Initializable, WindowResizeObserver {
         productBrowserController = new ProductBrowserController();
         myAccountController = new MyAccountController();
         checkoutController = new CheckoutController();
+
         shoppingCartController = new ShoppingCartController();
+        shoppingCartController.getShoppingCart1().register(this);
+        observeAllProductCards();
+
 
 
         spawnProductBrowser();
@@ -202,5 +210,57 @@ public class iMatController implements Initializable, WindowResizeObserver {
     private void checkoutActive(boolean state) {
         String color = (state) ? activeColor : inActiveColor;
         checkoutButton.setStyle("-fx-background-color: " + color);
+    }
+
+
+
+    @Override
+    public void FromShoppingCartToCheckout() {
+        checkoutToFront();
+    }
+
+    @Override
+    public void productAdded(Product product) {
+
+        final Animation animation = new Transition() {
+
+            {
+                setCycleDuration(Duration.millis(3000));
+                setInterpolator(Interpolator.EASE_OUT);
+            }
+
+            @Override
+            protected void interpolate(double frac) {
+                Color vColor = new Color(0, 1, 0, 1 - frac);
+                cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
+            }
+        };
+        animation.play();
+    }
+
+    @Override
+    public void productRemoved(Product product) {
+
+        final Animation animation = new Transition() {
+
+            {
+                setCycleDuration(Duration.millis(3000));
+                setInterpolator(Interpolator.EASE_OUT);
+            }
+
+            @Override
+            protected void interpolate(double frac) {
+                Color vColor = new Color(1, 0, 0, 1 - frac);
+                cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
+            }
+        };
+        animation.play();
+
+    }
+
+    private void observeAllProductCards() {
+        for (ProductCard productCard : backendController.getProductCardMap().values()) {
+            productCard.addObserver(this);
+        }
     }
 }

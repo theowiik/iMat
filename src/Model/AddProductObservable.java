@@ -2,9 +2,9 @@ package Model;
 
 import se.chalmers.cse.dat216.project.Product;
 
-public interface ProductCardObservable {
+public interface AddProductObservable {
     void notifyAllObserversProductAdded(Product product);
     void notifyAllObserversProductRemoved(Product product);
-    void addObserver(ProductCardObserver observer);
+    void addObserver(AddProductObserver observer);
     void removeAllObservers();
 }

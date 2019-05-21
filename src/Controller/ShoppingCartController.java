@@ -2,15 +2,17 @@ package Controller;
 
 import Model.CartItem;
 import Model.ProductCard;
-import Model.ProductCardObserver;
+import Model.AddProductObserver;
 import Model.ShoppingCart1;
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 
 import java.util.List;
 
-public class ShoppingCartController implements ProductCardObserver {
+public class ShoppingCartController implements AddProductObserver {
 
     private BackendController backendController;
     private ShoppingCart1 shoppingCart1;
@@ -24,6 +26,7 @@ public class ShoppingCartController implements ProductCardObserver {
         this.shoppingCart1 = new ShoppingCart1();
         for (ProductCard productCard : backendController.getProductCardMap().values()) {
             productCard.addObserver(this);
+
         }
     }
 
@@ -35,19 +38,19 @@ public class ShoppingCartController implements ProductCardObserver {
     @Override
     public void productAdded(Product product) {
         System.out.println("Nu är du här");
-        shoppingCart1.cartItemArea.getChildren().add(new CartItem(product));
-        //updateCartItemArea();
+        updateCartItemArea();
     }
 
     @Override
     public void productRemoved(Product product) {
-
+        updateCartItemArea();
     }
 
     public void updateCartItemArea() {
-        cart = shoppingCart.getItems();
-        for(ShoppingItem shop : cart) {
-            CartItem cartItem = new CartItem(shop.getProduct());
+        shoppingCart1.cartItemArea.getChildren().clear();
+        for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
+            CartItem cartItem = new CartItem(shoppingItem.getProduct());
+            cartItem.addObserver(this);
             shoppingCart1.cartItemArea.getChildren().add(cartItem);
         }
     }

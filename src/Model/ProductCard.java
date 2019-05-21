@@ -1,17 +1,13 @@
 package Model;
 
-import Controller.ProductCardController;
-import Controller.iMatController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
@@ -19,12 +15,11 @@ import se.chalmers.cse.dat216.project.Product;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observer;
 
 /**
  * A "card" includes information about a product
  */
-public class ProductCard extends AnchorPane implements CustomComponent, ProductCardObservable {
+public class ProductCard extends AnchorPane implements CustomComponent, AddProductObservable {
     @FXML
     public Text name;
     @FXML
@@ -38,7 +33,7 @@ public class ProductCard extends AnchorPane implements CustomComponent, ProductC
     @FXML
     public TextField productAmount;
 
-    List<ProductCardObserver> observers = new ArrayList<>();
+    List<AddProductObserver> observers = new ArrayList<>();
     private int amount = 0;
     private Product product;
 
@@ -126,22 +121,22 @@ public class ProductCard extends AnchorPane implements CustomComponent, ProductC
 
     @Override
     public void notifyAllObserversProductAdded(Product product) {
-        for (ProductCardObserver productCardObserver : observers) {
-            productCardObserver.productAdded(product);
+        for (AddProductObserver addProductObserver : observers) {
+            addProductObserver.productAdded(product);
             System.out.println("Clicked! (+)");
         }
     }
 
     @Override
     public void notifyAllObserversProductRemoved(Product product) {
-        for (ProductCardObserver productCardObserver : observers) {
-            productCardObserver.productRemoved(product);
+        for (AddProductObserver addProductObserver : observers) {
+            addProductObserver.productRemoved(product);
             System.out.println("Clicked! (-)");
         }
     }
 
     @Override
-    public void addObserver(ProductCardObserver observer) {
+    public void addObserver(AddProductObserver observer) {
         observers.add(observer);
     }
 

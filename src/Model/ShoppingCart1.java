@@ -1,24 +1,19 @@
 package Model;
 
-import Controller.BackendController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingItem;
-
+import javafx.scene.layout.FlowPane;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 
-public class ShoppingCart1 extends AnchorPane implements CustomComponent {
+
+public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subject {
 
     @FXML
-    public AnchorPane cartItemArea;
+    public FlowPane cartItemArea;
 
     @FXML
     public Label totalCostLabel;
@@ -26,7 +21,10 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent {
     @FXML
     public Button toCheckoutButton;
 
+    private ArrayList<Observer> observers;
+
     public ShoppingCart1() {
+        observers = new ArrayList<Observer>();
         setRoot();
     }
 
@@ -39,6 +37,27 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent {
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
+        }
+    }
+
+    public void toCheckout(){
+        notifyAllObservers();
+    }
+
+    @Override
+    public void register(Observer o) {
+        observers.add(o);
+    }
+
+    @Override
+    public void unregister(Observer o) {
+
+    }
+
+    @Override
+    public void notifyAllObservers() {
+        for (Observer o : observers) {
+            o.FromShoppingCartToCheckout();
         }
     }
 }

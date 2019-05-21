@@ -99,6 +99,11 @@ public class BackendController {
         cart.addItem(item);
     }
 
+    public ShoppingCart getShoppingCart() {
+        ShoppingCart shoppingCart = db.getShoppingCart();
+        return shoppingCart;
+    }
+
     public int getShoppingCartAmount() {
         return db.getShoppingCart().getItems().size();
     }

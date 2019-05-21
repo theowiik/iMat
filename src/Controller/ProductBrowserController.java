@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * The controller for the product browser view
  */
-public class ProductBrowserController implements ProductCardObserver {
+public class ProductBrowserController implements AddProductObserver {
     private static BackendController backendController;
     private ProductBrowser productBrowser;
 
@@ -112,6 +112,7 @@ public class ProductBrowserController implements ProductCardObserver {
         backendController.addToShoppingCart(product);
         backendController.printShoppingCart();
         System.out.println("+");
+        backendController.printShoppingCart();
     }
 
     @Override
