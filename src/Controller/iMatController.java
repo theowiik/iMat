@@ -50,7 +50,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
     public AnchorPane cartButton;
 
     private String activeColor = "#be5250";
-    private String inActiveColor = "#ffffff";
+    private String inActiveColor = "";
 
 
     /**

@@ -10,7 +10,7 @@ public class ExoticFruits extends Category {
         super(false,
                 new ArrayList<>(Arrays.asList(87, 41, 42, 43, 44, 45, 46, 47)),
                 CategoryName.EXOTIC_FRUITS,
-                "exotic_fruits.jpg",
+                "exotic_fruits.png",
                 parent);
     }
 

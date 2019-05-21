@@ -23,6 +23,8 @@ public class MyAccount extends AnchorPane implements CustomComponent{
     @FXML
     public AnchorPane leftContainer;
 
+    @FXML
+    public AnchorPane hider;
 
     MyAccountReciept myAccountReciept;
     MyAccountContactInfo myAccountContactInfo;
@@ -65,6 +67,10 @@ public class MyAccount extends AnchorPane implements CustomComponent{
         rightContainer.getChildren().add(myAccountPersonalDiscounts);
     }
 
+    public void hideContent() {
+        hider.toFront();
+    }
+
     public MyAccount() {
         setRoot();
         spawnRecieptView();
@@ -72,6 +78,7 @@ public class MyAccount extends AnchorPane implements CustomComponent{
         spawnListView();
         spawnPersonalDiscounts();
         recieptsToFront();
+        hideContent();
     }
 
     @Override
