@@ -10,7 +10,7 @@ public class Dairy extends Category {
         super(true,
                 new ArrayList<>(Arrays.asList(78, 79, 80, 81, 82, 83, 84, 85)),
                 CategoryName.DAIRY,
-                "dairy.jpg",
+                "dairy.png",
                 null);
 
     }

@@ -10,7 +10,7 @@ public class Fruits extends Category {
         super(true,
                 new ArrayList<>(Arrays.asList(22)),
                 CategoryName.FRUITS,
-                "fruits.jpg",
+                "fruits.png",
                 null);
     }
 
