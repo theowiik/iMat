@@ -27,16 +27,13 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent {
 
 
     public void spawnReciepts(List<Order> reciepts) {
-        /*RecieptItem ri;
+        /*
+        recieptItemTitled ri;
         for (Order order : reciepts){
-            ri = new RecieptItem(order.getDate().toString(), "Test", 22.00);
+            ri = new recieptItemTitled(order.getDate().toString(), "Test", 22.00);
             recieptArea.getChildren().add(ri);
         }
-        RecieptItem recieptItem = new RecieptItem("2019-05-10", "Emilia", 23.50);
-        recieptArea.getChildren().add(recieptItem);
-        RecieptItem reit = new RecieptItem("2019-05-10", "Emil", 23.50);
-        recieptArea.getChildren().add(reit);*/
-
+        */
 
         TitledPane reciept = new recieptItemTitled("2019-05-10", "Emilia", 2.3);
         reciept.setAnimated(true);
