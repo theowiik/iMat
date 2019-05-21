@@ -5,7 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
@@ -27,15 +30,26 @@ public class Checkout extends AnchorPane implements CustomComponent {
     public Text deliveryDateText;
 
     @FXML
-    public Button changeDeliveryButton;
+    public TextField nameField;
     @FXML
-    public Button confirmDeliveryButton;
+    public TextField nameField2;
     @FXML
-    public Button backDeliveryButton;
+    public TextField adressField;
     @FXML
-    public Button nextDateButton1;
+    public TextField addressField2;
     @FXML
-    public Button nextDateButton2;
+    public TextField codeField;
+    @FXML
+    public TextField codeField2;
+    @FXML
+    public TextField cityField;
+    @FXML
+    public TextField cityField2;
+    @FXML
+    public TextField bankField;
+    @FXML
+    public TextField cardField;
+
 
     @FXML
     public Button d1;
@@ -62,27 +76,27 @@ public class Checkout extends AnchorPane implements CustomComponent {
 
     @FXML
     public AnchorPane deliveryWindow1;
-
     @FXML
     public AnchorPane deliveryWindow2;
-
     @FXML
     public AnchorPane mainWindow;
-
     @FXML
     public AnchorPane shadowWindow;
-
     @FXML
     public AnchorPane payViewWindow;
-
     @FXML
     public AnchorPane infoCoverWindow;
-
     @FXML
     public AnchorPane invoiceInfoWindow;
-
     @FXML
     public AnchorPane bankInfoWindow;
+    @FXML
+    public AnchorPane InvoiceCoverWindow;
+    @FXML
+    public AnchorPane invoiceInfoGrid;
+
+    @FXML
+    public FlowPane cartPane;
 
 
 
@@ -100,7 +114,6 @@ public class Checkout extends AnchorPane implements CustomComponent {
     }
 
     public void setDeliveryDateText(){
-        System.out.println("Här");
         this.deliveryDateText.setText(deliveryDate);
         System.out.println(deliveryDate);
     }
@@ -169,6 +182,7 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public void uncoverInvoiceInfoWindow() {
         this.invoiceInfoWindow.toFront();
+        this.InvoiceCoverWindow.toFront();
     }
 
     @FXML
@@ -177,8 +191,18 @@ public class Checkout extends AnchorPane implements CustomComponent {
     }
 
     @FXML
+    public void uncoverInvoiceInfo() {
+        this.invoiceInfoGrid.toFront();
+    }
+
+    @FXML
     public void hideInfo() {
         this.infoCoverWindow.toFront();
+    }
+
+    @FXML
+    public void placeOrder() {
+
     }
 
     @FXML

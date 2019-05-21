@@ -146,6 +146,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
     public void checkoutToFront() {
         System.out.println("Bringing checkout to front...");
         checkoutController.getCheckout().toFront();
+        checkoutController.updateView();
         storeActive(false);
         checkoutActive(true);
         myAccountActive(false);

@@ -1,8 +1,10 @@
 package Controller;
 
+import Model.CartItem;
 import Model.Checkout;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.text.html.ImageView;
 
@@ -19,13 +21,22 @@ public class CheckoutController {
         backendController = BackendController.getInstance();
         checkout = new Checkout();
         updateView();
+        setDefaultDate();
+    }
+
+
+    public void updateCartItemArea() {
+        checkout.cartPane.getChildren().clear();
+        for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
+            checkout.cartPane.getChildren().add(new CartItem(shoppingItem.getProduct()));
+        }
     }
 
     public void updateView() {
         checkout.setWelcomeMessage("Var det bra så, " + getFirstName() + "?");
         checkout.setAmountMessage("Din kundvagn innehåller " + backendController.getShoppingCartAmount() + " varor.");
         checkout.setTotalText("TOTALT: " + getTotal() + "kr");
-        setDefaultDate();
+        updateCartItemArea();
     }
 
     public Checkout getCheckout() {

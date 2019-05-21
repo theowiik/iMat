@@ -51,6 +51,9 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
     public void showAllProducts() {
         clearCardVBox();
 
+        // Feature
+        spawnFeature();
+
         // Categories
         spawnTitledSection("Kategorier");
         List<Category> categories = new ArrayList<>();
@@ -67,6 +70,11 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
             products.addAll(category.getAllProductCards());
         }
         spawnCardGrid(products);
+    }
+
+    private void spawnFeature() {
+        Feature feature = new Feature();
+        cardVBox.getChildren().add(feature);
     }
 
     private void initTabs(List<Category> categories) {

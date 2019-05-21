@@ -1,13 +1,18 @@
 package Model;
 
+import Controller.BackendController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MyAccount extends AnchorPane implements CustomComponent{
@@ -21,12 +26,28 @@ public class MyAccount extends AnchorPane implements CustomComponent{
 
     MyAccountReciept myAccountReciept;
     MyAccountContactInfo myAccountContactInfo;
-    MyAccountShoppingList myAccountShoppingList;
+    public MyAccountShoppingList myAccountShoppingList;
     MyAccountPersonalDiscounts myAccountPersonalDiscounts;
 
-    public void spawnRecieptView(List<Order> reciepts) {
+    public void spawnRecieptView() {
+        List<Order> reciepts = BackendController.getInstance().getReciepts();
+
+        reciepts.add(addMango());
+
         myAccountReciept = new MyAccountReciept(reciepts);
         rightContainer.getChildren().add(myAccountReciept);
+    }
+
+    private Order addMango(){
+        Order order = new Order();
+        order.setDate(new Date());
+        order.setOrderNumber(1);
+        List<ShoppingItem> sl = new ArrayList<>();
+        ShoppingItem si = new ShoppingItem(BackendController.getInstance().getProduct(45));
+        sl.add(si);
+        order.setItems(sl);
+
+        return order;
     }
 
     public void spawnContactInfoView() {
@@ -44,9 +65,9 @@ public class MyAccount extends AnchorPane implements CustomComponent{
         rightContainer.getChildren().add(myAccountPersonalDiscounts);
     }
 
-    public MyAccount(List<Order> reciepts) {
+    public MyAccount() {
         setRoot();
-        spawnRecieptView(reciepts);
+        spawnRecieptView();
         spawnContactInfoView();
         spawnListView();
         spawnPersonalDiscounts();
@@ -82,6 +103,14 @@ public class MyAccount extends AnchorPane implements CustomComponent{
 
     public void clearFieldsContact() {
         myAccountContactInfo.clearFieldsContact();
+    }
+
+    public void addToCart() {
+        myAccountShoppingList.addToCart();
+    }
+
+    public void saveAsShoppingList() {
+        myAccountReciept.saveAsShoppingList();
     }
 
     //public void saveFieldsContact(Customer c) {
