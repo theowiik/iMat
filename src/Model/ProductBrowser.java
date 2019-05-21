@@ -49,10 +49,14 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
     }
 
     public void showAllProducts() {
+        showAllProducts(true);
+    }
+
+    public void showAllProducts(boolean showFeature) {
         clearCardVBox();
 
         // Feature
-        spawnFeature();
+        if (showFeature) spawnFeature();
 
         // Categories
         spawnTitledSection("Kategorier");
@@ -275,7 +279,10 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
         if (backPath != null) {
             breadcrumb.getBackButton().setOnAction(event -> {
                 categoryClicked(backPath);
-                System.out.println("clicked breadcrump button, goto: " + backPath);
+            });
+        } else {
+            breadcrumb.getBackButton().setOnAction(event -> {
+                showAllProducts(false);
             });
         }
 
