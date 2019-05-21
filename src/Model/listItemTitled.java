@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     @FXML
     public Button addToCartButton;
 
-    public ArrayList<Product> products = new ArrayList<>();
+    public ArrayList<ShoppingItem> products = new ArrayList<>();
 
     public listItemTitled(String name, String category, double price) {
         setRoot();
@@ -44,13 +45,14 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     }
 
     public void spawncartItems() {
-        for (Product p : products) {
-            CartItem cartItem = new CartItem(p);
+        for (ShoppingItem p : products) {
+            CartItem cartItem = new CartItem(p.getProduct());
+            cartItem.cartAmountTxtField.setText(String.valueOf(p.getAmount()));
             cartItemContainer.getChildren().add(cartItem);
         }
     }
 
-    public void addProduct(Product product) {
+    public void addProduct(ShoppingItem product) {
         this.products.add(product);
     }
 
@@ -68,8 +70,8 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     }
 
     public void addToCart() {
-        for (Product p : products)
-            BackendController.getInstance().addToShoppingCart(p);
+        for (ShoppingItem p : products)
+            BackendController.getInstance().addToShoppingCart(p.getProduct());
             BackendController.getInstance().printShoppingCart();
     }
 

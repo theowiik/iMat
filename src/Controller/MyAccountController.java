@@ -2,7 +2,7 @@ package Controller;
 
 import Model.MyAccount;
 import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class MyAccountController {
 
     public MyAccountController() {
         backendController = BackendController.getInstance();
-        myAccount = new MyAccount(this.getReciepts());
+        myAccount = new MyAccount();
     }
 
     public MyAccount getMyAccount() {
@@ -41,7 +41,11 @@ public class MyAccountController {
 
     public void addToCart() {myAccount.addToCart();}
 
-    public void addProductToShoppingList(Product p ) {
+    public void addProductToShoppingList(ShoppingItem p ) {
         myAccount.myAccountShoppingList.listItemTitled.addProduct(p);
+    }
+
+    public void saveAsShoppingList() {
+        myAccount.saveAsShoppingList();
     }
 }

@@ -9,8 +9,10 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,29 +27,55 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent {
     @FXML
     public Accordion recieptAccordion;
 
+    public recieptItemTitled recieptItemTitled;
+    public ArrayList<recieptItemTitled> reciepts = new ArrayList<>();
+
 
     public void spawnReciepts(List<Order> reciepts) {
-        /*
-        recieptItemTitled ri;
-        for (Order order : reciepts){
-            ri = new recieptItemTitled(order.getDate().toString(), "Test", 22.00);
-            recieptArea.getChildren().add(ri);
-        }
-        */
 
+        recieptItemTitled ri;
+        TitledPane tp;
+        for (Order order : reciepts){
+            List<ShoppingItem> items = order.getItems();
+            ri = new recieptItemTitled(order.getDate().toString(), "Test", 22.00);
+            double price = 0;
+            for (ShoppingItem si : items) {
+                ri.addProduct(si);
+                price += (si.getProduct().getPrice() * si.getAmount());
+            }
+            ri.spawncartItems();
+            tp = ri;
+            tp.setAnimated(true);
+            recieptAccordion.getPanes().add(tp);
+            ri.price.setText(String.valueOf(price));
+            ri.lev.setText("Emilia");
+        }
+
+
+        spawnExamples();
+    }
+
+    private void spawnExamples(){
         TitledPane reciept = new recieptItemTitled("2019-05-10", "Emilia", 2.3);
         reciept.setAnimated(true);
         recieptAccordion.getPanes().add(reciept);
         reciept = new recieptItemTitled("2019-05-12", "Emil", 433.23);
         reciept.setAnimated(true);
         recieptAccordion.getPanes().add(reciept);
+    }
 
+    public void saveAsShoppingList(){
+        recieptItemTitled.saveAsShoppingList();
     }
 
     public MyAccountReciept(List<Order> reciepts) {
         setRoot();
         spawnReciepts(reciepts);
         scrollReciepts.setFitToWidth(true);
+    }
+
+    public void newReciept(RecieptItem ri) {
+        double price = 0;
     }
 
     @Override

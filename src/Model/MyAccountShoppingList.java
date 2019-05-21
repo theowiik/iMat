@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,11 +32,11 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
     public listItemTitled listItemTitled;
     public ArrayList<listItemTitled> lists = new ArrayList<>();
 
-    public void newList(listItemTitled lit, List<Product> products) {
+    public void newList(listItemTitled lit, List<ShoppingItem> products) {
         double price = 0;
-        for (Product p : products) {
+        for (ShoppingItem p : products) {
             lit.addProduct(p);
-            price += p.getPrice();
+            price += p.getProduct().getPrice();
         }
 
         lit.spawncartItems();
@@ -44,7 +45,7 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
         lists.add(lit);
     }
 
-    public void newList(List<Product> products) {
+    public void newList(List<ShoppingItem> products) {
         listItemTitled lit = new listItemTitled("Namnlös lista", "Övrigt", 1234.56);
         newList(lit, products);
     }
@@ -66,7 +67,10 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
 
         listItemTitled = new listItemTitled("Veckohandlingen", "Blandat", 1234.56);
         List<Product> products = BackendController.getInstance().getRandomProducts(6);
-        newList(listItemTitled,products);
+        List<ShoppingItem> si = new ArrayList<>();
+        for (Product p : products)
+            si.add(new ShoppingItem(p));
+        newList(listItemTitled,si);
         spawnLists();
         scrollLists.setFitToWidth(true);
     }
