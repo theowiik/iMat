@@ -18,9 +18,6 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
     @FXML
     public Label totalCostLabel;
 
-    @FXML
-    public Button toCheckoutButton;
-
     private ArrayList<Observer> observers;
 
     public ShoppingCart1() {
@@ -38,6 +35,10 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+    }
+
+    public void closeShoppingCart() {
+        this.toBack();
     }
 
     public void toCheckout(){

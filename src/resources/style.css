@@ -164,7 +164,7 @@
 .productCard {
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
-    -fx-background-radius: 10;
+    -fx-background-radius: 5;
 }
 .squareInShoppingCart {
     -fx-background-color: white;
@@ -206,7 +206,7 @@
 .categoryCard {
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
-    -fx-background-radius: 10;
+    -fx-background-radius: 5;
 }
 
 .categoryCard:hover {

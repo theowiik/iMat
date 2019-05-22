@@ -52,19 +52,24 @@
                         </ScrollPane>
                         <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="620.0" GridPane.rowIndex="2">
                            <children>
-                              <Label prefHeight="30.0" prefWidth="129.0" styleClass="medium-text" text="Total kostand:">
+                              <Button mnemonicParsing="false" onMouseClicked="#closeShoppingCart" prefHeight="48.0" prefWidth="130.0" styleClass="prominentAbortButton" text="Stäng">
                                  <HBox.margin>
-                                    <Insets />
+                                    <Insets bottom="3.0" left="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label prefHeight="30.0" prefWidth="150.0" styleClass="medium-text" text="Total kostand:">
+                                 <HBox.margin>
+                                    <Insets left="40.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label fx:id="totalCostLabel" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" styleClass="medium-text" text="0 kr">
+                              <Label fx:id="totalCostLabel" alignment="CENTER" prefHeight="30.0" prefWidth="150.0" styleClass="medium-text" text="0 kr">
                                  <HBox.margin>
-                                    <Insets right="50.0" />
+                                    <Insets right="10.0" />
                                  </HBox.margin>
                               </Label>
                               <Button mnemonicParsing="false" onMouseClicked="#toCheckout" prefHeight="48.0" prefWidth="126.0" styleClass="prominentDoneButton" text="Till kassan">
                                  <HBox.margin>
-                                    <Insets bottom="3.0" left="20.0" />
+                                    <Insets bottom="3.0" />
                                  </HBox.margin>
                               </Button>
                            </children>

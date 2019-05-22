@@ -19,8 +19,6 @@ public class ShoppingCartController implements AddProductObserver {
     private List<ShoppingItem> cart;
     private ShoppingCart shoppingCart;
     CartItem cartItem;
-//    CheckoutController checkoutController;
-    //ProductCard productCard;
 
     public ShoppingCartController() {
         this.backendController = BackendController.getInstance();
@@ -60,6 +58,7 @@ public class ShoppingCartController implements AddProductObserver {
     }
 
     public void updateTotCost(){
-        shoppingCart1.totalCostLabel.setText(String.valueOf(backendController.getShoppingCart().getTotal())+ " kr");
+        String s = String.format("%.2f", backendController.getShoppingCart().getTotal());
+        shoppingCart1.totalCostLabel.setText(s + " kr");
     }
 }
