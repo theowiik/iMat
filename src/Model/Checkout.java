@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.BackendController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -12,8 +13,9 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
+import java.util.ArrayList;
 
-public class Checkout extends AnchorPane implements CustomComponent {
+public class Checkout extends AnchorPane implements CustomComponent, RecieptObservable {
 
     public String deliveryDate;
     public String selectedDeliveryDate;
@@ -98,7 +100,7 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public FlowPane cartPane;
 
-
+    private ArrayList<RecieptObserver> observers = new ArrayList<>();
 
     public void setWelcomeMessage(String welcomeMessage) {
         this.welcomeMessage.setText(welcomeMessage);
@@ -248,5 +250,18 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public void handled11() {
         setSelectedDeliveryDate(d11.getText());
+    }
+
+    @Override
+    public void addListener(RecieptObserver observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyNewShoppingList() {
+        BackendController bc = BackendController.getInstance();
+        for(RecieptObserver observer : observers) {
+            observer.ShoppingListAdded(bc.getShoppingCart().getItems());
+        }
     }
 }
