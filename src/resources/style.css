@@ -308,6 +308,10 @@
     -fx-cursor: hand;
 }
 
+.prominentDoneButton:pressed {
+    -fx-background-color: #1c4b14;
+}
+
 .prominentDoneButton2 {
     -fx-background-color: #4CAF50;
     -fx-background-radius: 10px 10px 10px 10px;
