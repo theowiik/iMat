@@ -10,6 +10,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.text.html.ImageView;
@@ -34,11 +35,15 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public Text deliveryDateText;
 
     @FXML
-    public TextField nameField;
+    public TextField fNameField;
     @FXML
-    public TextField nameField2;
+    public TextField fNameField2;
     @FXML
-    public TextField adressField;
+    public TextField lNameField;
+    @FXML
+    public TextField lNameField2;
+    @FXML
+    public TextField addressField;
     @FXML
     public TextField addressField2;
     @FXML
@@ -254,6 +259,20 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         setSelectedDeliveryDate(d11.getText());
     }
 
+    private void populateCurrent() {
+        BackendController backendController = BackendController.getInstance();
+        Customer c = backendController.getCustomer();
+        fNameField.setText(c.getFirstName());
+        fNameField2.setText(c.getFirstName());
+        lNameField.setText(c.getLastName());
+        lNameField2.setText(c.getLastName());
+        addressField.setText(c.getAddress());
+        addressField2.setText(c.getAddress());
+        codeField.setText(c.getPostCode());
+        codeField2.setText(c.getPostCode());
+        cityField.setText(c.getPostAddress());
+        cityField2.setText(c.getPostAddress());
+    }
 
     @Override
     public void addObserver(ConfirmedOrderObserver coo) {
