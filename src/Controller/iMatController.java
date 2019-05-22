@@ -257,7 +257,8 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
             @Override
             protected void interpolate(double frac) {
-                Color vColor = new Color(1, 0, 0, 1 - frac);
+                //Color vColor = new Color(1, 0, 0, 1 - frac);
+                Color vColor = new Color(0.89, 0.45, 0.45, 1 - frac);
                 cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
             }
         };
