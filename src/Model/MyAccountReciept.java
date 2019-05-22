@@ -55,6 +55,11 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent {
         spawnExamples();
     }
 
+    public void addListenerToAllReciepts(MyAccountShoppingList masl){
+        for (recieptItemTitled rit : reciepts)
+            rit.addListener(masl);
+    }
+
     private void spawnExamples(){
         TitledPane reciept = new recieptItemTitled("2019-05-10", "Emilia", 2.3);
         reciept.setAnimated(true);
@@ -65,7 +70,7 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent {
     }
 
     public void saveAsShoppingList(){
-        recieptItemTitled.saveAsShoppingList();
+        //recieptItemTitled.saveAsShoppingList();
     }
 
     public MyAccountReciept(List<Order> reciepts) {

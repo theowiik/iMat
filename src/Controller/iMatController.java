@@ -12,6 +12,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -52,6 +53,8 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
     private String activeColor = "#be5250";
     private String inActiveColor = "";
 
+    @FXML
+    public Text cartText;
 
     /**
      * Initializes iMatController
@@ -222,9 +225,8 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
     @Override
     public void productAdded(Product product) {
-
+        // Animate added product
         final Animation animation = new Transition() {
-
             {
                 setCycleDuration(Duration.millis(3000));
                 setInterpolator(Interpolator.EASE_OUT);
@@ -232,11 +234,15 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
             @Override
             protected void interpolate(double frac) {
-                Color vColor = new Color(0, 1, 0, 1 - frac);
+//                Color vColor = new Color(0, 1, 0, 1 - frac);
+                Color vColor = new Color(0.05, 0.90, 0.5, 1 - frac);
                 cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
             }
         };
         animation.play();
+
+        // Change text
+        cartText.setText(product.getName() + " tillagt i din varukorg!");
     }
 
     @Override
@@ -251,7 +257,8 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
             @Override
             protected void interpolate(double frac) {
-                Color vColor = new Color(1, 0, 0, 1 - frac);
+                //Color vColor = new Color(1, 0, 0, 1 - frac);
+                Color vColor = new Color(0.89, 0.45, 0.45, 1 - frac);
                 cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
             }
         };
