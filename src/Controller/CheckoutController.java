@@ -41,12 +41,14 @@ public class CheckoutController implements ShoppingCartListener {
         checkout.setWelcomeMessage("Var det bra så, " + getFirstName() + "?");
         checkout.setAmountMessage("Din kundvagn innehåller " + backendController.getShoppingCartAmount() + " varor.");
         checkout.setTotalText("TOTALT: " + getTotal() + "kr");
+        checkout.populateCurrent();
         updateCartItemArea();
+        //updateFinalWindow();
     }
 
-    public void updateFinalWindow() {
+/*    public void updateFinalWindow() {
         checkout.updateFinalWindow();
-    }
+    }*/
 
     public Checkout getCheckout() {
         return checkout;

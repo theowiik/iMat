@@ -24,6 +24,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     public String deliveryDate;
     public String selectedDeliveryDate;
+    public boolean orderIsFinished;
 
     @FXML
     public Text welcomeMessage;
@@ -228,7 +229,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     @FXML
     public void uncoverInvoiceInfo() {
-        this.invoiceInfoGrid.toFront();
+        this.invoiceInfoWindow.toFront();
     }
 
     @FXML
@@ -285,10 +286,12 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         BackendController bc = BackendController.getInstance();
         bc.placeOrder();
         addRecieptFromOrder();
-
+        updateFinalWindow();
+        openFinalWindow();
+        orderIsFinished = true;
     }
 
-    private void populateCurrent() {
+    public void populateCurrent() {
         BackendController backendController = BackendController.getInstance();
         Customer c = backendController.getCustomer();
         fNameField.setText(c.getFirstName());

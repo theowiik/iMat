@@ -299,7 +299,7 @@ public class BackendController implements AddProductObserver {
     }
 
     public int getLastOrderNumber() {
-        return db.getOrders().get(db.getOrders().size()).getOrderNumber();
+        return db.getOrders().get(db.getOrders().size() - 1).getOrderNumber();
     }
 }
 
