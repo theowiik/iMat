@@ -293,5 +293,13 @@ public class BackendController implements AddProductObserver {
     public void productRemoved(Product product) {
         removeFromShoppingCart(product);
     }
+    
+    public void placeOrder() {
+        db.placeOrder(true);
+    }
+
+    public int getLastOrderNumber() {
+        return db.getOrders().get(db.getOrders().size()).getOrderNumber();
+    }
 }
 
