@@ -44,6 +44,10 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
         this.cartPrice.setText(String.valueOf(product.getPrice() * amountOfProd) + " kr");
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
     @Override
     public void setRoot() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cartItem.fxml"));

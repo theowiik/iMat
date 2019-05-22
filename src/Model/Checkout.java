@@ -9,6 +9,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.CartEvent;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.ShoppingItem;
