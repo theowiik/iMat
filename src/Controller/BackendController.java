@@ -269,13 +269,5 @@ public class BackendController {
         return productCards;
     }
 
-    public void placeOrder() {
-        db.placeOrder(true);
-    }
-
-    public int getLastOrderNumber() {
-        return db.getOrders().get(db.getOrders().size()).getOrderNumber();
-    }
-
 }
 
