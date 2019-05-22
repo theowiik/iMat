@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.AddProductObserver;
 import Model.Categories.*;
 import Model.CategoryCard;
 import Model.ProductCard;
@@ -15,7 +16,7 @@ import java.util.Map;
 /**
  * The controller of the backend.
  */
-public class BackendController {
+public class BackendController implements AddProductObserver {
     private static BackendController instance = null;
     private static IMatDataHandler db;
     private final Map<String, ProductCard> productCardMap = new HashMap<String, ProductCard>();
@@ -90,6 +91,10 @@ public class BackendController {
                 // There already is one of those in the cart.
                 // Update.
                 shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+
+                // Update product card
+                updateProductCardAmount(product);
+
                 return;
             }
         }
@@ -99,6 +104,14 @@ public class BackendController {
         cart.addItem(item);
     }
 
+    public void updateProductCardAmount(Product product) {
+        ProductCard productCard = getProductCard(product);
+        int amountInCart = (int) getProductAmountInCart(product);
+        productCard.setAmountText(amountInCart);
+        productCard.setAmount(amountInCart);
+//        productCard.setAmountText("hej");
+//        System.out.println("ping..........................");
+    }
 
     public ShoppingCart getShoppingCart() {
         ShoppingCart shoppingCart = db.getShoppingCart();
@@ -211,6 +224,8 @@ public class BackendController {
                     cart.removeItem(shoppingItem);
                 }
 
+                updateProductCardAmount(product);
+
                 return;
             }
         }
@@ -269,5 +284,22 @@ public class BackendController {
         return productCards;
     }
 
+    @Override
+    public void productAdded(Product product) {
+        addToShoppingCart(product);
+    }
+
+    @Override
+    public void productRemoved(Product product) {
+        removeFromShoppingCart(product);
+    }
+    
+    public void placeOrder() {
+        db.placeOrder(true);
+    }
+
+    public int getLastOrderNumber() {
+        return db.getOrders().get(db.getOrders().size()).getOrderNumber();
+    }
 }
 

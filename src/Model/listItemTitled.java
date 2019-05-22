@@ -33,7 +33,7 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     @FXML
     public Button addToCartButton;
 
-    public ArrayList<ShoppingItem> products = new ArrayList<>();
+    public List<ShoppingItem> products = new ArrayList<>();
 
     public listItemTitled(String name, String category, double price) {
         setRoot();
@@ -56,7 +56,7 @@ public class listItemTitled extends TitledPane implements CustomComponent {
         this.products.add(product);
     }
 
-    public void addProductList(ArrayList<ShoppingItem> shoppingItems) { this.products = shoppingItems;}
+    public void addProductList(List<ShoppingItem> shoppingItems) { this.products = shoppingItems;}
 
     @Override
     public void setRoot() {
