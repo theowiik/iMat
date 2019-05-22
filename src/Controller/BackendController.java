@@ -105,6 +105,18 @@ public class BackendController {
         return shoppingCart;
     }
 
+    public double getProductAmountInCart(Product product) {
+        ShoppingCart cart = db.getShoppingCart();
+        double amountOfProd = 0;
+
+        for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
+            if(shoppingItem.getProduct().getName().equals(product.getName())) {
+                amountOfProd = shoppingItem.getAmount();
+            }
+        }
+        return amountOfProd;
+    }
+
 
     public int getShoppingCartAmount() {
         return db.getShoppingCart().getItems().size();
