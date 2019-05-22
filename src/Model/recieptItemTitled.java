@@ -10,6 +10,7 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class recieptItemTitled extends TitledPane implements CustomComponent, RecieptObservable{
 
@@ -30,7 +31,7 @@ public class recieptItemTitled extends TitledPane implements CustomComponent, Re
     @FXML
     public FlowPane recieptContainer;
 
-    public ArrayList<ShoppingItem> products = new ArrayList<>();
+    public List<ShoppingItem> products = new ArrayList<>();
 
     MyAccountShoppingList msl;
 
@@ -65,6 +66,10 @@ public class recieptItemTitled extends TitledPane implements CustomComponent, Re
 
     public void addProduct(ShoppingItem product) {
         this.products.add(product);
+    }
+
+    public void addProductsList(List<ShoppingItem> shoppingitems) {
+        this.products = shoppingitems;
     }
 
     @Override
