@@ -57,7 +57,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <Label fx:id="totalCostLabel" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" styleClass="medium-text" text="99 kr">
+                              <Label fx:id="totalCostLabel" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" styleClass="medium-text" text="0 kr">
                                  <HBox.margin>
                                     <Insets right="50.0" />
                                  </HBox.margin>
