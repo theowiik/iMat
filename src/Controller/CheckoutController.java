@@ -1,15 +1,19 @@
 package Controller;
 
+import Model.AddProductObserver;
 import Model.CartItem;
 import Model.Checkout;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import se.chalmers.cse.dat216.project.CartEvent;
+import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.text.html.ImageView;
 
 
-public class CheckoutController {
+public class CheckoutController implements ShoppingCartListener {
     private static BackendController backendController;
     private Checkout checkout;
 
@@ -22,6 +26,7 @@ public class CheckoutController {
         checkout = new Checkout();
         updateView();
         setDefaultDate();
+        BackendController.getInstance().getShoppingCart().addShoppingCartListener(this);
     }
 
 
@@ -57,5 +62,9 @@ public class CheckoutController {
         checkout.setDeliveryDateText();
     }
 
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        updateCartItemArea();
+    }
 
 }
