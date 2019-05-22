@@ -9,13 +9,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Checkout extends AnchorPane implements CustomComponent, RecieptObservable {
+public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOrderObservable{
 
     public String deliveryDate;
     public String selectedDeliveryDate;
@@ -100,7 +102,7 @@ public class Checkout extends AnchorPane implements CustomComponent, RecieptObse
     @FXML
     public FlowPane cartPane;
 
-    private ArrayList<RecieptObserver> observers = new ArrayList<>();
+    private ArrayList<ConfirmedOrderObserver> observers = new ArrayList<>();
 
     public void setWelcomeMessage(String welcomeMessage) {
         this.welcomeMessage.setText(welcomeMessage);
@@ -252,16 +254,17 @@ public class Checkout extends AnchorPane implements CustomComponent, RecieptObse
         setSelectedDeliveryDate(d11.getText());
     }
 
+
     @Override
-    public void addListener(RecieptObserver observer) {
-        observers.add(observer);
+    public void addObserver(ConfirmedOrderObserver coo) {
+        observers.add(coo);
     }
 
     @Override
-    public void notifyNewShoppingList() {
+    public void addRecieptFromOrder() {
         BackendController bc = BackendController.getInstance();
-        for(RecieptObserver observer : observers) {
-            observer.ShoppingListAdded(bc.getShoppingCart().getItems());
-        }
+        List<Order> orders = bc.getReciepts();
+        for (ConfirmedOrderObserver o : observers)
+            o.createReciept(orders);
     }
 }

@@ -93,9 +93,11 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
     }
 
     @Override
-    public void ShoppingListAdded(ArrayList<ShoppingItem> shoppingitem) {
+    public void ShoppingListAdded(List<ShoppingItem> shoppingitem) {
         listItemTitled lit = new listItemTitled("Testlista", "Övrigt", 100);
         lit.addProductList(shoppingitem);
         lists.add(lit);
     }
+
+
 }

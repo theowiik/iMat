@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MyAccountReciept extends AnchorPane implements CustomComponent {
+public class MyAccountReciept extends AnchorPane implements CustomComponent, ConfirmedOrderObserver {
 
     @FXML
     public AnchorPane recieptArea;
@@ -94,5 +94,12 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+    }
+
+
+
+    @Override
+    public void createReciept(List<Order> order) {
+
     }
 }
