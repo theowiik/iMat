@@ -221,7 +221,6 @@
 .navbarTile {
     -fx-background-color: #fbf9f9;
     -fx-border-color: #b9b7b7;
-    -fx-background-radius: 10;
 }
 
 .navbarTile:hover {

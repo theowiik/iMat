@@ -19,6 +19,7 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
     public Label totalCostLabel;
 
     private ArrayList<Observer> observers;
+    public boolean isInFront = false;
 
     public ShoppingCart1() {
         observers = new ArrayList<Observer>();
@@ -39,10 +40,12 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
 
     public void closeShoppingCart() {
         this.toBack();
+        isInFront = !isInFront;
     }
 
     public void toCheckout(){
         notifyAllObservers();
+        isInFront = !isInFront;
     }
 
     @Override
