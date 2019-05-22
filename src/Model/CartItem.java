@@ -7,7 +7,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +29,7 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
     public Label cartPrice;
 
     private Product product;
+    private ProductCard productCard;
 
     List<AddProductObserver> observers = new ArrayList<>();
     private double amount;
@@ -41,10 +41,8 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
         this.product = product;
         this.amount = amountOfProd;
         this.cartAmountTxtField.setText(String.valueOf(amountOfProd));
-        this.cartPrice.setText(String.valueOf(product.getPrice() * amountOfProd));
+        this.cartPrice.setText(String.valueOf(product.getPrice() * amountOfProd) + " kr");
     }
-
-
 
     @Override
     public void setRoot() {

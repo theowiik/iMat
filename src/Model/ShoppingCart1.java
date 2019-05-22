@@ -50,9 +50,8 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
     }
 
     @Override
-    public void unregister(Observer o) {
+    public void unregister(Observer o) {}
 
-    }
 
     @Override
     public void notifyAllObservers() {
