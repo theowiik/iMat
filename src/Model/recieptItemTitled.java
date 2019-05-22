@@ -11,7 +11,7 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class recieptItemTitled extends TitledPane implements CustomComponent {
+public class recieptItemTitled extends TitledPane implements CustomComponent, RecieptObservable{
 
     @FXML
     public Label date;
@@ -34,11 +34,14 @@ public class recieptItemTitled extends TitledPane implements CustomComponent {
 
     MyAccountShoppingList msl;
 
+    private ArrayList<RecieptObserver> observers = new ArrayList<>();
+
     public recieptItemTitled(String date, String lev, double price) {
         setRoot();
         this.date.setText(date);
         this.lev.setText(lev);
         this.price.setText(String.valueOf(price));
+
 
     }
 
@@ -57,8 +60,7 @@ public class recieptItemTitled extends TitledPane implements CustomComponent {
     }
 
     public void saveAsShoppingList(){
-        listItemTitled lit = new listItemTitled("Det som " + lev.getText() + " levererade." , "Övrigt", 123);
-        msl.newList(lit,products);
+        notifyNewShoppingList();
     }
 
     public void addProduct(ShoppingItem product) {
@@ -79,4 +81,14 @@ public class recieptItemTitled extends TitledPane implements CustomComponent {
     }
 
 
+    @Override
+    public void addListener(RecieptObserver observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyNewShoppingList() {
+        for (RecieptObserver o : observers)
+            o.ShoppingListAdded(products);
+    }
 }

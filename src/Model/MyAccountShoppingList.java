@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyAccountShoppingList extends AnchorPane implements CustomComponent {
+public class MyAccountShoppingList extends AnchorPane implements CustomComponent, RecieptObserver {
 
     @FXML
     public AnchorPane recieptArea;
@@ -90,5 +90,12 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
 
     public void addToCart() {
         listItemTitled.addToCart();
+    }
+
+    @Override
+    public void ShoppingListAdded(ArrayList<ShoppingItem> shoppingitem) {
+        listItemTitled lit = new listItemTitled("Testlista", "Övrigt", 100);
+        lit.addProductList(shoppingitem);
+        lists.add(lit);
     }
 }

@@ -56,6 +56,8 @@ public class listItemTitled extends TitledPane implements CustomComponent {
         this.products.add(product);
     }
 
+    public void addProductList(ArrayList<ShoppingItem> shoppingItems) { this.products = shoppingItems;}
+
     @Override
     public void setRoot() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("listItemTitled.fxml"));
@@ -78,4 +80,6 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     public void setPrice(double d) {
         listPrice.setText(String.valueOf(d));
     }
+
+
 }

@@ -77,6 +77,7 @@ public class MyAccount extends AnchorPane implements CustomComponent{
         spawnContactInfoView();
         spawnListView();
         spawnPersonalDiscounts();
+        myAccountReciept.addListenerToAllReciepts(myAccountShoppingList);
         recieptsToFront();
         hideContent();
     }
