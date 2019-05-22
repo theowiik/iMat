@@ -39,6 +39,10 @@ public class CheckoutController {
         updateCartItemArea();
     }
 
+    public void updateFinalWindow() {
+        checkout.updateFinalWindow();
+    }
+
     public Checkout getCheckout() {
         return checkout;
     }
