@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.BackendController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -10,12 +11,16 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.ShoppingCartListener;
+import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Checkout extends AnchorPane implements CustomComponent {
+public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOrderObservable{
 
     public String deliveryDate;
     public String selectedDeliveryDate;
@@ -32,11 +37,15 @@ public class Checkout extends AnchorPane implements CustomComponent {
     public Text deliveryDateText;
 
     @FXML
-    public TextField nameField;
+    public TextField fNameField;
     @FXML
-    public TextField nameField2;
+    public TextField fNameField2;
     @FXML
-    public TextField adressField;
+    public TextField lNameField;
+    @FXML
+    public TextField lNameField2;
+    @FXML
+    public TextField addressField;
     @FXML
     public TextField addressField2;
     @FXML
@@ -100,7 +109,7 @@ public class Checkout extends AnchorPane implements CustomComponent {
     @FXML
     public FlowPane cartPane;
 
-
+    private ArrayList<ConfirmedOrderObserver> observers = new ArrayList<>();
 
     public void setWelcomeMessage(String welcomeMessage) {
         this.welcomeMessage.setText(welcomeMessage);
@@ -252,4 +261,31 @@ public class Checkout extends AnchorPane implements CustomComponent {
         setSelectedDeliveryDate(d11.getText());
     }
 
+    private void populateCurrent() {
+        BackendController backendController = BackendController.getInstance();
+        Customer c = backendController.getCustomer();
+        fNameField.setText(c.getFirstName());
+        fNameField2.setText(c.getFirstName());
+        lNameField.setText(c.getLastName());
+        lNameField2.setText(c.getLastName());
+        addressField.setText(c.getAddress());
+        addressField2.setText(c.getAddress());
+        codeField.setText(c.getPostCode());
+        codeField2.setText(c.getPostCode());
+        cityField.setText(c.getPostAddress());
+        cityField2.setText(c.getPostAddress());
+    }
+
+    @Override
+    public void addObserver(ConfirmedOrderObserver coo) {
+        observers.add(coo);
+    }
+
+    @Override
+    public void addRecieptFromOrder() {
+        BackendController bc = BackendController.getInstance();
+        List<Order> orders = bc.getReciepts();
+        for (ConfirmedOrderObserver o : observers)
+            o.createReciept(orders);
+    }
 }
