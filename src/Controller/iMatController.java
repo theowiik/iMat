@@ -2,7 +2,6 @@ package Controller;
 
 import Model.*;
 import javafx.animation.*;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -34,7 +33,6 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
 
     private int cardSize = 300;
-    private boolean isInfront = false;
 
     @FXML
     public AnchorPane contentPane;
@@ -150,6 +148,10 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         System.out.println("Bringing checkout to front...");
         checkoutController.getCheckout().toFront();
         checkoutController.updateView();
+        if (checkoutController.getCheckout().orderIsFinished) {
+            checkoutController.getCheckout().orderIsFinished = false;
+            checkoutController.getCheckout().openMainWindow();
+        }
         storeActive(false);
         checkoutActive(true);
         myAccountActive(false);
@@ -168,13 +170,13 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
      * Bring the shopping cart view to the front.
      */
     public void shoppingCartToFront() {
-        if (!isInfront) {
+        if (!shoppingCartController.getShoppingCart1().isInFront) {
             System.out.println("Bringing my shopping cart view to front...");
             shoppingCartController.getShoppingCart1().toFront();
-            isInfront = true;
+            shoppingCartController.getShoppingCart1().isInFront = true;
         } else {
             shoppingCartController.getShoppingCart1().toBack();
-            isInfront = false;
+            shoppingCartController.getShoppingCart1().isInFront = false;
         }
     }
 

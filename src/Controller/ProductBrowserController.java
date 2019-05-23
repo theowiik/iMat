@@ -63,6 +63,7 @@ public class ProductBrowserController implements AddProductObserver {
     private void observeAllProductCards() {
         for (ProductCard productCard : backendController.getProductCardMap().values()) {
             productCard.addObserver(this);
+            productCard.addObserver(backendController);
         }
     }
 
@@ -109,16 +110,16 @@ public class ProductBrowserController implements AddProductObserver {
 
     @Override
     public void productAdded(Product product) {
-        backendController.addToShoppingCart(product);
-        backendController.printShoppingCart();
-        System.out.println("+");
-        backendController.printShoppingCart();
+//        backendController.addToShoppingCart(product);
+//        backendController.printShoppingCart();
+//        System.out.println("+");
+//        backendController.printShoppingCart();
     }
 
     @Override
     public void productRemoved(Product product) {
-        backendController.removeFromShoppingCart(product);
-        backendController.printShoppingCart();
-        System.out.println("-");
+//        backendController.removeFromShoppingCart(product);
+//        backendController.printShoppingCart();
+//        System.out.println("-");
     }
 }

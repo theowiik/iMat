@@ -19,7 +19,6 @@ public class ShoppingCartController implements AddProductObserver {
     private List<ShoppingItem> cart;
     private ShoppingCart shoppingCart;
     CartItem cartItem;
-    //ProductCard productCard;
 
     public ShoppingCartController() {
         this.backendController = BackendController.getInstance();
@@ -34,13 +33,10 @@ public class ShoppingCartController implements AddProductObserver {
         return shoppingCart1;
     }
 
-
     @Override
     public void productAdded(Product product) {
-        System.out.println("Nu är du här");
         updateCartItemArea();
         updateTotCost();
-
     }
 
     @Override
@@ -53,13 +49,16 @@ public class ShoppingCartController implements AddProductObserver {
         shoppingCart1.cartItemArea.getChildren().clear();
         for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
             CartItem cartItem = new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount());
+
+            cartItem.addObserver(backendController);
             cartItem.addObserver(this);
+
             shoppingCart1.cartItemArea.getChildren().add(cartItem);
         }
-
     }
 
     public void updateTotCost(){
-        shoppingCart1.totalCostLabel.setText(String.valueOf(backendController.getShoppingCart().getTotal())+ " kr");
+        String s = String.format("%.2f", backendController.getShoppingCart().getTotal());
+        shoppingCart1.totalCostLabel.setText(s + " kr");
     }
 }

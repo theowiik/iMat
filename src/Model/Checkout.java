@@ -9,6 +9,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.CartEvent;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -22,6 +24,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     public String deliveryDate;
     public String selectedDeliveryDate;
+    public boolean orderIsFinished;
 
     @FXML
     public Text welcomeMessage;
@@ -33,6 +36,11 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public Text totalText1;
     @FXML
     public Text deliveryDateText;
+    @FXML
+    public Text orderNumberMessage;
+    @FXML
+    public Text deliveryMessage;
+
 
     @FXML
     public TextField fNameField;
@@ -103,6 +111,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public AnchorPane InvoiceCoverWindow;
     @FXML
     public AnchorPane invoiceInfoGrid;
+    @FXML
+    public AnchorPane finalWindow;
 
     @FXML
     public FlowPane cartPane;
@@ -135,6 +145,15 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         this.deliveryDate = selectedDeliveryDate;
     }
 
+    public void setDeliveryMessage() {
+        deliveryMessage.setText("På " + deliveryDate + " kommer Emilia och levererar dina varor.");
+    }
+
+    public void setOrderNumberMessage() {
+        BackendController bc = BackendController.getInstance();
+        orderNumberMessage.setText("Ordernummer: " + bc.getLastOrderNumber());
+    }
+
     public Checkout() {
         setRoot();
     }
@@ -149,6 +168,11 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+    }
+
+    public void updateFinalWindow() {
+        setDeliveryMessage();
+        setOrderNumberMessage();
     }
 
     @FXML
@@ -188,6 +212,10 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         this.payViewWindow.toFront();
     }
 
+    public void openFinalWindow() {
+        finalWindow.toFront();
+    }
+
     @FXML
     public void uncoverInvoiceInfoWindow() {
         this.invoiceInfoWindow.toFront();
@@ -201,17 +229,12 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     @FXML
     public void uncoverInvoiceInfo() {
-        this.invoiceInfoGrid.toFront();
+        this.invoiceInfoWindow.toFront();
     }
 
     @FXML
     public void hideInfo() {
         this.infoCoverWindow.toFront();
-    }
-
-    @FXML
-    public void placeOrder() {
-
     }
 
     @FXML
@@ -259,7 +282,16 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         setSelectedDeliveryDate(d11.getText());
     }
 
-    private void populateCurrent() {
+    public void confirmPurchase() {
+        BackendController bc = BackendController.getInstance();
+        bc.placeOrder();
+        addRecieptFromOrder();
+        updateFinalWindow();
+        openFinalWindow();
+        orderIsFinished = true;
+    }
+
+    public void populateCurrent() {
         BackendController backendController = BackendController.getInstance();
         Customer c = backendController.getCustomer();
         fNameField.setText(c.getFirstName());

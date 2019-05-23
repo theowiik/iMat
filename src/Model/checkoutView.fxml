@@ -463,24 +463,24 @@
                                                 </GridPane>
                                              </children>
                                           </AnchorPane>
-                                          <AnchorPane fx:id="InvoiceCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.25);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                  <columnConstraints>
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                  </columnConstraints>
-                                                  <rowConstraints>
-                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                  </rowConstraints>
-                                                   <children>
-                                                      <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfo" styleClass="prominentAbortButton2" stylesheets="@../resources/style.css" text="ANNAN FAKTURAADRESS" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                                      <AnchorPane fx:id="infoCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" />
-                                                   </children>
-                                                </GridPane>
-                                             </children>
-                                          </AnchorPane>
                                        </children>
                                     </AnchorPane>
+                                    <AnchorPane fx:id="InvoiceCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.25);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfo" styleClass="prominentAbortButton2" stylesheets="@../resources/style.css" text="ANNAN FAKTURAADRESS" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="infoCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="7.0" prefWidth="600.0" GridPane.rowIndex="1">
@@ -561,7 +561,7 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#placeOrder" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="BETALA" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <Button mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="BETALA" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                        <font>
                                           <Font size="36.0" />
                                        </font>
@@ -587,6 +587,71 @@
                   </GridPane>
                </children>
             </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="finalWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="409.0" minHeight="10.0" prefHeight="302.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="119.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tack för din beställning." AnchorPane.leftAnchor="15.0">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <Text fx:id="deliveryMessage" layoutX="63.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Text fx:id="orderNumberMessage" layoutX="55.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="47.0" prefWidth="1200.0" GridPane.rowIndex="4">
+                     <children>
+                        <Button layoutX="169.0" layoutY="30.0" mnemonicParsing="false" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <children>
+                        <Button layoutX="58.0" layoutY="31.0" mnemonicParsing="false" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fitHeight="374.0" fitWidth="635.0" layoutX="395.0" layoutY="-26.0" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@../resources/iMatTruck.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="mainWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -703,7 +768,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                  <children>
-                                    <ImageView fitHeight="366.0" fitWidth="560.0" layoutX="14.0" layoutY="65.0" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                    <ImageView fitHeight="366.0" fitWidth="507.0" layoutX="14.0" layoutY="65.0" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
                                        <image>
                                           <Image url="@../resources/iMatTruck.png" />
                                        </image>

@@ -119,6 +119,14 @@ public class ProductCard extends AnchorPane implements CustomComponent, AddProdu
         this.amount = amount;
     }
 
+    public void setAmountText(double amount) {
+        this.productAmount.setText(String.valueOf(amount));
+    }
+
+    public void setAmountText(String text) {
+        this.productAmount.setText(text);
+    }
+
     @Override
     public void notifyAllObserversProductAdded(Product product) {
         for (AddProductObserver addProductObserver : observers) {
