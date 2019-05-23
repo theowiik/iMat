@@ -52,7 +52,7 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
 
 
     public void spawnLists() {
-
+        
         TitledPane tp;
         for (listItemTitled lit : lists){
             tp = lit;
@@ -97,6 +97,8 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
         listItemTitled lit = new listItemTitled("Testlista", "Övrigt", 100);
         lit.addProductList(shoppingitem);
         lists.add(lit);
+        spawnLists();
+
     }
 
 

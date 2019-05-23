@@ -1,6 +1,7 @@
 package Model;
 
 import Controller.BackendController;
+import Controller.MyAccountController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -34,12 +35,16 @@ public class MyAccount extends AnchorPane implements CustomComponent{
     public void spawnRecieptView() {
         List<Order> reciepts = BackendController.getInstance().getReciepts();
 
-        reciepts.add(addMango());
+        //reciepts.add(addMango());
 
         myAccountReciept = new MyAccountReciept(reciepts);
         rightContainer.getChildren().add(myAccountReciept);
     }
 
+    /**
+     * Used for tests
+     * @return Order
+     */
     private Order addMango(){
         Order order = new Order();
         order.setDate(new Date());
@@ -119,6 +124,10 @@ public class MyAccount extends AnchorPane implements CustomComponent{
 
     public void saveAsShoppingList() {
         myAccountReciept.saveAsShoppingList();
+    }
+
+    public MyAccountReciept getRecieptView() {
+        return this.myAccountReciept;
     }
 
     //public void saveFieldsContact(Customer c) {

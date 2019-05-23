@@ -1,6 +1,7 @@
 package Model;
 
 import Controller.BackendController;
+import Controller.MyAccountController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -154,8 +155,9 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         orderNumberMessage.setText("Ordernummer: " + bc.getLastOrderNumber());
     }
 
-    public Checkout() {
+    public Checkout(MyAccountReciept mar) {
         setRoot();
+        addObserver(mar);
     }
 
     @Override

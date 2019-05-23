@@ -24,9 +24,9 @@
           <RowConstraints vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ScrollPane fx:id="scrollReciepts" GridPane.rowIndex="2">
+            <ScrollPane fx:id="scrollReciepts" prefHeight="842.0" prefWidth="709.0" GridPane.rowIndex="2">
                <content>
-                  <Accordion fx:id="recieptAccordion" prefHeight="447.0" />
+                  <Accordion fx:id="recieptAccordion" prefWidth="0.0" />
                </content>
             </ScrollPane>
             <AnchorPane>

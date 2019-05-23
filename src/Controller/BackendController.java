@@ -27,7 +27,7 @@ public class BackendController implements AddProductObserver {
     private BackendController() {
         db = IMatDataHandler.getInstance();
         populateProductCardMap();
-        createSampleorders();
+        //createSampleorders();
     }
 
     private void createSampleorders() {

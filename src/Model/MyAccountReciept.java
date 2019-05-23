@@ -31,6 +31,8 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     //public recieptItemTitled recieptItemTitled;
     public List<recieptItemTitled> reciepts = new ArrayList<>();
 
+    MyAccountShoppingList msl;
+
 
     public void spawnReciepts(List<Order> reciepts) {
 
@@ -57,8 +59,9 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     }
 
     public void addListenerToAllReciepts(MyAccountShoppingList masl){
-        for (recieptItemTitled rit : reciepts)
-            rit.addListener(masl);
+        msl = masl; //"spara lyssnare"
+        //for (recieptItemTitled rit : reciepts)
+          //  rit.addListener(masl);
     }
 
     private void spawnExamples(){
@@ -106,6 +109,7 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
             recieptItemTitled rit = new recieptItemTitled(order.getDate().toString(), String.valueOf(order.getOrderNumber()), getPrice(order.getItems()));
             rit.addProductsList(order.getItems());
             rit.spawncartItems();
+            rit.addListener(msl);
             reciepts.add(rit);
         }
 
@@ -115,18 +119,25 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     private double getPrice(List<ShoppingItem> items) {
         double price = 0;
         for (ShoppingItem si : items)
-            price += si.getProduct().getPrice();
+            price += (si.getProduct().getPrice() * si.getAmount());
         return price;
     }
 
     private void updateReciepts() {
         clearAccordion();
         TitledPane tp;
-        for (recieptItemTitled rit : reciepts){
-            tp = rit;
+        if (reciepts.size()>1){
+            for (int i = reciepts.size()-1 ; i > 0; i--){
+                tp = reciepts.get(i);
+                tp.setAnimated(true);
+                recieptAccordion.getPanes().add(tp);
+            }
+        } else {
+            tp = reciepts.get(0);
             tp.setAnimated(true);
             recieptAccordion.getPanes().add(tp);
         }
+
     }
 
     private void clearAccordion() {

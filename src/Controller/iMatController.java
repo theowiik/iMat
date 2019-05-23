@@ -66,7 +66,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
         productBrowserController = new ProductBrowserController();
         myAccountController = new MyAccountController();
-        checkoutController = new CheckoutController();
+        checkoutController = new CheckoutController(myAccountController.getMyAccount().getRecieptView());
 
         shoppingCartController = new ShoppingCartController();
         shoppingCartController.getShoppingCart1().register(this);

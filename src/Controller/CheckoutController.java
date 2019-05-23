@@ -3,6 +3,7 @@ package Controller;
 import Model.AddProductObserver;
 import Model.CartItem;
 import Model.Checkout;
+import Model.MyAccountReciept;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import se.chalmers.cse.dat216.project.CartEvent;
@@ -21,9 +22,9 @@ public class CheckoutController implements ShoppingCartListener {
     //private Scrollbar shoppingCart;
 
 
-    public CheckoutController() {
+    public CheckoutController(MyAccountReciept mar) {
         backendController = BackendController.getInstance();
-        checkout = new Checkout();
+        checkout = new Checkout(mar);
         updateView();
         setDefaultDate();
         BackendController.getInstance().getShoppingCart().addShoppingCartListener(this);
