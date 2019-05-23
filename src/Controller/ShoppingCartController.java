@@ -4,8 +4,6 @@ import Model.CartItem;
 import Model.ProductCard;
 import Model.AddProductObserver;
 import Model.ShoppingCart1;
-import javafx.event.EventHandler;
-import javafx.scene.input.MouseEvent;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 import se.chalmers.cse.dat216.project.ShoppingCart;
@@ -54,6 +52,7 @@ public class ShoppingCartController implements AddProductObserver {
             cartItem.addObserver(this);
 
             shoppingCart1.cartItemArea.getChildren().add(cartItem);
+            shoppingCart1.scPane.vvalueProperty().setValue(1);
         }
     }
 

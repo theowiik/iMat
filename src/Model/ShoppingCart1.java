@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import java.io.IOException;
@@ -17,6 +18,9 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
 
     @FXML
     public Label totalCostLabel;
+
+    @FXML
+    public ScrollPane scPane;
 
     private ArrayList<Observer> observers;
     public boolean isInFront = false;

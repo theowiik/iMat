@@ -425,7 +425,7 @@
 }
 
 .prominentDefaultButton:pressed {
-    -fx-background-color: # B1B0A8;
+    -fx-background-color: #B1B0A8;
     -fx-background-radius: 10px 10px 10px 10px;
     -fx-border-style: solid;
     -fx-border-color: #D1D0E8;

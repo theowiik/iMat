@@ -8,40 +8,40 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="1225.0" styleClass="cartItem" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="1225.0" styleClass="cartItem" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="46.0" prefWidth="600.0">
+      <HBox prefHeight="50.0" prefWidth="600.0">
          <children>
-            <Label fx:id="cartItemName" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="43.0" prefWidth="263.0" styleClass="medium-text" text="Test test test" textAlignment="RIGHT">
+            <Label fx:id="cartItemName" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="261.0" styleClass="small-text" text="Test test test" textAlignment="RIGHT">
                <HBox.margin>
                   <Insets left="10.0" right="20.0" />
                </HBox.margin>
                <font>
-                  <Font size="25.0" />
+                  <Font size="1.0" />
                </font>
                <padding>
                   <Insets bottom="4.0" />
                </padding>
             </Label>
-            <Button fx:id="cartSubItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#subCartItem" prefHeight="25.0" prefWidth="25.0" styleClass="redButtonRound" text="-" textAlignment="CENTER">
+            <Button fx:id="cartSubItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#subCartItem" prefHeight="30.0" prefWidth="30.0" styleClass="redButtonRound" text="-" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets right="5.0" top="7.5" />
+                  <Insets right="5.0" top="8.0" />
                </HBox.margin>
                <font>
                   <Font size="13.0" />
                </font>
                <padding>
-                  <Insets bottom="1.0" />
+                  <Insets bottom="2.0" />
                </padding>
             </Button>
-            <TextField fx:id="cartAmountTxtField" alignment="CENTER" prefHeight="31.0" prefWidth="85.0" styleClass="small-text">
+            <TextField fx:id="cartAmountTxtField" alignment="CENTER" prefHeight="35.0" prefWidth="85.0" styleClass="small-text">
                <HBox.margin>
-                  <Insets right="5.0" top="5.0" />
+                  <Insets right="5.0" top="7.5" />
                </HBox.margin>
             </TextField>
-            <Button fx:id="cartAddItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#addCartItem" prefHeight="25.0" prefWidth="25.0" styleClass="greenButtonRound" text="+">
+            <Button fx:id="cartAddItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#addCartItem" prefHeight="30.0" prefWidth="30.0" styleClass="greenButtonRound" text="+">
                <HBox.margin>
-                  <Insets right="30.0" top="7.5" />
+                  <Insets right="30.0" top="8.0" />
                </HBox.margin>
                <font>
                   <Font name="System Bold" size="13.0" />
@@ -50,7 +50,7 @@
                   <Insets bottom="2.0" />
                </padding>
             </Button>
-            <Label fx:id="cartPrice" alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="133.0" styleClass="medium-text" text="999 kr" textAlignment="RIGHT" wrapText="true">
+            <Label fx:id="cartPrice" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="133.0" styleClass="medium-text" text="999 kr" textAlignment="RIGHT" wrapText="true">
                <font>
                   <Font size="25.0" />
                </font>

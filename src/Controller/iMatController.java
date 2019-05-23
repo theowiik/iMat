@@ -129,6 +129,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         storeActive(true);
         checkoutActive(false);
         myAccountActive(false);
+        cartActive(shoppingCartController.getShoppingCart1().isInFront);
     }
 
     /**
@@ -141,6 +142,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         storeActive(false);
         checkoutActive(false);
         myAccountActive(true);
+        cartActive(shoppingCartController.getShoppingCart1().isInFront);
     }
 
     /**
@@ -158,6 +160,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         storeActive(false);
         checkoutActive(true);
         myAccountActive(false);
+        cartActive(shoppingCartController.getShoppingCart1().isInFront);
     }
 
     /**
@@ -178,12 +181,20 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
             System.out.println("Bringing my shopping cart view to front...");
             shoppingCartController.getShoppingCart1().toFront();
             shoppingCartController.getShoppingCart1().isInFront = true;
+            storeActive(false);
+            checkoutActive(false);
+            myAccountActive(false);
+            cartActive(shoppingCartController.getShoppingCart1().isInFront);
         } else {
             shoppingCartController.getShoppingCart1().toBack();
             shoppingCartController.getShoppingCart1().isInFront = false;
+            storeActive(false);
+            checkoutActive(false);
+            myAccountActive(false);
+            cartActive(shoppingCartController.getShoppingCart1().isInFront);
         }
-    }
 
+    }
 
     /**
      * Calls all observers that the window has been resized.
@@ -203,6 +214,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         productBrowserController.clearCardVBox();
         productBrowserController.spawnTitledSection("Sökresultat för: " + query);
         productBrowserController.spawnProductCardGrid(products);
+        storeToFront();
     }
 
     private void storeActive(boolean state) {
@@ -210,6 +222,11 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         storeButton.setStyle("-fx-background-color: " + color);
         productBrowserController.showAllProducts();
 //        storeButton.setStyle("-fx-text-fill: white");
+    }
+
+    public void cartActive(boolean state){
+        String color = (state) ? activeColor : inActiveColor;
+        cartButton.setStyle("-fx-background-color: " + color);
     }
 
     private void myAccountActive(boolean state) {
@@ -221,8 +238,6 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         String color = (state) ? activeColor : inActiveColor;
         checkoutButton.setStyle("-fx-background-color: " + color);
     }
-
-
 
     @Override
     public void FromShoppingCartToCheckout() {
