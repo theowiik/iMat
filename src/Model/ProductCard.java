@@ -57,7 +57,7 @@ public class ProductCard extends AnchorPane implements CustomComponent, AddProdu
      * @param amount
      */
     private void setAmountLabel(int amount) {
-        productAmount.setText(String.valueOf(amount));
+        productAmount.setText(String.valueOf(amount + " " + this.product.getUnitSuffix()));
     }
 
     // FIXME: 2019-05-14
@@ -120,11 +120,7 @@ public class ProductCard extends AnchorPane implements CustomComponent, AddProdu
     }
 
     public void setAmountText(double amount) {
-        this.productAmount.setText(String.valueOf(amount));
-    }
-
-    public void setAmountText(String text) {
-        this.productAmount.setText(text);
+        this.productAmount.setText(String.valueOf(amount + " " + this.product.getUnitSuffix()));
     }
 
     @Override

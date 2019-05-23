@@ -34,7 +34,7 @@
             <GridPane prefHeight="61.0" prefWidth="344.0" GridPane.rowIndex="4">
               <columnConstraints>
                 <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="140.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="67.0" minWidth="10.0" prefWidth="20.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="99.0" />
                 <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="140.0" />
               </columnConstraints>
               <rowConstraints>
@@ -43,12 +43,12 @@
                <children>
                   <StackPane prefHeight="46.0" prefWidth="124.0" GridPane.columnIndex="1">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#be5250" height="39.0" stroke="#be5250" strokeType="INSIDE" width="128.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#be5250" height="39.0" stroke="#be5250" strokeType="INSIDE" width="157.0">
                            <StackPane.margin>
                               <Insets />
                            </StackPane.margin>
                         </Rectangle>
-                        <TextField fx:id="productAmount" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="38.0" prefWidth="47.0" promptText="0">
+                        <TextField fx:id="productAmount" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="38.0" prefWidth="83.0" promptText="0">
                            <font>
                               <Font name="Lato Bold" size="14.0" />
                            </font>
@@ -114,7 +114,7 @@
                            <children>
                               <Text fx:id="priceAndUnit" strokeType="OUTSIDE" strokeWidth="0.0" text="??? kr/förp" textAlignment="RIGHT" wrappingWidth="112.11559200286865">
                                  <styleClass>
-                                    <String fx:value="thinText" />
+                                    <String fx:value="medium-text" />
                                     <String fx:value="productPrice" />
                                  </styleClass>
                                  <HBox.margin>
