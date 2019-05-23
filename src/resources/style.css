@@ -211,7 +211,9 @@
 }
 
 .categoryCard:hover {
-    -fx-effect: dropshadow(three-pass-box, #b3d9ff, 10, 0, 0, 0);
+    -fx-border-color: #BE5250;
+    -fx-border-width: 4px;
+    -fx-effect: dropshadow(three-pass-box, #BE5250, 10, 0, 0, 0);
     -fx-cursor: hand;
 }
 

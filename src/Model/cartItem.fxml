@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="1225.0" styleClass="cartItem" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="1225.0" styleClass="cartItem" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="46.0" prefWidth="600.0">
          <children>
@@ -34,7 +34,7 @@
                   <Insets bottom="1.0" />
                </padding>
             </Button>
-            <TextField fx:id="cartAmountTxtField" alignment="CENTER" prefHeight="30.0" prefWidth="60.0" styleClass="small-text">
+            <TextField fx:id="cartAmountTxtField" alignment="CENTER" prefHeight="31.0" prefWidth="85.0" styleClass="small-text">
                <HBox.margin>
                   <Insets right="5.0" top="5.0" />
                </HBox.margin>
@@ -55,7 +55,7 @@
                   <Font size="25.0" />
                </font>
                <padding>
-                  <Insets bottom="4.0" right="15.0" />
+                  <Insets bottom="4.0" right="30.0" />
                </padding>
                <HBox.margin>
                   <Insets />

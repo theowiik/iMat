@@ -57,7 +57,7 @@
                                     <Insets bottom="3.0" left="20.0" />
                                  </HBox.margin>
                               </Button>
-                              <Label prefHeight="30.0" prefWidth="150.0" styleClass="medium-text" text="Total kostand:">
+                              <Label prefHeight="30.0" prefWidth="150.0" styleClass="medium-text" text="Total kostnad:">
                                  <HBox.margin>
                                     <Insets left="40.0" />
                                  </HBox.margin>
