@@ -311,6 +311,22 @@
     -fx-background-color: #1c4b14;
 }
 
+.buttonSquare {
+   -fx-background-color: #EEEEEE;
+}
+
+.buttonSquare:hover {
+   -fx-background-color: #DDDDDD;
+}
+
+.buttonSquare:pressed {
+   -fx-background-color: #CCCCCC;
+}
+
+.buttonSquare:focused {
+   -fx-background-color: #CCCCCC;
+}
+
 .prominentDoneButton2 {
     -fx-background-color: #4CAF50;
     -fx-background-radius: 10px 10px 10px 10px;
@@ -324,6 +340,18 @@
 
 .prominentDoneButton2:hover {
     -fx-background-color: #2A602C;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #4CAF70;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+}
+
+.prominentDoneButton2:pressed {
+    -fx-background-color: #1A501C;
     -fx-background-radius: 10px 10px 10px 10px;
     -fx-border-style: solid;
     -fx-border-color: #4CAF70;
@@ -357,6 +385,18 @@
     -fx-cursor: hand;
 }
 
+.prominentBackButton:hover {
+    -fx-background-color: #BEB976;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #DED9B6;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+}
+
 .prominentDefaultButton {
     -fx-background-color: #D1D0C8;
     -fx-background-radius: 10px 10px 10px 10px;
@@ -371,6 +411,18 @@
 
 .prominentDefaultButton:hover {
     -fx-background-color: #C1C0B8;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #D1D0E8;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+}
+
+.prominentDefaultButton:pressed {
+    -fx-background-color: # B1B0A8;
     -fx-background-radius: 10px 10px 10px 10px;
     -fx-border-style: solid;
     -fx-border-color: #D1D0E8;
@@ -417,6 +469,18 @@
 
 .prominentAbortButton2:hover {
     -fx-background-color: #8B3C3B;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #be5270;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 34px;
+    -fx-cursor: hand;
+}
+
+.prominentAbortButton2:pressed {
+    -fx-background-color: #7B2C1B;
     -fx-background-radius: 10px 10px 10px 10px;
     -fx-border-style: solid;
     -fx-border-color: #be5270;
