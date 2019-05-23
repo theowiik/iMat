@@ -258,12 +258,22 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 //                Color vColor = new Color(0, 1, 0, 1 - frac);
                 Color vColor = new Color(0.05, 0.90, 0.5, 1 - frac);
                 cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
+
+                FadeTransition ft = new FadeTransition(Duration.millis(7000), cartText);
+                cartText.setText(product.getName() + " tillagt i din varukorg!");
+                ft.setFromValue(1.0);
+                ft.setToValue(0);
+                ft.setCycleCount(1);
+                ft.setAutoReverse(true);
+
+                ft.play();
+
             }
         };
         animation.play();
 
         // Change text
-        cartText.setText(product.getName() + " tillagt i din varukorg!");
+        //cartText.setText(product.getName() + " tillagt i din varukorg!");
     }
 
     @Override
