@@ -1,22 +1,16 @@
 package Model;
 
 import Controller.BackendController;
-import Controller.MyAccountController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.ShoppingItem;
 
-import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -103,6 +97,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public AnchorPane payViewWindow;
     @FXML
+    public AnchorPane deliveryViewWindow;
+    @FXML
     public AnchorPane infoCoverWindow;
     @FXML
     public AnchorPane invoiceInfoWindow;
@@ -184,12 +180,17 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     @FXML
     public void closeDeliveryWindow() {
-        this.mainWindow.toFront();
+        this.deliveryViewWindow.toFront();
     }
 
     @FXML
     public void openMainWindow() {
         this.mainWindow.toFront();
+    }
+
+    @FXML
+    public void openDeliveryViewWindow() {
+        this.deliveryViewWindow.toFront();
     }
 
     @FXML
