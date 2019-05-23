@@ -61,6 +61,7 @@ public class recieptItemTitled extends TitledPane implements CustomComponent, Re
     }
 
     public void saveAsShoppingList(){
+        System.out.println("hellooo");
         notifyNewShoppingList();
     }
 

@@ -7,10 +7,7 @@ import Model.ProductCardFactory;
 import javafx.scene.image.Image;
 import se.chalmers.cse.dat216.project.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * The controller of the backend.
@@ -29,6 +26,20 @@ public class BackendController {
     private BackendController() {
         db = IMatDataHandler.getInstance();
         populateProductCardMap();
+        createSampleorders();
+    }
+
+    private void createSampleorders() {
+        Product p = getProduct(9);
+        addToShoppingCart(p);
+        p = getProduct(12);
+        addToShoppingCart(p);
+
+
+        db.placeOrder(true);
+
+
+
     }
 
     public void initCategories() {
