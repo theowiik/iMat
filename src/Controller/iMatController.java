@@ -124,6 +124,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
      */
     public void storeToFront() {
         System.out.println("Bringing store view to front...");
+        shoppingCartController.getShoppingCart1().isInFront = false;
         productBrowserController.getProductBrowser().toFront();
         storeActive(true);
         checkoutActive(false);
@@ -135,6 +136,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
      */
     public void myAccountToFront() {
         System.out.println("Bringing my account view to front...");
+        shoppingCartController.getShoppingCart1().isInFront = false;
         myAccountController.getMyAccount().toFront();
         storeActive(false);
         checkoutActive(false);
@@ -146,6 +148,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
      */
     public void checkoutToFront() {
         System.out.println("Bringing checkout to front...");
+        shoppingCartController.getShoppingCart1().isInFront = false;
         checkoutController.getCheckout().toFront();
         checkoutController.updateView();
         if (checkoutController.getCheckout().orderIsFinished) {
@@ -162,6 +165,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
      */
     public void helpToFront() {
         System.out.println("Bringing help to front...");
+        shoppingCartController.getShoppingCart1().isInFront = false;
         help.toFront();
         help.populateFields();
     }

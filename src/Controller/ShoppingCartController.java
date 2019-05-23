@@ -15,7 +15,7 @@ import java.util.List;
 public class ShoppingCartController implements AddProductObserver {
 
     private BackendController backendController;
-    private ShoppingCart1 shoppingCart1;
+    public ShoppingCart1 shoppingCart1;
     private List<ShoppingItem> cart;
     private ShoppingCart shoppingCart;
     CartItem cartItem;
