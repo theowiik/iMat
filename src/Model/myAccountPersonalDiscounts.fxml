@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<fx:root prefHeight="627.0" prefWidth="565.0" style="-fx-background-color: white;" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="627.0" prefWidth="565.0" style="-fx-background-color: white;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane layoutX="-2.0" layoutY="-1.0" prefHeight="627.0" prefWidth="565.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="90.0" vgrow="SOMETIMES" />
@@ -33,15 +32,7 @@
                   </ScrollPane>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="167.0" prefWidth="912.0">
-               <children>
-                  <Label layoutX="207.0" layoutY="10.0" prefHeight="44.0" prefWidth="325.0" text="PERSONLIGA ERBJUDANDEN" textAlignment="CENTER" AnchorPane.topAnchor="10.0">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-title" text="PERSONLIGA ERBJUDANDEN" />
          </children>
       </GridPane>
    </children>

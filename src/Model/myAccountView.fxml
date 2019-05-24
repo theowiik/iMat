@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<fx:root minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="836.0" style="-fx-background-color: white;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="836.0" style="-fx-background-color: white;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -147,8 +147,8 @@
                                     </ImageView>
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="KONTAKT &amp;" />
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="LEVERANS" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="MIN KONTAKT-" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="INFORMATION" />
                                        </children>
                                     </VBox>
                                  </children>

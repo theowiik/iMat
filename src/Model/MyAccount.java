@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MyAccount extends AnchorPane implements CustomComponent{
+public class MyAccount extends AnchorPane implements CustomComponent, RecieptObserver{
 
     @FXML
     public AnchorPane rightContainer;
@@ -82,7 +82,7 @@ public class MyAccount extends AnchorPane implements CustomComponent{
         spawnContactInfoView();
         spawnListView();
         spawnPersonalDiscounts();
-        myAccountReciept.addListenerToAllReciepts(myAccountShoppingList);
+        myAccountReciept.addListenerToAllReciepts(myAccountShoppingList, this);
         recieptsToFront();
         hideContent();
     }
@@ -128,6 +128,15 @@ public class MyAccount extends AnchorPane implements CustomComponent{
 
     public MyAccountReciept getRecieptView() {
         return this.myAccountReciept;
+    }
+
+    @Override
+    public void ShoppingListAdded(List<ShoppingItem> shoppingitem) {
+        listsToFront();
+    }
+
+    public void bringHelpToBack() {
+
     }
 
     //public void saveFieldsContact(Customer c) {

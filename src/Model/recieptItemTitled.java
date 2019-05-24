@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -55,6 +57,8 @@ public class recieptItemTitled extends TitledPane implements CustomComponent, Re
             cartItem.cartSubItem.setVisible(false);
             cartItem.cartAmountTxtField.setText(String.valueOf(p.getAmount()));
             cartItem.cartAmountTxtField.setEditable(false);
+            cartItem.cartAmountTxtField.setStyle("-fx-background-color: rgba(0,0,0,0)");
+            cartItem.setStyle("-fx-cursor: DEFAULT");
 
             recieptContainer.getChildren().add(cartItem);
         }
@@ -85,7 +89,6 @@ public class recieptItemTitled extends TitledPane implements CustomComponent, Re
             throw new RuntimeException(exception);
         }
     }
-
 
     @Override
     public void addListener(RecieptObserver observer) {

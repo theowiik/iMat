@@ -14,26 +14,21 @@
 
 <fx:root prefHeight="561.0" prefWidth="709.0" style="-fx-background-color: white;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane layoutX="-2.0" layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane hgap="5.0" layoutX="-2.0" layoutY="-1.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
           <RowConstraints vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ScrollPane fx:id="scrollLists" GridPane.rowIndex="2">
+            <ScrollPane fx:id="scrollLists" prefWidth="709.0" GridPane.rowIndex="2">
                <content>
                   <Accordion fx:id="listAccordion" prefHeight="447.0" />
                </content>
             </ScrollPane>
-            <AnchorPane>
-               <children>
-                  <Text layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="categoryTitle" text="INKÖPSLISTOR" textAlignment="CENTER" wrappingWidth="709.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="16.0" />
-               </children>
-            </AnchorPane>
             <AnchorPane GridPane.rowIndex="1">
                <children>
                   <GridPane hgap="30.0" layoutX="-1.0" layoutY="3.0" prefHeight="56.0" prefWidth="709.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -42,13 +37,13 @@
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="29.666656494140625" minHeight="10.0" prefHeight="29.666656494140625" vgrow="SOMETIMES" />
+                      <RowConstraints vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="13.333343505859375" minHeight="5.333343505859375" prefHeight="5.333343505859375" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0 kr" textAlignment="RIGHT" wrappingWidth="333.4699401855469" GridPane.columnIndex="1" />
-                        <Label text="Datum" />
+                        <Label text="Namn på lista" />
                         <Slider disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Kostnad" GridPane.columnIndex="1" />
                         <GridPane GridPane.rowIndex="1">
@@ -69,6 +64,7 @@
                   </GridPane>
                </children>
             </AnchorPane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-title" text="INKÖPSLISTOR" />
          </children>
       </GridPane>
    </children>
