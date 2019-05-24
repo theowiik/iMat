@@ -4,13 +4,11 @@ import Model.CartItem;
 import Model.ProductCard;
 import Model.AddProductObserver;
 import Model.ShoppingCart1;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingItem;
-import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.*;
 
 import java.util.List;
 
-public class ShoppingCartController implements AddProductObserver {
+public class ShoppingCartController implements ShoppingCartListener{
 
     private BackendController backendController;
     public ShoppingCart1 shoppingCart1;
@@ -21,43 +19,35 @@ public class ShoppingCartController implements AddProductObserver {
     public ShoppingCartController() {
         this.backendController = BackendController.getInstance();
         this.shoppingCart1 = new ShoppingCart1();
-        for (ProductCard productCard : backendController.getProductCardMap().values()) {
-            productCard.addObserver(this);
-
-        }
+        BackendController.getInstance().getShoppingCart().addShoppingCartListener(this);
     }
 
     public ShoppingCart1 getShoppingCart1() {
         return shoppingCart1;
     }
 
-    @Override
-    public void productAdded(Product product) {
-        updateCartItemArea();
-        updateTotCost();
-    }
-
-    @Override
-    public void productRemoved(Product product) {
-        updateCartItemArea();
-        updateTotCost();
-    }
-
     public void updateCartItemArea() {
+
         shoppingCart1.cartItemArea.getChildren().clear();
         for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
             CartItem cartItem = new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount());
-
             cartItem.addObserver(backendController);
-            cartItem.addObserver(this);
 
             shoppingCart1.cartItemArea.getChildren().add(cartItem);
-            shoppingCart1.scPane.vvalueProperty().setValue(1);
+
+            shoppingCart1.scPane.vvalueProperty().setValue(shoppingCart1.scPane.getVmax());
+
         }
     }
 
     public void updateTotCost(){
         String s = String.format("%.2f", backendController.getShoppingCart().getTotal());
         shoppingCart1.totalCostLabel.setText(s + " kr");
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        updateCartItemArea();
+        updateTotCost();
     }
 }
