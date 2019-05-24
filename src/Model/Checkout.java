@@ -112,6 +112,10 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public AnchorPane finalWindow;
 
     @FXML
+    public FlowPane indicatorArea;
+    public WizardView wizardView = new WizardView(1);
+
+    @FXML
     public FlowPane cartPane;
 
     private ArrayList<ConfirmedOrderObserver> observers = new ArrayList<>();
@@ -151,9 +155,14 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         orderNumberMessage.setText("Ordernummer: " + bc.getLastOrderNumber());
     }
 
+    public void spawnIndicator() {
+        indicatorArea.getChildren().add(wizardView);
+    }
+
     public Checkout(MyAccountReciept mar) {
         setRoot();
         addObserver(mar);
+        spawnIndicator();
     }
 
     @Override
@@ -191,6 +200,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public void openDeliveryViewWindow() {
         this.deliveryViewWindow.toFront();
+        wizardView.spawnNextStep();
     }
 
     @FXML

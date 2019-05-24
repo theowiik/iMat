@@ -524,6 +524,16 @@
 }
 
 
+.wizard-text {
+    -fx-font-size: 30px;
+}
+
+.wizard-text:hover {
+    -fx-font-size: 35px;
+    -fx-cursor: hand;
+    -fx-text-fill: #7B2C1B;
+}
+
 .recieptItem {
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
