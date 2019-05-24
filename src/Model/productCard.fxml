@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -17,17 +16,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="331.0" styleClass="productCard" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="331.0" styleClass="productCard" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="200.80001220703124" minHeight="10.0" prefHeight="200.80001220703124" valignment="TOP" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="152.40001220703127" minHeight="10.0" prefHeight="40.39998779296877" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="91.99997558593748" minHeight="10.0" prefHeight="59.99997558593748" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="200.80001220703124" minHeight="10.0" prefHeight="184.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="152.40001220703127" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="91.99997558593748" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <GridPane prefHeight="61.0" prefWidth="344.0" GridPane.rowIndex="3">
@@ -99,7 +98,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <VBox prefHeight="78.0" prefWidth="309.0">
+                  <VBox alignment="CENTER" prefHeight="78.0" prefWidth="309.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
                         <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="product name" textAlignment="CENTER" wrappingWidth="300.826416015625">
                            <styleClass>
@@ -109,28 +108,18 @@
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin></Text>
-                        <HBox prefHeight="26.0" prefWidth="224.0">
-                           <children>
-                              <Text fx:id="priceAndUnit" strokeType="OUTSIDE" strokeWidth="0.0" text="??? kr/förp" textAlignment="RIGHT" wrappingWidth="105.7156286239624">
-                                 <styleClass>
-                                    <String fx:value="medium-text" />
-                                    <String fx:value="productPrice" />
-                                 </styleClass>
-                                 <HBox.margin>
-                                    <Insets bottom="22.0" />
-                                 </HBox.margin>
-                              </Text>
-                           </children>
-                           <VBox.margin>
-                              <Insets left="45.0" />
-                           </VBox.margin>
-                        </HBox>
+                        <Text fx:id="priceAndUnit" strokeType="OUTSIDE" strokeWidth="0.0" text="??? kr/förp" textAlignment="RIGHT" wrappingWidth="105.7156286239624">
+                           <styleClass>
+                              <String fx:value="medium-text" />
+                              <String fx:value="productPrice" />
+                           </styleClass>
+                        </Text>
                      </children>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <GridPane.margin>
-                        <Insets left="15.0" right="15.0" />
+                        <Insets />
                      </GridPane.margin>
                   </VBox>
                </children>
