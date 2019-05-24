@@ -47,6 +47,7 @@ public class Help extends AnchorPane implements CustomComponent {
         clearErrMsg();
     }
 
+
     private void clearErrMsg() {
         errMsg.setText("");
         errSubject.setText("");

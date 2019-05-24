@@ -92,12 +92,27 @@ public class MyAccountShoppingList extends AnchorPane implements CustomComponent
         listItemTitled.addToCart();
     }
 
+    private double getPrice(List<ShoppingItem> items) {
+        double price = 0;
+        for (ShoppingItem si : items)
+            price += (si.getProduct().getPrice() * si.getAmount());
+        return price;
+    }
+
     @Override
     public void ShoppingListAdded(List<ShoppingItem> shoppingitem) {
         listItemTitled lit = new listItemTitled("Testlista", "Övrigt", 100);
         lit.addProductList(shoppingitem);
+        lit.spawncartItems();
+        lit.setName("Test");
+        lit.setPrice(getPrice(shoppingitem));
         lists.add(lit);
-        spawnLists();
+
+        TitledPane tp = lit;
+        tp.setAnimated(true);
+        listAccordion.getPanes().add(tp);
+
+        //spawnLists();
 
     }
 

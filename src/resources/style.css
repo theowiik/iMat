@@ -512,6 +512,10 @@
     -fx-font-size: 20px;
 }
 
+.page-title {
+    -fx-font-size: 30px;
+}
+
 
 .recieptItem {
     -fx-background-color: white;

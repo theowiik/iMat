@@ -31,9 +31,10 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     //public recieptItemTitled recieptItemTitled;
     public List<recieptItemTitled> reciepts = new ArrayList<>();
 
-    MyAccountShoppingList msl;
+    private MyAccountShoppingList msl;
+    private MyAccount account;
 
-
+/*
     public void spawnReciepts(List<Order> reciepts) {
 
         recieptItemTitled ri;
@@ -58,10 +59,12 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
         spawnExamples();
     }
 
-    public void addListenerToAllReciepts(MyAccountShoppingList masl){
+ */
+
+
+    public void addListenerToAllReciepts(MyAccountShoppingList masl, MyAccount account){
         msl = masl; //"spara lyssnare"
-        //for (recieptItemTitled rit : reciepts)
-          //  rit.addListener(masl);
+        this.account = account;
     }
 
     private void spawnExamples(){
@@ -79,7 +82,7 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
 
     public MyAccountReciept(List<Order> reciepts) {
         setRoot();
-        spawnReciepts(reciepts);
+        //spawnReciepts(reciepts);
         scrollReciepts.setFitToWidth(true);
     }
 
@@ -109,7 +112,8 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
             recieptItemTitled rit = new recieptItemTitled(order.getDate().toString(), String.valueOf(order.getOrderNumber()), getPrice(order.getItems()));
             rit.addProductsList(order.getItems());
             rit.spawncartItems();
-            rit.addListener(msl);
+            rit.addListener(this.msl);
+            rit.addListener(this.account);
             reciepts.add(rit);
         }
 

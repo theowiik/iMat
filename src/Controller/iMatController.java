@@ -173,6 +173,11 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         help.populateFields();
     }
 
+    public void helpToBack() {
+        shoppingCartController.getShoppingCart1().isInFront = false;
+        help.toBack();
+    }
+
     /**
      * Bring the shopping cart view to the front.
      */

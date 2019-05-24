@@ -35,6 +35,8 @@ public class listItemTitled extends TitledPane implements CustomComponent {
 
     public List<ShoppingItem> products = new ArrayList<>();
 
+
+
     public listItemTitled(String name, String category, double price) {
         setRoot();
         this.listName.setText(name);
@@ -82,4 +84,7 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     }
 
 
+    public void setName(String name) {
+        listName.setText(name);
+    }
 }
