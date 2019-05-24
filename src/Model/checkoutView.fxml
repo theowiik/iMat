@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -926,21 +927,12 @@
                               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
                            <rowConstraints>
-                              <RowConstraints maxHeight="312.0" minHeight="25.0" prefHeight="70.63751983642578" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="551.0" minHeight="0.0" prefHeight="404.5470275878906" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="25.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <AnchorPane prefHeight="28.0" prefWidth="600.0">
-                                 <children>
-                                    <Text layoutX="75.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 1: Bekräfta kundvagn " AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                              <AnchorPane prefHeight="28.0" prefWidth="600.0" />
                               <Button fx:id="buyMoreButton" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FORTSÄTT HANDLA" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="36.0" />
@@ -950,6 +942,11 @@
                                     <String fx:value="prominentBackButton" />
                                  </styleClass>
                               </Button>
+                              <FlowPane fx:id="indicatorArea" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </FlowPane>
                            </children>
                         </GridPane>
                      </children>
