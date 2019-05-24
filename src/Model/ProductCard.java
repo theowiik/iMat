@@ -120,7 +120,8 @@ public class ProductCard extends AnchorPane implements CustomComponent, AddProdu
     }
 
     public void setAmountText(double amount) {
-        this.productAmount.setText(String.valueOf(amount + " " + this.product.getUnitSuffix()));
+
+        this.productAmount.setText(String.valueOf((int)amount + " " + this.product.getUnitSuffix()));
     }
 
     @Override
