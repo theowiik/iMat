@@ -262,6 +262,13 @@
 #headerLogo {
 }
 
+.CircleWithAmountInImatHeader {
+    -fx-border-width: 2;
+    /*-fx-border-color: #4CAF50;*/
+    -fx-background-radius: 50px 50px 50px 50px;
+    -fx-background-color: white;
+}
+
 .card {
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);

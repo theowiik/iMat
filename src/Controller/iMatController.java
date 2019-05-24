@@ -5,6 +5,7 @@ import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -13,7 +14,9 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 
 import java.net.URL;
 import java.util.List;
@@ -22,7 +25,7 @@ import java.util.ResourceBundle;
 /**
  * The main controller for the application window.
  */
-public class iMatController implements Initializable, WindowResizeObserver, Observer, AddProductObserver {
+public class iMatController implements Initializable, WindowResizeObserver, Observer, AddProductObserver, ShoppingCartListener {
     private static BackendController backendController;
 
     private ProductBrowserController productBrowserController;
@@ -48,11 +51,17 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
     @FXML
     public AnchorPane cartButton;
 
+    @FXML
+    public Label amountOfItemsInCart;
+
     private String activeColor = "#be5250";
     private String inActiveColor = "";
 
     @FXML
     public Text cartText;
+
+    @FXML
+    public Label totalPrice;
 
     /**
      * Initializes iMatController
@@ -70,9 +79,9 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
         shoppingCartController = new ShoppingCartController();
         shoppingCartController.getShoppingCart1().register(this);
+
         observeAllProductCards();
-
-
+        backendController.db.getShoppingCart().addShoppingCartListener(this);
 
         spawnProductBrowser();
         spawnMyAccount();
@@ -193,7 +202,13 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
             myAccountActive(false);
             cartActive(shoppingCartController.getShoppingCart1().isInFront);
         }
+    }
 
+    public void setAmountOfItemsInCart() {
+        amountOfItemsInCart.setText(String.valueOf(backendController.getTotalAmountOfItems()));
+        amountOfItemsInCart.setVisible(true);
+        totalPrice.setText(String.valueOf(backendController.getTotal() + " kr"));
+        totalPrice.setVisible(true);
     }
 
     /**
@@ -214,7 +229,6 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         productBrowserController.clearCardVBox();
         productBrowserController.spawnTitledSection("Sökresultat för: " + query);
         productBrowserController.spawnProductCardGrid(products);
-        storeToFront();
     }
 
     private void storeActive(boolean state) {
@@ -274,6 +288,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
         // Change text
         //cartText.setText(product.getName() + " tillagt i din varukorg!");
+        setAmountOfItemsInCart();
     }
 
     @Override
@@ -294,12 +309,17 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
             }
         };
         animation.play();
-
+        setAmountOfItemsInCart();
     }
 
     private void observeAllProductCards() {
         for (ProductCard productCard : backendController.getProductCardMap().values()) {
             productCard.addObserver(this);
         }
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        setAmountOfItemsInCart();
     }
 }

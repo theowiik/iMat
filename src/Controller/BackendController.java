@@ -15,7 +15,7 @@ import java.util.*;
  */
 public class BackendController implements AddProductObserver {
     private static BackendController instance = null;
-    private static IMatDataHandler db;
+    public IMatDataHandler db;
     private final Map<String, ProductCard> productCardMap = new HashMap<String, ProductCard>();
 //    private final Map<String, CategoryCard> categoryCardMap = new HashMap<String, CategoryCard>();
     private final List<CategoryName> availableCategories = new ArrayList<>();
@@ -276,6 +276,15 @@ public class BackendController implements AddProductObserver {
 
         return products;
     }
+
+    public int getTotalAmountOfItems() {
+        int amount = 0;
+        ShoppingCart shoppingCart = db.getShoppingCart();
+        for (ShoppingItem product : shoppingCart.getItems()) {
+            amount += product.getAmount();
+        }
+        return amount;
+    }
     
     public List<Order> getReciepts() {
         return db.getOrders();
@@ -298,11 +307,19 @@ public class BackendController implements AddProductObserver {
     @Override
     public void productAdded(Product product) {
         addToShoppingCart(product);
+        for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
+            db.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
+
+        }
     }
 
     @Override
     public void productRemoved(Product product) {
         removeFromShoppingCart(product);
+        for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
+            db.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
+
+        }
     }
     
     public void placeOrder() {
