@@ -27,16 +27,22 @@ public class ShoppingCartController implements ShoppingCartListener{
     }
 
     public void updateCartItemArea() {
-
+        int x = 0;
         shoppingCart1.cartItemArea.getChildren().clear();
         for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
-            CartItem cartItem = new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount());
-            cartItem.addObserver(backendController);
 
-            shoppingCart1.cartItemArea.getChildren().add(cartItem);
+                CartItem cartItem = new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount());
+                cartItem.addObserver(backendController);
 
-            shoppingCart1.scPane.vvalueProperty().setValue(shoppingCart1.scPane.getVmax());
+                shoppingCart1.cartItemArea.getChildren().add(cartItem);
 
+                shoppingCart1.scPane.vvalueProperty().setValue(shoppingCart1.scPane.getVmax());
+            if ((x & 1) == 0) {
+
+            } else {
+                cartItem.pane.setStyle("-fx-background-color: #DDDDDD");
+            }
+            x++;
         }
     }
 

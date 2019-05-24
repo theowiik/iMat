@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import se.chalmers.cse.dat216.project.Product;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,6 +28,9 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
 
     @FXML
     public Label cartPrice;
+
+    @FXML
+    public AnchorPane pane;
 
     private Product product;
     private ProductCard productCard;
