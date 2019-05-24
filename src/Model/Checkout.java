@@ -195,7 +195,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     @FXML
     public void acceptDelivery() {
-        this.mainWindow.toFront();
+        this.deliveryViewWindow.toFront();
         confirmDeliveryDate();
         setDeliveryDateText();
     }

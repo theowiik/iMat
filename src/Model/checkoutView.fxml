@@ -261,71 +261,48 @@
             <GridPane layoutX="355.0" layoutY="255.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="0.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <GridPane GridPane.columnIndex="1">
+                  <GridPane GridPane.columnIndex="2">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="409.0" minHeight="10.0" prefHeight="302.0" vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
                         <RowConstraints vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Text layoutX="119.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tack för din beställning." AnchorPane.leftAnchor="15.0">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                           <children>
-                              <Text fx:id="deliveryMessage" layoutX="63.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-                           <children>
-                              <Text fx:id="orderNumberMessage" layoutX="55.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="47.0" prefWidth="1200.0" GridPane.rowIndex="4">
-                           <children>
-                              <Button layoutX="169.0" layoutY="30.0" mnemonicParsing="false" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
-                           <children>
-                              <Button layoutX="58.0" layoutY="31.0" mnemonicParsing="false" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
-                           <children>
-                              <ImageView fitHeight="374.0" fitWidth="635.0" layoutX="395.0" layoutY="-26.0" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
-                                 <image>
-                                    <Image url="@../resources/iMatTruck.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tack för din beställning.">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="deliveryMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="orderNumberMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="374.0" fitWidth="600.0" preserveRatio="true" GridPane.rowIndex="3">
+                           <image>
+                              <Image url="@../resources/iMatTruck.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <GridPane>
@@ -358,6 +335,12 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Separator layoutX="108.0" layoutY="115.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
                </children>
             </GridPane>
          </children>
@@ -369,16 +352,19 @@
                   <GridPane layoutX="200.0" layoutY="185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="33.0" prefWidth="158.97088623046875" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="0.0" prefWidth="158.97088623046875" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="0.0" prefWidth="158.97088623046875" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="706.3402252197266" minWidth="10.0" percentWidth="25.0" prefWidth="279.36767578125" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="660.1826171875" minWidth="10.0" prefWidth="644.63232421875" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="706.3402252197266" minWidth="10.0" percentWidth="0.0" prefWidth="279.36767578125" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <GridPane GridPane.columnIndex="1">
+                        <GridPane GridPane.columnIndex="3">
                            <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints maxHeight="62.0" minHeight="62.0" prefHeight="62.0" vgrow="SOMETIMES" />
@@ -389,67 +375,47 @@
                               <RowConstraints vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-                                 <children>
-                                    <Button layoutX="128.0" layoutY="5.0" mnemonicParsing="false" onAction="#hideInfo" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="VID LEVERANS" AnchorPane.bottomAnchor="11.5" AnchorPane.leftAnchor="15.0">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="buttonShadow" />
-                                          <String fx:value="prominentDefaultButton" />
-                                       </styleClass>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
-                                 <children>
-                                    <Button layoutX="121.0" layoutY="-19.0" mnemonicParsing="false" onAction="#uncoverBankInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="DIREKTBETALNING" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="9.0">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="buttonShadow" />
-                                          <String fx:value="prominentDefaultButton" />
-                                       </styleClass>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
-                                 <children>
-                                    <Button layoutX="79.0" layoutY="18.0" mnemonicParsing="false" onAction="#uncoverInvoiceInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FAKTURA" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="9.0">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="buttonShadow" />
-                                          <String fx:value="prominentDefaultButton" />
-                                       </styleClass>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5" />
-                              <AnchorPane prefHeight="54.0" prefWidth="600.0">
-                                 <children>
-                                    <Text layoutX="91.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj betalsätt" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                                 <children>
-                                    <Text fx:id="totalText1" layoutX="32.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="5.0">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </AnchorPane>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Välj betalsätt">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="totalText1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <Button mnemonicParsing="false" onAction="#hideInfo" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="VID LEVERANS" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="prominentDefaultButton" />
+                                 </styleClass>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#uncoverBankInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="DIREKTBETALNING" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="prominentDefaultButton" />
+                                 </styleClass>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FAKTURA" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="prominentDefaultButton" />
+                                 </styleClass>
+                              </Button>
                            </children>
                         </GridPane>
-                        <GridPane GridPane.columnIndex="2">
+                        <GridPane GridPane.columnIndex="5">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
@@ -457,7 +423,8 @@
                               <RowConstraints maxHeight="300.0" minHeight="300.0" prefHeight="300.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="300.0" minHeight="300.0" prefHeight="300.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="100.0" minHeight="100.0" percentHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="100.0" minHeight="100.0" percentHeight="20.0" prefHeight="100.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -503,6 +470,22 @@
                                           </GridPane>
                                        </children>
                                     </AnchorPane>
+                                    <AnchorPane fx:id="InvoiceCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfo" styleClass="prominentAbortButton2" stylesheets="@../resources/style.css" text="ANNAN FAKTURAADRESS" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="infoCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                     <AnchorPane fx:id="invoiceInfoWindow" layoutX="308.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <AnchorPane fx:id="invoiceInfoGrid" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -559,6 +542,7 @@
                                                                <children>
                                                                   <TextField fx:id="fNameField2" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
                                                                   <Label layoutX="14.0" layoutY="6.0" text="Förnamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                                                                  <Text layoutX="4.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annan Fakturaadress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="-5.0" />
                                                                </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -575,22 +559,6 @@
                                           </AnchorPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="InvoiceCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfo" styleClass="prominentAbortButton2" stylesheets="@../resources/style.css" text="ANNAN FAKTURAADRESS" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="infoCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="7.0" prefWidth="600.0" GridPane.rowIndex="1">
@@ -662,7 +630,7 @@
                                     </GridPane>
                                  </children>
                               </GridPane>
-                              <GridPane GridPane.rowIndex="3">
+                              <GridPane GridPane.rowIndex="4">
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -691,6 +659,7 @@
                                     </Button>
                                  </children>
                               </GridPane>
+                              <Separator prefWidth="200.0" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" />
@@ -725,6 +694,13 @@
                               </Button>
                            </children>
                         </GridPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                           <children>
+                              <Separator layoutX="147.0" layoutY="130.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -735,65 +711,55 @@
          <children>
             <GridPane layoutX="391.0" layoutY="249.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="596.0" minWidth="10.0" percentWidth="33.0" prefWidth="368.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="853.0" minWidth="10.0" prefWidth="832.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="596.0" minWidth="10.0" percentWidth="0.0" prefWidth="368.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="67.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                      <children>
                         <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" prefWidth="100.0" />
                            </columnConstraints>
                            <rowConstraints>
-                              <RowConstraints maxHeight="67.0" minHeight="67.0" prefHeight="67.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="345.0" minHeight="283.0" prefHeight="312.0" vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="136.0" minHeight="100.0" prefHeight="128.0" vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Text fx:id="welcomeMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="amountMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Text>
-                              <ImageView fitHeight="366.0" fitWidth="507.0" preserveRatio="true" GridPane.rowIndex="2">
+                              <ImageView fitHeight="477.0" fitWidth="820.0" preserveRatio="true" GridPane.valignment="BOTTOM">
                                  <image>
                                     <Image url="@../resources/iMatTruck.png" />
                                  </image>
                               </ImageView>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vi beräknar att leverera varorna hos dig" GridPane.rowIndex="3">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vi beräknar att leverera varorna hos dig" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="deliveryDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="DATUM" GridPane.rowIndex="4">
+                              <Text fx:id="deliveryDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="DATUM" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Text>
-                              <GridPane GridPane.rowIndex="5">
+                              <GridPane GridPane.rowIndex="4">
                                 <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="34.0" />
                                 </columnConstraints>
                                 <rowConstraints>
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Button fx:id="changeDeliveryButton" mnemonicParsing="false" onAction="#openDeliveryWindow" onMouseClicked="#openDeliveryWindow" prefHeight="70.0" prefWidth="290.0" stylesheets="@../resources/style.css" text="ÄNDRA LEVERANSTID" GridPane.columnIndex="1">
+                                    <Button fx:id="changeDeliveryButton" mnemonicParsing="false" onAction="#openDeliveryWindow" onMouseClicked="#openDeliveryWindow" prefHeight="70.0" prefWidth="290.0" stylesheets="@../resources/style.css" text="ÄNDRA LEVERANSTID" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                        <font>
                                           <Font size="36.0" />
                                        </font>
@@ -802,7 +768,7 @@
                                           <String fx:value="prominentDefaultButton" />
                                        </styleClass>
                                     </Button>
-                                    <Button mnemonicParsing="false" onAction="#openPayViewWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="NÄSTA STEG" GridPane.columnIndex="2">
+                                    <Button mnemonicParsing="false" onAction="#openPayViewWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="NÄSTA STEG" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                        <font>
                                           <Font size="36.0" />
                                        </font>
@@ -811,7 +777,7 @@
                                           <String fx:value="prominentDoneButton2" />
                                        </styleClass>
                                     </Button>
-                                    <Button fx:id="openMainWindow" mnemonicParsing="false" onAction="#openMainWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="TILLBAKA">
+                                    <Button fx:id="openMainWindow" mnemonicParsing="false" onAction="#openMainWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="TILLBAKA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                        <font>
                                           <Font size="36.0" />
                                        </font>
@@ -822,6 +788,7 @@
                                     </Button>
                                  </children>
                               </GridPane>
+                              <Separator prefWidth="200.0" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>
@@ -857,6 +824,11 @@
                         </Button>
                      </children>
                   </GridPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Separator layoutX="6.0" layoutY="78.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
                </children>
             </GridPane>
          </children>
@@ -866,25 +838,28 @@
             <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="594.0" minWidth="10.0" percentWidth="33.0" prefWidth="337.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="883.0" minWidth="10.0" prefWidth="863.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="594.0" minWidth="10.0" percentWidth="0.0" prefWidth="337.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="883.0" minWidth="10.0" percentWidth="67.0" prefWidth="863.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                      <children>
                         <GridPane layoutX="-30.0" layoutY="77.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
                            <rowConstraints>
-                              <RowConstraints vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="34.0" minHeight="34.0" prefHeight="34.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="74.0" minHeight="0.0" percentHeight="-0.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="-2.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="100.0" minHeight="0.0" percentHeight="5.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <GridPane GridPane.rowIndex="2">
+                              <GridPane GridPane.rowIndex="4">
                                  <columnConstraints>
                                     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -904,9 +879,9 @@
                                     </Button>
                                  </children>
                               </GridPane>
-                              <AnchorPane prefHeight="22.0" prefWidth="650.0" GridPane.rowIndex="1">
+                              <AnchorPane prefHeight="22.0" prefWidth="650.0" GridPane.rowIndex="3">
                                  <children>
-                                    <Text fx:id="totalText" layoutX="164.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="15.0">
+                                    <Text fx:id="totalText" layoutX="164.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="2.0">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
@@ -914,11 +889,32 @@
                                     <Separator layoutX="155.0" layoutY="31.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                  <children>
-                                    <FlowPane fx:id="cartPane" layoutX="144.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@../resources/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                                    <FlowPane fx:id="cartPane" layoutX="144.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@../resources/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Text fx:id="welcomeMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="amountMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </GridPane>
                            </children>
                         </GridPane>
                      </children>
@@ -956,6 +952,11 @@
                               </Button>
                            </children>
                         </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Separator layoutX="196.0" layoutY="119.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </children>
