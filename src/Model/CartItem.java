@@ -71,14 +71,6 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
         notifyAllObserversProductRemoved(product);
     }
 
-    public void updateCost() {
-
-    }
-
-    public void updateAmount() {
-
-    }
-
     @Override
     public void notifyAllObserversProductAdded(Product product) {
         for (AddProductObserver addProductObserver : observers) {

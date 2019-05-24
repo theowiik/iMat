@@ -34,7 +34,9 @@ public class CheckoutController implements ShoppingCartListener {
     public void updateCartItemArea() {
         checkout.cartPane.getChildren().clear();
         for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
-            checkout.cartPane.getChildren().add(new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount()));
+            CartItem cartItem = new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount());
+            checkout.cartPane.getChildren().add(cartItem);
+            cartItem.addObserver(backendController);
         }
     }
 

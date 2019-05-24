@@ -8,7 +8,7 @@ import se.chalmers.cse.dat216.project.*;
 
 import java.util.List;
 
-public class ShoppingCartController implements AddProductObserver, ShoppingCartListener{
+public class ShoppingCartController implements ShoppingCartListener{
 
     private BackendController backendController;
     public ShoppingCart1 shoppingCart1;
@@ -19,26 +19,11 @@ public class ShoppingCartController implements AddProductObserver, ShoppingCartL
     public ShoppingCartController() {
         this.backendController = BackendController.getInstance();
         this.shoppingCart1 = new ShoppingCart1();
-        for (ProductCard productCard : backendController.getProductCardMap().values()) {
-            productCard.addObserver(this);
-
-        }
+        BackendController.getInstance().getShoppingCart().addShoppingCartListener(this);
     }
 
     public ShoppingCart1 getShoppingCart1() {
         return shoppingCart1;
-    }
-
-    @Override
-    public void productAdded(Product product) {
-        updateCartItemArea();
-        updateTotCost();
-    }
-
-    @Override
-    public void productRemoved(Product product) {
-        updateCartItemArea();
-        updateTotCost();
     }
 
     public void updateCartItemArea() {
@@ -47,7 +32,6 @@ public class ShoppingCartController implements AddProductObserver, ShoppingCartL
         for(ShoppingItem shoppingItem: backendController.getShoppingCart().getItems()) {
             CartItem cartItem = new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount());
             cartItem.addObserver(backendController);
-            cartItem.addObserver(this);
 
             shoppingCart1.cartItemArea.getChildren().add(cartItem);
 
@@ -63,5 +47,7 @@ public class ShoppingCartController implements AddProductObserver, ShoppingCartL
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
+        updateCartItemArea();
+        updateTotCost();
     }
 }
