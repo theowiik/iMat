@@ -37,12 +37,11 @@ public class ShoppingCartController implements ShoppingCartListener{
                 shoppingCart1.cartItemArea.getChildren().add(cartItem);
 
                 shoppingCart1.scPane.vvalueProperty().setValue(shoppingCart1.scPane.getVmax());
-            if ((x & 1) == 0) {
 
-            } else {
+            if ((x++ % 2) == 1) {
                 cartItem.pane.setStyle("-fx-background-color: #DDDDDD");
             }
-            x++;
+
         }
     }
 
