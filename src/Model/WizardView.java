@@ -60,13 +60,13 @@ public class WizardView extends AnchorPane implements CustomComponent{
     }
 
     public void setFocus(int step) {
-        if (step > 1)
-            tmp.setStyle("-fx-font-size: 20 px;");
+        for (Label l : labels)
+            l.setStyle("-fx-font-size: 20 px;");
+
         if (step < 5){
             String path = "resources/step" + step + ".png";
             indicator.setImage(new Image(path));
             tmp = labels.get(step-1);
-            tmp.setStyle("-fx-text-fill: #7B2C1B");
             tmp.setStyle("-fx-font-size: 30 px;");
         }
 

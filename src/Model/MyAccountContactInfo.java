@@ -4,6 +4,7 @@ import Controller.BackendController;
 import Controller.MyAccountController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.AnchorPane;
@@ -37,34 +38,34 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
     public javafx.scene.control.TextField mail;
 
     @FXML
-    public RadioButton monday;
+    public CheckBox monday;
 
     @FXML
-    public RadioButton tuesday;
+    public CheckBox tuesday;
 
     @FXML
-    public RadioButton wednesday;
+    public CheckBox wednesday;
 
     @FXML
-    public RadioButton thursday;
+    public CheckBox thursday;
 
     @FXML
-    public RadioButton friday;
+    public CheckBox friday;
 
     @FXML
-    public RadioButton seven;
+    public CheckBox seven;
 
     @FXML
-    public RadioButton ten;
+    public CheckBox ten;
 
     @FXML
-    public RadioButton one;
+    public CheckBox one;
 
     @FXML
-    public RadioButton four;
+    public CheckBox four;
 
     @FXML
-    public RadioButton nineteen;
+    public CheckBox nineteen;
 
 
     @FXML
@@ -92,9 +93,11 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
 
     public MyAccountContactInfo() {
         setRoot();
+        save.setDisable(true);
         populateCurrent();
         msg.setText("");
         resetMsg();
+
     }
 
     private void populateCurrent() {
@@ -107,7 +110,13 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
         city.setText(c.getPostAddress());
         mail.setText(c.getEmail());
         telnumber.setText(c.getMobilePhoneNumber());
+
+        if (hasNoError())
+            save.setDisable(false);
+
     }
+
+
 
     private void resetMsg(){
         errName.setText("");
@@ -116,7 +125,6 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
         errPostalCity.setText("");
         errMail.setText("");
         errTelNumber.setText("");
-
     }
 
     @Override
@@ -132,8 +140,15 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
         }
     }
 
+    public void ButtonAble() {
+        if (hasNoError())
+            save.setDisable(false);
+        else
+            save.setDisable(true);
+    }
+
     private Boolean hasNoError() {
-        if(!name.getText().equals("") && !lastname.getText().equals("") && !address.getText().equals("") && !postalcode.getText().equals("") && !mail.getText().equals("") && !telnumber.getText().equals(""))
+        if(!name.getText().equals("") && !lastname.getText().equals("") && !address.getText().equals("") && !postalcode.getText().equals("") && !mail.getText().equals("") )
             return true;
 
         return false;
@@ -158,6 +173,7 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
         four.setSelected(false);
         nineteen.setSelected(false);
         resetMsg();
+        save.setDisable(true);
     }
 
     public void saveFieldsContact() {
