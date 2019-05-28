@@ -1,3 +1,4 @@
+import Controller.BackendController;
 import Controller.WindowResizeObservable;
 import Controller.WindowResizeObserver;
 import javafx.application.Application;
@@ -5,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,5 +54,10 @@ public class iMat extends Application implements WindowResizeObservable {
         for (WindowResizeObserver observer : observers) {
             observer.windowIsResized();
         }
+    }
+
+    @Override
+    public void stop(){
+        IMatDataHandler.getInstance().shutDown();
     }
 }
