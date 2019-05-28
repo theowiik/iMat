@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root maxHeight="-Infinity" minHeight="-Infinity" prefHeight="106.0" prefWidth="335.0" styleClass="categoryTab" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" minHeight="-Infinity" prefHeight="106.0" prefWidth="335.0" styleClass="categoryTab" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -17,7 +17,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-text" text="Text">
+            <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="categoryTabText" text="Text">
                <font>
                   <Font size="21.0" />
                </font>
