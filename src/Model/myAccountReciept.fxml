@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -10,9 +9,10 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<fx:root prefHeight="561.0" prefWidth="709.0" style="-fx-background-color: white;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="561.0" prefWidth="709.0" style="-fx-background-color: white;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane layoutX="-2.0" layoutY="-1.0" prefHeight="546.0" prefWidth="709.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -26,7 +26,7 @@
          <children>
             <ScrollPane fx:id="scrollReciepts" prefHeight="396.0" prefWidth="709.0" GridPane.rowIndex="2">
                <content>
-                  <Accordion fx:id="recieptAccordion" prefWidth="0.0" />
+                  <VBox fx:id="recieptAccordion" prefHeight="381.0" prefWidth="613.0" />
                </content>
             </ScrollPane>
             <AnchorPane GridPane.rowIndex="1">
