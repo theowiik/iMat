@@ -7,6 +7,7 @@ import javafx.scene.control.Accordion;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
@@ -26,7 +27,7 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     public ScrollPane scrollReciepts;
 
     @FXML
-    public Accordion recieptAccordion;
+    public VBox recieptAccordion;
 
     //public recieptItemTitled recieptItemTitled;
     public List<recieptItemTitled> reciepts = new ArrayList<>();
@@ -70,10 +71,10 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     private void spawnExamples(){
         TitledPane reciept = new recieptItemTitled("2019-05-10", "Emilia", 2.3);
         reciept.setAnimated(true);
-        recieptAccordion.getPanes().add(reciept);
+        recieptAccordion.getChildren().add(reciept);
         reciept = new recieptItemTitled("2019-05-12", "Emil", 433.23);
         reciept.setAnimated(true);
-        recieptAccordion.getPanes().add(reciept);
+        recieptAccordion.getChildren().add(reciept);
     }
 
     public void saveAsShoppingList(){
@@ -83,6 +84,7 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     public MyAccountReciept(List<Order> reciepts) {
         setRoot();
         //spawnReciepts(reciepts);
+        spawnExamples();
         scrollReciepts.setFitToWidth(true);
     }
 
@@ -134,17 +136,19 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
             for (int i = reciepts.size()-1 ; i > 0; i--){
                 tp = reciepts.get(i);
                 tp.setAnimated(true);
-                recieptAccordion.getPanes().add(tp);
+                recieptAccordion.getChildren().add(tp);
             }
         } else {
             tp = reciepts.get(0);
             tp.setAnimated(true);
-            recieptAccordion.getPanes().add(tp);
+            recieptAccordion.getChildren().add(tp);
         }
 
     }
 
     private void clearAccordion() {
-        recieptAccordion.getPanes().clear();
+        if (recieptAccordion.getChildren().size() > 0) {
+            recieptAccordion.getChildren().clear();
+        }
     }
 }
