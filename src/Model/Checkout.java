@@ -112,6 +112,10 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public AnchorPane finalWindow;
 
     @FXML
+    public AnchorPane indicatorArea;
+    public WizardView wizardView = new WizardView(1);
+
+    @FXML
     public FlowPane cartPane;
 
     private ArrayList<ConfirmedOrderObserver> observers = new ArrayList<>();
@@ -151,9 +155,14 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         orderNumberMessage.setText("Ordernummer: " + bc.getLastOrderNumber());
     }
 
+    public void spawnIndicator() {
+        indicatorArea.getChildren().add(wizardView);
+    }
+
     public Checkout(MyAccountReciept mar) {
         setRoot();
         addObserver(mar);
+        spawnIndicator();
     }
 
     @Override
@@ -181,21 +190,27 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public void closeDeliveryWindow() {
         this.deliveryViewWindow.toFront();
+        this.indicatorArea.toFront();
     }
 
     @FXML
     public void openMainWindow() {
         this.mainWindow.toFront();
+        this.indicatorArea.toFront();
+        wizardView.setFocus(1);
     }
 
     @FXML
     public void openDeliveryViewWindow() {
         this.deliveryViewWindow.toFront();
+        this.indicatorArea.toFront();
+        wizardView.setFocus(2);
     }
 
     @FXML
     public void acceptDelivery() {
         this.deliveryViewWindow.toFront();
+        this.indicatorArea.toFront();
         confirmDeliveryDate();
         setDeliveryDateText();
     }
@@ -213,10 +228,14 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public void openPayViewWindow() {
         this.payViewWindow.toFront();
+        this.indicatorArea.toFront();
+        wizardView.setFocus(3);
     }
 
     public void openFinalWindow() {
         finalWindow.toFront();
+        this.indicatorArea.toFront();
+        wizardView.setFocus(4);
     }
 
     @FXML

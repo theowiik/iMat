@@ -98,6 +98,10 @@
     -fx-font-size: 32px;
 }
 
+.largeText- {
+    -fx-font-size: 24px;
+}
+
 .transparentBackground {
     -fx-background-color:  rgba(0, 0, 0, 0.75);
 }
@@ -523,6 +527,16 @@
     -fx-font-size: 30px;
 }
 
+
+.wizard-text {
+    -fx-font-size: 30px;
+}
+
+.wizard-text:hover {
+    -fx-font-size: 35px;
+    -fx-cursor: hand;
+    -fx-text-fill: #7B2C1B;
+}
 
 .recieptItem {
     -fx-background-color: white;

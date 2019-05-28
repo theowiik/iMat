@@ -309,7 +309,7 @@ public class BackendController implements AddProductObserver {
         addToShoppingCart(product);
         for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
             db.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
-
+            break;
         }
     }
 
@@ -318,9 +318,10 @@ public class BackendController implements AddProductObserver {
         removeFromShoppingCart(product);
         for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
             db.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
-
+            break;
         }
     }
+
     
     public void placeOrder() {
         db.placeOrder(true);
