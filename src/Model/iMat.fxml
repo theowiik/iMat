@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
+<VBox prefHeight="713.0" prefWidth="888.0" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.iMatController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -283,7 +283,7 @@
                            </children>
                         </GridPane>
                      </children></AnchorPane>
-                  <AnchorPane fx:id="contentPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;" GridPane.rowIndex="1" />
+                  <AnchorPane fx:id="contentPane" style="-fx-background-color: gray;" GridPane.rowIndex="1" />
                </children>
             </GridPane>
       </children>
