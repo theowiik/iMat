@@ -2,6 +2,7 @@ package Model;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BackgroundImage;
 import sun.plugin.javascript.navig.Anchor;
@@ -14,8 +15,19 @@ public class Feature extends AnchorPane implements CustomComponent {
     @FXML
     public ImageView image;
 
+    @FXML
+    public Button getStartedButton;
+
     public Feature() {
         setRoot();
+    }
+
+    public void prominentDoneButtonPressed() {
+        System.out.println("klikked");
+    }
+
+    public Button getGetStartedButton() {
+        return getStartedButton;
     }
 
     @Override

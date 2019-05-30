@@ -59,15 +59,14 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
         if (showFeature) spawnFeature();
 
         // Categories
+        addSeparator();
         spawnTitledSection("Kategorier");
         List<Category> categories = new ArrayList<>();
-        for (Category category : rootCategories) {
-            categories.add(category);
-            categories.addAll(category.getAllSubCategories());
-        }
+        categories.addAll(rootCategories);
         spawnCategoryCardGrid(categories);
 
         // Products
+        addSeparator();
         spawnTitledSection("Produkter");
         List<AnchorPane> products = new ArrayList<>();
         for (Category category : rootCategories) {
@@ -78,6 +77,9 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
 
     private void spawnFeature() {
         Feature feature = new Feature();
+        feature.getGetStartedButton().setOnAction(event -> {
+            showAllProducts(false);
+        });
         cardVBox.getChildren().add(feature);
     }
 
@@ -137,6 +139,11 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
                     spawnCategoryCardGrid(subCategories);
 
                     // - Spawn product cards ---
+
+                    if (subCategories.size() != 0) {
+                        addSeparator();
+                    }
+
                     spawnTitledSection("Produkter inom " + category.getCategoryName().getPrettyName());
                     List<AnchorPane> anchorPanes = new ArrayList<>();
                     anchorPanes.addAll(category.getAllProductCards());
@@ -224,6 +231,12 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
         cardVBox.getChildren().add(cardGrid);
     }
 
+    public void addSeparator() {
+        AnchorPane separator = new AnchorPane();
+        separator.setPrefHeight(50);
+        cardVBox.getChildren().add(separator);
+    }
+
     /**
      * @return
      */
@@ -236,6 +249,7 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
      */
     public void spawnTitledSection(String title) {
         TitledSection titledSection = new TitledSection(title);
+//        addSeparator();
         cardVBox.getChildren().add(titledSection);
     }
 

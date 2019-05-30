@@ -33,6 +33,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public Text deliveryDateText;
     @FXML
+    public Text deliveryDateText2;
+    @FXML
     public Text orderNumberMessage;
     @FXML
     public Text deliveryMessage;
@@ -149,7 +151,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     public void setDeliveryDateText(){
         this.deliveryDateText.setText(deliveryDate);
-        System.out.println(deliveryDate);
+        this.deliveryDateText2.setText(deliveryDate);
     }
 
     public void setSelectedDeliveryDate(String s) {
@@ -274,48 +276,86 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     }
 
     @FXML
+    public void changeD1Class() {
+        d1.getStyleClass().remove(d1.getStyleClass().size()-1);
+        d1.getStyleClass().add("buttonSquare");
+    }
+
+    @FXML
     public void handled1() {
         setSelectedDeliveryDate(d1.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
     }
     @FXML
     public void handled2() {
         setSelectedDeliveryDate(d2.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled3() {
         setSelectedDeliveryDate(d3.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled4() {
         setSelectedDeliveryDate(d4.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled5() {
         setSelectedDeliveryDate(d5.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled6() {
         setSelectedDeliveryDate(d6.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled7() {
         setSelectedDeliveryDate(d7.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled8() {
         setSelectedDeliveryDate(d8.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled9() {
         setSelectedDeliveryDate(d9.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled10() {
         setSelectedDeliveryDate(d10.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
     @FXML
     public void handled11() {
         setSelectedDeliveryDate(d11.getText());
+        confirmDeliveryDate();
+        setDeliveryDateText();
+        changeD1Class();
     }
 
     public void confirmPurchase() {
