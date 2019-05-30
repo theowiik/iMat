@@ -74,7 +74,7 @@
                         <TextField fx:id="address" onKeyTyped="#ButtonAble" prefHeight="25.0" prefWidth="424.0" promptText="Ange din adress här" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label styleClass="small-text" text="Telefonnummer:" GridPane.rowIndex="5" />
                         <TextField fx:id="telnumber" onKeyTyped="#ButtonAble" prefHeight="25.0" prefWidth="424.0" promptText="Ange ditt telefonnummer här" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField fx:id="mail" onKeyTyped="#ButtonAble" prefHeight="25.0" prefWidth="424.0" promptText="Ange din mailadress här" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="mail" onInputMethodTextChanged="#ButtonAble" onKeyTyped="#ButtonAble" prefHeight="25.0" prefWidth="424.0" promptText="Ange din mailadress här" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label styleClass="small-text" text="E-postadress*:" GridPane.rowIndex="6" />
                         <Label styleClass="small-text" text="Jag brukar vara hemma:" GridPane.rowIndex="7" />
                         <Label styleClass="small-text" text="Dagar:" GridPane.rowIndex="8" />
@@ -89,7 +89,7 @@
                           </rowConstraints>
                            <children>
                               <Label styleClass="small-text" text="Tider:" GridPane.columnIndex="1" />
-                              <CheckBox fx:id="monday" mnemonicParsing="false" text="Måndag" />
+                              <CheckBox fx:id="monday" mnemonicParsing="false" prefHeight="30.0" prefWidth="129.0" text="Måndag" />
                               <CheckBox fx:id="seven" mnemonicParsing="false" text="7:00-10:00" GridPane.columnIndex="2" />
                            </children>
                         </GridPane>

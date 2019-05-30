@@ -117,7 +117,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
     }
 
     private void spawnHelp() {
-        help = new Help();
+        help = new Help(this);
         contentPane.getChildren().add(help);
     }
     /**
