@@ -41,7 +41,7 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="Välkommen till" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="iMat" GridPane.rowIndex="1" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Din matbutik i molnet&quot;" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" styleClass="prominentDoneButton" text="Börja Handla" GridPane.rowIndex="3" />
+                        <Button fx:id="getStartedButton" mnemonicParsing="false" onMousePressed="#prominentDoneButtonPressed" styleClass="prominentDoneButton" text="Börja Handla" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                </children>
