@@ -48,6 +48,10 @@ public class ProductBrowserController implements AddProductObserver {
         productBrowser.spawnCardGrid(cards);
     }
 
+    public void prominentDoneButtonPressed() {
+        showAllProducts();
+    }
+
 //    public void spawnCategoryCardGrid() {
 //        List<AnchorPane> cards = new ArrayList<>();
 //        cards.addAll(backendController.getCategoryCards());
