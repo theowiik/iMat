@@ -1,10 +1,7 @@
 package Controller;
 
-import Model.AddProductObserver;
+import Model.*;
 import Model.Categories.*;
-import Model.CategoryCard;
-import Model.ProductCard;
-import Model.ProductCardFactory;
 import javafx.scene.image.Image;
 import se.chalmers.cse.dat216.project.*;
 
@@ -86,8 +83,30 @@ public class BackendController implements AddProductObserver {
         List<Product> products = db.getProducts();
         for (Product product : products) {
             ProductCard productCard = ProductCardFactory.createProductCard(product, getProductImage(product));
+
+            double amount = getAmountInCart(product);
+            if (amount != 0) {
+                productCard.setAmount((int) amount);
+                productCard.setAmountText(amount);
+            }
+
             productCardMap.put(product.getName(), productCard);
         }
+    }
+
+    private boolean productIsInCart(Product product) {
+        ShoppingCart shoppingCart = db.getShoppingCart();
+
+        for (ShoppingItem shoppingItem : shoppingCart.getItems()) {
+            String productSimpleName = product.getClass().getSimpleName();
+            String cartSimpleName = shoppingItem.getProduct().getClass().getSimpleName();
+
+            if (productSimpleName.equals(cartSimpleName)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -144,6 +163,19 @@ public class BackendController implements AddProductObserver {
 
     public int getShoppingCartAmount() {
         return db.getShoppingCart().getItems().size();
+    }
+
+    public double getAmountInCart(Product product) {
+        for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
+            String productSimpleName = product.getName();
+            String cartSimpleName = shoppingItem.getProduct().getName();
+
+            if (productSimpleName.equals(cartSimpleName)) {
+                return shoppingItem.getAmount();
+            }
+        }
+
+        return 0;
     }
 
     public double getTotal() {
