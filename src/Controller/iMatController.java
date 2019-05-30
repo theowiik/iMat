@@ -1,7 +1,10 @@
 package Controller;
 
 import Model.*;
-import javafx.animation.*;
+import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.Transition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -57,6 +60,19 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
     private String activeColor = "#be5250";
     private String inActiveColor = "";
 
+    private String activeTabColor = "white";
+    private String inActiveTabColor = "#4a4a4a";
+
+    @FXML
+    public Text storeTitle;
+    @FXML
+    public Text myAccountTitle;
+    @FXML
+    public Text cartTitle;
+    @FXML
+    public Text checkoutTitle;
+
+
     @FXML
     public Text cartText;
 
@@ -65,7 +81,8 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
 
     /**
      * Initializes iMatController
-     * @param location location.
+     *
+     * @param location  location.
      * @param resources a resources file.
      */
     @Override
@@ -120,6 +137,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         help = new Help();
         contentPane.getChildren().add(help);
     }
+
     /**
      * Shows the shopping cart view
      */
@@ -218,6 +236,14 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         totalPrice.setVisible(true);
     }
 
+    public void logoPressed() {
+        storeActive(true);
+        storeToFront();
+        myAccountActive(false);
+        cartActive(false);
+        checkoutActive(false);
+    }
+
     /**
      * Calls all observers that the window has been resized.
      */
@@ -242,22 +268,30 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         String color = (state) ? activeColor : inActiveColor;
         storeButton.setStyle("-fx-background-color: " + color);
         productBrowserController.showAllProducts();
-//        storeButton.setStyle("-fx-text-fill: white");
+        setTextOnTabClick(storeTitle, state);
     }
 
-    public void cartActive(boolean state){
+    private void setTextOnTabClick(Text title, boolean state) {
+        String color = (state) ? activeTabColor : inActiveTabColor;
+        title.setStyle("-fx-fill: " + color + "; -fx-font-weight: bold");
+    }
+
+    public void cartActive(boolean state) {
         String color = (state) ? activeColor : inActiveColor;
         cartButton.setStyle("-fx-background-color: " + color);
+        setTextOnTabClick(cartTitle, state);
     }
 
     private void myAccountActive(boolean state) {
         String color = (state) ? activeColor : inActiveColor;
         myAccountButton.setStyle("-fx-background-color: " + color);
+        setTextOnTabClick(myAccountTitle, state);
     }
 
     private void checkoutActive(boolean state) {
         String color = (state) ? activeColor : inActiveColor;
         checkoutButton.setStyle("-fx-background-color: " + color);
+        setTextOnTabClick(checkoutTitle, state);
     }
 
     @Override
