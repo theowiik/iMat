@@ -44,7 +44,10 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
         this.product = product;
         this.amount = amountOfProd;
         this.cartAmountTxtField.setText(((int)amountOfProd + " " + product.getUnitSuffix()));
-        String s = String.format("%.2f", (product.getPrice() * amountOfProd));
+
+        double i = product.getPrice() * amountOfProd;
+        i = Math.ceil(i);
+        String s = String.format("%.0f", i);
         this.cartPrice.setText(s + " kr");
     }
 

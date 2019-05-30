@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -73,7 +74,7 @@
                         <TextField fx:id="address" onKeyTyped="#ButtonAble" prefHeight="25.0" prefWidth="424.0" promptText="Ange din adress här" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label styleClass="small-text" text="Telefonnummer:" GridPane.rowIndex="5" />
                         <TextField fx:id="telnumber" onKeyTyped="#ButtonAble" prefHeight="25.0" prefWidth="424.0" promptText="Ange ditt telefonnummer här" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField fx:id="mail" onKeyTyped="#ButtonAble" prefHeight="25.0" prefWidth="424.0" promptText="Ange din mailadress här" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="mail" onInputMethodTextChanged="#ButtonAble" onKeyTyped="#ButtonAble" prefHeight="25.0" prefWidth="424.0" promptText="Ange din mailadress här" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label styleClass="small-text" text="E-postadress*:" GridPane.rowIndex="6" />
                         <Label styleClass="small-text" text="Jag brukar vara hemma:" GridPane.rowIndex="7" />
                         <Label styleClass="small-text" text="Dagar:" GridPane.rowIndex="8" />
@@ -88,7 +89,7 @@
                           </rowConstraints>
                            <children>
                               <Label styleClass="small-text" text="Tider:" GridPane.columnIndex="1" />
-                              <CheckBox fx:id="monday" mnemonicParsing="false" text="Måndag" />
+                              <CheckBox fx:id="monday" mnemonicParsing="false" prefHeight="30.0" prefWidth="129.0" text="Måndag" />
                               <CheckBox fx:id="seven" mnemonicParsing="false" text="7:00-10:00" GridPane.columnIndex="2" />
                            </children>
                         </GridPane>
@@ -167,10 +168,13 @@
                         <Text fx:id="errPostalCity" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="same-page-err-msg" text="errPostalCity" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                         <Text fx:id="errTelNumber" fill="#ff0101" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="same-page-err-msg" text="errTelNumber" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                         <Text fx:id="errMail" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="same-page-err-msg" text="errmail" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small-text" text="*Obligatoriska fält" textAlignment="RIGHT" wrappingWidth="121.43604278564453" GridPane.columnIndex="2" GridPane.rowIndex="15">
+                        <Text strokeWidth="0.0" text="*Obligatoriska fält" textAlignment="RIGHT" wrappingWidth="605.1998138427734" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="15">
                            <font>
                               <Font size="10.0" />
                            </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
                         </Text>
                      </children>
                   </GridPane>

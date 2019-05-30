@@ -23,7 +23,7 @@
                   <ScrollPane fx:id="productViewMainScrollPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <ScrollPane fx:id="categoryScrollPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: purple;">
+            <ScrollPane fx:id="categoryScrollPane" prefHeight="200.0" prefWidth="200.0">
                <content>
                   <VBox fx:id="categoryVBox" style="-fx-background-color: blue;" />
                </content>

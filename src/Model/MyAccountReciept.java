@@ -27,7 +27,7 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     public ScrollPane scrollReciepts;
 
     @FXML
-    public VBox recieptAccordion;
+    public Accordion recieptAccordion;
 
     //public recieptItemTitled recieptItemTitled;
     public List<recieptItemTitled> reciepts = new ArrayList<>();
@@ -71,10 +71,10 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
     private void spawnExamples(){
         TitledPane reciept = new recieptItemTitled("2019-05-10", "Emilia", 2.3);
         reciept.setAnimated(true);
-        recieptAccordion.getChildren().add(reciept);
+        recieptAccordion.getPanes().add(reciept);
         reciept = new recieptItemTitled("2019-05-12", "Emil", 433.23);
         reciept.setAnimated(true);
-        recieptAccordion.getChildren().add(reciept);
+        recieptAccordion.getPanes().add(reciept);
     }
 
     public void saveAsShoppingList(){
@@ -136,19 +136,19 @@ public class MyAccountReciept extends AnchorPane implements CustomComponent, Con
             for (int i = reciepts.size()-1 ; i > 0; i--){
                 tp = reciepts.get(i);
                 tp.setAnimated(true);
-                recieptAccordion.getChildren().add(tp);
+                recieptAccordion.getPanes().add(tp);
             }
         } else {
             tp = reciepts.get(0);
             tp.setAnimated(true);
-            recieptAccordion.getChildren().add(tp);
+            recieptAccordion.getPanes().add(tp);
         }
 
     }
 
     private void clearAccordion() {
-        if (recieptAccordion.getChildren().size() > 0) {
-            recieptAccordion.getChildren().clear();
+        if (recieptAccordion.getPanes().size() > 0) {
+            recieptAccordion.getPanes().clear();
         }
     }
 }
