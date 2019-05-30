@@ -141,10 +141,32 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
     }
 
     public void ButtonAble() {
-        if (hasNoError())
+        if (hasNoError() && isRightFormatName() && isRightFormatMail())
             save.setDisable(false);
         else
             save.setDisable(true);
+    }
+
+    private boolean isRightFormatMail() {
+        if (!mail.getText().isEmpty() && (mail.getText().indexOf("@")>=1) && (mail.getText().indexOf(".") >= 2) ){
+            errMail.setText("");
+            return true;
+        }
+        else {
+            errMail.setText("Ange giltig mailadress");
+            return false;
+        }
+    }
+
+    private boolean isRightFormatName() {
+        if (!(name.getText().isEmpty()) && name.getText().length() < 12){
+            errName.setText("");
+            return true;
+        }
+        else {
+            errName.setText("Max 12 tecken");
+            return false;
+        }
     }
 
     private Boolean hasNoError() {
@@ -180,37 +202,20 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
         BackendController backendController = BackendController.getInstance();
         Customer c = backendController.getCustomer();
         resetMsg();
-        if (!(name.getText().isEmpty()))
+        if (!(name.getText().isEmpty()) && name.getText().length() < 12)
             c.setFirstName(name.getText());
-        else
-            errName.setText("Förnamn saknas");
-
-        if (!lastname.getText().isEmpty())
+        if (!lastname.getText().isEmpty() && lastname.getText().length() < 15)
             c.setLastName(lastname.getText());
-        else
-            errLastName.setText("Efternamn saknas");
-
         if (!address.getText().isEmpty())
             c.setAddress(address.getText());
-        else
-            errAddress.setText("Adress saknas");
-
-        if (!postalcode.getText().isEmpty() || !city.getText().isEmpty()) {
+         if (!postalcode.getText().isEmpty() || !city.getText().isEmpty()) {
             c.setPostCode(postalcode.getText());
             c.setPostAddress(city.getText());
         }
-        else
-            errPostalCity.setText("Postkod & stad saknas");
-
         if (!mail.getText().isEmpty())
             c.setEmail(mail.getText());
-        else
-            errMail.setText("Mail saknas");
-
         if (!telnumber.getText().isEmpty())
             c.setMobilePhoneNumber(telnumber.getText());
-        else
-            errTelNumber.setText("Telefonnummer saknas");
 
         if (hasNoError()){
 
