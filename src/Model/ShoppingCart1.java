@@ -1,5 +1,6 @@
 package Model;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -49,6 +50,10 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
     public void toCheckout(){
         notifyAllObservers();
         isInFront = !isInFront;
+    }
+
+    public void mouseTrap(Event event){
+        event.consume();
     }
 
     @Override

@@ -213,7 +213,10 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
     public void setAmountOfItemsInCart() {
         amountOfItemsInCart.setText(String.valueOf(backendController.getTotalAmountOfItems()));
         amountOfItemsInCart.setVisible(true);
-        String s = String.format("%.2f", backendController.getShoppingCart().getTotal());
+
+        double i = backendController.getShoppingCart().getTotal();
+        i = Math.ceil(i);
+        String s = String.format("%.0f", i);
         totalPrice.setText(s + " kr");
         totalPrice.setVisible(true);
     }

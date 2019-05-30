@@ -8,6 +8,8 @@ import se.chalmers.cse.dat216.project.*;
 
 import java.util.List;
 
+import static java.lang.Math.round;
+
 public class ShoppingCartController implements ShoppingCartListener{
 
     private BackendController backendController;
@@ -46,9 +48,11 @@ public class ShoppingCartController implements ShoppingCartListener{
     }
 
     public void updateTotCost(){
-        String s = String.format("%.2f", backendController.getShoppingCart().getTotal());
+        double i = backendController.getShoppingCart().getTotal();
+        i = Math.ceil(i);
+        String s = String.format("%.0f", i);
         shoppingCart1.totalCostLabel.setText(s + " kr");
-    }
+}
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {

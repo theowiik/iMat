@@ -135,7 +135,6 @@
 
 .greenButtonRound:hover {
     -fx-background-color: #4CAF50;
-    /* Green */
     -fx-text-fill: white;
     -fx-cursor: hand;
 }
