@@ -263,6 +263,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         String query = searchBar.getText();
         List<Product> products = backendController.search(query);
         productBrowserController.clearCardVBox();
+        storeToFront();
         productBrowserController.spawnTitledSection("Sökresultat för: " + query);
         productBrowserController.spawnProductCardGrid(products);
     }
