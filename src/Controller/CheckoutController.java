@@ -73,6 +73,7 @@ public class CheckoutController implements ShoppingCartListener {
     }
 
     private void setDefaultDate() {
+        checkout.d1.setStyle("fx-background-color: #4CAF50;");
         checkout.handled1();
         checkout.confirmDeliveryDate();
         checkout.setDeliveryDateText();

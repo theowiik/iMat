@@ -334,11 +334,11 @@
 }
 
 .buttonSquare:pressed {
-   -fx-background-color: #CCCCCC;
+   -fx-background-color: #4CAF50;
 }
 
 .buttonSquare:focused {
-   -fx-background-color: #CCCCCC;
+   -fx-background-color: #4CAF50;
 }
 
 .prominentDoneButton2 {
