@@ -1,18 +1,11 @@
 package Controller;
 
-import Model.AddProductObserver;
 import Model.CartItem;
 import Model.Checkout;
 import Model.MyAccountReciept;
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
 import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.ShoppingItem;
-
-import javax.swing.text.html.ImageView;
-
 
 public class CheckoutController implements ShoppingCartListener {
     private static BackendController backendController;
@@ -90,5 +83,4 @@ public class CheckoutController implements ShoppingCartListener {
         updateCartItemArea();
         setTotText();
     }
-
 }

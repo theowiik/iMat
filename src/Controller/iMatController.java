@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.*;
+import javafx.event.EventHandler;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
@@ -10,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -28,7 +30,7 @@ import java.util.ResourceBundle;
 /**
  * The main controller for the application window.
  */
-public class iMatController implements Initializable, WindowResizeObserver, Observer, AddProductObserver, ShoppingCartListener {
+public class iMatController implements Initializable, WindowResizeObserver, AddProductObserver, ShoppingCartListener {
     private static BackendController backendController;
 
     private ProductBrowserController productBrowserController;
@@ -95,7 +97,6 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         checkoutController = new CheckoutController(myAccountController.getMyAccount().getRecieptView());
 
         shoppingCartController = new ShoppingCartController();
-        shoppingCartController.getShoppingCart1().register(this);
 
         observeAllProductCards();
         backendController.db.getShoppingCart().addShoppingCartListener(this);
@@ -105,6 +106,8 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         spawnCheckout();
         spawnShoppingCart();
         spawnHelp();
+
+        eventHandlerMethod();
 
         storeToFront();
     }
@@ -263,6 +266,7 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         String query = searchBar.getText();
         List<Product> products = backendController.search(query);
         productBrowserController.clearCardVBox();
+        storeToFront();
         productBrowserController.spawnTitledSection("Sökresultat för: " + query);
         productBrowserController.spawnProductCardGrid(products);
     }
@@ -295,11 +299,6 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
         String color = (state) ? activeColor : inActiveColor;
         checkoutButton.setStyle("-fx-background-color: " + color);
         setTextOnTabClick(checkoutTitle, state);
-    }
-
-    @Override
-    public void FromShoppingCartToCheckout() {
-        checkoutToFront();
     }
 
     @Override
@@ -365,5 +364,65 @@ public class iMatController implements Initializable, WindowResizeObserver, Obse
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         setAmountOfItemsInCart();
+    }
+
+    private void eventHandlerMethod() {
+        checkoutController.getCheckout().buyMoreButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        storeToFront();
+                    }
+                });
+        checkoutController.getCheckout().buyMoreButton1.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        storeToFront();
+                    }
+                });
+        checkoutController.getCheckout().buyMoreButton2.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        storeToFront();
+                    }
+                });
+        checkoutController.getCheckout().buyMoreButton3.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        storeToFront();
+                    }
+                });
+        checkoutController.getCheckout().buyMoreButton4.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        storeToFront();
+                    }
+                });
+
+        shoppingCartController.shoppingCart1.toCheckoutButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        checkoutToFront();
+                    }
+                });
+        shoppingCartController.shoppingCart1.closeButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        shoppingCartToFront();
+                    }
+                });
+        shoppingCartController.shoppingCart1.closeShoppingCart.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        shoppingCartToFront();
+                    }
+                });
     }
 }

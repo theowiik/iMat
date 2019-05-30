@@ -3,15 +3,14 @@ package Model;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import java.io.IOException;
-import java.util.ArrayList;
 
-
-public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subject {
+public class ShoppingCart1 extends AnchorPane implements CustomComponent {
 
     @FXML
     public FlowPane cartItemArea;
@@ -22,11 +21,18 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
     @FXML
     public ScrollPane scPane;
 
-    private ArrayList<Observer> observers;
+    @FXML
+    public Button toCheckoutButton;
+
+    @FXML
+    public Button closeButton;
+
+    @FXML
+    public AnchorPane closeShoppingCart;
+
     public boolean isInFront = false;
 
     public ShoppingCart1() {
-        observers = new ArrayList<Observer>();
         setRoot();
     }
 
@@ -42,33 +48,7 @@ public class ShoppingCart1 extends AnchorPane implements CustomComponent, Subjec
         }
     }
 
-    public void closeShoppingCart() {
-        this.toBack();
-        isInFront = !isInFront;
-    }
-
-    public void toCheckout(){
-        notifyAllObservers();
-        isInFront = !isInFront;
-    }
-
     public void mouseTrap(Event event){
         event.consume();
-    }
-
-    @Override
-    public void register(Observer o) {
-        observers.add(o);
-    }
-
-    @Override
-    public void unregister(Observer o) {}
-
-
-    @Override
-    public void notifyAllObservers() {
-        for (Observer o : observers) {
-            o.FromShoppingCartToCheckout();
-        }
     }
 }

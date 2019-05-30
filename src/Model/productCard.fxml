@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="331.0" styleClass="productCard" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="331.0" styleClass="productCard" stylesheets="@../resources/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -115,7 +115,7 @@
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin></Text>
-                        <Text fx:id="priceAndUnit" strokeType="OUTSIDE" strokeWidth="0.0" text="??? kr/förp" textAlignment="RIGHT" wrappingWidth="105.7156286239624">
+                        <Text fx:id="priceAndUnit" strokeType="OUTSIDE" strokeWidth="0.0" text="??? kr/förp" textOrigin="CENTER" wrappingWidth="151.31560277938843">
                            <styleClass>
                               <String fx:value="medium-text" />
                               <String fx:value="productPrice" />
