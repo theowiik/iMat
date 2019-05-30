@@ -340,18 +340,32 @@
 
 .buttonSquare {
    -fx-background-color: #EEEEEE;
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 3, 3);
+   -fx-font-size: 26px;
 }
 
 .buttonSquare:hover {
    -fx-background-color: #DDDDDD;
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 3, 3);
+   -fx-font-size: 26px;
 }
 
 .buttonSquare:pressed {
    -fx-background-color: #4CAF50;
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 3, 3);
+   -fx-font-size: 26px;
 }
 
 .buttonSquare:focused {
    -fx-background-color: #4CAF50;
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 3, 3);
+   -fx-font-size: 26px;
+}
+
+.buttonSquared1 {
+   -fx-background-color: #4CAF50;
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 3, 3);
+   -fx-font-size: 26px;
 }
 
 .prominentDoneButton2 {
