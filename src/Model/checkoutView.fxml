@@ -313,8 +313,8 @@
                               <Image url="@../resources/iMatTruck.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" GridPane.rowIndex="4" />
-                        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                        <Button fx:id="saveAsShoppingList" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" GridPane.rowIndex="4" />
+                        <Button fx:id="buyMoreButton4" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
                      </children>
                   </GridPane>
                   <GridPane>
