@@ -953,9 +953,27 @@
                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                    </rowConstraints>
                                                    <children>
-                                                      <Button fx:id="d10" mnemonicParsing="false" onAction="#handled10" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="TORSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d11" mnemonicParsing="false" onAction="#handled11" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="TORSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d9" mnemonicParsing="false" onAction="#handled9" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="TORSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                      <Button fx:id="d10" mnemonicParsing="false" onAction="#handled10" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d11" mnemonicParsing="false" onAction="#handled11" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d9" mnemonicParsing="false" onAction="#handled9" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
                                                    </children>
                                                 </GridPane>
                                                 <GridPane GridPane.rowIndex="2">
@@ -1047,14 +1065,61 @@
                                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                    </rowConstraints>
                                                    <children>
-                                                      <Button fx:id="d2" mnemonicParsing="false" onAction="#handled2" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="TISDAG  16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d3" mnemonicParsing="false" onAction="#handled3" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="TISDAG  18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d4" mnemonicParsing="false" onAction="#handled4" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="ONSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d5" mnemonicParsing="false" onAction="#handled5" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="ONSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d6" mnemonicParsing="false" onAction="#handled6" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="ONSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d7" mnemonicParsing="false" onAction="#handled7" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="ONSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d8" mnemonicParsing="false" onAction="#handled8" prefHeight="150.0" prefWidth="160.0" styleClass="buttonSquare" stylesheets="@../resources/style.css" text="TORSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Button fx:id="d1" mnemonicParsing="false" onAction="#handled1" prefHeight="150.0" prefWidth="160.0" style="-fx-background-color: #4CAF50;" styleClass="buttonSquared1" stylesheets="@../resources/style.css" text="TISDAG  14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                      <Button fx:id="d2" mnemonicParsing="false" onAction="#handled2" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG  16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d3" mnemonicParsing="false" onAction="#handled3" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG  18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d4" mnemonicParsing="false" onAction="#handled4" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d5" mnemonicParsing="false" onAction="#handled5" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d6" mnemonicParsing="false" onAction="#handled6" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d7" mnemonicParsing="false" onAction="#handled7" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d8" mnemonicParsing="false" onAction="#handled8" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="d1" mnemonicParsing="false" onAction="#handled1" prefHeight="150.0" prefWidth="160.0" style="-fx-background-color: #4CAF50;" stylesheets="@../resources/style.css" text="TISDAG  14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                         </styleClass>
+                                                      </Button>
                                                    </children>
                                                 </GridPane>
                                                 <GridPane GridPane.rowIndex="2">
