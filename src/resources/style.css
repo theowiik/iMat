@@ -135,7 +135,6 @@
 
 .greenButtonRound:hover {
     -fx-background-color: #4CAF50;
-    /* Green */
     -fx-text-fill: white;
     -fx-cursor: hand;
 }
@@ -287,6 +286,12 @@
     -fx-background-radius: 4;
 }
 
+.feature {
+    -fx-background-color: rgba(255, 255, 255, .7);
+    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+    -fx-background-radius: 4;
+}
+
 .square-button {
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
@@ -342,11 +347,11 @@
 }
 
 .buttonSquare:pressed {
-   -fx-background-color: #CCCCCC;
+   -fx-background-color: #4CAF50;
 }
 
 .buttonSquare:focused {
-   -fx-background-color: #CCCCCC;
+   -fx-background-color: #4CAF50;
 }
 
 .prominentDoneButton2 {

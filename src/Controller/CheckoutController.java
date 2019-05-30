@@ -50,12 +50,18 @@ public class CheckoutController implements ShoppingCartListener {
     public void updateView() {
         checkout.setWelcomeMessage("Var det bra så, " + getFirstName() + "?");
         checkout.setAmountMessage("Din kundvagn innehåller " + backendController.getShoppingCartAmount() + " varor.");
-        checkout.setTotalText("TOTALT: " + getTotal() + "kr");
+        setTotText();
         checkout.populateCurrent();
         updateCartItemArea();
         //updateFinalWindow();
     }
 
+    public void setTotText() {
+        double i = getTotal();
+        i = Math.ceil(i);
+        String s = String.format("%.0f", i);
+        checkout.setTotalText("TOTALT: " + s + "kr");
+    }
 /*    public void updateFinalWindow() {
         checkout.updateFinalWindow();
     }*/
@@ -73,6 +79,7 @@ public class CheckoutController implements ShoppingCartListener {
     }
 
     private void setDefaultDate() {
+        checkout.d1.setStyle("fx-background-color: #4CAF50;");
         checkout.handled1();
         checkout.confirmDeliveryDate();
         checkout.setDeliveryDateText();
@@ -81,6 +88,7 @@ public class CheckoutController implements ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         updateCartItemArea();
+        setTotText();
     }
 
 }

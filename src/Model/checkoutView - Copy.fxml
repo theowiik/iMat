@@ -870,6 +870,7 @@
             </GridPane>
          </children>
       </AnchorPane>
+<<<<<<< HEAD
       <AnchorPane fx:id="deliveryViewWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <GridPane layoutX="391.0" layoutY="249.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -1224,5 +1225,7 @@
             </GridPane>
          </children>
       </AnchorPane>
+=======
+>>>>>>> 1e189ab70d8254879a648f6ce3342387f7985da9
    </children>
 </fx:root>
