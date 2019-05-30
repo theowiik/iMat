@@ -207,9 +207,15 @@
     -fx-font-size: 26px;
 }
 
+.titledSection {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-fill: #4a4a4a;
+}
+
 .categoryCard {
     -fx-background-color: white;
-    -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, #8c8c8c, 10, 0, 0, 0);
     -fx-background-radius: 5;
 }
 
@@ -232,6 +238,7 @@
 .navbarTile:hover {
     -fx-background-color: #be5250;
     -fx-cursor: hand;
+    -fx-fill: white;
 }
 
 .navbarTitle {
@@ -263,6 +270,7 @@
 }
 
 #headerLogo {
+    -fx-cursor: hand;
 }
 
 .CircleWithAmountInImatHeader {
@@ -278,7 +286,7 @@
     -fx-background-radius: 4;
 }
 
-.feature {
+.featureCard {
     -fx-background-color: rgba(255, 255, 255, .7);
     -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
     -fx-background-radius: 4;
@@ -569,7 +577,6 @@
 
 .categoryTab {
     -fx-background-color: white;
-    -fx-font-size: 30px;
 }
 
 .categoryTab:hover {
@@ -595,16 +602,11 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 3, 3);
 }
 
-.feature {
-    /*-fx-background-color: pink;*/
-    -fx-background-image: url('resources/feature.png');
-}
-
 .pane {
     -fx-border-color: black;
 }
 
 .categoryTabText {
-    -fx-font-size: 35px;
-    -fx-font-weight: normal;
+    -fx-font-size: 34px;
+    -fx-font-weight: regular;
 }
