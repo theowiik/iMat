@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root onMouseClicked="#closeShoppingCart" pickOnBounds="false" prefHeight="491.0" prefWidth="640.0" style="-fx-background-color: rgba(0, 0, 0, 0.4);" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="closeShoppingCart" pickOnBounds="false" prefHeight="491.0" prefWidth="640.0" style="-fx-background-color: rgba(0, 0, 0, 0.4);" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
    <children>
       <GridPane pickOnBounds="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -52,7 +52,7 @@
                         </ScrollPane>
                         <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="620.0" GridPane.rowIndex="2">
                            <children>
-                              <Button mnemonicParsing="false" onMouseClicked="#closeShoppingCart" prefHeight="48.0" prefWidth="130.0" styleClass="prominentAbortButton" text="Stäng">
+                              <Button fx:id="closeButton" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" styleClass="prominentAbortButton" text="Stäng">
                                  <HBox.margin>
                                     <Insets bottom="3.0" left="20.0" />
                                  </HBox.margin>
@@ -67,7 +67,7 @@
                                     <Insets right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <Button mnemonicParsing="false" onMouseClicked="#toCheckout" prefHeight="48.0" prefWidth="126.0" styleClass="prominentDoneButton" text="Till kassan">
+                              <Button fx:id="toCheckoutButton" mnemonicParsing="false" prefHeight="48.0" prefWidth="126.0" styleClass="prominentDoneButton" text="Till kassan">
                                  <HBox.margin>
                                     <Insets bottom="3.0" />
                                  </HBox.margin>
