@@ -90,15 +90,15 @@
                         <RowConstraints maxHeight="103.33331807454425" minHeight="10.0" prefHeight="35.666646321614564" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label styleClass="small-text" text="Namn:" GridPane.columnIndex="1" />
-                        <Label styleClass="small-text" text="Mailadress:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label styleClass="small-text" text="Ämne:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label styleClass="small-text" text="Meddelande:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="nameInput" GridPane.columnIndex="2" />
-                        <TextField fx:id="mailInput" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <TextArea fx:id="message" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                        <TextField fx:id="subject" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" onMouseClicked="#send" styleClass="prominentDoneButton" text="SKICKA" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label styleClass="small-text" text="Namn*:" GridPane.columnIndex="1" />
+                        <Label styleClass="small-text" text="Mailadress*:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label styleClass="small-text" text="Ämne*:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label styleClass="small-text" text="Meddelande*:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="nameInput" onInputMethodTextChanged="#ButtonAble" onKeyTyped="#ButtonAble" GridPane.columnIndex="2" />
+                        <TextField fx:id="mailInput" onInputMethodTextChanged="#ButtonAble" onKeyTyped="#ButtonAble" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextArea fx:id="message" onInputMethodTextChanged="#ButtonAble" onKeyTyped="#ButtonAble" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField fx:id="subject" onInputMethodTextChanged="#ButtonAble" onKeyTyped="#ButtonAble" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Button fx:id="sendBtn" mnemonicParsing="false" onMouseClicked="#send" styleClass="prominentDoneButton" text="SKICKA" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                         <Text fx:id="msg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="same-page-msg" text="Ditt meddelande har skickats! " GridPane.columnIndex="2" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
@@ -138,7 +138,7 @@
                         <Font name="Lato Regular" size="21.0" />
                      </font>
                   </Text>
-                  <Button mnemonicParsing="false" styleClass="prominentAbortButton" text="&lt; TILLBAKA" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" onMouseClicked="#sendHelpToBack" styleClass="prominentAbortButton" text="&lt; TILLBAKA" GridPane.columnIndex="1" />
                </children>
             </GridPane>
          </children>
