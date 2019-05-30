@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -869,7 +870,11 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                  <children>
-                                    <FlowPane fx:id="cartPane" layoutX="144.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@../resources/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0" />
+                                    <ScrollPane layoutX="184.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <FlowPane fx:id="cartPane" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@../resources/style.css" />
+                                       </content>
+                                    </ScrollPane>
                                  </children>
                               </AnchorPane>
                               <GridPane>
