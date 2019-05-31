@@ -293,8 +293,13 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     @FXML
     public void uncoverBankInfoWindow() {
+/*        updateButton(bankButton, true);
+        updateButton(nextButton, false);
+        updateButton(last, false);*/
         this.bankInfoWindow.toFront();
     }
+
+
 
     @FXML
     public void uncoverInvoiceInfo() {
