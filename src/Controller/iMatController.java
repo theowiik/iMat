@@ -1,11 +1,11 @@
 package Controller;
 
 import Model.*;
-import javafx.event.EventHandler;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.Transition;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -153,14 +153,21 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     /**
      * Brings the store view to the front.
      */
-    public void storeToFront() {
+    public void storeToFront(boolean showStartPage) {
         System.out.println("Bringing store view to front...");
         shoppingCartController.getShoppingCart1().isInFront = false;
         productBrowserController.getProductBrowser().toFront();
+        if (showStartPage) {
+            productBrowserController.showAllProducts();
+        }
         storeActive(true);
         checkoutActive(false);
         myAccountActive(false);
         cartActive(shoppingCartController.getShoppingCart1().isInFront);
+    }
+
+    public void storeToFront() {
+        storeToFront(false);
     }
 
     /**
@@ -261,7 +268,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
 
     public void logoPressed() {
         storeActive(true);
-        storeToFront();
+        storeToFront(true);
         myAccountActive(false);
         cartActive(false);
         checkoutActive(false);
@@ -284,19 +291,28 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
         List<Product> products = backendController.search(query);
         productBrowserController.clearCardVBox();
         storeToFront();
-        productBrowserController.spawnTitledSection("Sökresultat för: " + query);
-        productBrowserController.spawnProductCardGrid(products);
+        if (products.isEmpty()) {
+            productBrowserController.spawnTitledSection("Ajdå!");
+            productBrowserController.spawnText("Tyvär hittade vi inget med namnet: " + query);
+            productBrowserController.spawnText("Du kan pröva söka på något annat eller bläddra bland alla våra produkter genom att trycka på knappen nedan.");
+        } else {
+            productBrowserController.spawnTitledSection("Sökresultat för: " + query);
+            productBrowserController.spawnProductCardGrid(products);
+        }
+
+        productBrowserController.spawnShowAllProductsButton();
     }
 
     private void storeActive(boolean state) {
         String color = (state) ? moduleTabColorActive : moduleTabColorInactive;
         storeButton.setStyle("-fx-background-color: " + color);
-        productBrowserController.showAllProducts();
+//        productBrowserController.showAllProducts();
         setTextOnTabClick(storeTitle, state, storeButton);
     }
 
     /**
      * Adds styling module tabs text when it is clicked.
+     *
      * @param title
      * @param active
      * @param moduleTab
