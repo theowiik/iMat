@@ -84,6 +84,7 @@ public class BackendController implements AddProductObserver {
 
         availableCategories.add(CategoryName.SNACKS);
         categories.add(new Snacks());
+
     }
 
     public Map<String, ProductCard> getProductCardMap() {
