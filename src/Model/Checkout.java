@@ -4,7 +4,9 @@ import Controller.BackendController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -140,6 +142,10 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public AnchorPane finalWindow;
 
+    @FXML
+    public Label nameLabel;
+    @FXML
+    public Label lastNameLabel;
 
     @FXML
     public AnchorPane indicatorArea;
@@ -197,15 +203,96 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     }
 
-    public Boolean hasNoEmptyFields() {
-        if (fNameField.getText().isEmpty() || lNameField.getText().isEmpty() || addressField.getText().isEmpty() ||
-        codeField.getText().isEmpty() || cityField.getText().isEmpty() || bankField.getText().isEmpty() ||
-        cardField.getText().isEmpty() || cardField1.getText().isEmpty() || cardField2.getText().isEmpty() ||
-        cardField3.getText().isEmpty() || monthYear.getText().isEmpty() || cvc.getText().isEmpty())
-            return false;
+    private Boolean hasNoEmptyFields() {
 
-        else
+        /*
+                if (fNameField.getText().isEmpty() && lNameField.getText().isEmpty() && addressField.getText().isEmpty() &&
+        codeField.getText().isEmpty() && cityField.getText().isEmpty() && bankField.getText().isEmpty() &&
+        cardField.getText().isEmpty() && cardField1.getText().isEmpty() && cardField2.getText().isEmpty() &&
+        cardField3.getText().isEmpty() && monthYear.getText().isEmpty() && cvc.getText().isEmpty()){
             return true;
+        }
+         */
+        if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
+                checkFormatCity() && checkFormatBank() && checkFormatCard()){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+    private Boolean checkFormatName() {
+        if (!(fNameField.getText().isEmpty())){
+            if (fNameField.getText().length() > 12) {
+                nameLabel.setText("Förnamn (Max 12 tecken)");
+                nameLabel.setStyle("-fx-text-fill: red");
+                fNameField.setStyle("-fx-border-color: red");
+                return false;
+            }
+            nameLabel.setText("Förnamn");
+            nameLabel.setStyle("-fx-text-fill: black");
+            fNameField.setStyle("-fx-border-color: grey");
+            return true;
+        }
+        else {
+            fNameField.setTooltip(new Tooltip("Ange förnamn, max 12 tecken"));
+
+            return false;
+        }
+    }
+    private Boolean checkFormatLastName() {
+        if (!(lNameField.getText().isEmpty())){
+            return true;
+        }else {
+            lNameField.setTooltip(new Tooltip("Ange efternamn, max 15 tecken"));
+            return false;
+        }
+    }
+
+    private Boolean checkFormatAddress() {
+        if (!(addressField.getText().isEmpty())){
+            return true;
+        }else {
+            addressField.setTooltip(new Tooltip("Ange din adress"));
+            return false;
+        }
+    }
+
+    private Boolean checkFormatCode() {
+        if (!(codeField.getText().isEmpty())){
+            return true;
+        }else {
+            codeField.setTooltip(new Tooltip("Ange din postkod"));
+            return false;
+        }
+    }
+
+    private Boolean checkFormatCity() {
+        if (!(cityField.getText().isEmpty())){
+            return true;
+        }else {
+            cityField.setTooltip(new Tooltip("Ange din ort"));
+            return false;
+        }
+    }
+
+    private Boolean checkFormatBank() {
+        if (!(bankField.getText().isEmpty())){
+            return true;
+        }else {
+            bankField.setTooltip(new Tooltip("Ange din bank"));
+            return false;
+        }
+    }
+
+    private Boolean checkFormatCard() {
+        if (!(cardField.getText().isEmpty()) && !(cardField1.getText().isEmpty()) && !(cardField2.getText().isEmpty()) &&
+                !(cardField3.getText().isEmpty())){
+            return true;
+        }else {
+            cardField.setTooltip(new Tooltip("Ange ditt kortnummer"));
+            return false;
+        }
     }
 
     public Checkout(MyAccountReciept mar) {
@@ -279,6 +366,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         this.payViewWindow.toFront();
         this.indicatorArea.toFront();
         wizardView.setFocus(3);
+        paybtn.setDisable(true);
     }
 
     public void openFinalWindow() {

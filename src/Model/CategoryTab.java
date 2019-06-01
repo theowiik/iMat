@@ -4,6 +4,7 @@ import Controller.CategoryName;
 import Model.Categories.Category;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
@@ -21,6 +22,8 @@ public class CategoryTab extends AnchorPane implements CustomComponent {
         this.title.setText(category.getCategoryName().getPrettyName());
         this.categoryName = category.getCategoryName();
         this.category = category;
+        Tooltip tooltip = new Tooltip("Visa produkter inom " + categoryName.getPrettyName().toLowerCase() + ".");
+        Tooltip.install(this, tooltip);
     }
 
     public boolean hasCategory(CategoryName categoryName) {
