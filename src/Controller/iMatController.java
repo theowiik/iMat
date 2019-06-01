@@ -240,7 +240,9 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     }
 
     public void setAmountOfItemsInCart() {
-        amountOfItemsInCart.setText(String.valueOf(backendController.getTotalAmountOfItems()));
+        String text = "  " + backendController.getTotalAmountOfItems() + "  ";
+
+        amountOfItemsInCart.setText(text);
         amountOfItemsInCart.setVisible(true);
 
         makeLabelRound(amountOfItemsInCart);
