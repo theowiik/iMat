@@ -5,6 +5,7 @@ import Model.Categories.Category;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -107,6 +108,10 @@ public class ProductBrowser extends AnchorPane implements CustomComponent {
         categories.add(rootCategory);
         categories.addAll(rootCategory.getAllSubCategories());
         return categories;
+    }
+
+    public void addNode(Node node) {
+        cardVBox.getChildren().add(node);
     }
 
     /**

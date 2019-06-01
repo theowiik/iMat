@@ -2,7 +2,9 @@ package Controller;
 
 import Model.*;
 import Model.Categories.Category;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 
 import java.util.ArrayList;
@@ -103,6 +105,21 @@ public class ProductBrowserController implements AddProductObserver {
         int cols = productBrowser.getRecommendedAmountOfColumns(cardSize, availableWidth);
         productBrowser.updateGaps(cols);
         System.out.println(cols);
+    }
+
+    public void spawnShowAllProductsButton() {
+        Button button = new Button();
+        button.setText("Visa alla produkter");
+        button.setOnAction(e -> {
+            showAllProducts();
+        });
+        productBrowser.addNode(button);
+    }
+
+    public void spawnText(String text) {
+        Text text1 = new Text();
+        text1.setText(text);
+        productBrowser.addNode(text1);
     }
 
     /**
