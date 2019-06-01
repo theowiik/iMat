@@ -40,6 +40,10 @@ public class CheckoutController implements ShoppingCartListener {
         }
     }
 
+    public void responsiveEnabling(){
+        checkout.responsiveEnabling();
+    }
+
     public void updateView() {
         checkout.setWelcomeMessage("Var det bra så, " + getFirstName() + "?");
         checkout.setAmountMessage("Din kundvagn innehåller " + backendController.getShoppingCartAmount() + " varor.");
