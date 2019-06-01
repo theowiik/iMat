@@ -59,11 +59,11 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     @FXML
     public Label amountOfItemsInCart;
 
-    private String activeColor = "#be5250";
-    private String inActiveColor = "";
+    private String moduleTabColorActive = "#be5250";
+    private String moduleTabColorInactive = "";
 
-    private String activeTabColor = "white";
-    private String inActiveTabColor = "#4a4a4a";
+    private String moduleTabTextActive = "white";
+    private String moduleTabTextInactive = "#4a4a4a";
 
     @FXML
     public Text storeTitle;
@@ -235,11 +235,27 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
         amountOfItemsInCart.setText(String.valueOf(backendController.getTotalAmountOfItems()));
         amountOfItemsInCart.setVisible(true);
 
+        makeLabelRound(amountOfItemsInCart);
+
         double i = backendController.getShoppingCart().getTotal();
         i = Math.ceil(i);
         String s = String.format("%.0f", i);
         totalPrice.setText(s + " kr");
         totalPrice.setVisible(true);
+    }
+
+    private void makeLabelRound(Label amountOfItemsInCart) {
+        double width = amountOfItemsInCart.getPrefWidth();
+        double height = amountOfItemsInCart.getPrefHeight();
+        if (width > height) {
+            amountOfItemsInCart.setPrefHeight(width);
+            amountOfItemsInCart.setMaxHeight(width);
+            amountOfItemsInCart.setMinHeight(width);
+        } else {
+            amountOfItemsInCart.setPrefWidth(height);
+            amountOfItemsInCart.setMaxWidth(height);
+            amountOfItemsInCart.setMinWidth(height);
+        }
     }
 
     public void logoPressed() {
@@ -272,33 +288,62 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     }
 
     private void storeActive(boolean state) {
-        String color = (state) ? activeColor : inActiveColor;
+        String color = (state) ? moduleTabColorActive : moduleTabColorInactive;
         storeButton.setStyle("-fx-background-color: " + color);
         productBrowserController.showAllProducts();
-        setTextOnTabClick(storeTitle, state);
+        setTextOnTabClick(storeTitle, state, storeButton);
     }
 
-    private void setTextOnTabClick(Text title, boolean state) {
-        String color = (state) ? activeTabColor : inActiveTabColor;
-        title.setStyle("-fx-fill: " + color + "; -fx-font-weight: bold");
+    /**
+     * Adds styling module tabs text when it is clicked.
+     * @param title
+     * @param active
+     * @param moduleTab
+     */
+    private void setTextOnTabClick(Text title, boolean active, AnchorPane moduleTab) {
+        String color = (active) ? moduleTabTextActive : moduleTabTextInactive;
+        String staticStyling = "-fx-fill: " + color + "; -fx-font-weight: bold;";
+        String moduleTabTextActiveStyling = "-fx-fill: " + "white" + "; -fx-font-weight: bold;";
+        String moduleTabTextInactiveStyling = "-fx-fill: " + "#4a4a4a" + "; -fx-font-weight: bold;";
+
+        // Static styling
+        title.setStyle(staticStyling);
+
+        // Coloring when hovering
+        moduleTab.setOnMouseEntered(e -> {
+            title.setStyle(moduleTabTextActiveStyling);
+            System.out.println("entered hover");
+        });
+
+        // "Normal styling" when its not active
+        if (!active) {
+            moduleTab.setOnMouseExited(e -> {
+                title.setStyle(moduleTabTextInactiveStyling);
+                System.out.println("exited hover");
+            });
+        } else {
+            moduleTab.setOnMouseExited(e -> {
+                title.setStyle(staticStyling);
+            });
+        }
     }
 
     public void cartActive(boolean state) {
-        String color = (state) ? activeColor : inActiveColor;
+        String color = (state) ? moduleTabColorActive : moduleTabColorInactive;
         cartButton.setStyle("-fx-background-color: " + color);
-        setTextOnTabClick(cartTitle, state);
+        setTextOnTabClick(cartTitle, state, cartButton);
     }
 
     private void myAccountActive(boolean state) {
-        String color = (state) ? activeColor : inActiveColor;
+        String color = (state) ? moduleTabColorActive : moduleTabColorInactive;
         myAccountButton.setStyle("-fx-background-color: " + color);
-        setTextOnTabClick(myAccountTitle, state);
+        setTextOnTabClick(myAccountTitle, state, myAccountButton);
     }
 
     private void checkoutActive(boolean state) {
-        String color = (state) ? activeColor : inActiveColor;
+        String color = (state) ? moduleTabColorActive : moduleTabColorInactive;
         checkoutButton.setStyle("-fx-background-color: " + color);
-        setTextOnTabClick(checkoutTitle, state);
+        setTextOnTabClick(checkoutTitle, state, checkoutButton);
     }
 
     @Override

@@ -174,7 +174,7 @@
                                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                   </rowConstraints>
                                                    <children>
-                                                      <Label fx:id="amountOfItemsInCart" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 50px 50px 50px 50px; -fx-background-color: red; -fx-text-fill: white;" styleClass="small-text" text="??" visible="false">
+                                                      <Label fx:id="amountOfItemsInCart" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-radius: 50px 50px 50px 50px; -fx-background-color: red; -fx-text-fill: white;" styleClass="small-text" text="lorem" visible="false">
                                                          <font>
                                                             <Font size="8.0" />
                                                          </font>
