@@ -582,6 +582,7 @@
 .categoryTab:hover {
     -fx-background-color: #FFBEBD;
     -fx-font-size: 50px;
+    -fx-cursor: hand;
 }
 
 .backButton {
