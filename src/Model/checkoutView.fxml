@@ -160,7 +160,7 @@
                                                             <String fx:value="prominentDefaultButton" />
                                                          </styleClass>
                                                          <tooltip>
-                                                            <Tooltip text="Klicka förr att se tidigare leveranstider" />
+                                                            <Tooltip text="Se tidigare leveranstider" />
                                                          </tooltip>
                                                       </Button>
                                                       <Button fx:id="confirmDeliveryButton1" disable="true" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="Se senare leveranstider" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -336,7 +336,7 @@
                                                             <String fx:value="prominentDefaultButton" />
                                                          </styleClass>
                                                          <tooltip>
-                                                            <Tooltip text="Gå tillbaka till färegående steg" />
+                                                            <Tooltip text="Se tidigare leveranstider" />
                                                          </tooltip>
                                                       </Button>
                                                       <Button fx:id="confirmDeliveryButton" mnemonicParsing="false" onAction="#nextDateView1" prefHeight="60.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="SENARE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -348,7 +348,7 @@
                                                             <String fx:value="prominentDefaultButton" />
                                                          </styleClass>
                                                          <tooltip>
-                                                            <Tooltip text="Gå till nästa steg" />
+                                                            <Tooltip text="Se senare leveranstider" />
                                                          </tooltip>
                                                       </Button>
                                                       <GridPane GridPane.columnIndex="1">
@@ -475,7 +475,7 @@
                         </ImageView>
                         <Button fx:id="sparaSomInköpslista" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" GridPane.rowIndex="4">
                            <tooltip>
-                              <Tooltip text="Sparar ditt köp som en inkpslista" />
+                              <Tooltip text="Sparar ditt köp som en inköpslista" />
                            </tooltip></Button>
                         <Button fx:id="buyMoreButton4" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" GridPane.rowIndex="5" GridPane.valignment="TOP">
                            <tooltip>
@@ -705,7 +705,7 @@
                                     <String fx:value="prominentDefaultButton" />
                                  </styleClass>
                                  <tooltip>
-                                    <Tooltip text="Betala när dina varor levererats till angivna adressen" />
+                                    <Tooltip text="Betala när dina varor levererats till din angivna adress" />
                                  </tooltip>
                               </Button>
                               <Button mnemonicParsing="false" onAction="#uncoverBankInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="KORTBETALNING" GridPane.rowIndex="3">
@@ -760,7 +760,7 @@
                                              <children>
                                                 <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfo" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="ANNAN FAKTURAADRESS" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                                    <tooltip>
-                                                      <Tooltip text="Har du en annan fakturaadress än din leveransadress? Klicka här" />
+                                                      <Tooltip text="Få fakturan postad till annan adress" />
                                                    </tooltip></Button>
                                              </children>
                                           </GridPane>
