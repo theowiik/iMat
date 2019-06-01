@@ -146,6 +146,18 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public Label nameLabel;
     @FXML
     public Label lastNameLabel;
+    @FXML
+    public Label addressLabel;
+    @FXML
+    public Label codeLabel;
+    @FXML
+    public Label cityLabel;
+    @FXML
+    public Label cardLabel;
+    @FXML
+    public Label myLabel;
+    @FXML
+    public Label cvcLabel;
 
     @FXML
     public AnchorPane indicatorArea;
@@ -216,7 +228,9 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
                 checkFormatCity() && checkFormatBank() && checkFormatCard()){
             return true;
-        }else {
+        } else if (checkFormatLastName())
+            return true;
+        else {
             return false;
         }
 
@@ -242,6 +256,15 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     }
     private Boolean checkFormatLastName() {
         if (!(lNameField.getText().isEmpty())){
+            if (lNameField.getText().length() > 15) {
+                lastNameLabel.setText("Efternamn (Max 15 tecken)");
+                lastNameLabel.setStyle("-fx-text-fill: red");
+                lNameField.setStyle("-fx-border-color: red");
+                return false;
+            }
+            lastNameLabel.setText("Efternamn");
+            lastNameLabel.setStyle("-fx-text-fill: black");
+            lNameField.setStyle("-fx-border-color: grey");
             return true;
         }else {
             lNameField.setTooltip(new Tooltip("Ange efternamn, max 15 tecken"));
@@ -260,7 +283,21 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     private Boolean checkFormatCode() {
         if (!(codeField.getText().isEmpty())){
-            return true;
+            String string = codeField.getText();
+            boolean numeric = true;
+
+            try {
+                Double num = Double.parseDouble(string);
+            } catch (NumberFormatException e) {
+                numeric = false;
+            }
+
+            if(numeric)
+                return true;
+            else
+                codeLabel.setText("Postkod (Ange bara numeriska tecken)");
+                return false;
+
         }else {
             codeField.setTooltip(new Tooltip("Ange din postkod"));
             return false;
