@@ -261,7 +261,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     }
 
     public void focusOnSearchBar() {
-        productBrowserController.getProductBrowser().searchBar.setFocusTraversable(true);
+        searchBar.requestFocus();
         System.out.println("fokus på sök knappen");
     }
 

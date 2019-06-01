@@ -19,8 +19,6 @@ import java.util.List;
 
 public class ProductBrowser extends AnchorPane implements CustomComponent {
     @FXML
-    public TextField searchBar;
-    @FXML
     public Text testText;
     @FXML
     public AnchorPane productContainer;
