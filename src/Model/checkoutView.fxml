@@ -19,87 +19,6 @@
 
 <fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #EEEEEE;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="finalWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <GridPane layoutX="355.0" layoutY="255.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="0.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <GridPane GridPane.columnIndex="2">
-                     <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="90.0" minHeight="90.0" prefHeight="90.0" vgrow="SOMETIMES" />
-                        <RowConstraints vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="Tack för din beställning.">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="deliveryMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText-" text="Text" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="orderNumberMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-text" text="Text" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="412.0" fitWidth="734.0" preserveRatio="true" GridPane.rowIndex="3">
-                           <image>
-                              <Image url="@../resources/iMatTruck.png" />
-                           </image>
-                        </ImageView>
-                        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" GridPane.rowIndex="4" />
-                        <Button fx:id="buyMoreButton4" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
-                     </children>
-                  </GridPane>
-                  <GridPane>
-                     <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Button fx:id="buyMoreButton1" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FORTSÄTT HANDLA" GridPane.rowIndex="2">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="buttonShadow" />
-                              <String fx:value="prominentBackButton" />
-                           </styleClass>
-                        </Button>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                     </children>
-                  </GridPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                     <children>
-                        <Separator layoutX="108.0" layoutY="115.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-                  <Separator orientation="VERTICAL" prefHeight="200.0" />
-               </children>
-            </GridPane>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="indicatorArea" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0" />
       <AnchorPane fx:id="mainWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -159,7 +78,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                  <children>
-                                    <ScrollPane layoutX="184.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
+                                    <ScrollPane hbarPolicy="NEVER" layoutX="184.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
                                        <content>
                                           <FlowPane fx:id="cartPane" prefHeight="206.0" prefWidth="330.0" stylesheets="@../resources/style.css" />
                                        </content>
@@ -229,6 +148,397 @@
                   </AnchorPane>
                </children>
             </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="payViewWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <GridPane layoutX="200.0" layoutY="185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="33.0" prefWidth="158.97088623046875" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="0.0" prefWidth="158.97088623046875" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="0.0" prefWidth="158.97088623046875" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="706.3402252197266" minWidth="10.0" percentWidth="25.0" prefWidth="279.36767578125" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="706.3402252197266" minWidth="10.0" percentWidth="0.0" prefWidth="279.36767578125" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <GridPane GridPane.columnIndex="3">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="62.0" minHeight="62.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="79.0" minHeight="79.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="76.0" minHeight="76.0" prefHeight="76.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="79.0" minHeight="79.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="Välj betalsätt">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="totalText1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-text" text="Text" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <Button mnemonicParsing="false" onAction="#hideInfo" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="VID LEVERANS" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="prominentDefaultButton" />
+                                 </styleClass>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#uncoverBankInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="KORTBETALNING" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="prominentDefaultButton" />
+                                 </styleClass>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FAKTURA" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="prominentDefaultButton" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="5">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="300.0" minHeight="300.0" prefHeight="300.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="300.0" minHeight="300.0" prefHeight="300.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="100.0" minHeight="100.0" percentHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="100.0" minHeight="100.0" percentHeight="20.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <AnchorPane fx:id="InvoiceCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfo" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="ANNAN FAKTURAADRESS" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="invoiceInfoWindow" layoutX="308.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <AnchorPane fx:id="invoiceInfoGrid" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <GridPane prefHeight="233.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="100.0" minHeight="70.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <GridPane GridPane.rowIndex="2">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <TextField fx:id="codeField2" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                                  <Label layoutX="14.0" layoutY="6.0" text="Postkod" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                               <children>
+                                                                  <Label layoutX="22.0" layoutY="6.0" text="Stad" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                                  <TextField fx:id="cityField2" layoutX="22.0" layoutY="27.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </GridPane>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <TextField fx:id="addressField2" layoutX="230.0" layoutY="13.0" prefHeight="40.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                            <Label layoutX="14.0" layoutY="5.0" text="Adress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <GridPane>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <TextField fx:id="fNameField2" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                                  <Label layoutX="14.0" layoutY="6.0" text="Förnamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                                  <Text layoutX="4.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annan Fakturaadress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="-5.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                               <children>
+                                                                  <Label layoutX="22.0" layoutY="6.0" text="Efternamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                                  <TextField fx:id="lNameField2" layoutX="22.0" layoutY="27.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="infoCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <AnchorPane fx:id="bankInfoWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <GridPane prefHeight="233.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="100.0" minHeight="70.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <GridPane GridPane.rowIndex="2">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                         <children>
+                                                            <GridPane hgap="15.0" layoutX="26.0" layoutY="-31.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints maxHeight="45.33331298828125" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="74.0" valignment="TOP" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label text="Månad/år" />
+                                                                  <TextField fx:id="cardField4" prefHeight="44.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                  <Label text="CVC" GridPane.columnIndex="1" />
+                                                                  <Label text="Månad/år" />
+                                                                  <Label text="Månad/år" />
+                                                                  <TextField fx:id="cardField41" prefHeight="44.0" prefWidth="80.0" GridPane.rowIndex="1" />
+                                                               </children>
+                                                            </GridPane>
+                                                         </children></AnchorPane>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                                                   </children>
+                                                </GridPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TextField fx:id="bankField" layoutY="24.0" prefHeight="40.0" prefWidth="552.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                      <Label layoutX="15.0" layoutY="14.0" text="Bank" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="14.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <GridPane hgap="15.0" layoutX="171.0" layoutY="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints maxHeight="45.3333740234375" minHeight="10.0" prefHeight="24.66668701171875" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="75.33331298828125" minHeight="10.0" prefHeight="75.33331298828125" valignment="TOP" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Label text="Kort" />
+                                                            <TextField fx:id="cardField" prefHeight="44.0" prefWidth="117.0" GridPane.rowIndex="1" />
+                                                            <TextField fx:id="cardField1" prefHeight="44.0" prefWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <TextField fx:id="cardField2" prefHeight="44.0" prefWidth="117.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                            <TextField fx:id="cardField3" prefHeight="44.0" prefWidth="117.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="7.0" prefWidth="600.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Separator AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                                 </children>
+                              </AnchorPane>
+                              <GridPane prefHeight="233.0" prefWidth="600.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="70.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <GridPane GridPane.rowIndex="2">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="codeField" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                <Label layoutX="14.0" layoutY="6.0" text="Postkod" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label layoutX="22.0" layoutY="6.0" text="Stad" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                <TextField fx:id="cityField" layoutX="22.0" layoutY="27.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <TextField fx:id="addressField" layoutX="230.0" layoutY="13.0" prefHeight="40.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" text="Adress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="fNameField" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                <Label layoutX="14.0" layoutY="6.0" text="Förnamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label layoutX="22.0" layoutY="6.0" text="Efternamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                <TextField fx:id="lNameField" layoutX="22.0" layoutY="27.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.rowIndex="4">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="BETALA" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="buttonShadow" />
+                                          <String fx:value="prominentDoneButton2" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#openDeliveryViewWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="TILLBAKA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="buttonShadow" />
+                                          <String fx:value="prominentBackButton" />
+                                       </styleClass>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <Separator prefWidth="200.0" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="312.0" minHeight="25.0" prefHeight="70.63751983642578" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="551.0" minHeight="0.0" prefHeight="404.5470275878906" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <AnchorPane prefHeight="28.0" prefWidth="600.0" />
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                              <Button fx:id="buyMoreButton3" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FORTSÄTT HANDLA" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="prominentBackButton" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                           <children>
+                              <Separator layoutX="147.0" layoutY="130.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="deliveryViewWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -585,395 +895,85 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="payViewWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="finalWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <GridPane layoutX="355.0" layoutY="255.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="0.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <GridPane layoutX="200.0" layoutY="185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <GridPane GridPane.columnIndex="2">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="33.0" prefWidth="158.97088623046875" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="0.0" prefWidth="158.97088623046875" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.2248840332031" minWidth="10.0" percentWidth="0.0" prefWidth="158.97088623046875" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="706.3402252197266" minWidth="10.0" percentWidth="25.0" prefWidth="279.36767578125" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="706.3402252197266" minWidth="10.0" percentWidth="0.0" prefWidth="279.36767578125" />
-                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
                      <rowConstraints>
+                        <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="90.0" minHeight="90.0" prefHeight="90.0" vgrow="SOMETIMES" />
                         <RowConstraints vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <GridPane GridPane.columnIndex="3">
-                           <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="62.0" minHeight="62.0" prefHeight="62.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="79.0" minHeight="79.0" prefHeight="79.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="76.0" minHeight="76.0" prefHeight="76.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="79.0" minHeight="79.0" prefHeight="79.0" vgrow="SOMETIMES" />
-                              <RowConstraints vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="Välj betalsätt">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Text>
-                              <Text fx:id="totalText1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-text" text="Text" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Text>
-                              <Button mnemonicParsing="false" onAction="#hideInfo" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="VID LEVERANS" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="buttonShadow" />
-                                    <String fx:value="prominentDefaultButton" />
-                                 </styleClass>
-                              </Button>
-                              <Button mnemonicParsing="false" onAction="#uncoverBankInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="KORTBETALNING" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="buttonShadow" />
-                                    <String fx:value="prominentDefaultButton" />
-                                 </styleClass>
-                              </Button>
-                              <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FAKTURA" GridPane.rowIndex="4">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="buttonShadow" />
-                                    <String fx:value="prominentDefaultButton" />
-                                 </styleClass>
-                              </Button>
-                           </children>
-                        </GridPane>
-                        <GridPane GridPane.columnIndex="5">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="300.0" minHeight="300.0" prefHeight="300.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="300.0" minHeight="300.0" prefHeight="300.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="100.0" minHeight="100.0" percentHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="100.0" minHeight="100.0" percentHeight="20.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-                                 <children>
-                                    <AnchorPane fx:id="InvoiceCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfo" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="ANNAN FAKTURAADRESS" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="invoiceInfoWindow" layoutX="308.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <AnchorPane fx:id="invoiceInfoGrid" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <GridPane prefHeight="233.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="100.0" minHeight="70.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <GridPane GridPane.rowIndex="2">
-                                                         <columnConstraints>
-                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                         </columnConstraints>
-                                                         <rowConstraints>
-                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                         </rowConstraints>
-                                                         <children>
-                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                                               <children>
-                                                                  <TextField fx:id="codeField2" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                                  <Label layoutX="14.0" layoutY="6.0" text="Postkod" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                                               </children>
-                                                            </AnchorPane>
-                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                                               <children>
-                                                                  <Label layoutX="22.0" layoutY="6.0" text="Stad" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                                                  <TextField fx:id="cityField2" layoutX="22.0" layoutY="27.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                               </children>
-                                                            </AnchorPane>
-                                                         </children>
-                                                      </GridPane>
-                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                                                         <children>
-                                                            <TextField fx:id="addressField2" layoutX="230.0" layoutY="13.0" prefHeight="40.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                            <Label layoutX="14.0" layoutY="5.0" text="Adress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                                         </children>
-                                                      </AnchorPane>
-                                                      <GridPane>
-                                                         <columnConstraints>
-                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                         </columnConstraints>
-                                                         <rowConstraints>
-                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                         </rowConstraints>
-                                                         <children>
-                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                                               <children>
-                                                                  <TextField fx:id="fNameField2" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                                  <Label layoutX="14.0" layoutY="6.0" text="Förnamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                                                  <Text layoutX="4.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annan Fakturaadress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="-5.0" />
-                                                               </children>
-                                                            </AnchorPane>
-                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                                               <children>
-                                                                  <Label layoutX="22.0" layoutY="6.0" text="Efternamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                                                  <TextField fx:id="lNameField2" layoutX="22.0" layoutY="27.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                               </children>
-                                                            </AnchorPane>
-                                                         </children>
-                                                      </GridPane>
-                                                   </children>
-                                                </GridPane>
-                                             </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="infoCoverWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                    <AnchorPane fx:id="bankInfoWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <GridPane prefHeight="233.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                                <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                                <RowConstraints maxHeight="100.0" minHeight="70.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <GridPane GridPane.rowIndex="2">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                                         <children>
-                                                            <GridPane hgap="15.0" layoutX="26.0" layoutY="-31.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                               <columnConstraints>
-                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                               </columnConstraints>
-                                                               <rowConstraints>
-                                                                  <RowConstraints maxHeight="45.33331298828125" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
-                                                                  <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="74.0" valignment="TOP" vgrow="SOMETIMES" />
-                                                               </rowConstraints>
-                                                               <children>
-                                                                  <Label text="Månad/år" />
-                                                                  <TextField fx:id="cvc" onInputMethodTextChanged="#responsiveEnabling" prefHeight="44.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                                  <Label text="CVC" GridPane.columnIndex="1" />
-                                                                  <Label text="Månad/år" />
-                                                                  <Label text="Månad/år" />
-                                                                  <TextField fx:id="monthYear" onInputMethodTextChanged="#responsiveEnabling" prefHeight="44.0" prefWidth="80.0" GridPane.rowIndex="1" />
-                                                               </children>
-                                                            </GridPane>
-                                                         </children></AnchorPane>
-                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                                                   </children>
-                                                </GridPane>
-                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                                   <children>
-                                                      <TextField fx:id="bankField" layoutY="24.0" onInputMethodTextChanged="#responsiveEnabling" prefHeight="40.0" prefWidth="552.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                      <Label layoutX="15.0" layoutY="14.0" text="Bank" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="14.0" />
-                                                   </children>
-                                                </AnchorPane>
-                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                                                   <children>
-                                                      <GridPane hgap="15.0" layoutX="171.0" layoutY="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
-                                                         <columnConstraints>
-                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                         </columnConstraints>
-                                                         <rowConstraints>
-                                                            <RowConstraints maxHeight="45.3333740234375" minHeight="10.0" prefHeight="24.66668701171875" vgrow="SOMETIMES" />
-                                                            <RowConstraints maxHeight="75.33331298828125" minHeight="10.0" prefHeight="75.33331298828125" valignment="TOP" vgrow="SOMETIMES" />
-                                                         </rowConstraints>
-                                                         <children>
-                                                            <Label text="Kort" />
-                                                            <TextField fx:id="cardField" onInputMethodTextChanged="#responsiveEnabling" prefHeight="44.0" prefWidth="117.0" GridPane.rowIndex="1" />
-                                                            <TextField fx:id="cardField1" onInputMethodTextChanged="#responsiveEnabling" prefHeight="44.0" prefWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                            <TextField fx:id="cardField2" onInputMethodTextChanged="#responsiveEnabling" prefHeight="44.0" prefWidth="117.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                            <TextField fx:id="cardField3" onInputMethodTextChanged="#responsiveEnabling" prefHeight="44.0" prefWidth="117.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                                         </children>
-                                                      </GridPane>
-                                                   </children>
-                                                </AnchorPane>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="7.0" prefWidth="600.0" GridPane.rowIndex="1">
-                                 <children>
-                                    <Separator AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
-                                 </children>
-                              </AnchorPane>
-                              <GridPane prefHeight="233.0" prefWidth="600.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="100.0" minHeight="70.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <GridPane GridPane.rowIndex="2">
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                             <children>
-                                                <TextField fx:id="codeField" layoutX="22.0" layoutY="21.0" onInputMethodTextChanged="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                <Label layoutX="14.0" layoutY="6.0" text="Postkod" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                             </children>
-                                          </AnchorPane>
-                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                             <children>
-                                                <Label layoutX="22.0" layoutY="6.0" text="Stad" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                                <TextField fx:id="cityField" layoutX="22.0" layoutY="27.0" onInputMethodTextChanged="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                             </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </GridPane>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                                       <children>
-                                          <TextField fx:id="addressField" layoutX="230.0" layoutY="13.0" onInputMethodTextChanged="#responsiveEnabling" prefHeight="40.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                          <Label layoutX="14.0" layoutY="5.0" text="Adress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                       </children>
-                                    </AnchorPane>
-                                    <GridPane>
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                             <children>
-                                                <TextField fx:id="fNameField" layoutX="22.0" layoutY="21.0" onInputMethodTextChanged="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                <Label layoutX="14.0" layoutY="6.0" text="Förnamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                             </children>
-                                          </AnchorPane>
-                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                             <children>
-                                                <Label layoutX="22.0" layoutY="6.0" text="Efternamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
-                                                <TextField fx:id="lNameField" layoutX="22.0" layoutY="27.0" onInputMethodTextChanged="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                             </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </GridPane>
-                                 </children>
-                              </GridPane>
-                              <GridPane GridPane.rowIndex="4">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <Button fx:id="paybtn" mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="BETALA" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="buttonShadow" />
-                                          <String fx:value="prominentDoneButton2" />
-                                       </styleClass>
-                                    </Button>
-                                    <Button mnemonicParsing="false" onAction="#openDeliveryViewWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="TILLBAKA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="buttonShadow" />
-                                          <String fx:value="prominentBackButton" />
-                                       </styleClass>
-                                    </Button>
-                                 </children>
-                              </GridPane>
-                              <Separator prefWidth="200.0" GridPane.rowIndex="3" />
-                           </children>
-                        </GridPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                        <GridPane>
-                           <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="312.0" minHeight="25.0" prefHeight="70.63751983642578" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="551.0" minHeight="0.0" prefHeight="404.5470275878906" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <AnchorPane prefHeight="28.0" prefWidth="600.0" />
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-                              <Button fx:id="buyMoreButton3" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FORTSÄTT HANDLA" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="buttonShadow" />
-                                    <String fx:value="prominentBackButton" />
-                                 </styleClass>
-                              </Button>
-                           </children>
-                        </GridPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
-                           <children>
-                              <Separator layoutX="147.0" layoutY="130.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                           </children>
-                        </AnchorPane>
-                        <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="Tack för din beställning.">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="deliveryMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText-" text="Text" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="orderNumberMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-text" text="Text" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="412.0" fitWidth="734.0" preserveRatio="true" GridPane.rowIndex="3">
+                           <image>
+                              <Image url="@../resources/iMatTruck.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="sparaSomInköpslista" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" GridPane.rowIndex="4" />
+                        <Button fx:id="buyMoreButton4" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
                      </children>
                   </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="buyMoreButton1" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FORTSÄTT HANDLA" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttonShadow" />
+                              <String fx:value="prominentBackButton" />
+                           </styleClass>
+                        </Button>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </GridPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Separator layoutX="108.0" layoutY="115.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
                </children>
-            </AnchorPane>
+            </GridPane>
          </children>
       </AnchorPane>
    </children>

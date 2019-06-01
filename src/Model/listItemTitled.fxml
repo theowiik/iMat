@@ -23,7 +23,7 @@
         </rowConstraints>
          <children>
             <Button fx:id="addToCartButton" mnemonicParsing="false" onMouseClicked="#addToCart" prefHeight="47.0" prefWidth="261.0" styleClass="prominentDoneButton" text="LÄGG TILL I KUNDVAGN" GridPane.rowIndex="1" />
-            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+            <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
                <content>
                   <FlowPane fx:id="cartItemContainer" prefHeight="263.0" prefWidth="566.0" />
                </content>

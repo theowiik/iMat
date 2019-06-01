@@ -24,7 +24,7 @@
           <RowConstraints vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ScrollPane fx:id="scrollLists" prefWidth="709.0" GridPane.rowIndex="2">
+            <ScrollPane fx:id="scrollLists" hbarPolicy="NEVER" prefWidth="709.0" GridPane.rowIndex="2">
                <content>
                   <Accordion fx:id="listAccordion" prefHeight="447.0" />
                </content>
