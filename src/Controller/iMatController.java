@@ -317,7 +317,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
                 cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
 
                 FadeTransition ft = new FadeTransition(Duration.millis(7000), cartText);
-                cartText.setText(product.getName() + " tillagt i din varukorg!");
+                cartText.setText(product.getName() + " tillagd!");
                 ft.setFromValue(1.0);
                 ft.setToValue(0);
                 ft.setCycleCount(1);

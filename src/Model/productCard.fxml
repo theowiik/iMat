@@ -115,7 +115,7 @@
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin></Text>
-                        <Text fx:id="priceAndUnit" strokeType="OUTSIDE" strokeWidth="0.0" text="??? kr/förp" textOrigin="CENTER" wrappingWidth="151.31560277938843">
+                        <Text fx:id="priceAndUnit" strokeType="OUTSIDE" strokeWidth="0.0" text="??? kr/förp" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="151.31560277938843">
                            <styleClass>
                               <String fx:value="medium-text" />
                               <String fx:value="productPrice" />

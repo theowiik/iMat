@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #EEEEEE;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #EEEEEE;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="indicatorArea" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0" />
       <AnchorPane fx:id="mainWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -78,7 +78,7 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                  <children>
-                                    <ScrollPane layoutX="184.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
+                                    <ScrollPane hbarPolicy="NEVER" layoutX="184.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
                                        <content>
                                           <FlowPane fx:id="cartPane" prefHeight="206.0" prefWidth="330.0" stylesheets="@../resources/style.css" />
                                        </content>
@@ -940,7 +940,7 @@
                               <Image url="@../resources/iMatTruck.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" GridPane.rowIndex="4" />
+                        <Button fx:id="sparaSomInköpslista" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="SPARA INKÖP SOM INKÖPSLISTA" GridPane.rowIndex="4" />
                         <Button fx:id="buyMoreButton4" mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="prominentDefaultButton" stylesheets="@../resources/style.css" text="HANDLA MER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
                      </children>
                   </GridPane>
