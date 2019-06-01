@@ -1,15 +1,14 @@
 package Controller;
 
 import Model.*;
-import javafx.event.EventHandler;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.Transition;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -25,7 +24,6 @@ import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCartListener;
 
 import java.net.URL;
-import java.sql.BatchUpdateException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -296,11 +294,13 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
         if (products.isEmpty()) {
             productBrowserController.spawnTitledSection("Ajdå!");
             productBrowserController.spawnText("Tyvär hittade vi inget med namnet: " + query);
-            productBrowserController.spawnShowAllProductsButton();
+            productBrowserController.spawnText("Du kan pröva söka på något annat eller bläddra bland alla våra produkter genom att trycka på knappen nedan.");
         } else {
             productBrowserController.spawnTitledSection("Sökresultat för: " + query);
             productBrowserController.spawnProductCardGrid(products);
         }
+
+        productBrowserController.spawnShowAllProductsButton();
     }
 
     private void storeActive(boolean state) {
@@ -312,6 +312,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
 
     /**
      * Adds styling module tabs text when it is clicked.
+     *
      * @param title
      * @param active
      * @param moduleTab

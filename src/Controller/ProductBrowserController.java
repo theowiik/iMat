@@ -2,6 +2,7 @@ package Controller;
 
 import Model.*;
 import Model.Categories.Category;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -27,7 +28,11 @@ public class ProductBrowserController implements AddProductObserver {
     }
 
     public void showAllProducts() {
-        productBrowser.showAllProducts();
+        showAllProducts(true);
+    }
+
+    public void showAllProducts(boolean showFeature) {
+        productBrowser.showAllProducts(showFeature);
     }
 
     /**
@@ -110,16 +115,31 @@ public class ProductBrowserController implements AddProductObserver {
     public void spawnShowAllProductsButton() {
         Button button = new Button();
         button.setText("Visa alla produkter");
+        button.setLayoutX(30);
+        button.setLayoutY(30);
+
         button.setOnAction(e -> {
-            showAllProducts();
+            showAllProducts(false);
         });
-        productBrowser.addNode(button);
+
+        AnchorPane container = new AnchorPane();
+        container.getChildren().add(button);
+        container.setPadding(new Insets(30));
+        productBrowser.addNode(container);
     }
 
+    /**
+     * Spawns a text on the card grid
+     * @param text
+     */
     public void spawnText(String text) {
-        Text text1 = new Text();
-        text1.setText(text);
-        productBrowser.addNode(text1);
+        Text content = new Text();
+        content.setText(text);
+        content.setLayoutX(30);
+        AnchorPane container = new AnchorPane();
+        container.setPadding(new Insets(10));
+        container.getChildren().add(content);
+        productBrowser.addNode(container);
     }
 
     /**
