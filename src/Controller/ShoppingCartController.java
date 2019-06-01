@@ -22,6 +22,7 @@ public class ShoppingCartController implements ShoppingCartListener{
         this.backendController = BackendController.getInstance();
         this.shoppingCart1 = new ShoppingCart1();
         BackendController.getInstance().getShoppingCart().addShoppingCartListener(this);
+        updateCartItemArea();
     }
 
     public ShoppingCart1 getShoppingCart1() {
