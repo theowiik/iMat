@@ -75,7 +75,7 @@ public class listItemTitled extends TitledPane implements CustomComponent {
 
     public void addToCart() {
         for (ShoppingItem p : products)
-            BackendController.getInstance().addToShoppingCart(p.getProduct());
+            BackendController.getInstance().addToShoppingCart(p.getProduct(), (int)p.getAmount());
             BackendController.getInstance().printShoppingCart();
     }
 

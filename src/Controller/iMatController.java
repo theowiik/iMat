@@ -348,7 +348,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     }
 
     @Override
-    public void productAdded(Product product) {
+    public void productAdded(Product product, int i) {
         // Animate added product
         final Animation animation = new Transition() {
             {
@@ -381,7 +381,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     }
 
     @Override
-    public void productRemoved(Product product) {
+    public void productRemoved(Product product, int i) {
 
         final Animation animation = new Transition() {
 

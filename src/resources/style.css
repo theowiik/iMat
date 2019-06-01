@@ -131,6 +131,7 @@
     -fx-text-fill: black;
     -fx-font-size: 13px;
     -fx-effect: dropshadow(three-pass-box, gray, 1, 3, 0, 0);
+    -fx-border-insets: -2;
 }
 
 .greenButtonRound:hover {
@@ -153,6 +154,7 @@
     -fx-text-fill: black;
     -fx-font-size: 13px;
     -fx-effect: dropshadow(three-pass-box, gray, 1, 3, 0, 0);
+    -fx-border-insets: -2;
 }
 
 .redButtonRound:hover {
@@ -267,6 +269,44 @@
 
 .needHelpButton:pressed {
     -fx-background-color: #690C09;
+}
+
+.removeAllButton {
+    -fx-background-color: white;
+    -fx-background-radius: 10px 10px 10px 10px;
+    -fx-effect: dropshadow(three-pass-box, gray, 1, 4, 0, 0);
+    -fx-border-color: #be5250;
+    -fx-border-radius: 8px;
+    -fx-border-width: 2px;
+    -fx-border-insets: -2;
+    -fx-background-image: url("icons8-remove-100.png");
+    -fx-background-size: 35px 35px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+
+
+}
+
+.removeAllButton:hover {
+     -fx-cursor: hand;
+     -fx-background-color: #952A27;
+     -fx-border-color: #952A27;
+     -fx-border-insets: 0;
+     -fx-background-image: url("removeIcon.png");
+     -fx-background-size: 40px 40px;
+     -fx-background-repeat: no-repeat;
+     -fx-background-position: center;
+ }
+
+.removeAllButton:pressed {
+    -fx-cursor: hand;
+    -fx-background-color: #690C09;
+    -fx-border-color: #690C09;
+    -fx-border-insets: 0;
+    -fx-background-image: url("removeIcon.png");
+    -fx-background-size: 40px 40px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
 
 #headerLogo {

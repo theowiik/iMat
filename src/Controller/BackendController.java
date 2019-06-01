@@ -27,7 +27,7 @@ public class BackendController implements AddProductObserver {
         //createSampleorders();
     }
 
-    private void createSampleorders() {
+    /*private void createSampleorders() {
         Product p = getProduct(9);
         addToShoppingCart(p);
         p = getProduct(12);
@@ -38,7 +38,7 @@ public class BackendController implements AddProductObserver {
 
 
 
-    }
+    }*/
 
     public void initCategories() {
         availableCategories.add(CategoryName.DAIRY);
@@ -138,14 +138,14 @@ public class BackendController implements AddProductObserver {
      * Adds a product to the shopping cart.
      * @param product a product.
      */
-    public void addToShoppingCart(Product product) {
+    public void addToShoppingCart(Product product, int i) {
         ShoppingCart cart = db.getShoppingCart();
 
         for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
             if (shoppingItem.getProduct().getName().equals(product.getName())) {
                 // There already is one of those in the cart.
                 // Update.
-                shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+                shoppingItem.setAmount(shoppingItem.getAmount() + i);
 
                 // Update product card
                 updateProductCardAmount(product);
@@ -278,7 +278,7 @@ public class BackendController implements AddProductObserver {
 //        return categoryCards;
 //    }
 
-    public void removeFromShoppingCart(Product product) {
+    public void removeFromShoppingCart(Product product, int i) {
         ShoppingCart cart = db.getShoppingCart();
         ShoppingItem item = new ShoppingItem(product);
 
@@ -286,7 +286,7 @@ public class BackendController implements AddProductObserver {
             if (shoppingItem.getProduct().getName().equals(product.getName())) {
                 // There already is one of those in the cart.
                 // Update.
-                shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+                shoppingItem.setAmount(shoppingItem.getAmount() - i);
 
                 if (shoppingItem.getAmount() <= 0) {
                     cart.removeItem(shoppingItem);
@@ -362,8 +362,8 @@ public class BackendController implements AddProductObserver {
     }
 
     @Override
-    public void productAdded(Product product) {
-        addToShoppingCart(product);
+    public void productAdded(Product product, int i) {
+        addToShoppingCart(product, i);
         for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
             db.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
             break;
@@ -371,8 +371,8 @@ public class BackendController implements AddProductObserver {
     }
 
     @Override
-    public void productRemoved(Product product) {
-        removeFromShoppingCart(product);
+    public void productRemoved(Product product, int i) {
+        removeFromShoppingCart(product, i);
         for (ShoppingItem shoppingItem : db.getShoppingCart().getItems()) {
             db.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
             break;

@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import se.chalmers.cse.dat216.project.Product;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,6 +30,10 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
 
     @FXML
     public AnchorPane pane;
+
+    @FXML
+    public Button removeAllButton;
+
 
     private Product product;
     private ProductCard productCard;
@@ -70,26 +73,30 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
 
     public void addCartItem() {
         System.out.println("lägger till");
-        notifyAllObserversProductAdded(product);
+        notifyAllObserversProductAdded(product, 1);
     }
 
     public void subCartItem() {
         System.out.println("tar bort");
-        notifyAllObserversProductRemoved(product);
+        notifyAllObserversProductRemoved(product, 1);
+    }
+
+    public  void  removeAll() {
+        notifyAllObserversProductRemoved(product, 99999);
     }
 
     @Override
-    public void notifyAllObserversProductAdded(Product product) {
+    public void notifyAllObserversProductAdded(Product product, int i) {
         for (AddProductObserver addProductObserver : observers) {
-            addProductObserver.productAdded(product);
+            addProductObserver.productAdded(product, i);
             System.out.println("Clicked! (+)");
         }
     }
 
     @Override
-    public void notifyAllObserversProductRemoved(Product product) {
+    public void notifyAllObserversProductRemoved(Product product, int i) {
         for (AddProductObserver addProductObserver : observers) {
-            addProductObserver.productRemoved(product);
+            addProductObserver.productRemoved(product, i);
             System.out.println("Clicked! (-)");
         }
     }

@@ -113,7 +113,7 @@ public class ProductBrowserController implements AddProductObserver {
     }
 
     @Override
-    public void productAdded(Product product) {
+    public void productAdded(Product product, int i) {
 //        backendController.addToShoppingCart(product);
 //        backendController.printShoppingCart();
 //        System.out.println("+");
@@ -121,7 +121,7 @@ public class ProductBrowserController implements AddProductObserver {
     }
 
     @Override
-    public void productRemoved(Product product) {
+    public void productRemoved(Product product, int i) {
 //        backendController.removeFromShoppingCart(product);
 //        backendController.printShoppingCart();
 //        System.out.println("-");

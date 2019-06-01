@@ -96,7 +96,7 @@ public class ProductCard extends AnchorPane implements CustomComponent, AddProdu
     public void add() {
         amount++;
         updateAmountLabel();
-        notifyAllObserversProductAdded(this.product);
+        notifyAllObserversProductAdded(this.product, 1);
     }
 
     private void updateAmountLabel() {
@@ -107,7 +107,7 @@ public class ProductCard extends AnchorPane implements CustomComponent, AddProdu
         if (amount > 0) {
             amount--;
             updateAmountLabel();
-            notifyAllObserversProductRemoved(this.product);
+            notifyAllObserversProductRemoved(this.product, 1);
         }
     }
 
@@ -125,17 +125,17 @@ public class ProductCard extends AnchorPane implements CustomComponent, AddProdu
     }
 
     @Override
-    public void notifyAllObserversProductAdded(Product product) {
+    public void notifyAllObserversProductAdded(Product product, int i) {
         for (AddProductObserver addProductObserver : observers) {
-            addProductObserver.productAdded(product);
+            addProductObserver.productAdded(product, i);
             System.out.println("Clicked! (+)");
         }
     }
 
     @Override
-    public void notifyAllObserversProductRemoved(Product product) {
+    public void notifyAllObserversProductRemoved(Product product, int i) {
         for (AddProductObserver addProductObserver : observers) {
-            addProductObserver.productRemoved(product);
+            addProductObserver.productRemoved(product, i);
             System.out.println("Clicked! (-)");
         }
     }
