@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <fx:root fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="1225.0" styleClass="cartItem" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -37,6 +39,9 @@
                <padding>
                   <Insets bottom="2.0" />
                </padding>
+               <tooltip>
+                  <Tooltip text="Minska antal" />
+               </tooltip>
             </Button>
             <TextField fx:id="cartAmountTxtField" alignment="CENTER" prefHeight="35.0" prefWidth="85.0" styleClass="small-text">
                <HBox.margin>
@@ -53,6 +58,9 @@
                <padding>
                   <Insets bottom="2.0" />
                </padding>
+               <tooltip>
+                  <Tooltip text="Öka antal" />
+               </tooltip>
             </Button>
             <Label fx:id="cartPrice" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="133.0" styleClass="medium-text" text="999 kr" textAlignment="RIGHT" wrapText="true">
                <font>
@@ -78,7 +86,8 @@
          <children>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="removeAllButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#removeAll" prefHeight="35.0" prefWidth="50.0" styleClass="removeAllButton" textFill="WHITE" wrapText="true" StackPane.alignment="CENTER">
+                  <Text fx:id="removeText" accessibleRole="BUTTON" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-text" wrappingWidth="217.69465145468712" />
+                  <Button fx:id="removeAllButton" alignment="CENTER_RIGHT" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#removeAll" onMouseEntered="#addCartItemText" onMouseExited="#removeCartItemText" prefHeight="35.0" prefWidth="50.0" styleClass="removeAllButton" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" StackPane.alignment="CENTER">
                      <StackPane.margin>
                         <Insets left="90.0" />
                      </StackPane.margin>

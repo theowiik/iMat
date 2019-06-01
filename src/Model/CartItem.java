@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +34,9 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
 
     @FXML
     public Button removeAllButton;
+
+    @FXML
+    private Text removeText;
 
 
     private Product product;
@@ -71,16 +75,29 @@ public class CartItem extends AnchorPane implements CustomComponent, AddProductO
         }
     }
 
+    @FXML
+    public void removeCartItemText() {
+        removeText.setText(null);
+    }
+
+    @FXML
+    private void addCartItemText(){
+        removeText.setText("Ta bort varan:");
+    }
+
+    @FXML
     public void addCartItem() {
         System.out.println("lägger till");
         notifyAllObserversProductAdded(product, 1);
     }
 
+    @FXML
     public void subCartItem() {
         System.out.println("tar bort");
         notifyAllObserversProductRemoved(product, 1);
     }
 
+    @FXML
     public  void  removeAll() {
         notifyAllObserversProductRemoved(product, 99999);
     }

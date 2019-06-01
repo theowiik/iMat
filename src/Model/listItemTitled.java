@@ -47,10 +47,15 @@ public class listItemTitled extends TitledPane implements CustomComponent {
     }
 
     public void spawncartItems() {
+        int x = 0;
         for (ShoppingItem p : products) {
             CartItem cartItem = new CartItem(p.getProduct(), p.getAmount());
             cartItem.cartAmountTxtField.setText(String.valueOf(p.getAmount()));
             cartItemContainer.getChildren().add(cartItem);
+
+            if ((x++ % 2) == 1) {
+                cartItem.pane.setStyle("-fx-background-color: #DDDDDD");
+            }
         }
     }
 
