@@ -4,6 +4,7 @@ import Controller.CategoryName;
 import Model.Categories.Category;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -22,6 +23,8 @@ public class CategoryCard extends AnchorPane implements CustomComponent {
         this.categoryName.setText(category.getCategoryName().getPrettyName());
         this.categoryNameEnum = category.getCategoryName();
         this.image.setImage(category.getImage());
+        Tooltip tooltip = new Tooltip("Visa produkter inom " + categoryNameEnum.getPrettyName().toLowerCase() + ".");
+        Tooltip.install(this, tooltip);
     }
 
     public CategoryName getCategoryNameEnum() {
