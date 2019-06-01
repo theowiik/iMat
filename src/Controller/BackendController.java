@@ -41,24 +41,49 @@ public class BackendController implements AddProductObserver {
     }
 
     public void initCategories() {
-        // - Root Categories -----
         availableCategories.add(CategoryName.DAIRY);
         categories.add(new Dairy());
-        // ---
+
         availableCategories.add(CategoryName.MEAT);
         categories.add(new Meat());
-        // ---
+
         availableCategories.add(CategoryName.FRUITS);
+        availableCategories.add(CategoryName.EXOTIC_FRUITS);
+        availableCategories.add(CategoryName.CITRUS_FRUITS);
+        availableCategories.add(CategoryName.BERRIES);
+        availableCategories.add(CategoryName.MELONS);
         categories.add(new Fruits());
 
         availableCategories.add(CategoryName.FISH);
+        availableCategories.add(CategoryName.SHELLFISH);
         categories.add(new Fish());
 
-        // - Sub Categories -----
-        // Only requires to be added to availableCategories.
-        availableCategories.add(CategoryName.EXOTIC_FRUITS);
-        availableCategories.add(CategoryName.BERRIES);
-        availableCategories.add(CategoryName.SHELLFISH);
+        availableCategories.add(CategoryName.DRINKS);
+        availableCategories.add(CategoryName.COLD_DRINKS);
+        availableCategories.add(CategoryName.HOT_DRINKS);
+        categories.add(new Drinks());
+
+        availableCategories.add(CategoryName.PASTRY);
+        categories.add(new Pastry());
+
+        availableCategories.add(CategoryName.BREAD);
+        categories.add(new Bread());
+
+        availableCategories.add(CategoryName.VEGETABLES);
+        categories.add(new Vegetable());
+
+        availableCategories.add(CategoryName.HERB);
+        categories.add(new Herb());
+
+        availableCategories.add(CategoryName.NUTS);
+        categories.add(new Nuts());
+
+        availableCategories.add(CategoryName.PANTRY);
+        availableCategories.add(CategoryName.SEEDS);
+        categories.add(new Pantry());
+
+        availableCategories.add(CategoryName.SNACKS);
+        categories.add(new Snacks());
     }
 
     public Map<String, ProductCard> getProductCardMap() {

@@ -64,7 +64,16 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public TextField bankField;
     @FXML
     public TextField cardField;
-
+    @FXML
+    public TextField cardField1;
+    @FXML
+    public TextField cardField2;
+    @FXML
+    public TextField cardField3;
+    @FXML
+    public TextField monthYear;
+    @FXML
+    public TextField cvc;
 
     @FXML
     public Button d1;
@@ -102,6 +111,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public Button sparaSomInköpslista;
 
+    @FXML
+    public Button paybtn;
 
 
     @FXML
@@ -128,6 +139,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public AnchorPane invoiceInfoGrid;
     @FXML
     public AnchorPane finalWindow;
+
 
     @FXML
     public AnchorPane indicatorArea;
@@ -175,6 +187,25 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     public void spawnIndicator() {
         indicatorArea.getChildren().add(wizardView);
+    }
+
+    public void responsiveEnabling(){
+        if (hasNoEmptyFields())
+            paybtn.setDisable(false);
+        else
+            paybtn.setDisable(true);
+
+    }
+
+    public Boolean hasNoEmptyFields() {
+        if (fNameField.getText().isEmpty() || lNameField.getText().isEmpty() || addressField.getText().isEmpty() ||
+        codeField.getText().isEmpty() || cityField.getText().isEmpty() || bankField.getText().isEmpty() ||
+        cardField.getText().isEmpty() || cardField1.getText().isEmpty() || cardField2.getText().isEmpty() ||
+        cardField3.getText().isEmpty() || monthYear.getText().isEmpty() || cvc.getText().isEmpty())
+            return false;
+
+        else
+            return true;
     }
 
     public Checkout(MyAccountReciept mar) {
@@ -264,8 +295,13 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     @FXML
     public void uncoverBankInfoWindow() {
+/*        updateButton(bankButton, true);
+        updateButton(nextButton, false);
+        updateButton(last, false);*/
         this.bankInfoWindow.toFront();
     }
+
+
 
     @FXML
     public void uncoverInvoiceInfo() {
