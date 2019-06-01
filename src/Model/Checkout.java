@@ -75,6 +75,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public TextField monthYear;
     @FXML
+    public TextField monthYear1;
+    @FXML
     public TextField cvc;
 
     @FXML
@@ -115,6 +117,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     @FXML
     public Button paybtn;
+    @FXML
+    public Button nextStepCart;
 
 
     @FXML
@@ -208,6 +212,15 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     }
 
     public void responsiveEnabling(){
+        checkFormatName();
+        checkFormatLastName();
+        checkFormatAddress();
+        checkFormatCode();
+        checkFormatCity();
+        checkFormatBank();
+        checkFormatCard();
+        checkFormatMmYy();
+        checkFormatCvc();
         if (hasNoEmptyFields())
             paybtn.setDisable(false);
         else
@@ -217,19 +230,10 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     private Boolean hasNoEmptyFields() {
 
-        /*
-                if (fNameField.getText().isEmpty() && lNameField.getText().isEmpty() && addressField.getText().isEmpty() &&
-        codeField.getText().isEmpty() && cityField.getText().isEmpty() && bankField.getText().isEmpty() &&
-        cardField.getText().isEmpty() && cardField1.getText().isEmpty() && cardField2.getText().isEmpty() &&
-        cardField3.getText().isEmpty() && monthYear.getText().isEmpty() && cvc.getText().isEmpty()){
+        if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
+                checkFormatCity() && checkFormatBank() && checkFormatCard() && checkFormatMmYy() && checkFormatCvc()) {
             return true;
         }
-         */
-        if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
-                checkFormatCity() && checkFormatBank() && checkFormatCard()){
-            return true;
-        } else if (checkFormatLastName())
-            return true;
         else {
             return false;
         }
@@ -283,20 +287,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     private Boolean checkFormatCode() {
         if (!(codeField.getText().isEmpty())){
-            String string = codeField.getText();
-            boolean numeric = true;
-
-            try {
-                Double num = Double.parseDouble(string);
-            } catch (NumberFormatException e) {
-                numeric = false;
-            }
-
-            if(numeric)
-                return true;
-            else
-                codeLabel.setText("Postkod (Ange bara numeriska tecken)");
-                return false;
+            checkNumericField(codeField,codeLabel,"Postkod",5);
+            return true;
 
         }else {
             codeField.setTooltip(new Tooltip("Ange din postkod"));
@@ -323,12 +315,76 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     }
 
     private Boolean checkFormatCard() {
+        if (!(cardField.getText().isEmpty()))
+            checkNumericField(cardField,cardLabel,"Kort",4);
+        if (!(cardField1.getText().isEmpty()))
+            checkNumericField(cardField1,cardLabel,"Kort",4);
+        if (!(cardField2.getText().isEmpty()))
+            checkNumericField(cardField2,cardLabel,"Kort",4);
+        if (!(cardField3.getText().isEmpty()))
+            checkNumericField(cardField3,cardLabel,"Kort",4);
+
         if (!(cardField.getText().isEmpty()) && !(cardField1.getText().isEmpty()) && !(cardField2.getText().isEmpty()) &&
                 !(cardField3.getText().isEmpty())){
             return true;
+
         }else {
             cardField.setTooltip(new Tooltip("Ange ditt kortnummer"));
             return false;
+        }
+    }
+
+    private Boolean checkFormatMmYy(){
+        if (!(monthYear.getText().isEmpty())){
+            checkNumericField(monthYear,myLabel,"Månad/År",2);
+        }
+        if (!(monthYear1.getText().isEmpty())){
+            checkNumericField(monthYear1,myLabel,"Månad/År",2);
+        }
+        if (!(monthYear.getText().isEmpty()) && !(monthYear1.getText().isEmpty())){
+            return true;
+        }else {
+            bankField.setTooltip(new Tooltip("Ange månad och datum"));
+            return false;
+        }
+    }
+
+    private Boolean checkFormatCvc() {
+        if (!(cvc.getText().isEmpty())){
+            checkNumericField(cvc,cvcLabel,"CVC",3);
+            return true;
+
+        }else {
+            codeField.setTooltip(new Tooltip("Ange CVC"));
+            return false;
+        }
+    }
+
+    private void checkNumericField(TextField field, Label text,String label, int length){
+        String string = field.getText();
+        //int i = string.length();
+        boolean numeric = true;
+
+        try {
+            Double num = Double.parseDouble(string);
+        } catch (NumberFormatException e) {
+            numeric = false;
+        }
+
+        if(numeric) {
+            /*if (i < length){*/
+                text.setText(label);
+                text.setStyle("-fx-text-fill: black");
+                field.setStyle("-fx-border-color: gray");
+          /*  } else {
+                field.setText(string.substring(0,i-1));
+
+            }*/
+        }
+        else {
+            text.setText(label + " (Ange bara " + length + " numeriska tecken)");
+            text.setStyle("-fx-text-fill: red");
+            field.setStyle("-fx-border-color: red");
         }
     }
 
@@ -371,6 +427,16 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         this.mainWindow.toFront();
         this.indicatorArea.toFront();
         wizardView.setFocus(1);
+        checkIfItemsInCart();
+    }
+
+    private void checkIfItemsInCart() {
+        BackendController bg = BackendController.getInstance();
+        if (bg.getShoppingCartAmount() > 0)
+            nextStepCart.setDisable(false);
+        else
+            nextStepCart.setDisable(true);
+
     }
 
     @FXML
