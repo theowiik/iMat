@@ -44,6 +44,11 @@
                         <KeyCodeCombination alt="UP" code="DIGIT4" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#focusOnSearchBar" text="Sök efter en vara">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
           </items>
         </Menu>
       </menus>
@@ -258,7 +263,7 @@
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <TextField fx:id="searchBar" prefHeight="50.0" promptText="Jag vill köpa..." GridPane.columnIndex="1">
+                                                <TextField fx:id="searchBar" prefHeight="50.0" promptText="Jag vill köpa..." onAction="#onEnter" GridPane.columnIndex="1">
                                                    <GridPane.margin>
                                                       <Insets left="20.0" right="20.0" />
                                                    </GridPane.margin>
@@ -271,7 +276,10 @@
                                                       <Image url="@../resources/search.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Button mnemonicParsing="false" onMousePressed="#search" text="Sök" GridPane.columnIndex="2" />
+                                                <Button mnemonicParsing="false" onMousePressed="#search" text="Sök" GridPane.columnIndex="2">
+                                                   <tooltip>
+                                                      <Tooltip text="Tryck här för att söka" />
+                                                   </tooltip></Button>
                                              </children>
                                           </GridPane>
                                        </children>
