@@ -1,10 +1,7 @@
 package Controller;
 
 import Model.*;
-import javafx.animation.Animation;
-import javafx.animation.FadeTransition;
-import javafx.animation.Interpolator;
-import javafx.animation.Transition;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -230,6 +227,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
             checkoutActive(false);
             myAccountActive(false);
             cartActive(shoppingCartController.getShoppingCart1().isInFront);
+            animateCartButtonOpen();
         } else {
             shoppingCartController.getShoppingCart1().toBack();
             shoppingCartController.getShoppingCart1().isInFront = false;
@@ -237,8 +235,10 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
             checkoutActive(false);
             myAccountActive(false);
             cartActive(shoppingCartController.getShoppingCart1().isInFront);
+            animateCartButtonClose();
         }
     }
+
 
     public void setAmountOfItemsInCart() {
         String text = "  " + backendController.getTotalAmountOfItems() + "  ";
@@ -377,7 +377,28 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     }
 
     @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        setAmountOfItemsInCart();
+    }
+
+    @Override
     public void productAdded(Product product, int i) {
+
+        animateProdAdded(product);
+        setAmountOfItemsInCart();
+    }
+
+    @Override
+    public void productRemoved(Product product, int i) {
+
+        animateProdRemoved(product);
+        setAmountOfItemsInCart();
+    }
+
+    /**
+     * Makes an animation on the cartButton where the color green fades out over 3s along with text .
+     */
+    private void animateProdAdded(Product product) {
         // Animate added product
         final Animation animation = new Transition() {
             {
@@ -387,7 +408,6 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
 
             @Override
             protected void interpolate(double frac) {
-//                Color vColor = new Color(0, 1, 0, 1 - frac);
                 Color vColor = new Color(0.05, 0.90, 0.5, 1 - frac);
                 cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
 
@@ -403,15 +423,13 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
             }
         };
         animation.play();
-
-        // Change text
-        //cartText.setText(product.getName() + " tillagt i din varukorg!");
-        setAmountOfItemsInCart();
     }
 
-    @Override
-    public void productRemoved(Product product, int i) {
-
+    /**
+     * Makes an animation on the cartButton where the color red fades out over 3s.
+     */
+    private void animateProdRemoved(Product product) {
+        //animate removed product
         final Animation animation = new Transition() {
 
             {
@@ -424,21 +442,67 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
                 //Color vColor = new Color(1, 0, 0, 1 - frac);
                 Color vColor = new Color(0.89, 0.45, 0.45, 1 - frac);
                 cartButton.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
+
+                FadeTransition ft = new FadeTransition(Duration.millis(5000), cartText);
+                cartText.setText(product.getName() + " Bortagen!");
+                ft.setFromValue(1.0);
+                ft.setToValue(0);
+                ft.setCycleCount(1);
+                ft.setAutoReverse(true);
+
+                ft.play();
             }
         };
         animation.play();
-        setAmountOfItemsInCart();
+    }
+
+    /**
+     * This method works as a counter animation to the following methods: animateProdAdded, animateProdRemoved.
+     */
+    private void animateCartButtonOpen() {
+        final Animation animation = new Transition() {
+            {
+                setInterpolator(Interpolator.LINEAR);
+                setCycleDuration(Duration.seconds(3));
+            }
+
+            @Override
+            protected void interpolate(double frac) {
+                Color to = new Color(0.74509804, 0.32156863, 0.31372549, 1);
+                cartButton.setBackground(new Background(new BackgroundFill(to, CornerRadii.EMPTY, Insets.EMPTY)));
+
+            }
+        };
+        animation.play();
+
+    }
+
+    /**
+     * This method works as a counter animation to animateCartButtonOpen.
+     */
+    private void animateCartButtonClose() {
+
+        final Animation animation = new Transition() {
+
+            {
+                setCycleDuration(Duration.millis(3000));
+                setInterpolator(Interpolator.LINEAR);
+            }
+
+            @Override
+            protected void interpolate(double frac) {
+                Color to = new Color(0.74509804, 0.32156863, 0.31372549, 0);
+                cartButton.setBackground(new Background(new BackgroundFill(to, CornerRadii.EMPTY, Insets.EMPTY)));
+            }
+        };
+        animation.play();
+
     }
 
     private void observeAllProductCards() {
         for (ProductCard productCard : backendController.getProductCardMap().values()) {
             productCard.addObserver(this);
         }
-    }
-
-    @Override
-    public void shoppingCartChanged(CartEvent cartEvent) {
-        setAmountOfItemsInCart();
     }
 
     private void eventHandlerMethod() {
