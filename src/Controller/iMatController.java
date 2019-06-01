@@ -111,6 +111,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
 
         eventHandlerMethod();
 
+        setAmountOfItemsInCart();
         storeToFront();
     }
 
