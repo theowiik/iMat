@@ -5,6 +5,7 @@ import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.Transition;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -252,6 +253,16 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
         String s = String.format("%.0f", i);
         totalPrice.setText(s + " kr");
         totalPrice.setVisible(true);
+    }
+
+    @FXML
+    public void onEnter(ActionEvent ae){
+        search();
+    }
+
+    public void focusOnSearchBar() {
+        productBrowserController.getProductBrowser().searchBar.setFocusTraversable(true);
+        System.out.println("fokus på sök knappen");
     }
 
     private void makeLabelRound(Label amountOfItemsInCart) {
