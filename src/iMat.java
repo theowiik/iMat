@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 
@@ -32,6 +33,7 @@ public class iMat extends Application implements WindowResizeObservable {
         stage.setMinHeight(700);
         stage.setTitle("iMat");
         stage.setScene(scene);
+        stage.getIcons().add(new Image("resources/iMat.png"));
         stage.show();
         stage.setMaximized(true);
     }
