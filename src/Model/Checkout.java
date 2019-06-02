@@ -119,6 +119,12 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public Button paybtn;
     @FXML
     public Button nextStepCart;
+    @FXML
+    public Button invoiceBtn;
+    @FXML
+    public Button payWithCardBtn;
+    @FXML
+    public Button atArrivalBtn;
 
 
     @FXML
@@ -162,6 +168,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public Label myLabel;
     @FXML
     public Label cvcLabel;
+    @FXML
+    public Label codeLabel2;
 
     @FXML
     public AnchorPane indicatorArea;
@@ -169,6 +177,10 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     @FXML
     public FlowPane cartPane;
+
+    Boolean payWithCard = true;
+    Boolean invoice = false;
+    Boolean payAtArrival = false;
 
     private ArrayList<ConfirmedOrderObserver> observers = new ArrayList<>();
 
@@ -212,15 +224,21 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     }
 
     public void responsiveEnabling(){
+
         checkFormatName();
         checkFormatLastName();
         checkFormatAddress();
         checkFormatCode();
         checkFormatCity();
-        checkFormatBank();
-        checkFormatCard();
-        checkFormatMmYy();
-        checkFormatCvc();
+        if (payWithCard){
+            checkFormatBank();
+            checkFormatCard();
+            checkFormatMmYy();
+            checkFormatCvc();
+        }
+        if (invoice)
+            checkNumericField(codeField2,codeLabel2,"Postkod", 5);
+
         if (hasNoEmptyFields())
             paybtn.setDisable(false);
         else
@@ -230,13 +248,26 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     private Boolean hasNoEmptyFields() {
 
-        if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
-                checkFormatCity() && checkFormatBank() && checkFormatCard() && checkFormatMmYy() && checkFormatCvc()) {
-            return true;
+        if (payWithCard){
+            if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
+                    checkFormatCity() && checkFormatBank() && checkFormatCard() && checkFormatMmYy() && checkFormatCvc()) {
+                return true;
+            }
         }
-        else {
+        if (payAtArrival){
+            if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
+                    checkFormatCity()) {
+                return true;
+            }
+        }if (invoice){
+            if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
+                    checkFormatCity() && !(fNameField2.getText().isEmpty()) && !(lNameField2.getText().isEmpty()) &&
+                    !(addressField2.getText().isEmpty()) && !(codeField2.getText().isEmpty()) && !(cityField2.getText().isEmpty())) {
+                return true;
+            }
+        }
             return false;
-        }
+
 
     }
     private Boolean checkFormatName() {
@@ -392,6 +423,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         setRoot();
         addObserver(mar);
         spawnIndicator();
+        setBtnFocus();
     }
 
     @Override
@@ -482,6 +514,10 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public void uncoverInvoiceInfoWindow() {
         this.invoiceInfoWindow.toFront();
         this.InvoiceCoverWindow.toFront();
+        invoice = true;
+        payAtArrival = false;
+        payWithCard = false;
+        setBtnFocus();
     }
 
     @FXML
@@ -490,6 +526,10 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         updateButton(nextButton, false);
         updateButton(last, false);*/
         this.bankInfoWindow.toFront();
+        invoice = false;
+        payAtArrival = false;
+        payWithCard = true;
+        setBtnFocus();
     }
 
 
@@ -497,11 +537,29 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public void uncoverInvoiceInfo() {
         this.invoiceInfoWindow.toFront();
+
     }
 
     @FXML
     public void hideInfo() {
         this.infoCoverWindow.toFront();
+        invoice = false;
+        payAtArrival = true;
+        payWithCard = false;
+        setBtnFocus();
+    }
+
+    private void setBtnFocus() {
+        invoiceBtn.setStyle("-fx-background-color: #D1D0C8");
+        atArrivalBtn.setStyle("-fx-background-color: #D1D0C8");
+        payWithCardBtn.setStyle("-fx-background-color: #D1D0C8");
+        if (invoice)
+            invoiceBtn.setStyle("-fx-background-color: grey");
+        if (payWithCard)
+            payWithCardBtn.setStyle("-fx-background-color: grey");
+        if (payAtArrival)
+            atArrivalBtn.setStyle("-fx-background-color: grey");
+
     }
 
     @FXML
