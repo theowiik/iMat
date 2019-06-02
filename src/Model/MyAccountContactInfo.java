@@ -100,7 +100,7 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
 
     }
 
-    private void populateCurrent() {
+    public void populateCurrent() {
         BackendController backendController = BackendController.getInstance();
         Customer c = backendController.getCustomer();
         name.setText(c.getFirstName());

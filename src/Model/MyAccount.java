@@ -158,6 +158,10 @@ public class MyAccount extends AnchorPane implements CustomComponent, RecieptObs
 
     }
 
+    public void updateContactInfoFields() {
+        myAccountContactInfo.populateCurrent();
+    }
+
     //public void saveFieldsContact(Customer c) {
     //    myAccountContactInfo.saveFieldsContact(c);
     //}

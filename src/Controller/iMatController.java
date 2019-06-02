@@ -1,7 +1,10 @@
 package Controller;
 
 import Model.*;
-import javafx.animation.*;
+import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.Transition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -256,7 +259,7 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
     }
 
     @FXML
-    public void onEnter(ActionEvent ae){
+    public void onEnter(ActionEvent ae) {
         search();
     }
 
@@ -563,5 +566,11 @@ public class iMatController implements Initializable, WindowResizeObserver, AddP
                         shoppingCartToFront();
                     }
                 });
+        checkoutController.getCheckout().paybtn.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                myAccountController.updateContactInfoFields();
+            }
+        });
     }
 }

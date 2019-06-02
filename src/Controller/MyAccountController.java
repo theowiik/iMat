@@ -48,4 +48,8 @@ public class MyAccountController {
     public void saveAsShoppingList() {
         myAccount.saveAsShoppingList();
     }
+
+    public void updateContactInfoFields() {
+        myAccount.updateContactInfoFields();
+    }
 }
