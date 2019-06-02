@@ -287,7 +287,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Button mnemonicParsing="false" onAction="#hideInfo" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="VID LEVERANS" GridPane.rowIndex="2">
+                              <Button fx:id="atArrivalBtn" mnemonicParsing="false" onAction="#hideInfo" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="VID LEVERANS" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
@@ -299,19 +299,7 @@
                                     <Tooltip text="Betala när dina varor levererats till din angivna adress" />
                                  </tooltip>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#uncoverBankInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="KORTBETALNING" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="buttonShadow" />
-                                    <String fx:value="prominentDefaultButton" />
-                                 </styleClass>
-                                 <tooltip>
-                                    <Tooltip text="Betala med kontokort" />
-                                 </tooltip>
-                              </Button>
-                              <Button mnemonicParsing="false" onAction="#uncoverInvoiceInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FAKTURA" GridPane.rowIndex="4">
+                              <Button fx:id="invoiceBtn" mnemonicParsing="false" onAction="#uncoverInvoiceInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FAKTURA" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
@@ -321,6 +309,18 @@
                                  </styleClass>
                                  <tooltip>
                                     <Tooltip text="Betala med faktura" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="payWithCardBtn" mnemonicParsing="false" onAction="#uncoverBankInfoWindow" prefHeight="50.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="KORTBETALNING" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttonShadow" />
+                                    <String fx:value="prominentDefaultButton" />
+                                 </styleClass>
+                                 <tooltip>
+                                    <Tooltip text="Betala med kontokort" />
                                  </tooltip>
                               </Button>
                            </children>
@@ -382,13 +382,13 @@
                                                          <children>
                                                             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                                                <children>
-                                                                  <TextField fx:id="codeField2" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                                  <Label layoutX="14.0" layoutY="6.0" text="Postkod" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                                  <TextField fx:id="codeField2" layoutX="22.0" layoutY="21.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                                  <Label fx:id="codeLabel2" layoutX="14.0" layoutY="6.0" text="Postkod" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
                                                                </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                                                <children>
-                                                                  <Label layoutX="22.0" layoutY="6.0" text="Stad" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                                  <Label layoutX="22.0" layoutY="6.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" text="Stad" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
                                                                   <TextField fx:id="cityField2" layoutX="22.0" layoutY="27.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
                                                                </children>
                                                             </AnchorPane>
@@ -396,7 +396,7 @@
                                                       </GridPane>
                                                       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                                          <children>
-                                                            <TextField fx:id="addressField2" layoutX="230.0" layoutY="13.0" prefHeight="40.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                            <TextField fx:id="addressField2" layoutX="230.0" layoutY="13.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
                                                             <Label layoutX="14.0" layoutY="5.0" text="Adress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
                                                          </children>
                                                       </AnchorPane>
@@ -411,14 +411,14 @@
                                                          <children>
                                                             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                                                <children>
-                                                                  <TextField fx:id="fNameField2" layoutX="22.0" layoutY="21.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                                  <TextField fx:id="fNameField2" layoutX="22.0" layoutY="21.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
                                                                   <Label layoutX="14.0" layoutY="6.0" text="Förnamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
                                                                   <Text layoutX="4.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annan Fakturaadress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="-5.0" />
                                                                </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                                                <children>
-                                                                  <Label layoutX="22.0" layoutY="6.0" text="Efternamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
+                                                                  <Label layoutX="22.0" layoutY="6.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" text="Efternamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="13.0" />
                                                                   <TextField fx:id="lNameField2" layoutX="22.0" layoutY="27.0" prefHeight="40.0" prefWidth="256.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
                                                                </children>
                                                             </AnchorPane>

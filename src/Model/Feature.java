@@ -4,8 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BackgroundImage;
-import sun.plugin.javascript.navig.Anchor;
 
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
