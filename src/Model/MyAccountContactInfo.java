@@ -141,20 +141,20 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
     }
 
     public void ButtonAble() {
-        if (hasNoError() && isRightFormatName() && isRightFormatMail())
+        if (hasNoError() && isRightFormatName())
             save.setDisable(false);
         else
             save.setDisable(true);
     }
 
-    private boolean isRightFormatMail() {
+    private void isRightFormatMail() {
         if (!mail.getText().isEmpty() && (mail.getText().indexOf("@")>=1) && (mail.getText().indexOf(".") >= 2) ){
             errMail.setText("");
-            return true;
+
         }
         else {
             errMail.setText("Ange giltig mailadress");
-            return false;
+
         }
     }
 
@@ -170,7 +170,8 @@ public class MyAccountContactInfo extends AnchorPane implements CustomComponent 
     }
 
     private Boolean hasNoError() {
-        if(!name.getText().equals("") && !lastname.getText().equals("") && !address.getText().equals("") && !postalcode.getText().equals("") && !mail.getText().equals("") )
+        if(!name.getText().equals("") && !lastname.getText().equals("") && !address.getText().equals("") &&
+                !postalcode.getText().equals("") && !telnumber.getText().isEmpty())
             return true;
 
         return false;

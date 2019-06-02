@@ -62,7 +62,7 @@ public class BackendController implements AddProductObserver {
         availableCategories.add(CategoryName.COLD_DRINKS);
         availableCategories.add(CategoryName.HOT_DRINKS);
         categories.add(new Drinks());
-/*
+
         availableCategories.add(CategoryName.PASTRY);
         categories.add(new Pastry());
 
@@ -84,7 +84,7 @@ public class BackendController implements AddProductObserver {
 
         availableCategories.add(CategoryName.SNACKS);
         categories.add(new Snacks());
-*/
+
     }
 
     public Map<String, ProductCard> getProductCardMap() {

@@ -82,6 +82,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public TextField cvc;
 
+
     @FXML
     public Button d1;
     @FXML
@@ -173,6 +174,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public Label cvcLabel;
     @FXML
     public Label codeLabel2;
+    @FXML
+    public Label telNrLabel;
 
     @FXML
     public AnchorPane indicatorArea;
@@ -252,19 +255,19 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     private Boolean hasNoEmptyFields() {
 
         if (payWithCard){
-            if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
+            if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() && checkFormatTelNr()&&
                     checkFormatCity() && checkFormatBank() && checkFormatCard() && checkFormatMmYy() && checkFormatCvc()) {
                 return true;
             }
         }
         if (payAtArrival){
             if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
-                    checkFormatCity()) {
+                    checkFormatCity() && checkFormatTelNr()) {
                 return true;
             }
         }if (invoice){
             if (checkFormatName() && checkFormatLastName() && checkFormatAddress() && checkFormatCode() &&
-                    checkFormatCity() && !(fNameField2.getText().isEmpty()) && !(lNameField2.getText().isEmpty()) &&
+                    checkFormatCity() && checkFormatTelNr() && !(fNameField2.getText().isEmpty()) && !(lNameField2.getText().isEmpty()) &&
                     !(addressField2.getText().isEmpty()) && !(codeField2.getText().isEmpty()) && !(cityField2.getText().isEmpty())) {
                 return true;
             }
@@ -315,6 +318,16 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
             return true;
         }else {
             addressField.setTooltip(new Tooltip("Ange din adress"));
+            return false;
+        }
+    }
+
+    private Boolean checkFormatTelNr() {
+        if (!(phoneNumberField.getText().isEmpty())){
+            checkNumericField(phoneNumberField,telNrLabel,"Telefonnummer",10);
+            return true;
+        }else {
+            phoneNumberField.setTooltip(new Tooltip("Ange ditt telefonnummer"));
             return false;
         }
     }
@@ -407,7 +420,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
         if(numeric) {
             /*if (i < length){*/
-                text.setText(label);
+                text.setText(label + "*");
                 text.setStyle("-fx-text-fill: black");
                 field.setStyle("-fx-border-color: gray");
           /*  } else {
