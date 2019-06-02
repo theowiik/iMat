@@ -37,7 +37,7 @@
                       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <AnchorPane onMouseClicked="#recieptsToFront" styleClass="square-button" stylesheets="@../resources/style.css">
+                        <AnchorPane fx:id="recieptBtn" onMouseClicked="#recieptsToFront" styleClass="square-button" stylesheets="@../resources/style.css">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -64,7 +64,7 @@
                               </GridPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane onMouseClicked="#listsToFront" styleClass="square-button" GridPane.columnIndex="1">
+                        <AnchorPane fx:id="listBtn" onMouseClicked="#listsToFront" styleClass="square-button" GridPane.columnIndex="1">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -91,7 +91,7 @@
                               </GridPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane onMouseClicked="#personalDiscountToFront" styleClass="square-button" GridPane.rowIndex="1">
+                        <AnchorPane fx:id="discountsBtn" onMouseClicked="#personalDiscountToFront" styleClass="square-button" GridPane.rowIndex="1">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>

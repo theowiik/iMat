@@ -5,6 +5,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -159,8 +160,14 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                         </GridPane>
-                        <Button fx:id="clear" mnemonicParsing="false" onMouseClicked="#clearFieldsContact" styleClass="prominentAbortButton" text="RENSA" GridPane.rowIndex="14" />
-                        <Button fx:id="save" mnemonicParsing="false" onMouseClicked="#saveFieldsContact" styleClass="prominentDoneButton" text="SPARA" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                        <Button fx:id="clear" mnemonicParsing="false" onMouseClicked="#clearFieldsContact" styleClass="prominentAbortButton" text="RENSA" GridPane.rowIndex="14">
+                           <tooltip>
+                              <Tooltip text="Rensa alla fält" />
+                           </tooltip></Button>
+                        <Button fx:id="save" mnemonicParsing="false" onMouseClicked="#saveFieldsContact" styleClass="prominentDoneButton" text="SPARA" GridPane.columnIndex="2" GridPane.rowIndex="14">
+                           <tooltip>
+                              <Tooltip text="Spara uppgifter till konto" />
+                           </tooltip></Button>
                         <Text fx:id="msg" fill="#06541f" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="same-page-msg" text="meddelande" GridPane.columnIndex="1" GridPane.rowIndex="15" />
                         <Text fx:id="errName" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="same-page-err-msg" text="errName" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <Text fx:id="errLastName" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="same-page-err-msg" text="errLastName" GridPane.columnIndex="2" GridPane.rowIndex="2" />
