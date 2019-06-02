@@ -415,7 +415,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
             }*/
         }
         else {
-            text.setText(label + " (Ange bara " + length + " numeriska tecken)");
+            text.setText(label + "*" + " (Ange bara " + length + " numeriska tecken)");
             text.setStyle("-fx-text-fill: red");
             field.setStyle("-fx-border-color: red");
         }
