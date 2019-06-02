@@ -276,12 +276,12 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     private Boolean checkFormatName() {
         if (!(fNameField.getText().isEmpty())){
             if (fNameField.getText().length() > 12) {
-                nameLabel.setText("Förnamn (Max 12 tecken)");
+                nameLabel.setText("Förnamn* (Max 12 tecken)");
                 nameLabel.setStyle("-fx-text-fill: red");
                 fNameField.setStyle("-fx-border-color: red");
                 return false;
             }
-            nameLabel.setText("Förnamn");
+            nameLabel.setText("Förnamn*");
             nameLabel.setStyle("-fx-text-fill: black");
             fNameField.setStyle("-fx-border-color: grey");
             return true;
@@ -295,12 +295,12 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     private Boolean checkFormatLastName() {
         if (!(lNameField.getText().isEmpty())){
             if (lNameField.getText().length() > 15) {
-                lastNameLabel.setText("Efternamn (Max 15 tecken)");
+                lastNameLabel.setText("Efternamn* (Max 15 tecken)");
                 lastNameLabel.setStyle("-fx-text-fill: red");
                 lNameField.setStyle("-fx-border-color: red");
                 return false;
             }
-            lastNameLabel.setText("Efternamn");
+            lastNameLabel.setText("Efternamn*");
             lastNameLabel.setStyle("-fx-text-fill: black");
             lNameField.setStyle("-fx-border-color: grey");
             return true;
@@ -667,6 +667,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         customer.setLastName(lNameField.getText());
         customer.setPostCode(codeField.getText());
         customer.setPostAddress(cityField.getText());
+        customer.setMobilePhoneNumber(phoneNumberField.getText());
     }
 
     private void updateCardInfo() {
