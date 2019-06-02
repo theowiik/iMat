@@ -49,6 +49,7 @@ public class CheckoutController implements ShoppingCartListener {
         checkout.setAmountMessage("Din kundvagn innehåller " + backendController.getShoppingCartAmount() + " varor.");
         setTotText();
         checkout.populateCurrent();
+        checkout.populateCard();
         updateCartItemArea();
         //updateFinalWindow();
     }
