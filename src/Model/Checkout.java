@@ -116,7 +116,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     @FXML
     public Button buyMoreButton4;
     @FXML
-    public Button sparaSomInköpslista;
+    public Button saveCart;
 
     @FXML
     public Button paybtn;
