@@ -25,6 +25,8 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
     public boolean orderIsFinished;
 
     @FXML
+    public TextField phoneNumberField;
+    @FXML
     public Text welcomeMessage;
     @FXML
     public Text amountMessage;
@@ -661,6 +663,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         fNameField2.setText(c.getFirstName());
         lNameField.setText(c.getLastName());
         lNameField2.setText(c.getLastName());
+        phoneNumberField.setText(c.getMobilePhoneNumber());
         addressField.setText(c.getAddress());
         addressField2.setText(c.getAddress());
         codeField.setText(c.getPostCode());

@@ -965,23 +965,17 @@
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                              <children>
                                                 <TextField fx:id="codeField" layoutX="22.0" layoutY="21.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" promptText="xxxxx" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                <Label fx:id="codeLabel" layoutX="14.0" layoutY="6.0" text="Postkod" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
+                                                <Label fx:id="codeLabel" layoutX="14.0" layoutY="6.0" text="Postkod*" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                              <children>
-                                                <Label fx:id="cityLabel" layoutX="22.0" layoutY="6.0" text="Stad" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
+                                                <Label fx:id="cityLabel" layoutX="22.0" layoutY="6.0" text="Stad*" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
                                                 <TextField fx:id="cityField" layoutX="22.0" layoutY="27.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" promptText="Din stad" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
                                              </children>
                                           </AnchorPane>
                                        </children>
                                     </GridPane>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                                       <children>
-                                          <TextField fx:id="addressField" layoutX="230.0" layoutY="13.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" promptText="Exempelgatan x" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                          <Label fx:id="addressLabel" layoutX="14.0" layoutY="5.0" text="Adress" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
-                                       </children>
-                                    </AnchorPane>
                                     <GridPane>
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -994,13 +988,36 @@
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                              <children>
                                                 <TextField fx:id="fNameField" layoutX="22.0" layoutY="21.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" promptText="Ditt förnamn" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
-                                                <Label fx:id="nameLabel" layoutX="14.0" layoutY="6.0" text="Förnamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
+                                                <Label fx:id="nameLabel" layoutX="14.0" layoutY="6.0" text="Förnamn*" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                              <children>
-                                                <Label fx:id="lastNameLabel" layoutX="22.0" layoutY="6.0" text="Efternamn" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
+                                                <Label fx:id="lastNameLabel" layoutX="22.0" layoutY="6.0" text="Efternamn*" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
                                                 <TextField fx:id="lNameField" layoutX="22.0" layoutY="27.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" promptText="Ditt efternamn" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.rowIndex="1">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="addressField" layoutX="22.0" layoutY="21.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" promptText="xxxxx" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
+                                                <Label fx:id="codeLabel1" layoutX="14.0" layoutY="6.0" text="Adress*" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label layoutX="22.0" layoutY="6.0" text="Telefonnummer*" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="8.0" />
+                                                <TextField fx:id="phoneNumberField" layoutX="22.0" layoutY="27.0" onInputMethodTextChanged="#responsiveEnabling" onKeyTyped="#responsiveEnabling" prefHeight="40.0" prefWidth="256.0" promptText="Din stad" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0" />
                                              </children>
                                           </AnchorPane>
                                        </children>
