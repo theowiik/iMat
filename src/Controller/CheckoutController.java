@@ -31,9 +31,7 @@ public class CheckoutController implements ShoppingCartListener {
             CartItem cartItem = new CartItem(shoppingItem.getProduct(), shoppingItem.getAmount());
             checkout.cartPane.getChildren().add(cartItem);
             cartItem.addObserver(backendController);
-            if ((x & 1) == 0) {
-
-            } else {
+            if ((x & 1) != 0) {
                 cartItem.pane.setStyle("-fx-background-color: #DDDDDD");
             }
             x++;
