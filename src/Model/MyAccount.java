@@ -4,6 +4,7 @@ import Controller.BackendController;
 import Controller.MyAccountController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.Order;
@@ -26,6 +27,15 @@ public class MyAccount extends AnchorPane implements CustomComponent, RecieptObs
 
     @FXML
     public AnchorPane hider;
+
+    @FXML
+    public AnchorPane recieptBtn;
+    @FXML
+    public AnchorPane listBtn;
+    @FXML
+    public AnchorPane discountsBtn;
+    @FXML
+    public AnchorPane contactButton;
 
     MyAccountReciept myAccountReciept;
     MyAccountContactInfo myAccountContactInfo;
@@ -85,6 +95,15 @@ public class MyAccount extends AnchorPane implements CustomComponent, RecieptObs
         myAccountReciept.addListenerToAllReciepts(myAccountShoppingList, this);
         recieptsToFront();
         hideContent();
+        setTooltips();
+
+    }
+
+    private void setTooltips() {
+        Tooltip.install(recieptBtn,new Tooltip("Här finns dina kvitton"));
+        Tooltip.install(listBtn,new Tooltip("Här finns dina inköpslistor"));
+        Tooltip.install(discountsBtn,new Tooltip("Här finns dina erbjudanden"));
+        Tooltip.install(contactButton,new Tooltip("Här kan du ange din kontaktinformaion"));
     }
 
     @Override

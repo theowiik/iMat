@@ -5,13 +5,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<fx:root animated="false" prefWidth="600.0" stylesheets="@../resources/style.css" type="TitledPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root animated="false" prefWidth="600.0" stylesheets="@../resources/style.css" type="TitledPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <GridPane>
         <columnConstraints>
@@ -22,7 +23,10 @@
           <RowConstraints maxHeight="156.33331298828128" minHeight="10.0" prefHeight="59.333353678385436" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="saveAsShoppingList" mnemonicParsing="false" onMouseClicked="#saveAsShoppingList" prefHeight="48.0" prefWidth="291.0" styleClass="prominentDoneButton" text="SPARA SOM INKÖPSLISTA" GridPane.rowIndex="1" />
+            <Button fx:id="saveAsShoppingList" mnemonicParsing="false" onMouseClicked="#saveAsShoppingList" prefHeight="48.0" prefWidth="291.0" styleClass="prominentDoneButton" text="SPARA SOM INKÖPSLISTA" GridPane.rowIndex="1">
+               <tooltip>
+                  <Tooltip text="Lägg till varor som en inköpslista" />
+               </tooltip></Button>
             <AnchorPane fx:id="cartItemContainer" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ScrollPane layoutY="-1.0" prefHeight="249.0" prefWidth="581.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

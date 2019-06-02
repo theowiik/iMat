@@ -20,414 +20,6 @@
 
 <fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #EEEEEE;" stylesheets="@../resources/style.css" type="AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="deliveryViewWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <GridPane layoutX="391.0" layoutY="249.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="596.0" minWidth="10.0" percentWidth="0.0" prefWidth="368.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="67.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
-                     <children>
-                        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints vgrow="SOMETIMES" />
-                              <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
-                              <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <GridPane GridPane.rowIndex="2">
-                                 <columnConstraints>
-                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="34.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <Button mnemonicParsing="false" onAction="#openPayViewWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="NÄSTA STEG" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="buttonShadow" />
-                                          <String fx:value="prominentDoneButton" />
-                                       </styleClass>
-                                       <tooltip>
-                                          <Tooltip text="Gå till nästa steg" />
-                                       </tooltip>
-                                    </Button>
-                                    <Button fx:id="openMainWindow" mnemonicParsing="false" onAction="#openMainWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="TILLBAKA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="buttonShadow" />
-                                          <String fx:value="prominentBackButton" />
-                                       </styleClass>
-                                       <tooltip>
-                                          <Tooltip text="Gå tillbaka till föregående steg" />
-                                       </tooltip>
-                                    </Button>
-                                 </children>
-                              </GridPane>
-                              <Separator prefWidth="200.0" GridPane.rowIndex="1" />
-                              <AnchorPane fx:id="shadowWindow" onMouseClicked="#closeDeliveryWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-                                 <children>
-                                    <AnchorPane fx:id="deliveryWindow2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <GridPane layoutX="514.0" layoutY="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                                <RowConstraints maxHeight="390.0" minHeight="390.0" prefHeight="390.0" vgrow="SOMETIMES" />
-                                                <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-                                                <GridPane GridPane.rowIndex="1">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <Button fx:id="d10" mnemonicParsing="false" onAction="#handled10" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d11" mnemonicParsing="false" onAction="#handled11" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d9" mnemonicParsing="false" onAction="#handled9" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                   </children>
-                                                </GridPane>
-                                                <GridPane GridPane.rowIndex="2">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <Button fx:id="backDeliveryButton" mnemonicParsing="false" onAction="#nextDateView2" prefHeight="30.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="Se tidigare levereanstider" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <font>
-                                                            <Font size="36.0" />
-                                                         </font>
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="prominentDefaultButton" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Se tidigare leveranstider" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="confirmDeliveryButton1" disable="true" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="Se senare leveranstider" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <font>
-                                                            <Font size="36.0" />
-                                                         </font>
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="prominentDefaultButton" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Klicka för att se senare leveranstider" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <GridPane GridPane.columnIndex="1">
-                                                         <columnConstraints>
-                                                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                         </columnConstraints>
-                                                         <rowConstraints>
-                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
-                                                         </rowConstraints>
-                                                         <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText-" text="Vi beräknar att leverera varorna hos dig">
-                                                               <font>
-                                                                  <Font size="24.0" />
-                                                               </font>
-                                                            </Text>
-                                                            <Text fx:id="deliveryDateText2" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="DATUM" GridPane.rowIndex="1">
-                                                               <font>
-                                                                  <Font size="36.0" />
-                                                               </font>
-                                                            </Text>
-                                                         </children>
-                                                      </GridPane>
-                                                   </children>
-                                                </GridPane>
-                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                                   <children>
-                                                      <Text layoutX="65.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vilken tid passar dig bäst?" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                                         <font>
-                                                            <Font size="30.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </children>
-                                                </AnchorPane>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="deliveryWindow1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <GridPane layoutX="514.0" layoutY="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                                <RowConstraints maxHeight="390.0" minHeight="390.0" prefHeight="390.0" vgrow="SOMETIMES" />
-                                                <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-                                                <GridPane GridPane.rowIndex="1">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <Button fx:id="d2" mnemonicParsing="false" onAction="#handled2" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG  16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d3" mnemonicParsing="false" onAction="#handled3" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG  18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d4" mnemonicParsing="false" onAction="#handled4" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d5" mnemonicParsing="false" onAction="#handled5" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d6" mnemonicParsing="false" onAction="#handled6" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d7" mnemonicParsing="false" onAction="#handled7" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d8" mnemonicParsing="false" onAction="#handled8" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                            <String fx:value="buttonSquare" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="d1" mnemonicParsing="false" onAction="#handled1" prefHeight="150.0" prefWidth="160.0" style="-fx-background-color: #4CAF50;" stylesheets="@../resources/style.css" text="TISDAG  14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="categoryTitle" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Välj tiden genom att klicka" />
-                                                         </tooltip>
-                                                      </Button>
-                                                   </children>
-                                                </GridPane>
-                                                <GridPane GridPane.rowIndex="2">
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <children>
-                                                      <Button fx:id="backDeliveryButton" disable="true" mnemonicParsing="false" onAction="#nextDateView1" prefHeight="60.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="TIDIGARE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <font>
-                                                            <Font size="36.0" />
-                                                         </font>
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="prominentDefaultButton" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Se tidigare leveranstider" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <Button fx:id="confirmDeliveryButton" mnemonicParsing="false" onAction="#nextDateView1" prefHeight="60.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="SENARE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                                         <font>
-                                                            <Font size="36.0" />
-                                                         </font>
-                                                         <styleClass>
-                                                            <String fx:value="buttonShadow" />
-                                                            <String fx:value="prominentDefaultButton" />
-                                                         </styleClass>
-                                                         <tooltip>
-                                                            <Tooltip text="Se senare leveranstider" />
-                                                         </tooltip>
-                                                      </Button>
-                                                      <GridPane GridPane.columnIndex="1">
-                                                         <columnConstraints>
-                                                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                         </columnConstraints>
-                                                         <rowConstraints>
-                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
-                                                         </rowConstraints>
-                                                         <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText-" text="Vi beräknar att leverera varorna hos dig">
-                                                               <font>
-                                                                  <Font size="24.0" />
-                                                               </font>
-                                                            </Text>
-                                                            <Text fx:id="deliveryDateText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="DATUM" GridPane.rowIndex="1">
-                                                               <font>
-                                                                  <Font size="36.0" />
-                                                               </font>
-                                                            </Text>
-                                                         </children>
-                                                      </GridPane>
-                                                   </children>
-                                                </GridPane>
-                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                                   <children>
-                                                      <Text layoutX="65.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="Vilken tid passar dig bäst?" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                                         <font>
-                                                            <Font size="30.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </children>
-                                                </AnchorPane>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </GridPane>
-                     </children>
-                  </AnchorPane>
-                  <GridPane>
-                     <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="312.0" minHeight="25.0" prefHeight="70.63751983642578" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="551.0" minHeight="0.0" prefHeight="404.5470275878906" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="28.0" prefWidth="600.0" />
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-                        <Button fx:id="buyMoreButton2" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FORTSÄTT HANDLA" GridPane.rowIndex="2">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="buttonShadow" />
-                              <String fx:value="prominentBackButton" />
-                           </styleClass>
-                           <tooltip>
-                              <Tooltip text="Gå tillbaka till affären" />
-                           </tooltip>
-                        </Button>
-                     </children>
-                  </GridPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                     <children>
-                        <Separator layoutX="6.0" layoutY="78.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </GridPane>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="finalWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <GridPane layoutX="355.0" layoutY="255.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -1082,6 +674,414 @@
                   </GridPane>
                </children>
             </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="deliveryViewWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane layoutX="391.0" layoutY="249.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="596.0" minWidth="10.0" percentWidth="0.0" prefWidth="368.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="67.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <GridPane GridPane.rowIndex="2">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="34.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#openPayViewWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="NÄSTA STEG" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="buttonShadow" />
+                                          <String fx:value="prominentDoneButton" />
+                                       </styleClass>
+                                       <tooltip>
+                                          <Tooltip text="Gå till nästa steg" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="openMainWindow" mnemonicParsing="false" onAction="#openMainWindow" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="TILLBAKA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="buttonShadow" />
+                                          <String fx:value="prominentBackButton" />
+                                       </styleClass>
+                                       <tooltip>
+                                          <Tooltip text="Gå tillbaka till föregående steg" />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                              <AnchorPane fx:id="shadowWindow" onMouseClicked="#closeDeliveryWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+                                 <children>
+                                    <AnchorPane fx:id="deliveryWindow2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <GridPane layoutX="514.0" layoutY="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="390.0" minHeight="390.0" prefHeight="390.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                                                <GridPane GridPane.rowIndex="1">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Button fx:id="d10" mnemonicParsing="false" onAction="#handled10" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d11" mnemonicParsing="false" onAction="#handled11" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d9" mnemonicParsing="false" onAction="#handled9" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                   </children>
+                                                </GridPane>
+                                                <GridPane GridPane.rowIndex="2">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Button fx:id="backDeliveryButton" mnemonicParsing="false" onAction="#nextDateView2" prefHeight="30.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="Se tidigare levereanstider" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font size="36.0" />
+                                                         </font>
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="prominentDefaultButton" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Se tidigare leveranstider" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="confirmDeliveryButton1" disable="true" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="Se senare leveranstider" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font size="36.0" />
+                                                         </font>
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="prominentDefaultButton" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Klicka för att se senare leveranstider" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <GridPane GridPane.columnIndex="1">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText-" text="Vi beräknar att leverera varorna hos dig">
+                                                               <font>
+                                                                  <Font size="24.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <Text fx:id="deliveryDateText2" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="DATUM" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Text>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </GridPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text layoutX="65.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vilken tid passar dig bäst?" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                                         <font>
+                                                            <Font size="30.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="deliveryWindow1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <GridPane layoutX="514.0" layoutY="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="390.0" minHeight="390.0" prefHeight="390.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                                                <GridPane GridPane.rowIndex="1">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Button fx:id="d2" mnemonicParsing="false" onAction="#handled2" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG  16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d3" mnemonicParsing="false" onAction="#handled3" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TISDAG  18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d4" mnemonicParsing="false" onAction="#handled4" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d5" mnemonicParsing="false" onAction="#handled5" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d6" mnemonicParsing="false" onAction="#handled6" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 16:30" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d7" mnemonicParsing="false" onAction="#handled7" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="ONSDAG 18:30" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d8" mnemonicParsing="false" onAction="#handled8" prefHeight="150.0" prefWidth="160.0" stylesheets="@../resources/style.css" text="TORSDAG 12:30" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                            <String fx:value="buttonSquare" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="d1" mnemonicParsing="false" onAction="#handled1" prefHeight="150.0" prefWidth="160.0" style="-fx-background-color: #4CAF50;" stylesheets="@../resources/style.css" text="TISDAG  14:30" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="categoryTitle" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Välj tiden genom att klicka" />
+                                                         </tooltip>
+                                                      </Button>
+                                                   </children>
+                                                </GridPane>
+                                                <GridPane GridPane.rowIndex="2">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Button fx:id="backDeliveryButton" disable="true" mnemonicParsing="false" onAction="#nextDateView1" prefHeight="60.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="TIDIGARE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font size="36.0" />
+                                                         </font>
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="prominentDefaultButton" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Se tidigare leveranstider" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <Button fx:id="confirmDeliveryButton" mnemonicParsing="false" onAction="#nextDateView1" prefHeight="60.0" prefWidth="250.0" stylesheets="@../resources/style.css" text="SENARE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font size="36.0" />
+                                                         </font>
+                                                         <styleClass>
+                                                            <String fx:value="buttonShadow" />
+                                                            <String fx:value="prominentDefaultButton" />
+                                                         </styleClass>
+                                                         <tooltip>
+                                                            <Tooltip text="Se senare leveranstider" />
+                                                         </tooltip>
+                                                      </Button>
+                                                      <GridPane GridPane.columnIndex="1">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText-" text="Vi beräknar att leverera varorna hos dig">
+                                                               <font>
+                                                                  <Font size="24.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <Text fx:id="deliveryDateText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="DATUM" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Text>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </GridPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text layoutX="65.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="largeText" text="Vilken tid passar dig bäst?" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                                         <font>
+                                                            <Font size="30.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="312.0" minHeight="25.0" prefHeight="70.63751983642578" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="551.0" minHeight="0.0" prefHeight="404.5470275878906" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="150.0" minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="28.0" prefWidth="600.0" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                        <Button fx:id="buyMoreButton2" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" stylesheets="@../resources/style.css" text="FORTSÄTT HANDLA" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttonShadow" />
+                              <String fx:value="prominentBackButton" />
+                           </styleClass>
+                           <tooltip>
+                              <Tooltip text="Gå tillbaka till affären" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Separator layoutX="6.0" layoutY="78.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="indicatorArea" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0" />
