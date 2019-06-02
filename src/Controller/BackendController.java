@@ -135,6 +135,10 @@ public class BackendController implements AddProductObserver {
         return false;
     }
 
+    public CreditCard getCard() {
+        return db.getCreditCard();
+    }
+
     /**
      * Adds a product to the shopping cart.
      * @param product a product.

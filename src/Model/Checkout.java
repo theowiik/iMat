@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Customer;
 
@@ -654,6 +655,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         updateFinalWindow();
         openFinalWindow();
         updateAccountInfo();
+        updateCardInfo();
         orderIsFinished = true;
     }
 
@@ -666,6 +668,17 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         customer.setPostCode(codeField.getText());
         customer.setPostAddress(cityField.getText());
         customer.setMobilePhoneNumber(phoneNumberField.getText());
+    }
+
+    private void updateCardInfo() {
+        BackendController backendController = BackendController.getInstance();
+        CreditCard creditCard = backendController.getCard();
+        creditCard.setValidMonth(Integer.valueOf(monthYear.getText()));
+        creditCard.setValidYear(Integer.valueOf(monthYear1.getText()));
+        creditCard.setHoldersName(bankField.getText());
+        creditCard.setCardNumber(cardField.getText() + cardField1.getText() + cardField2.getText() + cardField3.getText());
+        creditCard.setVerificationCode(Integer.valueOf(cvc.getText()));
+        creditCard.setCardType(bankField.getText());
     }
 
     public void populateCurrent() {
@@ -682,6 +695,19 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         codeField2.setText(c.getPostCode());
         cityField.setText(c.getPostAddress());
         cityField2.setText(c.getPostAddress());
+    }
+
+    public void populateCard() {
+        BackendController backendController = BackendController.getInstance();
+        CreditCard creditCard = backendController.getCard();
+        monthYear.setText(String.valueOf(creditCard.getValidMonth()));
+        monthYear1.setText(String.valueOf(creditCard.getValidYear()));
+        cardField.setText(creditCard.getCardNumber().substring(0, 4));
+        cardField1.setText(creditCard.getCardNumber().substring(4, 8));
+        cardField2.setText(creditCard.getCardNumber().substring(8, 12));
+        cardField3.setText(creditCard.getCardNumber().substring(12, 16));
+        bankField.setText(creditCard.getHoldersName());
+        cvc.setText(String.valueOf(creditCard.getVerificationCode()));
     }
 
     @Override
