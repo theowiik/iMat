@@ -651,7 +651,18 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
         addRecieptFromOrder();
         updateFinalWindow();
         openFinalWindow();
+        updateAccountInfo();
         orderIsFinished = true;
+    }
+
+    private void updateAccountInfo() {
+        BackendController backendController = BackendController.getInstance();
+        Customer customer = backendController.getCustomer();
+        customer.setAddress(addressField.getText());
+        customer.setFirstName(fNameField.getText());
+        customer.setLastName(lNameField.getText());
+        customer.setPostCode(codeField.getText());
+        customer.setPostAddress(cityField.getText());
     }
 
     public void populateCurrent() {
