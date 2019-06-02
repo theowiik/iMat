@@ -699,15 +699,21 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
     public void populateCard() {
         BackendController backendController = BackendController.getInstance();
-        CreditCard creditCard = backendController.getCard();
-        monthYear.setText(String.valueOf(creditCard.getValidMonth()));
-        monthYear1.setText(String.valueOf(creditCard.getValidYear()));
-        cardField.setText(creditCard.getCardNumber().substring(0, 4));
-        cardField1.setText(creditCard.getCardNumber().substring(4, 8));
-        cardField2.setText(creditCard.getCardNumber().substring(8, 12));
-        cardField3.setText(creditCard.getCardNumber().substring(12, 16));
-        bankField.setText(creditCard.getHoldersName());
-        cvc.setText(String.valueOf(creditCard.getVerificationCode()));
+        CreditCard cd = backendController.getCard();
+
+        // Prevent errors
+        if (cd.getCardNumber().isEmpty()) return;
+        if (cd.getHoldersName().isEmpty()) return;
+        if (cd.getCardType().isEmpty()) return;
+
+        monthYear.setText(String.valueOf(cd.getValidMonth()));
+        monthYear1.setText(String.valueOf(cd.getValidYear()));
+        cardField.setText(cd.getCardNumber().substring(0, 4));
+        cardField1.setText(cd.getCardNumber().substring(4, 8));
+        cardField2.setText(cd.getCardNumber().substring(8, 12));
+        cardField3.setText(cd.getCardNumber().substring(12, 16));
+        bankField.setText(cd.getHoldersName());
+        cvc.setText(String.valueOf(cd.getVerificationCode()));
     }
 
     @Override
