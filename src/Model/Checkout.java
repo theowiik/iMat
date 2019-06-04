@@ -716,7 +716,7 @@ public class Checkout extends AnchorPane implements CustomComponent, ConfirmedOr
 
         // Prevent errors
         if (cd.getCardNumber().isEmpty()) return;
-        if (cd.getCardNumber().length() <= 16) return;
+        if (cd.getCardNumber().length() < 16) return;
         if (cd.getHoldersName().isEmpty()) return;
         if (cd.getCardType().isEmpty()) return;
 
